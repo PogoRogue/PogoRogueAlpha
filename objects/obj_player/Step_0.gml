@@ -145,18 +145,19 @@ or (key_fire_projectile and current_weapon[2] and auto_firing and projectiles_le
 }
 
 //testing weapon switching
-if (keyboard_check_pressed(ord("1"))) {
-	current_weapon = basic_weapon
-	auto_firing = current_weapon[2]
-	if (projectiles_left > current_weapon[0]) {
-		projectiles_left = current_weapon[0]
-	}
-}
-if (keyboard_check_pressed(ord("2"))) {
-	current_weapon = auto_weapon
-	auto_firing = current_weapon[2]
-	if (projectiles_left > current_weapon[0]) {
-		projectiles_left = current_weapon[0]
+if (keyboard_check_pressed(ord("E"))) {
+	if current_weapon = auto_weapon {
+		current_weapon = basic_weapon
+		auto_firing = current_weapon[2]
+		if (projectiles_left > current_weapon[0]) {
+			projectiles_left = current_weapon[0]
+		}
+	}else {
+		current_weapon = auto_weapon
+		auto_firing = current_weapon[2]
+		if (projectiles_left > current_weapon[0]) {
+			projectiles_left = current_weapon[0]
+		}
 	}
 }
 

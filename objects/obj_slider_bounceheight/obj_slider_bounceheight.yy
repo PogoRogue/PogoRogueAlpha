@@ -8,6 +8,7 @@
   ],
   "managed": true,
   "overriddenProperties": [
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":null,"propertyId":{"name":"slider_index","path":"objects/obj_slider_parent_2/obj_slider_parent_2.yy",},"value":"0",},
     {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_slider_parent","path":"objects/obj_slider_parent/obj_slider_parent.yy",},"propertyId":{"name":"slider_index","path":"objects/obj_slider_parent/obj_slider_parent.yy",},"value":"0",},
   ],
   "parent": {

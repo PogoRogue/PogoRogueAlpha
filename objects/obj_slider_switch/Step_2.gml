@@ -10,7 +10,7 @@ right_button = keyboard_check_pressed(vk_right) or keyboard_check_pressed(ord("D
 if (global.use_mouse_for_slider) {
 	if (mouse_check_button_pressed(mb_left)) {
 		if (point_in_rectangle(mouse_x,mouse_y,bbox_left,bbox_top,bbox_right,bbox_bottom)) {
-			value = !value
+			custom_value = !custom_value
 			event_user(0)
 			draw_outline = true
 		}
@@ -24,12 +24,12 @@ if (global.use_mouse_for_slider) {
 }else if (global.slider_index = slider_index) {
 
 	if (left_button) {
-		value = false
+		custom_value = false
 		event_user(0)
 	}
 
 	if (right_button) {
-		value = true
+		custom_value = true
 		event_user(0)
 	}
 	draw_outline = false

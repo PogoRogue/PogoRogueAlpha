@@ -5,7 +5,7 @@ if (instance_exists(camera_object)) {
 }
 
 if (global.use_mouse_for_slider) {
-	var button_x = x + sprite_width*value
+	var button_x = x + sprite_width*value_
 	var button_y = y
 	var button_radius = sprite_get_width(spr_slider_button)/2
 	//draw outline for mouse mode
@@ -15,3 +15,4 @@ if (global.use_mouse_for_slider) {
 		draw_outline = false
 	}
 }
+

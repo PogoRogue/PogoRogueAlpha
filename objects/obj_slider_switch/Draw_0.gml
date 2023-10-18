@@ -1,5 +1,5 @@
 /// @description Draw
-draw_sprite(sprite_index,value,x,y)
+draw_sprite(sprite_index,custom_value,x,y)
 if (global.slider_index = slider_index) or (draw_outline) {
 	draw_sprite(spr_slider_switch_outline,0,x,y)
 }

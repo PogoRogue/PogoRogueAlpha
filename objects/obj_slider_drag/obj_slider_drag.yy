@@ -1,15 +1,15 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_slider_keyboardsensitivity",
+  "name": "obj_slider_drag",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":10,"eventType":7,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [
-    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_slider_parent","path":"objects/obj_slider_parent/obj_slider_parent.yy",},"propertyId":{"name":"slider_index","path":"objects/obj_slider_parent/obj_slider_parent.yy",},"value":"3",},
-    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_slider_parent","path":"objects/obj_slider_parent/obj_slider_parent.yy",},"propertyId":{"name":"keyboard_only","path":"objects/obj_slider_parent/obj_slider_parent.yy",},"value":"True",},
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":null,"propertyId":null,"value":"1",},
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_slider_parent","path":"objects/obj_slider_parent/obj_slider_parent.yy",},"propertyId":{"name":"slider_index","path":"objects/obj_slider_parent/obj_slider_parent.yy",},"value":"2",},
   ],
   "parent": {
     "name": "Sliders",

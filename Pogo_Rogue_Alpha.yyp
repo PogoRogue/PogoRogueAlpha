@@ -61,6 +61,7 @@
     {"id":{"name":"obj_slider_control","path":"objects/obj_slider_control/obj_slider_control.yy",},},
     {"id":{"name":"spr_player_falling2hurt_red","path":"sprites/spr_player_falling2hurt_red/spr_player_falling2hurt_red.yy",},},
     {"id":{"name":"spr_player_mask2","path":"sprites/spr_player_mask2/spr_player_mask2.yy",},},
+    {"id":{"name":"obj_slider_drag","path":"objects/obj_slider_drag/obj_slider_drag.yy",},},
     {"id":{"name":"spr_brownsquare","path":"sprites/spr_brownsquare/spr_brownsquare.yy",},},
     {"id":{"name":"spr_projectile_paintball","path":"sprites/spr_projectile_paintball/spr_projectile_paintball.yy",},},
     {"id":{"name":"spr_player_dead","path":"sprites/spr_player_dead/spr_player_dead.yy",},},

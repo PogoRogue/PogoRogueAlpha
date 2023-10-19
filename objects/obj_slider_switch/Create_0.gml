@@ -13,3 +13,4 @@ custom_value = false
 str = "Parent"
 string_false = "0"
 string_true = "1"
+color = c_white

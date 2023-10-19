@@ -13,9 +13,14 @@ if (draw_outline) or (selected) {
 draw_set_font(fnt_combo)
 draw_set_valign(fa_center)
 draw_set_halign(fa_right)
-scr_Draw_Text_Outlined(x-6,y,string(custom_min_value))
+scr_Draw_Text_Outlined(x-6,y,string(custom_min_value),c_white)
 draw_set_halign(fa_left)
-scr_Draw_Text_Outlined(x+sprite_width+6,y,string(custom_max_value))
+scr_Draw_Text_Outlined(x+sprite_width+6,y,string(custom_max_value),c_white)
 draw_set_halign(fa_center)
-scr_Draw_Text_Outlined(x+sprite_width/2,y-10,str)
-scr_Draw_Text_Outlined(x+sprite_width*value_,y+10,string(abs(custom_value)))
+scr_Draw_Text_Outlined(x+sprite_width/2,y-10,str,c_white)
+if !more_decimals {
+	scr_Draw_Text_Outlined(x+sprite_width*value_,y+10,string(abs(custom_value)),c_white)
+}else {
+	scr_Draw_Text_Outlined(x+sprite_width*value_,y+10,string_format(abs(custom_value), 1, num_of_decimals),c_white)
+
+}

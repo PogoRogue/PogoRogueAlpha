@@ -11,7 +11,7 @@
     {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":null,"propertyId":{"name":"slider_index","path":"objects/obj_slider_parent_1/obj_slider_parent_1.yy",},"value":"2",},
     {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":null,"propertyId":{"name":"mouse_only","path":"objects/obj_slider_parent_1/obj_slider_parent_1.yy",},"value":"True",},
     {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_slider_parent","path":"objects/obj_slider_parent/obj_slider_parent.yy",},"propertyId":{"name":"mouse_only","path":"objects/obj_slider_parent/obj_slider_parent.yy",},"value":"True",},
-    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_slider_parent","path":"objects/obj_slider_parent/obj_slider_parent.yy",},"propertyId":{"name":"slider_index","path":"objects/obj_slider_parent/obj_slider_parent.yy",},"value":"2",},
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_slider_parent","path":"objects/obj_slider_parent/obj_slider_parent.yy",},"propertyId":{"name":"slider_index","path":"objects/obj_slider_parent/obj_slider_parent.yy",},"value":"3",},
   ],
   "parent": {
     "name": "Sliders",

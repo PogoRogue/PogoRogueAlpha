@@ -25,3 +25,5 @@ str = "Parent"
 
 init_index = slider_index
 draw_outline = false
+more_decimals = false
+num_of_decimals = 2

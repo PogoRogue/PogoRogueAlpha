@@ -9,7 +9,7 @@
   "managed": true,
   "overriddenProperties": [
     {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":null,"propertyId":null,"value":"4",},
-    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_slider_parent","path":"objects/obj_slider_parent/obj_slider_parent.yy",},"propertyId":{"name":"slider_index","path":"objects/obj_slider_parent/obj_slider_parent.yy",},"value":"4",},
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_slider_parent","path":"objects/obj_slider_parent/obj_slider_parent.yy",},"propertyId":{"name":"slider_index","path":"objects/obj_slider_parent/obj_slider_parent.yy",},"value":"5",},
   ],
   "parent": {
     "name": "Sliders",

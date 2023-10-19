@@ -3,6 +3,7 @@
 //feel free to make copies of this object to mess around with movement values
 
 grv = 0.18; //gravity
+h_grv = 0.0; //horizontal drag
 rotation_speed = 2.2; //rotation speed
 current_rotation_speed = rotation_speed
 rotation_delay = 0.25

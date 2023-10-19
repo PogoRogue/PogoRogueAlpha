@@ -68,6 +68,13 @@ if (!bouncing) {
 	vspeed += grv
 }
 
+//horizontal drag
+if hspeed > 0 {
+	motion_add(180,h_grv)
+}else if hspeed < 0 {
+	motion_add(0,h_grv)
+}
+
 //check for collision with ground below
 if (place_meeting(x,y+vspeed,obj_ground_oneway) and vspeed > 0 and !place_meeting(x,y,obj_ground_oneway)) {
 	while !(place_meeting(x,y+sign(vspeed),obj_ground_oneway)) {

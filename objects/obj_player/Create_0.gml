@@ -3,7 +3,7 @@
 //feel free to make copies of this object to mess around with movement values
 
 grv = 0.18; //gravity
-rotation_speed = 2; //rotation speed
+rotation_speed = 2.2; //rotation speed
 current_rotation_speed = rotation_speed
 rotation_delay = 0.25
 vsp_basicjump = -6; //bounce height
@@ -15,6 +15,7 @@ use_mouse = true //use mouse to control instead of WASD/Arrow keys?
 mouse_sensitivity = 150 //the lower the value, the more sensitive the player is to mouse movement and vice versa
 mouse_reanglespeed = 4 //the lower the value, the faster the player will reangle itself and vice versa
 max_speed = 5 //player cant move faster than this during auto fire
+invert = false
 
 //set controls variables
 key_right = 0

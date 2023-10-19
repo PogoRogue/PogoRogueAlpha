@@ -28,9 +28,9 @@ if (dead = false) {
 
 //angle
 if (use_mouse = false) { //use WASD/Arrow Keys to angle player
-	if (angle >= -anglemax and key_right) {
+	if (angle >= -anglemax and key_right and !invert) or (angle >= -anglemax and key_left and invert){
 		current_rotation_speed = -rotation_speed
-	}else if (angle <= anglemax and key_left) {
+	}else if (angle <= anglemax and key_left and !invert) or (angle <= anglemax and key_right and invert) {
 		current_rotation_speed = rotation_speed
 	}else {
 		if (current_rotation_speed > 0) {
@@ -39,14 +39,22 @@ if (use_mouse = false) { //use WASD/Arrow Keys to angle player
 			current_rotation_speed += rotation_delay
 		}
 	}
+	
 	angle += current_rotation_speed
 }else if (dead = false) { //use mouse to angle player
 	
-		
-		if (angle <= point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90) {
-			angle += ((point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed
-		}else if (angle >= point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90) {
-			angle += ((point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed
+		if invert = false {
+			if (angle <= point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90) {
+				angle += ((point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed
+			}else if (angle >= point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90) {
+				angle += ((point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed
+			}
+		}else{
+			if (angle <= point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90) {
+				angle += ((point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed
+			}else if (angle >= point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90) {
+				angle += ((point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed
+			}
 		}
 			
 		clamp(angle,-anglemax,anglemax) //cant tilt too far

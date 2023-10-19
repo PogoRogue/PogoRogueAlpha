@@ -34,7 +34,8 @@ if (global.use_mouse_for_slider) {
 	}
 	draw_outline = false
 	
+}else {
+	draw_outline = false
 }
-
 
 

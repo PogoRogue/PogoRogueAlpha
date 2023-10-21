@@ -182,3 +182,7 @@ if (keyboard_check_pressed(ord("E"))) {
 if (bbox_bottom < 0 and mask_index != spr_nothing) {
 	room_restart()	
 }
+
+
+
+

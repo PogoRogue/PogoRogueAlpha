@@ -1,6 +1,7 @@
 {
   "FolderOrderSettings": [
     {"name":"Enemy","order":1,"path":"folders/Objects/Enemy.yy",},
+    {"name":"item","order":5,"path":"folders/Objects/item.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_slider_bar","order":21,"path":"sprites/spr_slider_bar/spr_slider_bar.yy",},
@@ -11,6 +12,7 @@
     {"name":"obj_slider_snappinesskeyboard","order":13,"path":"objects/obj_slider_snappinesskeyboard/obj_slider_snappinesskeyboard.yy",},
     {"name":"spr_player_hurt_red","order":18,"path":"sprites/spr_player_hurt_red/spr_player_hurt_red.yy",},
     {"name":"spr_slider_switch","order":22,"path":"sprites/spr_slider_switch/spr_slider_switch.yy",},
+    {"name":"spr_test","order":28,"path":"sprites/spr_test/spr_test.yy",},
     {"name":"obj_slider_switch","order":19,"path":"objects/obj_slider_switch/obj_slider_switch.yy",},
     {"name":"spr_projectile_nerfdart","order":17,"path":"sprites/spr_projectile_nerfdart/spr_projectile_nerfdart.yy",},
     {"name":"obj_slider_switch_controls","order":21,"path":"objects/obj_slider_switch_controls/obj_slider_switch_controls.yy",},
@@ -35,12 +37,14 @@
     {"name":"spr_nothing","order":6,"path":"sprites/spr_nothing/spr_nothing.yy",},
     {"name":"spr_blacksquare","order":5,"path":"sprites/spr_blacksquare/spr_blacksquare.yy",},
     {"name":"spr_projectile","order":4,"path":"sprites/spr_projectile/spr_projectile.yy",},
+    {"name":"obj_item_speed","order":2,"path":"objects/obj_item_speed/obj_item_speed.yy",},
     {"name":"obj_slider_switch_invert","order":20,"path":"objects/obj_slider_switch_invert/obj_slider_switch_invert.yy",},
     {"name":"obj_slider_parent","order":1,"path":"objects/obj_slider_parent/obj_slider_parent.yy",},
     {"name":"spr_slider_button_outline","order":25,"path":"sprites/spr_slider_button_outline/spr_slider_button_outline.yy",},
     {"name":"spr_player_falling_hurt_red","order":3,"path":"sprites/spr_player_falling_hurt_red/spr_player_falling_hurt_red.yy",},
     {"name":"obj_slider_bounceheight","order":6,"path":"objects/obj_slider_bounceheight/obj_slider_bounceheight.yy",},
     {"name":"spr_player_mask","order":2,"path":"sprites/spr_player_mask/spr_player_mask.yy",},
+    {"name":"obj_item_increase_X","order":1,"path":"objects/obj_item_increase_X/obj_item_increase_X.yy",},
     {"name":"BIDOOF","order":27,"path":"sprites/BIDOOF/BIDOOF.yy",},
     {"name":"fnt_combo2","order":1,"path":"fonts/fnt_combo2/fnt_combo2.yy",},
     {"name":"spr_pogo","order":1,"path":"sprites/spr_pogo/spr_pogo.yy",},

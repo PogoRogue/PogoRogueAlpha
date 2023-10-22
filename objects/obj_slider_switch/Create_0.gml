@@ -14,3 +14,5 @@ str = "Parent"
 string_false = "0"
 string_true = "1"
 color = c_white
+
+disable_sliders = false

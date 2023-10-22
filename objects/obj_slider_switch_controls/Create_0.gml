@@ -6,3 +6,5 @@ custom_value = obj_player.use_mouse
 str = "Controls"
 string_false = "Keyboard"
 string_true = "Mouse"
+
+event_user(0)

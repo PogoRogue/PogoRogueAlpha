@@ -38,4 +38,7 @@ if (global.use_mouse_for_slider) {
 	draw_outline = false
 }
 
-
+//disable
+if (disable_sliders) {
+	instance_destroy()
+}

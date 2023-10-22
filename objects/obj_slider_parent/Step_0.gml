@@ -51,3 +51,11 @@ or !(global.use_mouse_for_slider) and (keyboard_only) {
 }else if (slider_index = -100) {
 	slider_index = init_index
 }
+
+//disable
+if (disable_sliders) {
+	instance_destroy()
+	with obj_presets {
+		instance_destroy()
+	}
+}

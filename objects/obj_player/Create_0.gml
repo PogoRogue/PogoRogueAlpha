@@ -2,17 +2,17 @@
 
 //feel free to make copies of this object to mess around with movement values
 
-grv = 0.18; //gravity
+grv = 0.21; //gravity
 h_grv = 0.0; //horizontal drag
-rotation_speed = 2.2; //rotation speed
+rotation_speed = 2.5; //rotation speed
 current_rotation_speed = rotation_speed
-rotation_delay = 0.25
-vsp_basicjump = -6; //bounce height
+rotation_delay = rotation_speed / 5 //0.5
+vsp_basicjump = -6.6; //bounce height
 angle = 0
 anglemax = 40 //maximum degrees added on either side
 bouncing = false; //bouncing animation when true
 animation_complete = false //bounce animation before jumping
-use_mouse = true //use mouse to control instead of WASD/Arrow keys?
+use_mouse = false //use mouse to control instead of WASD/Arrow keys?
 mouse_sensitivity = 150 //the lower the value, the more sensitive the player is to mouse movement and vice versa
 mouse_reanglespeed = 4 //the lower the value, the faster the player will reangle itself and vice versa
 max_speed = 5 //player cant move faster than this during auto fire

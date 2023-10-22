@@ -77,7 +77,7 @@ if hspeed > 0 {
 
 //check for collision with ground below
 
-if (place_meeting(x,y+vspeed,obj_ground_oneway) and vspeed > 0 and !place_meeting(x,y,obj_ground_oneway)) {
+if (place_meeting(x,y+vspeed,obj_ground_oneway) and vspeed > 0 and !place_meeting(x,y-1,obj_ground_oneway)) {
 	while !(place_meeting(x,y+sign(vspeed),obj_ground_oneway)) {
 		y += sign(vspeed)
 	}

@@ -1,7 +1,9 @@
 /// @description Bounce off of enemy and kill it
 
-bouncing = true;
-other.hp = 0;
+if(!other.is_dead) {
+	bouncing = true;
+	other.hp = 0;
+}
 
 
 

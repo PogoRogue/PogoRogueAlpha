@@ -3,4 +3,4 @@
 
 hspeed = -spd;
 
-alarm_set(1, 2 * fps);
+alarm_set(1, 2 * room_speed);

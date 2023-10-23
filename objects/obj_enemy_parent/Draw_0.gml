@@ -1,2 +1,3 @@
 /// @description Draw self
-draw_self()
+
+draw_self();

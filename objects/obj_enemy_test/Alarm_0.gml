@@ -1,7 +1,6 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Switch directions
 
 
-hspeed = -Speed;
+hspeed = -spd;
 
-alarm_set(1, 30);
+alarm_set(1, 2 * fps);

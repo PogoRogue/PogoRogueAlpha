@@ -1,2 +1,2 @@
-/// @description draw self
+/// @description Draw self
 draw_self()

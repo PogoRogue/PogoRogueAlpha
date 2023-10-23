@@ -1,11 +1,13 @@
-HP = 100;
+/// @description Instantiate varaibles
 
-Attack = 1;
+// Stats
+hp = 100;
+attack = 1;
+melee_def = 0;
+ranged_def = 0;
+spd = 0;
+fly = 0;
 
-MeleeDef = 0;
-
-RangedDef = 0;
-
-Speed=0;
-
-Fly = 0;
+// State
+is_grounded = 0;
+is_falling = 0;

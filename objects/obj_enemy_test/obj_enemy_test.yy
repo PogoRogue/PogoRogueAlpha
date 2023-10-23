@@ -35,8 +35,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "BIDOOF",
-    "path": "sprites/BIDOOF/BIDOOF.yy",
+    "name": "spr_enemy_flying",
+    "path": "sprites/spr_enemy_flying/spr_enemy_flying.yy",
   },
   "spriteMaskId": null,
   "visible": true,

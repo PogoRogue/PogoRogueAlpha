@@ -7,7 +7,3 @@ if(!other.is_dead) {
 		y--;	
 	}
 }
-
-
-
-

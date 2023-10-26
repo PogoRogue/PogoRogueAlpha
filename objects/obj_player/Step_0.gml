@@ -2,18 +2,18 @@
 
 //Get inputs (1 = pressed, 0 = not pressed)
 if (dead = false) {
-	key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
-	key_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
-	key_fire_projectile = keyboard_check(vk_space) || mouse_check_button(mb_left)
+	key_right = keyboard_check(vk_right) || keyboard_check(ord("D")) || gamepad_axis_value(0,gp_axislh) > 0.5;
+	key_left = keyboard_check(vk_left) || keyboard_check(ord("A")) || gamepad_axis_value(0,gp_axislh) < -0.5;
+	key_fire_projectile = keyboard_check(vk_space) || mouse_check_button(mb_left) || gamepad_button_check(0,gp_shoulderrb);
 
-	key_right_pressed = keyboard_check(vk_right) || keyboard_check(ord("D"));
-	key_left_pressed = keyboard_check(vk_left) || keyboard_check(ord("A"));
+	key_right_pressed = keyboard_check(vk_right) || keyboard_check(ord("D")) || gamepad_axis_value(0,gp_axislh) > 0.5;
+	key_left_pressed = keyboard_check(vk_left) || keyboard_check(ord("A")) || gamepad_axis_value(0,gp_axislh) < -0.5;
 	if use_mouse {
-		key_fire_projectile_pressed = mouse_check_button_pressed(mb_left)
-		key_fire_projectile_released = mouse_check_button_released(mb_left)
+		key_fire_projectile_pressed = mouse_check_button_pressed(mb_left) || gamepad_button_check_pressed(0,gp_shoulderrb);
+		key_fire_projectile_released = mouse_check_button_released(mb_left) || gamepad_button_check_released(0,gp_shoulderrb);
 	}else {
-		key_fire_projectile_pressed = keyboard_check_pressed(vk_space)
-		key_fire_projectile_released = keyboard_check_released(vk_space)
+		key_fire_projectile_pressed = keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0,gp_shoulderrb);
+		key_fire_projectile_released = keyboard_check_released(vk_space) || gamepad_button_check_released(0,gp_shoulderrb);
 	}
 }else {
 	key_right = 0
@@ -83,9 +83,9 @@ if (place_meeting(x,y+vspeed,obj_ground_oneway) and vspeed > 0 and !place_meetin
 	}
 	bouncing = true
 	
-	if (object_get_name(instance_place(x,y+vspeed,obj_ground_oneway).object_index) = "obj_floatingenemy") {
-		instance_place(x,y+vspeed,obj_ground_oneway).being_bounced = true
-	}
+	//if (object_get_name(instance_place(x,y+vspeed,obj_ground_oneway).object_index) = "obj_floatingenemy") {
+		//instance_place(x,y+vspeed,obj_ground_oneway).being_bounced = true
+	//}
 }
 if (place_meeting(x,y+vspeed,obj_ground) and vspeed > 0) {
 	while !(place_meeting(x,y+sign(vspeed),obj_ground))
@@ -176,7 +176,11 @@ if (canshoot > 0) {
 		repeat (gun.burst_number - 1) {
 			call_later(delay,time_source_units_frames,scr_Shoot);
 			delay += gun.burst_delay;
+			gun.current_bullets -= 1;
 		}
+		
+		//decrease ammo count
+		gun.current_bullets -= 1;
 	}
 }
 
@@ -184,15 +188,24 @@ if !(key_fire_projectile) { //lerp back to starting firerate while not shooting
 	ammo.firerate = lerp(ammo.firerate, ammo.firerate_start, ammo.firerate_mult);
 }
 
-
 #endregion
 
 //switch between weapons
-if keyboard_check_pressed(ord("E")) {
+if keyboard_check_pressed(ord("E")) || gamepad_button_check_released(0,gp_shoulderr) {
 	if (current_gun) < array_length(gun_array)-1 {
 		current_gun += 1;
 	}else {
 		current_gun = 0;
+	}
+	
+	gun = gun_array[current_gun];
+}
+
+if keyboard_check_pressed(ord("Q")) || gamepad_button_check_released(0,gp_shoulderl) {
+	if (current_gun) > 0 {
+		current_gun -= 1;
+	}else {
+		current_gun = array_length(gun_array)-1;
 	}
 	
 	gun = gun_array[current_gun];

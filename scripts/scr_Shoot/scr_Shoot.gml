@@ -38,7 +38,6 @@ function scr_Shoot(){
 			bullet_index = 0;
 		}
 		
-		//decrease ammo count
-		gun.current_bullets -= 1;
+		
 	}
 }

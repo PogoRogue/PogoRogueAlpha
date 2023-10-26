@@ -127,62 +127,78 @@ if (bouncing = true) {
 		image_index = 0 //reset animation to starting frame
 		bouncing = false
 		animation_complete = false
-		projectiles_left = current_weapon[0] //reload bullets
+		gun.current_bullets = gun.bullets_per_bounce //reload bullets
 	}
 }
 
-//projectile
-if (key_fire_projectile_pressed and !current_weapon[2] and projectiles_left > 0 and !bouncing)
-or (key_fire_projectile and current_weapon[2] and auto_firing and projectiles_left > 0 and !bouncing) {
-	with instance_create_depth(x,y,depth+1,current_weapon[5]) { //create bullet 
-		speed = other.current_weapon[4]
-		direction = other.image_angle - 90
-		image_angle = other.image_angle - 90
-		other.flash = true
-		other.alarm[3] = 3
-		sprite_index = other.current_weapon[6]
-		image_index = other.projectiles_left-1
-	}
-	
-	//give player extra momentum
-	if !(current_weapon[2]) {
-		speed = 0 //reset momentum if not on an auto fire weapon
-	}
-	motion_add(angle - 90, current_weapon[1]);
-	if (speed > max_speed and current_weapon[2]) { //player cant exceed a certain speed if on an auto fire weapon
-		speed = max_speed
-	}
+//moving and shooting
+#region //gun position and angle
+/*
+//sprite_index = gun.sprite
 
-	if (auto_firing) {//fire every time_between_fires amount of frames if auto fire
-		auto_firing = false
-		alarm[0] = current_weapon[3]
-	}
-	
-	projectiles_left -= 1 //lower ammo count
+//flip gun
+if (mouse_x > x) {
+	image_yscale = 1
+}else {
+	image_yscale = -1
 }
 
-//testing weapon switching
-if (keyboard_check_pressed(ord("E"))) {
-	if current_weapon = auto_weapon {
-		current_weapon = basic_weapon
-		auto_firing = current_weapon[2]
-		if (projectiles_left > current_weapon[0]) {
-			projectiles_left = current_weapon[0]
+//lerp angle
+mouse_angle -= angle_difference(mouse_angle,point_direction(x,y,mouse_x,mouse_y)) * 0.5
+knockback_angle -= angle_difference(mouse_angle,point_direction(x,y,mouse_x,mouse_y)) * 0.05
+
+image_angle = mouse_angle + knockback_angle
+
+//lerp position
+x = lerp(x,ox,0.05)
+y = lerp(y,oy,0.05)
+*/
+#endregion
+
+#region shooting
+
+var shoot = gun.full_auto ? key_fire_projectile : key_fire_projectile_pressed;
+var ammo = gun.ammo[bullet_index];
+
+if (canshoot > 0) {
+	canshoot -= 1;
+}else if (shoot) {
+	//reset firerate
+	canshoot = ammo.firerate;
+	
+	//lerp firerate to end while shooting
+	ammo.firerate = lerp(ammo.firerate, ammo.firerate_end, ammo.firerate_mult);
+	
+	if ((gun.current_bullets) > 0 and !bouncing) {
+		scr_Shoot();
+	
+		var delay = gun.burst_delay;
+		repeat (gun.burst_number - 1) {
+			call_later(delay,time_source_units_frames,scr_Shoot);
+			delay += gun.burst_delay;
 		}
+	}
+}
+
+if !(key_fire_projectile) { //lerp back to starting firerate while not shooting
+	ammo.firerate = lerp(ammo.firerate, ammo.firerate_start, ammo.firerate_mult);
+}
+
+
+#endregion
+
+//switch between weapons
+if keyboard_check_pressed(ord("E")) {
+	if (current_gun) < array_length(gun_array)-1 {
+		current_gun += 1;
 	}else {
-		current_weapon = auto_weapon
-		auto_firing = current_weapon[2]
-		if (projectiles_left > current_weapon[0]) {
-			projectiles_left = current_weapon[0]
-		}
+		current_gun = 0;
 	}
+	
+	gun = gun_array[current_gun];
 }
 
 //restart room if reached the top
 if (bbox_bottom < 0 and mask_index != spr_nothing) {
 	room_restart()	
 }
-
-
-
-

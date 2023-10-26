@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_projectile_nerfdart",
+  "name": "spr_projectile_paintball1",
   "bbox_bottom": 15,
   "bbox_left": 0,
   "bbox_right": 15,
@@ -16,8 +16,8 @@
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"84579d9d-4739-4855-b3e5-188b8de78b27",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a0cbe6c6-a628-424d-942d-0d6b4bdb65c2",},
   ],
-  "gridX": 0,
-  "gridY": 0,
+  "gridX": 8,
+  "gridY": 8,
   "height": 16,
   "HTile": false,
   "layers": [
@@ -33,7 +33,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_projectile_nerfdart",
+    "name": "spr_projectile_paintball1",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"84579d9d-4739-4855-b3e5-188b8de78b27","path":"sprites/spr_projectile_nerfdart/spr_projectile_nerfdart.yy",},},},"Disabled":false,"id":"9a5f5204-2b49-490c-9f9a-49dc9a27a56f","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a0cbe6c6-a628-424d-942d-0d6b4bdb65c2","path":"sprites/spr_projectile_nerfdart/spr_projectile_nerfdart.yy",},},},"Disabled":false,"id":"7187c7f7-7db6-4df0-9897-b15a85aa0cfa","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"84579d9d-4739-4855-b3e5-188b8de78b27","path":"sprites/spr_projectile_paintball1/spr_projectile_paintball1.yy",},},},"Disabled":false,"id":"372eaa25-5c3a-44f8-9e6b-9503ccc10e53","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a0cbe6c6-a628-424d-942d-0d6b4bdb65c2","path":"sprites/spr_projectile_paintball1/spr_projectile_paintball1.yy",},},},"Disabled":false,"id":"3a5c764c-5f11-46c1-a43a-2feced95abd7","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

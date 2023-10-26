@@ -38,6 +38,7 @@
     "IDEVersion": "2023.8.2.108",
   },
   "resources": [
+    {"id":{"name":"scr_Shoot","path":"scripts/scr_Shoot/scr_Shoot.yy",},},
     {"id":{"name":"spr_enemy_generic","path":"sprites/spr_enemy_generic/spr_enemy_generic.yy",},},
     {"id":{"name":"spr_enemy_shoot_only","path":"sprites/spr_enemy_shoot_only/spr_enemy_shoot_only.yy",},},
     {"id":{"name":"spr_slider_bar","path":"sprites/spr_slider_bar/spr_slider_bar.yy",},},
@@ -55,6 +56,7 @@
     {"id":{"name":"obj_enemy_moving","path":"objects/obj_enemy_moving/obj_enemy_moving.yy",},},
     {"id":{"name":"spr_projectile_nerfdart","path":"sprites/spr_projectile_nerfdart/spr_projectile_nerfdart.yy",},},
     {"id":{"name":"obj_projectile","path":"objects/obj_projectile/obj_projectile.yy",},},
+    {"id":{"name":"spr_projectile_paintball1","path":"sprites/spr_projectile_paintball1/spr_projectile_paintball1.yy",},},
     {"id":{"name":"obj_slider_switch_controls","path":"objects/obj_slider_switch_controls/obj_slider_switch_controls.yy",},},
     {"id":{"name":"obj_enemy_test","path":"objects/obj_enemy_test/obj_enemy_test.yy",},},
     {"id":{"name":"spr_player_falling","path":"sprites/spr_player_falling/spr_player_falling.yy",},},

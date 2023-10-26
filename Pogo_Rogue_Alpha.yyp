@@ -71,6 +71,7 @@
     {"id":{"name":"obj_ground_parent","path":"objects/obj_ground_parent/obj_ground_parent.yy",},},
     {"id":{"name":"spr_enemy_moving","path":"sprites/spr_enemy_moving/spr_enemy_moving.yy",},},
     {"id":{"name":"spr_player_falling_hurt","path":"sprites/spr_player_falling_hurt/spr_player_falling_hurt.yy",},},
+    {"id":{"name":"obj_enemy_jump","path":"objects/obj_enemy_jump/obj_enemy_jump.yy",},},
     {"id":{"name":"spr_enemy_projectile","path":"sprites/spr_enemy_projectile/spr_enemy_projectile.yy",},},
     {"id":{"name":"obj_slider_control","path":"objects/obj_slider_control/obj_slider_control.yy",},},
     {"id":{"name":"spr_enemy_stomp_only","path":"sprites/spr_enemy_stomp_only/spr_enemy_stomp_only.yy",},},

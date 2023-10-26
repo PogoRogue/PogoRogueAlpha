@@ -1,6 +1,7 @@
 /// @description Draw strings by column
 
 draw_set_halign(fa_left);
+draw_set_font(fnt_combo)
 
 // Draw left column
 scr_Draw_Text_Outlined(x - 60, y, controls_left, c_white);

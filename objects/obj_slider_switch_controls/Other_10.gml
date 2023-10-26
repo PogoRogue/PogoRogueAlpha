@@ -10,6 +10,6 @@ if (custom_value) {
 	global.slider_index = 0
 	//global.slider_index = slider_index
 }else {
-	window_set_cursor(spr_cursor)
-	cursor_sprite = spr_cursor
+	//window_set_cursor(spr_cursor)
+	//cursor_sprite = spr_cursor
 }

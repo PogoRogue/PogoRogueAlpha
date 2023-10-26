@@ -3,7 +3,7 @@
 //Update destination
 if (instance_exists(follow)) {
 	xTo = follow.x
-	yTo = follow.y - 64
+	yTo = follow.y - 32
 
 	//Update object position
 	x += (xTo - x) / readjust_speed

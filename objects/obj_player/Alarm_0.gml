@@ -1,2 +1,2 @@
 /// @description auto fire
-auto_firing = true
+auto_firing = true;

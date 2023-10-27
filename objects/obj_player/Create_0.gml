@@ -3,7 +3,7 @@
 //feel free to make copies of this object to mess around with movement values
 
 grv = 0.21; //gravity
-h_grv = 0.0; //horizontal drag
+h_grv = 0.01; //horizontal drag
 rotation_speed = 2.5; //rotation speed
 current_rotation_speed = rotation_speed;
 rotation_delay = rotation_speed / 5; //0.5
@@ -44,33 +44,33 @@ default_bullet = {
 };
 
 paintball_bullet = {
-	sprite: spr_projectile_paintball1,//bullet sprite
-	spd: 15,                          //speed of bullet
-	firerate_start: 5,                //initial firerate, higher = slower
-	firerate_end: 5,                  //max firerate, higher = slower
-	firerate_mult: 0,                 //multiplication of firerate per shot
-	firerate: 5,                      //current firerate, higher = slower
-	destroy_on_impact: true           //destroy when touching ground or not
+	sprite: spr_projectile_paintball1,
+	spd: 15,                          
+	firerate_start: 5,               
+	firerate_end: 5,                 
+	firerate_mult: 0,               
+	firerate: 5,                     
+	destroy_on_impact: true         
 };
 
 speedup_bullet = {
-	sprite: spr_projectile_nerfdart,//bullet sprite
-	spd: 15,                          //speed of bullet
-	firerate_start: 3,                //initial firerate, higher = slower
-	firerate_end: 3,                  //max firerate, higher = slower
-	firerate_mult: 0.75,                 //multiplication of firerate per shot
-	firerate: 3,                      //current firerate, higher = slower
-	destroy_on_impact: true           //destroy when touching ground or not
+	sprite: spr_projectile_nerfdart,
+	spd: 15,                         
+	firerate_start: 10,               
+	firerate_end: 2,                
+	firerate_mult: 0.6,                
+	firerate: 3,                     
+	destroy_on_impact: true          
 };
 
 burstfire_bullet = {
-	sprite: spr_projectile_nerfdart,//bullet sprite
-	spd: 15,                        //speed of bullet
-	firerate_start: 20,              //initial firerate, higher = slower
-	firerate_end: 20,                //max firerate, higher = slower
-	firerate_mult: 0,               //multiplication of firerate per shot
-	firerate: 20,                    //current firerate, higher = slower
-	destroy_on_impact: true         //destroy when touching ground or not
+	sprite: spr_projectile_nerfdart,
+	spd: 15,                       
+	firerate_start: 30,            
+	firerate_end: 30,           
+	firerate_mult: 0,              
+	firerate: 30,                 
+	destroy_on_impact: true      
 };
 #endregion
 
@@ -162,20 +162,20 @@ burstfire_gun = {
 	spread_angle: 15,    
 	full_auto: true,     
 	burst_number: 3,     
-	burst_delay: 100,     
-	momentum_added: 0.5, 
+	burst_delay: 6,     
+	momentum_added: 1, 
 	reset_momentum: false, 
 	bullets_per_bounce: 9,
 	current_bullets: 9,  
 	max_speed: 6          
-};
+};	
 
 #endregion
 
 canshoot = 0; //shooting timer
 bullet_index = 0; //current bullet
 
-gun_array = [default_gun,paintball_gun,shotgun_gun,negev_gun];
+gun_array = [default_gun,paintball_gun,shotgun_gun,negev_gun,burstfire_gun];
 current_gun = 0;
 gun = gun_array[current_gun];
 

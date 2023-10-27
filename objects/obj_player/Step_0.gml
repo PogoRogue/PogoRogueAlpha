@@ -16,72 +16,72 @@ if (dead = false) {
 		key_fire_projectile_released = keyboard_check_released(vk_space) || gamepad_button_check_released(0,gp_shoulderrb);
 	}
 }else {
-	key_right = 0
-	key_left = 0
-	key_fire_projectile = 0
+	key_right = 0;
+	key_left = 0;
+	key_fire_projectile = 0;
 
-	key_right_pressed = 0
-	key_left_pressed = 0
-	key_fire_projectile_pressed = 0
-	key_fire_projectile_released = 0
+	key_right_pressed = 0;
+	key_left_pressed = 0;
+	key_fire_projectile_pressed = 0;
+	key_fire_projectile_released = 0;
 }
 
 //angle
 if (use_mouse = false) { //use WASD/Arrow Keys to angle player
 	if (angle >= -anglemax and key_right and !invert) or (angle >= -anglemax and key_left and invert){
-		current_rotation_speed = -rotation_speed
+		current_rotation_speed = -rotation_speed;
 	}else if (angle <= anglemax and key_left and !invert) or (angle <= anglemax and key_right and invert) {
-		current_rotation_speed = rotation_speed
+		current_rotation_speed = rotation_speed;
 	}else {
 		if (current_rotation_speed > 0) {
-			current_rotation_speed -= rotation_delay
+			current_rotation_speed -= rotation_delay;
 		}else if (current_rotation_speed < 0) {
-			current_rotation_speed += rotation_delay
+			current_rotation_speed += rotation_delay;
 		}
 	}
 	
-	angle += current_rotation_speed
+	angle += current_rotation_speed;
 }else if (dead = false) { //use mouse to angle player
 	
 		if invert = false {
 			if (angle <= point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90) {
-				angle += ((point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed
+				angle += ((point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
 			}else if (angle >= point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90) {
-				angle += ((point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed
+				angle += ((point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
 			}
 		}else{
 			if (angle <= point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90) {
-				angle += ((point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed
+				angle += ((point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
 			}else if (angle >= point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90) {
-				angle += ((point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed
+				angle += ((point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
 			}
 		}
 			
-		clamp(angle,-anglemax,anglemax) //cant tilt too far
+		clamp(angle,-anglemax,anglemax); //cant tilt too far
 }
 
 
-image_angle = angle
+image_angle = angle;
 
 //falling
 if (!bouncing) {
-	vspeed += grv
+	vspeed += grv;
 }
 
 //horizontal drag
 if hspeed > 0 {
-	motion_add(180,h_grv)
+	motion_add(180,h_grv);
 }else if hspeed < 0 {
-	motion_add(0,h_grv)
+	motion_add(0,h_grv);
 }
 
 //check for collision with ground below
 
 if (place_meeting(x,y+vspeed,obj_ground_oneway) and vspeed > 0 and !place_meeting(x,y-1,obj_ground_oneway)) {
 	while !(place_meeting(x,y+sign(vspeed),obj_ground_oneway)) {
-		y += sign(vspeed)
+		y += sign(vspeed);
 	}
-	bouncing = true
+	bouncing = true;
 	
 	//if (object_get_name(instance_place(x,y+vspeed,obj_ground_oneway).object_index) = "obj_floatingenemy") {
 		//instance_place(x,y+vspeed,obj_ground_oneway).being_bounced = true
@@ -90,9 +90,9 @@ if (place_meeting(x,y+vspeed,obj_ground_oneway) and vspeed > 0 and !place_meetin
 if (place_meeting(x,y+vspeed,obj_ground) and vspeed > 0) {
 	while !(place_meeting(x,y+sign(vspeed),obj_ground))
 	{
-		y += sign(vspeed)
+		y += sign(vspeed);
 	}
-	bouncing = true
+	bouncing = true;
 
 }
 
@@ -100,34 +100,34 @@ if (place_meeting(x,y+vspeed,obj_ground) and vspeed > 0) {
 if (vspeed > 0 and bouncing = false) {
 	//falling animation
 	if (vspeed > 1.4) {
-		sprite_index = falling_sprite2
+		sprite_index = falling_sprite2;
 	}else {
-		sprite_index = falling_sprite
+		sprite_index = falling_sprite;
 	}
 }else
 {
-	sprite_index = player_sprite
+	sprite_index = player_sprite;
 }
 
 //bouncing
 if (bouncing = true) {
-	speed = 0 //stop player movement while animating
+	speed = 0; //stop player movement while animating
 	
 	//animate before bouncing
 	if (image_index = sprite_get_number(sprite_index)-1) {
-		animation_complete = true
+		animation_complete = true;
 	}else if (animation_complete = false) {
-		image_index += 1	
+		image_index += 1;
 	}
 	
 	//bounce after animation is complete
 	if (animation_complete) {
-		speed = vsp_basicjump //bounce speed
-		direction = angle - 90 //bounce angle
-		image_index = 0 //reset animation to starting frame
-		bouncing = false
-		animation_complete = false
-		gun.current_bullets = gun.bullets_per_bounce //reload bullets
+		speed = vsp_basicjump; //bounce speed
+		direction = angle - 90; //bounce angle
+		image_index = 0; //reset animation to starting frame
+		bouncing = false;
+		animation_complete = false;
+		gun.current_bullets = gun.bullets_per_bounce; //reload bullets
 	}
 }
 
@@ -213,5 +213,5 @@ if keyboard_check_pressed(ord("Q")) || gamepad_button_check_released(0,gp_should
 
 //restart room if reached the top
 if (bbox_bottom < 0 and mask_index != spr_nothing) {
-	room_restart()	
+	room_restart();
 }

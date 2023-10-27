@@ -189,12 +189,12 @@ if (jump_count % 20 == 0 && jump_count > 0) {
     var _trigger_chance = irandom_range(1, 100);
 	jump_count = 0 ;
     if (_trigger_chance <= 20) {
-        // Buff触发成功，应用变化
+        // if buff active
         speed += 3;
         current_weapon[0] = current_weapon[0] + 4;
         projectiles_left = current_weapon[0];
-		buff_active = true; // 设置Buff为活动
-		alarm[1] = buff_duration; // 设置alarm[1]，以便在Buff持续时间结束时触发
+		buff_active = true; 
+		alarm[1] = buff_duration; 
     }
 }
 
@@ -202,12 +202,12 @@ if (shoot_count % 20 == 0 && shoot_count > 0) {
     var _triggerchance = irandom_range(1, 100);
 	shoot_count = 0 ;
     if (_triggerchance <= 10) {
-        // Buff触发成功，应用变化
+        // if buff active
         speed += 3;
         current_weapon[0] = current_weapon[0] + 4;
         projectiles_left = current_weapon[0];
-		buff_active = true; // 设置Buff为活动
-		alarm[1] = buff_duration; // 设置alarm[1]，以便在Buff持续时间结束时触发
+		buff_active = true; 
+		alarm[1] = buff_duration; 
     }
 }
 

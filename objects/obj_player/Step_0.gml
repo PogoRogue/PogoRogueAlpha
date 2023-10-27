@@ -177,7 +177,56 @@ if (keyboard_check_pressed(ord("E"))) {
 		}
 	}
 }
+//if (bouncing == true && animation_complete) {
+//    jump_count += 1;
+//}
+ 
+	
 
+
+
+if (jump_count % 20 == 0 && jump_count > 0) {
+    var _trigger_chance = irandom_range(1, 100);
+	jump_count = 0 ;
+    if (_trigger_chance <= 20) {
+        // Buff触发成功，应用变化
+        speed += 3;
+        current_weapon[0] = current_weapon[0] + 4;
+        projectiles_left = current_weapon[0];
+		buff_active = true; // 设置Buff为活动
+		alarm[1] = buff_duration; // 设置alarm[1]，以便在Buff持续时间结束时触发
+    }
+}
+
+if (shoot_count % 20 == 0 && shoot_count > 0) {
+    var _triggerchance = irandom_range(1, 100);
+	shoot_count = 0 ;
+    if (_triggerchance <= 10) {
+        // Buff触发成功，应用变化
+        speed += 3;
+        current_weapon[0] = current_weapon[0] + 4;
+        projectiles_left = current_weapon[0];
+		buff_active = true; // 设置Buff为活动
+		alarm[1] = buff_duration; // 设置alarm[1]，以便在Buff持续时间结束时触发
+    }
+}
+
+//testing weapon switching
+if (keyboard_check_pressed(ord("E"))) {
+	if current_weapon = auto_weapon {
+		current_weapon = basic_weapon
+		auto_firing = current_weapon[2]
+		if (projectiles_left > current_weapon[0]) {
+			projectiles_left = current_weapon[0]
+		}
+	}else {
+		current_weapon = auto_weapon
+		auto_firing = current_weapon[2]
+		if (projectiles_left > current_weapon[0]) {
+			projectiles_left = current_weapon[0]
+		}
+	}
+}
 //restart room if reached the top
 if (bbox_bottom < 0 and mask_index != spr_nothing) {
 	room_restart()	

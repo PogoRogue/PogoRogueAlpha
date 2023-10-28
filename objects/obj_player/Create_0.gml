@@ -55,3 +55,7 @@ msk_index = instance_nearest(x,y,obj_player_mask) //references obj_playermask ob
 has_item = false; // // Whether the player is equipped with a weapon
 equipped_item = noone; // The weapon that initializes the equipment is none
 
+shoot_count = 0; // shoot count
+jump_count = 0;  // bounce count
+buff_active = false; // if the buff is active
+buff_duration = 60 * 5; // buff duration timer

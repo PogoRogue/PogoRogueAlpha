@@ -177,10 +177,7 @@ if (keyboard_check_pressed(ord("E"))) {
 		}
 	}
 }
-//if (bouncing == true && animation_complete) {
-//    jump_count += 1;
-//}
- 
+
 	
 
 

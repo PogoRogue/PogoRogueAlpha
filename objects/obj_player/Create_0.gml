@@ -129,6 +129,10 @@ state_bouncing = function() {
 	}
 }
 
+state_wallstun = function() {
+	
+}
+
 state = state_falling;
 #endregion
 

@@ -1,6 +1,6 @@
 /// @description player movement
 
-#region //Get inputs (1 = pressed, 0 = not pressed)
+//Get inputs (1 = pressed, 0 = not pressed)
 if (dead = false) {
 	key_right = keyboard_check(vk_right) || keyboard_check(ord("D")) || gamepad_axis_value(0,gp_axislh) > 0.5;
 	key_left = keyboard_check(vk_left) || keyboard_check(ord("A")) || gamepad_axis_value(0,gp_axislh) < -0.5;
@@ -19,17 +19,17 @@ if (dead = false) {
 	key_right = 0;
 	key_left = 0;
 	key_fire_projectile = 0;
+
 	key_right_pressed = 0;
 	key_left_pressed = 0;
 	key_fire_projectile_pressed = 0;
 	key_fire_projectile_released = 0;
 }
-#endregion
 
 //run state machine
 state();
 
-#region //angling
+//angle
 if (use_mouse = false) { //use WASD/Arrow Keys to angle player
 	if (angle >= -anglemax and key_right and !invert) or (angle >= -anglemax and key_left and invert){
 		current_rotation_speed = -rotation_speed;
@@ -65,9 +65,73 @@ if (use_mouse = false) { //use WASD/Arrow Keys to angle player
 
 
 image_angle = angle;
-#endregion
 
-#region //moving and shooting
+//falling
+if (!bouncing) {
+	vspeed += grv;
+}
+
+//horizontal drag
+if hspeed > 0 {
+	motion_add(180,h_grv);
+}else if hspeed < 0 {
+	motion_add(0,h_grv);
+}
+
+//check for collision with ground below
+
+if (place_meeting(x,y+vspeed,obj_ground_oneway) and vspeed > 0 and !place_meeting(x,y-1,obj_ground_oneway)) {
+	while !(place_meeting(x,y+sign(vspeed),obj_ground_oneway)) {
+		y += sign(vspeed);
+	}
+	bouncing = true;
+}
+if (place_meeting(x,y+vspeed,obj_ground) and vspeed > 0) {
+	while !(place_meeting(x,y+sign(vspeed),obj_ground))
+	{
+		y += sign(vspeed);
+	}
+	bouncing = true;
+
+}
+
+//set player sprite
+if (vspeed > 0 and bouncing = false) {
+	//falling animation
+	if (vspeed > 1.4) {
+		sprite_index = falling_sprite2;
+	}else {
+		sprite_index = falling_sprite;
+	}
+}else
+{
+	sprite_index = player_sprite;
+}
+
+//bouncing
+if (bouncing = true) {
+	speed = 0; //stop player movement while animating
+	
+	//animate before bouncing
+	if (image_index = sprite_get_number(sprite_index)-1) {
+		animation_complete = true;
+	}else if (animation_complete = false) {
+		image_index += 1;
+	}
+	
+	//bounce after animation is complete
+	if (animation_complete) {
+		speed = vsp_basicjump; //bounce speed
+		direction = angle - 90; //bounce angle
+		image_index = 0; //reset animation to starting frame
+		bouncing = false;
+		animation_complete = false;
+		gun.current_bullets = gun.bullets_per_bounce; //reload bullets
+	}
+}
+
+//moving and shooting
+#region 
 //gun position and angle
 
 /* THIS CODE IS MEANT FOR THE ARM CANNON OBJECT, commented out until implemented
@@ -146,4 +210,9 @@ if keyboard_check_pressed(ord("Q")) || gamepad_button_check_released(0,gp_should
 	}
 	
 	gun = gun_array[current_gun];
+}
+
+//restart room if reached the top
+if (bbox_bottom < 0 and mask_index != spr_nothing) {
+	room_restart();
 }

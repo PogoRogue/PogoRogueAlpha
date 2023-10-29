@@ -293,7 +293,7 @@ current_gun = 0;
 gun = gun_array[current_gun];
 
 #endregion
-=======
+
 shoot_count = 0; // shoot count
 jump_count = 0;  // bounce count
 buff_active = false; // if the buff is active

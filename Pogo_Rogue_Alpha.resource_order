@@ -25,7 +25,6 @@
     {"name":"spr_test","order":28,"path":"sprites/spr_test/spr_test.yy",},
     {"name":"obj_slider_switch","order":19,"path":"objects/obj_slider_switch/obj_slider_switch.yy",},
     {"name":"obj_enemy_moving","order":7,"path":"objects/obj_enemy_moving/obj_enemy_moving.yy",},
-
     {"name":"spr_projectile_nerfdart","order":1,"path":"sprites/spr_projectile_nerfdart/spr_projectile_nerfdart.yy",},
     {"name":"spr_orangesquare","order":46,"path":"sprites/spr_orangesquare/spr_orangesquare.yy",},
     {"name":"obj_projectile","order":2,"path":"objects/obj_projectile/obj_projectile.yy",},
@@ -36,13 +35,11 @@
     {"name":"obj_slider_snappinessmouse","order":16,"path":"objects/obj_slider_snappinessmouse/obj_slider_snappinessmouse.yy",},
     {"name":"obj_walltopleftcorner","order":5,"path":"objects/obj_walltopleftcorner/obj_walltopleftcorner.yy",},
     {"name":"obj_enemy_stomp_only","order":2,"path":"objects/obj_enemy_stomp_only/obj_enemy_stomp_only.yy",},
-
     {"name":"spr_slider_button","order":2,"path":"sprites/spr_slider_button/spr_slider_button.yy",},
     {"name":"spr_purplesquare","order":43,"path":"sprites/spr_purplesquare/spr_purplesquare.yy",},
     {"name":"obj_presets","order":2,"path":"objects/obj_presets/obj_presets.yy",},
     {"name":"spr_bluesquare","order":44,"path":"sprites/spr_bluesquare/spr_bluesquare.yy",},
     {"name":"spr_player_falling2","order":5,"path":"sprites/spr_player_falling2/spr_player_falling2.yy",},
-
     {"name":"obj_enemy_projectile","order":4,"path":"objects/obj_enemy_projectile/obj_enemy_projectile.yy",},
     {"name":"spr_slider_bar_outline","order":1,"path":"sprites/spr_slider_bar_outline/spr_slider_bar_outline.yy",},
     {"name":"obj_ground_parent","order":2,"path":"objects/obj_ground_parent/obj_ground_parent.yy",},
@@ -64,20 +61,16 @@
     {"name":"spr_nothing","order":6,"path":"sprites/spr_nothing/spr_nothing.yy",},
     {"name":"spr_blacksquare","order":5,"path":"sprites/spr_blacksquare/spr_blacksquare.yy",},
     {"name":"obj_enemy_generic","order":6,"path":"objects/obj_enemy_generic/obj_enemy_generic.yy",},
-
-    {"name":"obj_item_speed","order":2,"path":"objects/obj_item_speed/obj_item_speed.yy",},
     {"name":"obj_enemy_shooter","order":3,"path":"objects/obj_enemy_shooter/obj_enemy_shooter.yy",},
     {"name":"obj_enemy_shoot_only","order":5,"path":"objects/obj_enemy_shoot_only/obj_enemy_shoot_only.yy",},
     {"name":"obj_ground_oneway","order":1,"path":"objects/obj_ground_oneway/obj_ground_oneway.yy",},
     {"name":"obj_slider_switch_invert","order":20,"path":"objects/obj_slider_switch_invert/obj_slider_switch_invert.yy",},
     {"name":"obj_slider_parent","order":1,"path":"objects/obj_slider_parent/obj_slider_parent.yy",},
-
     {"name":"spr_slider_button_outline","order":3,"path":"sprites/spr_slider_button_outline/spr_slider_button_outline.yy",},
     {"name":"spr_player_falling_hurt_red","order":4,"path":"sprites/spr_player_falling_hurt_red/spr_player_falling_hurt_red.yy",},
     {"name":"obj_player_mask","order":1,"path":"objects/obj_player_mask/obj_player_mask.yy",},
     {"name":"obj_slider_bounceheight","order":6,"path":"objects/obj_slider_bounceheight/obj_slider_bounceheight.yy",},
     {"name":"spr_player_mask","order":10,"path":"sprites/spr_player_mask/spr_player_mask.yy",},
-    {"name":"obj_item_increase_X","order":1,"path":"objects/obj_item_increase_X/obj_item_increase_X.yy",},
     {"name":"fnt_combo2","order":1,"path":"fonts/fnt_combo2/fnt_combo2.yy",},
     {"name":"spr_redsquare","order":42,"path":"sprites/spr_redsquare/spr_redsquare.yy",},
     {"name":"spr_pogo","order":12,"path":"sprites/spr_pogo/spr_pogo.yy",},

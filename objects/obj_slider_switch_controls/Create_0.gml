@@ -7,4 +7,7 @@ str = "Controls";
 string_false = "Keyboard";
 string_true = "Mouse";
 
-event_user(0);
+
+if !(disable_sliders) {
+	event_user(0);
+}

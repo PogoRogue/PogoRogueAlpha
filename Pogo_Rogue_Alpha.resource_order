@@ -1,11 +1,11 @@
 {
   "FolderOrderSettings": [
     {"name":"Enemy","order":1,"path":"folders/Objects/Enemy.yy",},
+    {"name":"Ground","order":8,"path":"folders/Objects/Ground.yy",},
     {"name":"item","order":5,"path":"folders/Objects/item.yy",},
     {"name":"Player","order":7,"path":"folders/Objects/Player.yy",},
-    {"name":"Ground","order":8,"path":"folders/Objects/Ground.yy",},
-    {"name":"Player","order":38,"path":"folders/Sprites/Player.yy",},
     {"name":"Enemy","order":39,"path":"folders/Sprites/Enemy.yy",},
+    {"name":"Player","order":38,"path":"folders/Sprites/Player.yy",},
     {"name":"Projectiles","order":40,"path":"folders/Sprites/Projectiles.yy",},
     {"name":"Sliders","order":41,"path":"folders/Sprites/Sliders.yy",},
   ],

@@ -82,10 +82,6 @@ if (place_meeting(x,y+vspeed,obj_ground_oneway) and vspeed > 0 and !place_meetin
 		y += sign(vspeed);
 	}
 	bouncing = true;
-	
-	//if (object_get_name(instance_place(x,y+vspeed,obj_ground_oneway).object_index) = "obj_floatingenemy") {
-		//instance_place(x,y+vspeed,obj_ground_oneway).being_bounced = true
-	//}
 }
 if (place_meeting(x,y+vspeed,obj_ground) and vspeed > 0) {
 	while !(place_meeting(x,y+sign(vspeed),obj_ground))
@@ -132,8 +128,10 @@ if (bouncing = true) {
 }
 
 //moving and shooting
-#region //gun position and angle
-/*
+#region 
+//gun position and angle
+
+/* THIS CODE IS MEANT FOR THE ARM CANNON OBJECT, commented out until implemented
 //sprite_index = gun.sprite
 
 //flip gun

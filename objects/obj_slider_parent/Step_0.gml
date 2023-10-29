@@ -24,7 +24,7 @@ if (global.use_mouse_for_slider = true) {
 	
 	if (left_button_pressed) {
 		if (value_ > min_value) {
-			value_ -= increment	;
+			value_ -= increment;
 			alarm[0] = 15;
 		}else {
 			value_ = min_value;

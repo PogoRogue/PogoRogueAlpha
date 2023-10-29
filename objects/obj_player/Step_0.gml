@@ -147,3 +147,31 @@ if keyboard_check_pressed(ord("Q")) || gamepad_button_check_released(0,gp_should
 	
 	gun = gun_array[current_gun];
 }
+
+
+/*
+if (jump_count % 20 == 0 && jump_count > 0) {
+    var _trigger_chance = irandom_range(1, 100);
+	jump_count = 0 ;
+    if (_trigger_chance <= 20) {
+        // if buff active
+        speed += 3;
+        current_weapon[0] = current_weapon[0] + 4;
+        projectiles_left = current_weapon[0];
+		buff_active = true; 
+		alarm[1] = buff_duration; 
+    }
+}
+
+if (shoot_count % 20 == 0 && shoot_count > 0) {
+    var _triggerchance = irandom_range(1, 100);
+	shoot_count = 0 ;
+    if (_triggerchance <= 10) {
+        // if buff active
+        speed += 3;
+        current_weapon[0] = current_weapon[0] + 4;
+        projectiles_left = current_weapon[0];
+		buff_active = true; 
+		alarm[1] = buff_duration; 
+    }
+} */

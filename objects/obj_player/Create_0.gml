@@ -45,6 +45,7 @@ has_item = false; // // Whether the player is equipped with a weapon
 equipped_item = noone; // The weapon that initializes the equipment is none
 
 
+
 #region //STATES
 
 state_rising = function() {
@@ -292,3 +293,9 @@ current_gun = 0;
 gun = gun_array[current_gun];
 
 #endregion
+=======
+shoot_count = 0; // shoot count
+jump_count = 0;  // bounce count
+buff_active = false; // if the buff is active
+buff_duration = 60 * 5; // buff duration timer
+

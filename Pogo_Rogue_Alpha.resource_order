@@ -1,8 +1,8 @@
 {
   "FolderOrderSettings": [
     {"name":"Enemy","order":1,"path":"folders/Objects/Enemy.yy",},
-    {"name":"item","order":5,"path":"folders/Objects/item.yy",},
     {"name":"Hitbox","order":12,"path":"folders/Objects/Enemy/Hitbox.yy",},
+    {"name":"item","order":5,"path":"folders/Objects/item.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_enemy_generic","order":35,"path":"sprites/spr_enemy_generic/spr_enemy_generic.yy",},

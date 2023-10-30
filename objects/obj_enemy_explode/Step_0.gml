@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Explode on death
 // You can write your code in this editor
 
 

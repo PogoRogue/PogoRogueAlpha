@@ -31,9 +31,11 @@ state();
 
 #region //angling
 if (use_mouse = false) { //use WASD/Arrow Keys to angle player
-	if (angle >= -anglemax and key_right and !invert) or (angle >= -anglemax and key_left and invert){
+	if (angle >= -anglemax and key_right and !invert) and !(msk_index.colliding_with_ground_right)
+	or (angle >= -anglemax and key_left and invert) and !(msk_index.colliding_with_ground_left) {
 		current_rotation_speed = -rotation_speed;
-	}else if (angle <= anglemax and key_left and !invert) or (angle <= anglemax and key_right and invert) {
+	}else if (angle <= anglemax and key_left and !invert) and !(msk_index.colliding_with_ground_left) 
+	or (angle <= anglemax and key_right and invert) and !(msk_index.colliding_with_ground_right) {
 		current_rotation_speed = rotation_speed;
 	}else {
 		if (current_rotation_speed > 0) {

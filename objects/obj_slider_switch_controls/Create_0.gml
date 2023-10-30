@@ -2,9 +2,12 @@
 // Inherit the parent event
 event_inherited();
 
-custom_value = obj_player.use_mouse
-str = "Controls"
-string_false = "Keyboard"
-string_true = "Mouse"
+custom_value = obj_player.use_mouse;
+str = "Controls";
+string_false = "Keyboard";
+string_true = "Mouse";
 
-event_user(0)
+
+if !(disable_sliders) {
+	event_user(0);
+}

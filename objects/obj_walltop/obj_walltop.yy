@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_wallbottom",
+  "name": "obj_walltop",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
@@ -28,8 +28,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_redsquare",
-    "path": "sprites/spr_redsquare/spr_redsquare.yy",
+    "name": "spr_yellowsquare",
+    "path": "sprites/spr_yellowsquare/spr_yellowsquare.yy",
   },
   "spriteMaskId": null,
   "visible": true,

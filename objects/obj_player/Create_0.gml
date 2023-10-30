@@ -57,6 +57,15 @@ state_rising = function() {
 	}else if hspeed < 0 {
 		motion_add(0,h_grv);
 	}
+	
+	//check for collision with ground below
+	if (place_meeting(x,y+vspeed,obj_ground)) {
+		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
+			y += sign(vspeed);
+		}
+		state = state_bouncing;
+		speed = 0; //stop player movement while bouncing
+	}
 		
 	//restart room if reached the top
 	if (bbox_bottom < 0 and mask_index != spr_nothing) {

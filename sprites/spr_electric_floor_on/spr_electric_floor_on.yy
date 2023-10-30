@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Envornmetal hazards",
-    "path": "folders/Sprites/Envornmetal hazards.yy",
+    "name": "Enviornmetal hazards",
+    "path": "folders/Sprites/Enviornmetal hazards.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

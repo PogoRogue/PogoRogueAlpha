@@ -1,4 +1,3 @@
-
 #region //weapons
 
 mouse_angle = 0; //direction from gun to mouse
@@ -157,4 +156,4 @@ gun = gun_array[current_gun];
 
 #endregion
 
-
+instance_create_depth(x,y,depth,obj_crosshair)

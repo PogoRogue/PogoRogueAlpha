@@ -15,8 +15,6 @@ use_mouse = false; //use mouse to control instead of WASD/Arrow keys?
 mouse_sensitivity = 150; //the lower the value, the more sensitive the player is to mouse movement and vice versa
 mouse_reanglespeed = 4; //the lower the value, the faster the player will reangle itself and vice versa
 invert = false;
-arm_cannon = instance_create_depth(x,y,depth-1, obj_arm_cannon);
-gun = arm_cannon.gun;
 //set controls variables
 key_right = 0;
 key_left = 0;
@@ -34,6 +32,9 @@ dead = false;
 image_speed = 0;
 
 depth = -10;
+
+arm_cannon = instance_create_depth(x,y,depth-1, obj_arm_cannon);
+gun = arm_cannon.gun;
 
 //we probably want 2 separate collision masks, one for the very bottom of the pogo stick, and the other for colliding with the sides/bottom of walls
 with (instance_create_depth(x,y,depth-1,obj_player_mask)) {

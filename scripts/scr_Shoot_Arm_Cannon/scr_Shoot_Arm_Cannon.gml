@@ -11,7 +11,7 @@ function scr_Shoot_Arm_Cannon(){
 		for (var i = 0; i < gun.spread_number; i++;) {
 			var angle_ = image_angle + (i * gun.spread_angle) - ((gun.spread_number - 1) * (gun.spread_angle / 2));
 			
-			instance_create_depth(x,y,depth-1,obj_projectile,{
+			instance_create_depth(x+lengthdir_x(16,image_angle),y+lengthdir_y(16,image_angle),depth-1,obj_projectile,{
 				image_angle: angle_ + random_range(-gun.inaccuracy,gun.inaccuracy),
 				sprite_index: gun.ammo[bullet_index].sprite,
 				spd: gun.ammo[bullet_index].spd,
@@ -20,15 +20,19 @@ function scr_Shoot_Arm_Cannon(){
 		}
 		
 		//Gun kick and knockback
-		//x -= gun.kick * image_yscale;
-		//knockback_angle += gun.kick * image_yscale;
+		x -= gun.kick * image_yscale;
+		knockback_angle += gun.kick * image_yscale;
 		if (gun.reset_momentum) {
-			speed = 0;
+			with obj_player {
+				speed = 0;
+			}
 		}
-		motion_add(image_angle, obj_player.vsp_basicjump * gun.momentum_added);
-		if (speed > gun.max_speed and gun.full_auto = true) { //player cant exceed certain speed if full_auto = true
+		with obj_player {
+			motion_add(other.image_angle, vsp_basicjump * other.gun.momentum_added);
+			if (speed > other.gun.max_speed and other.gun.full_auto = true) { //player cant exceed certain speed if full_auto = true
 			
-			speed = gun.max_speed;
+				speed = other.gun.max_speed;
+			}
 		}
 		
 		//iterate through ammo types

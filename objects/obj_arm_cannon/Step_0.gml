@@ -2,8 +2,8 @@
 #region //Get inputs (1 = pressed, 0 = not pressed)
 if (dead = false) {
 	key_fire_projectile = keyboard_check(vk_space) || mouse_check_button(mb_left) || gamepad_button_check(0,gp_shoulderrb);
-	key_fire_projectile_pressed = keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0,gp_shoulderrb);
-	key_fire_projectile_released = keyboard_check_released(vk_space) || gamepad_button_check_released(0,gp_shoulderrb);
+	key_fire_projectile_pressed = keyboard_check_pressed(vk_space) || mouse_check_button_pressed(mb_left) || gamepad_button_check_pressed(0,gp_shoulderrb);
+	key_fire_projectile_released = keyboard_check_released(vk_space) || mouse_check_button_released(mb_left) || gamepad_button_check_released(0,gp_shoulderrb);
 	
 }else {
 	key_fire_projectile = 0;
@@ -15,24 +15,24 @@ if (dead = false) {
 #region //moving and shooting
 //gun position and angle
 
-sprite_index = gun.sprite
+sprite_index = gun.sprite;
 
 //flip gun
 if (mouse_x > x) {
-	image_yscale = 1
+	image_yscale = 1;
 }else {
-	image_yscale = -1
+	image_yscale = -1;
 }
 
 //lerp angle
-mouse_angle -= angle_difference(mouse_angle,point_direction(x,y,mouse_x,mouse_y)) * 0.5
-knockback_angle -= angle_difference(mouse_angle,point_direction(x,y,mouse_x,mouse_y)) * 0.05
+mouse_angle -= angle_difference(mouse_angle,point_direction(x,y,mouse_x,mouse_y)) * 0.5;
+knockback_angle -= angle_difference(mouse_angle,point_direction(x,y,mouse_x,mouse_y)) * 0.05;
 
-image_angle = mouse_angle + knockback_angle
+image_angle = mouse_angle;// + knockback_angle;
 
 //lerp position
-x = lerp(x,ox,0.05)
-y = lerp(y,oy,0.05)
+x = lerp(x,obj_player_armcan.x,0.05);
+y = lerp(y,obj_player_armcan.y-20,0.05);
 
 #endregion
 

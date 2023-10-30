@@ -1,3 +1,3 @@
 /// @description Insert description here
 // You can write your code in this editor
-custom_value = value
+custom_value = value;

@@ -6,8 +6,8 @@
 // Inherit the parent event
 event_inherited();
 
-attackRate=240
+attackRate=240;
 
-alarm_set(1,attackRate)
+alarm_set(1,attackRate);
 is_grounded = 0;
 is_falling = 0;

@@ -1,3 +1,3 @@
 /// @description Instantiate variables
 
-hspeed=-10
+hspeed=-10;

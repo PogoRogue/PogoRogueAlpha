@@ -6,9 +6,9 @@
 // Inherit the parent event
 event_inherited();
   var player=collision_rectangle(x-range,y-range,x+range,y+range,[obj_player],0,0);
-  if player != noone
+  if (player != noone)
   {
-	aggro=true
+	aggro=true;
 	vspeed = spd;
   }
 if(!(aggro))

@@ -6,5 +6,5 @@
 // Inherit the parent event
 event_inherited();
 
-range=500
-aggro=0
+range=500;
+aggro=0;

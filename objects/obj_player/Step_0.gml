@@ -106,7 +106,7 @@ if (canshoot > 0) {
 	//lerp firerate to end while shooting
 	ammo.firerate = lerp(ammo.firerate, ammo.firerate_end, ammo.firerate_mult);
 	
-	if ((gun.current_bullets) > 0 and !bouncing) {
+	if ((gun.current_bullets) > 0 and state != state_bouncing) {
 		scr_Shoot();
 	
 		var delay = gun.burst_delay;

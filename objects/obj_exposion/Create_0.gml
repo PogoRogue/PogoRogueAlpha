@@ -5,4 +5,4 @@
 
 // Inherit the parent event
 event_inherited();
-alarm_set(1,30)
+alarm_set(1,30);

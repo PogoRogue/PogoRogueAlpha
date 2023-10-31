@@ -39,3 +39,4 @@ if (place_meeting(x,y+parent_index.vspeed,obj_walltoprightcorner)) {
 	}
 	parent_index.vspeed *= -0.5;
 }
+

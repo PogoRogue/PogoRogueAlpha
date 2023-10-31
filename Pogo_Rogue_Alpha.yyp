@@ -117,11 +117,8 @@
     {"id":{"name":"spr_env_air_effect","path":"sprites/spr_env_air_effect/spr_env_air_effect.yy",},},
     {"id":{"name":"spr_player_dead","path":"sprites/spr_player_dead/spr_player_dead.yy",},},
     {"id":{"name":"obj_instructions","path":"objects/obj_instructions/obj_instructions.yy",},},
-
     {"id":{"name":"obj_enemy_shooter_explode","path":"objects/obj_enemy_shooter_explode/obj_enemy_shooter_explode.yy",},},
-
     {"id":{"name":"spr_electric_floor_on","path":"sprites/spr_electric_floor_on/spr_electric_floor_on.yy",},},
-
     {"id":{"name":"spr_player_falling2_hurt","path":"sprites/spr_player_falling2_hurt/spr_player_falling2_hurt.yy",},},
     {"id":{"name":"spr_cursor","path":"sprites/spr_cursor/spr_cursor.yy",},},
     {"id":{"name":"spr_nothing","path":"sprites/spr_nothing/spr_nothing.yy",},},

@@ -34,6 +34,10 @@ image_speed = 0;
 
 depth = -10;
 
+if (global.arm_cannon = true) {
+	instance_destroy();
+}
+
 //we probably want 2 separate collision masks, one for the very bottom of the pogo stick, and the other for colliding with the sides/bottom of walls
 with (instance_create_depth(x,y,depth-1,obj_player_mask)) {
 	parent_index = other;
@@ -307,4 +311,3 @@ shoot_count = 0; // shoot count
 jump_count = 0;  // bounce count
 buff_active = false; // if the buff is active
 buff_duration = 60 * 5; // buff duration timer
-

@@ -33,8 +33,12 @@ image_speed = 0;
 
 depth = -10;
 
-arm_cannon = instance_create_depth(x,y,depth-1, obj_arm_cannon);
-gun = arm_cannon.gun;
+if (global.arm_cannon = false) {
+	instance_destroy();
+}else {
+	arm_cannon = instance_create_depth(x,y,depth-1, obj_arm_cannon);
+	gun = arm_cannon.gun;
+}
 
 //we probably want 2 separate collision masks, one for the very bottom of the pogo stick, and the other for colliding with the sides/bottom of walls
 with (instance_create_depth(x,y,depth-1,obj_player_mask)) {

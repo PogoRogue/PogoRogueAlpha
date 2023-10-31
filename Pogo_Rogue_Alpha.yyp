@@ -78,6 +78,7 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_enemy_stomp_only","path":"objects/obj_enemy_stomp_only/obj_enemy_stomp_only.yy",},},
     {"id":{"name":"obj_env_fan","path":"objects/obj_env_fan/obj_env_fan.yy",},},
+    {"id":{"name":"obj_control_armcannon","path":"objects/obj_control_armcannon/obj_control_armcannon.yy",},},
     {"id":{"name":"obj_crosshair","path":"objects/obj_crosshair/obj_crosshair.yy",},},
     {"id":{"name":"spr_slider_button","path":"sprites/spr_slider_button/spr_slider_button.yy",},},
     {"id":{"name":"spr_yellowsquare","path":"sprites/spr_yellowsquare/spr_yellowsquare.yy",},},

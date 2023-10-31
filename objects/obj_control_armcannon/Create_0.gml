@@ -1,0 +1,1 @@
+global.arm_cannon = true;

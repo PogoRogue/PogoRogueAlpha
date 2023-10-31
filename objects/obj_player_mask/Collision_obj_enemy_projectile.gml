@@ -7,3 +7,4 @@ if(parent_index.current_i_frames <= 0) {
 	parent_index.hspeed = -2 * sign(parent_index.hspeed);
 	parent_index.vspeed = 0;
 }
+

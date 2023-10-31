@@ -1,4 +1,4 @@
 /// @description Decrease health when stomped
 
-hp -= 10
+hp -= 10;
 

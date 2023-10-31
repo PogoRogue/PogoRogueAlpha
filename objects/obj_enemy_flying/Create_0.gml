@@ -2,5 +2,5 @@
 // Inherit the parent event
 event_inherited();
 
-spd = 1
+spd = 1;
 

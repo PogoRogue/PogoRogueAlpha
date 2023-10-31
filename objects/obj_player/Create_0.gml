@@ -3,7 +3,7 @@
 //feel free to make copies of this object to mess around with movement values
 grv = 0.21; //gravity
 h_grv = 0.01; //horizontal drag
-rotation_speed = 2.5; //rotation speed
+rotation_speed = 2.75; //rotation speed
 current_rotation_speed = rotation_speed;
 rotation_delay = rotation_speed / 5; //0.5
 vsp_basicjump = -6.6; //bounce height

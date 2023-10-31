@@ -3,7 +3,7 @@
 //feel free to make copies of this object to mess around with movement values
 grv = 0.21; //gravity
 h_grv = 0.01; //horizontal drag
-rotation_speed = 2.5; //rotation speed
+rotation_speed = 2.75; //rotation speed
 current_rotation_speed = rotation_speed;
 rotation_delay = rotation_speed / 5; //0.5
 vsp_basicjump = -6.6; //bounce height
@@ -24,9 +24,9 @@ key_right_pressed = 0;
 key_left_pressed = 0;
 key_fire_projectile_pressed = 0;
 
-player_sprite = spr_player;
-falling_sprite = spr_player_falling;
-falling_sprite2 = spr_player_falling2;
+player_sprite = spr_player_zekai;
+falling_sprite = spr_player_zekai2;
+falling_sprite2 = spr_player_zekai2;
 
 dead = false;
 
@@ -40,6 +40,10 @@ current_i_frames = 0;
 image_speed = 0;
 
 depth = -10;
+
+if (global.arm_cannon = true) {
+	instance_destroy();
+}
 
 //we probably want 2 separate collision masks, one for the very bottom of the pogo stick, and the other for colliding with the sides/bottom of walls
 with (instance_create_depth(x,y,depth-1,obj_player_mask)) {
@@ -66,9 +70,10 @@ state_rising = function() {
 	}
 	
 	//check for collision with ground below
-	if (place_meeting(x,y+vspeed,obj_ground)) {
-		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
-			y += sign(vspeed);
+	if (place_meeting(x+lengthdir_x(vspeed,image_angle-90),y+lengthdir_y(vspeed,image_angle-90),obj_ground)) {
+		while !(place_meeting(x+lengthdir_x(sign(vspeed),image_angle-90),y+lengthdir_y(sign(vspeed),image_angle-90),obj_ground)) {
+			x += (lengthdir_x(sign(vspeed),image_angle-90));
+			y += (lengthdir_y(sign(vspeed),image_angle-90));
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
@@ -105,9 +110,10 @@ state_falling = function() {
 		speed = 0; //stop player movement while bouncing
 	}
 	
-	if (place_meeting(x,y+vspeed,obj_ground)) {
-		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
-			y += sign(vspeed);
+	if (place_meeting(x+lengthdir_x(vspeed,image_angle-90),y+lengthdir_y(vspeed,image_angle-90),obj_ground)) {
+		while !(place_meeting(x+lengthdir_x(sign(vspeed),image_angle-90),y+lengthdir_y(sign(vspeed),image_angle-90),obj_ground)) {
+			x += (lengthdir_x(sign(vspeed),image_angle-90));
+			y += (lengthdir_y(sign(vspeed),image_angle-90));
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
@@ -163,7 +169,7 @@ oy = y; //original y position
 
 #region //bullets
 default_bullet = {
-	sprite: spr_projectile_nerfdart,//bullet sprite
+	sprite: spr_projectile_default,//bullet sprite
 	spd: 15,                        //speed of bullet
 	firerate_start: 1,              //initial firerate, higher = slower
 	firerate_end: 1,                //max firerate, higher = slower
@@ -182,8 +188,18 @@ paintball_bullet = {
 	destroy_on_impact: true         
 };
 
+shotgun_bullet = {
+	sprite: spr_projectile_nerfdart,//bullet sprite
+	spd: 15,                        //speed of bullet
+	firerate_start: 1,              //initial firerate, higher = slower
+	firerate_end: 1,                //max firerate, higher = slower
+	firerate_mult: 0,               //multiplication of firerate per shot
+	firerate: 1,                    //current firerate, higher = slower
+	destroy_on_impact: true         //destroy when touching ground or not
+};
+
 speedup_bullet = {
-	sprite: spr_projectile_nerfdart,
+	sprite: spr_projectile_speedup,
 	spd: 15,                         
 	firerate_start: 10,               
 	firerate_end: 2,                
@@ -193,7 +209,7 @@ speedup_bullet = {
 };
 
 burstfire_bullet = {
-	sprite: spr_projectile_nerfdart,
+	sprite: spr_projectile_burstfire,
 	spd: 15,                       
 	firerate_start: 30,            
 	firerate_end: 30,           
@@ -245,7 +261,7 @@ paintball_gun = {
 shotgun_gun = {
 	name: "Shotgun",  
 	sprite: spr_player,  
-	ammo: [default_bullet],
+	ammo: [shotgun_bullet],
 	inaccuracy: 0,       
 	kick: 2,             
 	//sound: snd_nothing,
@@ -262,7 +278,7 @@ shotgun_gun = {
 };
 
 negev_gun = {
-	name: "Negev",  
+	name: "Frenzy Gun",  
 	sprite: spr_player,   
 	ammo: [speedup_bullet],
 	inaccuracy: 35,       
@@ -314,4 +330,3 @@ shoot_count = 0; // shoot count
 jump_count = 0;  // bounce count
 buff_active = false; // if the buff is active
 buff_duration = 60 * 5; // buff duration timer
-

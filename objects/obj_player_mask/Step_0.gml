@@ -1,6 +1,10 @@
 /// @description check for collisions
 //bounce off
 
+colliding_with_ground = place_meeting(x,y,obj_ground);	
+colliding_with_ground_left = place_meeting(x-2,y,obj_ground)
+colliding_with_ground_right = place_meeting(x+2,y,obj_ground)
+
 //left correct direction
 if (place_meeting(x+parent_index.hspeed,y,obj_wallleft)) and parent_index.hspeed > 0 {
 	parent_index.hspeed *= -0.5;

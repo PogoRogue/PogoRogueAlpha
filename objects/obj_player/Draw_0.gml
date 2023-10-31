@@ -7,3 +7,7 @@ image_alpha = abs(cos(current_i_frames / 5)) + 0.2;
 
 draw_self();
 shader_reset();
+
+//uncomment to show collision check location
+//draw_sprite(spr_dot,0,x+lengthdir_x(speed,image_angle-90),y+lengthdir_y(vspeed,image_angle-90))
+

@@ -35,8 +35,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_player_mask",
-    "path": "sprites/spr_player_mask/spr_player_mask.yy",
+    "name": "spr_player_mask_zekai",
+    "path": "sprites/spr_player_mask_zekai/spr_player_mask_zekai.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -6,6 +6,3 @@ max_stack_layers = 1;
 cooldown_time = 0; 
 current_cooldown = 0;
 dead = false;
-
-
-

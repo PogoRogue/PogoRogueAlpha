@@ -1,4 +1,10 @@
-/// @description create walls
+/// @description initialize variables and create walls
+
+tile_frame[0][0] = 0;
+xx[0] = x;
+yy[0] = y;
+alarm[0] = 1;
+tileset = tl_ground;
 
 //left
 with instance_create_depth(bbox_left,bbox_top,depth-1,obj_wallleft) {
@@ -29,3 +35,4 @@ with instance_create_depth(bbox_right,bbox_top,depth-2,obj_walltoprightcorner) {
 	image_xscale = 0.5
 	image_yscale = 0.5
 }
+

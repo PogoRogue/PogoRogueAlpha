@@ -4,7 +4,7 @@ controls_left =	  "Controls:\n\n" +
 				  "Rotate\n" +
 				  "Shoot\n" +
 				  "Switch Weapon\n" +
-				  "Switch Preset\n";
+				  "Toggle Cannon\n";
 					
 controls_middle = "\n\n" +
 				  "->\n" +
@@ -13,7 +13,7 @@ controls_middle = "\n\n" +
 				  "->\n";
 					
 controls_right =  "\n\n" +
-				  "M ouse  /  Arrow  Keys\n" +
-				  "L M  B  /  Spacebar\n" + 
-				  "E\n" +
-				  "Numbers 1-6\n";
+				  "WASD/Arrow  Keys\n" +
+				  "Spacebar/Left Click\n" + 
+				  "Q/E\n" +
+				  "Tab";

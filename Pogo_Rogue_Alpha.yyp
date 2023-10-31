@@ -33,6 +33,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sounds","folderPath":"folders/Sounds.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sprites","folderPath":"folders/Sprites.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Enemy","folderPath":"folders/Sprites/Enemy.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Enviornmetal hazards","folderPath":"folders/Sprites/Enviornmetal hazards.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Player","folderPath":"folders/Sprites/Player.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Projectiles","folderPath":"folders/Sprites/Projectiles.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sliders","folderPath":"folders/Sprites/Sliders.yy",},
@@ -70,6 +71,7 @@
     {"id":{"name":"spr_projectile_nerfdart","path":"sprites/spr_projectile_nerfdart/spr_projectile_nerfdart.yy",},},
     {"id":{"name":"spr_orangesquare","path":"sprites/spr_orangesquare/spr_orangesquare.yy",},},
     {"id":{"name":"obj_projectile","path":"objects/obj_projectile/obj_projectile.yy",},},
+    {"id":{"name":"obj_electric_floor","path":"objects/obj_electric_floor/obj_electric_floor.yy",},},
     {"id":{"name":"spr_projectile_paintball1","path":"sprites/spr_projectile_paintball1/spr_projectile_paintball1.yy",},},
     {"id":{"name":"obj_slider_switch_controls","path":"objects/obj_slider_switch_controls/obj_slider_switch_controls.yy",},},
     {"id":{"name":"spr_enemy_explode","path":"sprites/spr_enemy_explode/spr_enemy_explode.yy",},},
@@ -95,6 +97,7 @@
     {"id":{"name":"spr_player_falling_hurt","path":"sprites/spr_player_falling_hurt/spr_player_falling_hurt.yy",},},
     {"id":{"name":"obj_enemy_jump","path":"objects/obj_enemy_jump/obj_enemy_jump.yy",},},
     {"id":{"name":"spr_enemy_projectile","path":"sprites/spr_enemy_projectile/spr_enemy_projectile.yy",},},
+    {"id":{"name":"spr_electric_floor_off","path":"sprites/spr_electric_floor_off/spr_electric_floor_off.yy",},},
     {"id":{"name":"obj_wallbottom","path":"objects/obj_wallbottom/obj_wallbottom.yy",},},
     {"id":{"name":"obj_slider_control","path":"objects/obj_slider_control/obj_slider_control.yy",},},
     {"id":{"name":"spr_enemy_stomp_only","path":"sprites/spr_enemy_stomp_only/spr_enemy_stomp_only.yy",},},
@@ -109,7 +112,11 @@
     {"id":{"name":"spr_env_air_effect","path":"sprites/spr_env_air_effect/spr_env_air_effect.yy",},},
     {"id":{"name":"spr_player_dead","path":"sprites/spr_player_dead/spr_player_dead.yy",},},
     {"id":{"name":"obj_instructions","path":"objects/obj_instructions/obj_instructions.yy",},},
+
     {"id":{"name":"obj_enemy_shooter_explode","path":"objects/obj_enemy_shooter_explode/obj_enemy_shooter_explode.yy",},},
+
+    {"id":{"name":"spr_electric_floor_on","path":"sprites/spr_electric_floor_on/spr_electric_floor_on.yy",},},
+
     {"id":{"name":"spr_player_falling2_hurt","path":"sprites/spr_player_falling2_hurt/spr_player_falling2_hurt.yy",},},
     {"id":{"name":"spr_cursor","path":"sprites/spr_cursor/spr_cursor.yy",},},
     {"id":{"name":"spr_nothing","path":"sprites/spr_nothing/spr_nothing.yy",},},

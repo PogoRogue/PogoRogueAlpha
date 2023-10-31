@@ -23,9 +23,9 @@ key_right_pressed = 0;
 key_left_pressed = 0;
 key_fire_projectile_pressed = 0;
 
-player_sprite = spr_player;
-falling_sprite = spr_player_falling;
-falling_sprite2 = spr_player_falling2;
+player_sprite = spr_player_ziteng;
+falling_sprite = spr_player_ziteng2;
+falling_sprite2 = spr_player_ziteng2;
 
 dead = false;
 
@@ -65,9 +65,10 @@ state_rising = function() {
 	}
 	
 	//check for collision with ground below
-	if (place_meeting(x,y+vspeed,obj_ground)) {
-		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
-			y += sign(vspeed);
+	if (place_meeting(x+lengthdir_x(vspeed,image_angle-90),y+lengthdir_y(vspeed,image_angle-90),obj_ground)) {
+		while !(place_meeting(x+lengthdir_x(sign(vspeed),image_angle-90),y+lengthdir_y(sign(vspeed),image_angle-90),obj_ground)) {
+			x += (lengthdir_x(sign(vspeed),image_angle-90));
+			y += (lengthdir_y(sign(vspeed),image_angle-90));
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
@@ -104,9 +105,10 @@ state_falling = function() {
 		speed = 0; //stop player movement while bouncing
 	}
 	
-	if (place_meeting(x,y+vspeed,obj_ground)) {
-		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
-			y += sign(vspeed);
+	if (place_meeting(x+lengthdir_x(vspeed,image_angle-90),y+lengthdir_y(vspeed,image_angle-90),obj_ground)) {
+		while !(place_meeting(x+lengthdir_x(sign(vspeed),image_angle-90),y+lengthdir_y(sign(vspeed),image_angle-90),obj_ground)) {
+			x += (lengthdir_x(sign(vspeed),image_angle-90));
+			y += (lengthdir_y(sign(vspeed),image_angle-90));
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
@@ -140,7 +142,7 @@ state_bouncing = function() {
 		direction = angle - 90; //bounce angle
 		image_index = 0; //reset animation to starting frame
 		animation_complete = false;
-		arm_cannon.gun.current_bullets = arm_cannon.gun.bullets_per_bounce; //reload bullets
+		gun.current_bullets = gun.bullets_per_bounce; //reload bullets
 		state = state_rising;
 	}
 }

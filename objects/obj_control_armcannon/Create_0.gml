@@ -1,1 +1,1 @@
-global.arm_cannon = true;
+global.arm_cannon = false;

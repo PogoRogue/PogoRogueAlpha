@@ -44,8 +44,14 @@ if (use_mouse = false) { //use WASD/Arrow Keys to angle player
 			current_rotation_speed += rotation_delay;
 		}
 	}
-	
 	angle += current_rotation_speed;
+	
+	if hspeed > 0.5 {
+		image_xscale = 1;
+	}else if hspeed < -0.5 {
+		image_xscale = -1;
+	}
+	
 }else if (dead = false) { //use mouse to angle player
 	
 		if invert = false {

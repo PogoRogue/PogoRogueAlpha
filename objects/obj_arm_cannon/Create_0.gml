@@ -9,7 +9,7 @@ dead = false;
 
 #region //bullets
 default_bullet = {
-	sprite: spr_projectile_nerfdart,//bullet sprite
+	sprite: spr_projectile_default,//bullet sprite
 	spd: 15,                        //speed of bullet
 	firerate_start: 1,              //initial firerate, higher = slower
 	firerate_end: 1,                //max firerate, higher = slower
@@ -28,8 +28,18 @@ paintball_bullet = {
 	destroy_on_impact: true         
 };
 
+shotgun_bullet = {
+	sprite: spr_projectile_nerfdart,//bullet sprite
+	spd: 15,                        //speed of bullet
+	firerate_start: 1,              //initial firerate, higher = slower
+	firerate_end: 1,                //max firerate, higher = slower
+	firerate_mult: 0,               //multiplication of firerate per shot
+	firerate: 1,                    //current firerate, higher = slower
+	destroy_on_impact: true         //destroy when touching ground or not
+};
+
 speedup_bullet = {
-	sprite: spr_projectile_nerfdart,
+	sprite: spr_projectile_speedup,
 	spd: 15,                         
 	firerate_start: 10,               
 	firerate_end: 2,                
@@ -39,7 +49,7 @@ speedup_bullet = {
 };
 
 burstfire_bullet = {
-	sprite: spr_projectile_nerfdart,
+	sprite: spr_projectile_burstfire,
 	spd: 15,                       
 	firerate_start: 30,            
 	firerate_end: 30,           
@@ -52,7 +62,7 @@ burstfire_bullet = {
 #region //guns
 default_gun = {
 	name: "Default Gun",  //name of gun
-	sprite: spr_arm_cannon,   //gun sprite
+	sprite: spr_player,   //gun sprite
 	ammo: [default_bullet],//array of ammo
 	inaccuracy: 0,        //random bullet angle inaccuracy
 	kick: 2,              //kickback to position and angle
@@ -71,7 +81,7 @@ default_gun = {
 
 paintball_gun = {
 	name: "Paintball Gun",  
-	sprite: spr_arm_cannon,   
+	sprite: spr_player,   
 	ammo: [paintball_bullet],     
 	inaccuracy: 5,     
 	kick: 2,           
@@ -90,8 +100,8 @@ paintball_gun = {
 
 shotgun_gun = {
 	name: "Shotgun",  
-	sprite: spr_arm_cannon,  
-	ammo: [default_bullet],
+	sprite: spr_player,  
+	ammo: [shotgun_bullet],
 	inaccuracy: 0,       
 	kick: 2,             
 	//sound: snd_nothing,
@@ -108,8 +118,8 @@ shotgun_gun = {
 };
 
 negev_gun = {
-	name: "Negev",  
-	sprite: spr_arm_cannon,   
+	name: "Frenzy Gun",  
+	sprite: spr_player,   
 	ammo: [speedup_bullet],
 	inaccuracy: 35,       
 	kick: 2,              
@@ -128,7 +138,7 @@ negev_gun = {
 
 burstfire_gun = {
 	name: "Burst Fire Gun",  
-	sprite: spr_arm_cannon,   
+	sprite: spr_player,   
 	ammo: [burstfire_bullet],
 	inaccuracy: 10,       
 	kick: 2,              

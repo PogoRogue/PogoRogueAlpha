@@ -24,9 +24,9 @@ key_right_pressed = 0;
 key_left_pressed = 0;
 key_fire_projectile_pressed = 0;
 
-player_sprite = spr_player;
-falling_sprite = spr_player_falling;
-falling_sprite2 = spr_player_falling2;
+player_sprite = spr_player_zekai;
+falling_sprite = spr_player_zekai2;
+falling_sprite2 = spr_player_zekai2;
 
 dead = false;
 
@@ -63,9 +63,10 @@ state_rising = function() {
 	}
 	
 	//check for collision with ground below
-	if (place_meeting(x,y+vspeed,obj_ground)) {
-		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
-			y += sign(vspeed);
+	if (place_meeting(x+lengthdir_x(vspeed,image_angle-90),y+lengthdir_y(vspeed,image_angle-90),obj_ground)) {
+		while !(place_meeting(x+lengthdir_x(sign(vspeed),image_angle-90),y+lengthdir_y(sign(vspeed),image_angle-90),obj_ground)) {
+			x += (lengthdir_x(sign(vspeed),image_angle-90));
+			y += (lengthdir_y(sign(vspeed),image_angle-90));
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
@@ -102,9 +103,10 @@ state_falling = function() {
 		speed = 0; //stop player movement while bouncing
 	}
 	
-	if (place_meeting(x,y+vspeed,obj_ground)) {
-		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
-			y += sign(vspeed);
+	if (place_meeting(x+lengthdir_x(vspeed,image_angle-90),y+lengthdir_y(vspeed,image_angle-90),obj_ground)) {
+		while !(place_meeting(x+lengthdir_x(sign(vspeed),image_angle-90),y+lengthdir_y(sign(vspeed),image_angle-90),obj_ground)) {
+			x += (lengthdir_x(sign(vspeed),image_angle-90));
+			y += (lengthdir_y(sign(vspeed),image_angle-90));
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
@@ -160,7 +162,7 @@ oy = y; //original y position
 
 #region //bullets
 default_bullet = {
-	sprite: spr_projectile_nerfdart,//bullet sprite
+	sprite: spr_projectile_default,//bullet sprite
 	spd: 15,                        //speed of bullet
 	firerate_start: 1,              //initial firerate, higher = slower
 	firerate_end: 1,                //max firerate, higher = slower
@@ -179,8 +181,18 @@ paintball_bullet = {
 	destroy_on_impact: true         
 };
 
+shotgun_bullet = {
+	sprite: spr_projectile_nerfdart,//bullet sprite
+	spd: 15,                        //speed of bullet
+	firerate_start: 1,              //initial firerate, higher = slower
+	firerate_end: 1,                //max firerate, higher = slower
+	firerate_mult: 0,               //multiplication of firerate per shot
+	firerate: 1,                    //current firerate, higher = slower
+	destroy_on_impact: true         //destroy when touching ground or not
+};
+
 speedup_bullet = {
-	sprite: spr_projectile_nerfdart,
+	sprite: spr_projectile_speedup,
 	spd: 15,                         
 	firerate_start: 10,               
 	firerate_end: 2,                
@@ -190,7 +202,7 @@ speedup_bullet = {
 };
 
 burstfire_bullet = {
-	sprite: spr_projectile_nerfdart,
+	sprite: spr_projectile_burstfire,
 	spd: 15,                       
 	firerate_start: 30,            
 	firerate_end: 30,           
@@ -242,7 +254,7 @@ paintball_gun = {
 shotgun_gun = {
 	name: "Shotgun",  
 	sprite: spr_player,  
-	ammo: [default_bullet],
+	ammo: [shotgun_bullet],
 	inaccuracy: 0,       
 	kick: 2,             
 	//sound: snd_nothing,
@@ -259,7 +271,7 @@ shotgun_gun = {
 };
 
 negev_gun = {
-	name: "Negev",  
+	name: "Frenzy Gun",  
 	sprite: spr_player,   
 	ammo: [speedup_bullet],
 	inaccuracy: 35,       

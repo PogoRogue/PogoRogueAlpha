@@ -12,8 +12,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Environmental",
+    "path": "folders/Objects/Environmental.yy",
   },
   "parentObjectId": {
     "name": "obj_ground",

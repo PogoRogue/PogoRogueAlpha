@@ -6,10 +6,10 @@
     {"name":"item","order":5,"path":"folders/Objects/item.yy",},
     {"name":"Player","order":7,"path":"folders/Objects/Player.yy",},
     {"name":"Enemy","order":6,"path":"folders/Sprites/Enemy.yy",},
+    {"name":"Ground","order":9,"path":"folders/Sprites/Ground.yy",},
     {"name":"Player","order":5,"path":"folders/Sprites/Player.yy",},
     {"name":"Projectiles","order":7,"path":"folders/Sprites/Projectiles.yy",},
     {"name":"Sliders","order":8,"path":"folders/Sprites/Sliders.yy",},
-    {"name":"Ground","order":9,"path":"folders/Sprites/Ground.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_dot","order":10,"path":"sprites/spr_dot/spr_dot.yy",},

@@ -26,8 +26,8 @@ key_left_pressed = 0;
 key_fire_projectile_pressed = 0;
 
 player_sprite = spr_player_zekai;
-falling_sprite = spr_player_zekai2;
-falling_sprite2 = spr_player_zekai2;
+falling_sprite = spr_player_zekai_falling;
+falling_sprite2 = spr_player_zekai_falling;
 
 dead = false;
 
@@ -84,7 +84,7 @@ state_rising = function() {
 		room_restart();
 	}
 	
-	sprite_index = player_sprite; //set player sprite
+	sprite_index = falling_sprite; //set player sprite
 	
 	if vspeed >= 0 {
 		state = state_falling;
@@ -125,10 +125,15 @@ state_falling = function() {
 	}
 	
 	//falling animation
-	if (vspeed > 1.4) {
-		sprite_index = falling_sprite2;
+	sprite_index = falling_sprite;
+	if (vspeed > 3) {
+		image_index = 3;
+	}else if (vspeed > 2) {
+		image_index = 2;
+	}else if (vspeed > 1) {
+		image_index = 1;
 	}else {
-		sprite_index = falling_sprite;
+		image_index = 0;
 	}
 }
 

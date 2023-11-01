@@ -68,14 +68,24 @@ state_rising = function() {
 		motion_add(0,h_grv);
 	}
 	
-	//check for collision with ground below
+	//check for collision with ground
+	if (place_meeting(x+hspeed,y,obj_ground)) and free = true {
+		while !(place_meeting(x+sign(hspeed),y,obj_ground)) {
+			x += sign(hspeed);
+		}
+		state = state_bouncing;
+		speed = 0; //stop player movement while bouncing
+		image_index = 0;
+	}
+	
 	if (place_meeting(x,y+vspeed,obj_ground)) and free = true {
 		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
 			y += sign(vspeed);
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
-	}else if !(place_meeting(x,y+vspeed,obj_ground)) and free = false {
+	}
+	if !(place_meeting(x+hspeed,y+vspeed,obj_ground)) and free = false {
 		free = true;	
 	}
 		
@@ -86,7 +96,7 @@ state_rising = function() {
 	
 	sprite_index = falling_sprite; //set player sprite
 	
-	if vspeed >= 0 {
+	if vspeed > 0 {
 		state = state_falling;
 	}
 }
@@ -110,13 +120,23 @@ state_falling = function() {
 		speed = 0; //stop player movement while bouncing
 	}
 	
+	//check for collision with ground
+	if (place_meeting(x+hspeed,y,obj_ground)) and free = true {
+		while !(place_meeting(x+sign(hspeed),y,obj_ground)) {
+			x += sign(hspeed);
+		}
+		state = state_bouncing;
+		speed = 0; //stop player movement while bouncing
+	}
+	
 	if (place_meeting(x,y+vspeed,obj_ground)) and free = true {
 		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
 			y += sign(vspeed);
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
-	}else if !(place_meeting(x,y+vspeed,obj_ground)) and free = false {
+	}
+	if !(place_meeting(x+hspeed,y+vspeed,obj_ground)) and free = false {
 		free = true;	
 	}
 	
@@ -138,6 +158,7 @@ state_falling = function() {
 }
 
 state_bouncing = function() {
+	
 	free = false;
 	sprite_index = player_sprite; //set sprite
 	

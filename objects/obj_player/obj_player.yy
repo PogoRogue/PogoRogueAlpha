@@ -36,8 +36,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_player",
-    "path": "sprites/spr_player/spr_player.yy",
+    "name": "spr_player_zekai",
+    "path": "sprites/spr_player_zekai/spr_player_zekai.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -3,7 +3,7 @@
 //feel free to make copies of this object to mess around with movement values
 grv = 0.21; //gravity
 h_grv = 0.01; //horizontal drag
-rotation_speed = 2.75; //rotation speed
+rotation_speed = 3; //rotation speed
 current_rotation_speed = rotation_speed;
 rotation_delay = rotation_speed / 5; //0.5
 vsp_basicjump = -6.6; //bounce height
@@ -26,8 +26,8 @@ key_left_pressed = 0;
 key_fire_projectile_pressed = 0;
 
 player_sprite = spr_player_zekai;
-falling_sprite = spr_player_zekai2;
-falling_sprite2 = spr_player_zekai2;
+falling_sprite = spr_player_zekai_falling;
+falling_sprite2 = spr_player_zekai_falling;
 
 dead = false;
 
@@ -68,14 +68,23 @@ state_rising = function() {
 		motion_add(0,h_grv);
 	}
 	
-	//check for collision with ground below
+	//check for collision with ground
+	if (place_meeting(x+hspeed,y,obj_ground)) and free = true {
+		while !(place_meeting(x+sign(hspeed),y,obj_ground)) {
+			x += sign(hspeed);
+		}
+		state = state_bouncing;
+		speed = 0; //stop player movement while bouncing
+	}
+	
 	if (place_meeting(x,y+vspeed,obj_ground)) and free = true {
 		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
 			y += sign(vspeed);
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
-	}else if !(place_meeting(x,y+vspeed,obj_ground)) and free = false {
+	}
+	if !(place_meeting(x+hspeed,y+vspeed,obj_ground)) and free = false {
 		free = true;	
 	}
 		
@@ -84,9 +93,9 @@ state_rising = function() {
 		room_restart();
 	}
 	
-	sprite_index = player_sprite; //set player sprite
+	sprite_index = falling_sprite; //set player sprite
 	
-	if vspeed >= 0 {
+	if vspeed > 0 {
 		state = state_falling;
 	}
 }
@@ -110,13 +119,23 @@ state_falling = function() {
 		speed = 0; //stop player movement while bouncing
 	}
 	
+	//check for collision with ground
+	if (place_meeting(x+hspeed,y,obj_ground)) and free = true {
+		while !(place_meeting(x+sign(hspeed),y,obj_ground)) {
+			x += sign(hspeed);
+		}
+		state = state_bouncing;
+		speed = 0; //stop player movement while bouncing
+	}
+	
 	if (place_meeting(x,y+vspeed,obj_ground)) and free = true {
 		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
 			y += sign(vspeed);
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
-	}else if !(place_meeting(x,y+vspeed,obj_ground)) and free = false {
+	}
+	if !(place_meeting(x+hspeed,y+vspeed,obj_ground)) and free = false {
 		free = true;	
 	}
 	
@@ -125,14 +144,20 @@ state_falling = function() {
 	}
 	
 	//falling animation
-	if (vspeed > 1.4) {
-		sprite_index = falling_sprite2;
+	sprite_index = falling_sprite;
+	if (vspeed > 3) {
+		image_index = 3;
+	}else if (vspeed > 2) {
+		image_index = 2;
+	}else if (vspeed > 1) {
+		image_index = 1;
 	}else {
-		sprite_index = falling_sprite;
+		image_index = 0;
 	}
 }
 
 state_bouncing = function() {
+	
 	free = false;
 	sprite_index = player_sprite; //set sprite
 	
@@ -152,10 +177,6 @@ state_bouncing = function() {
 		gun.current_bullets = gun.bullets_per_bounce; //reload bullets
 		state = state_rising;
 	}
-}
-
-state_wallstun = function() {
-	
 }
 
 state = state_falling;

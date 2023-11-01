@@ -8,7 +8,7 @@ if(is_dead) {
 }
 
 // Update iframes
-current_i_frames = max(current_i_frames - 1, 0);
+current_iframes = max(current_iframes - 1, 0);
 
 // Update red shader frames
 red_frames = max(red_frames - 1, 0);

@@ -8,9 +8,9 @@
     {"name":"Enemy","order":6,"path":"folders/Sprites/Enemy.yy",},
     {"name":"Ground","order":9,"path":"folders/Sprites/Ground.yy",},
     {"name":"Player","order":5,"path":"folders/Sprites/Player.yy",},
+    {"name":"Old","order":22,"path":"folders/Sprites/Player/Old.yy",},
     {"name":"Projectiles","order":7,"path":"folders/Sprites/Projectiles.yy",},
     {"name":"Sliders","order":8,"path":"folders/Sprites/Sliders.yy",},
-    {"name":"Old","order":22,"path":"folders/Sprites/Player/Old.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_dot","order":10,"path":"sprites/spr_dot/spr_dot.yy",},

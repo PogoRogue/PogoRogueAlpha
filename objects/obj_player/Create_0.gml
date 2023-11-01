@@ -35,8 +35,8 @@ dead = false;
 hp = 24;
 max_hp = 24;
 stomp_damage = 8;
-num_i_frames = room_speed;
-current_i_frames = 0;
+num_iframes = room_speed;
+current_iframes = 0;
 
 conveyor_speed = 0;
 

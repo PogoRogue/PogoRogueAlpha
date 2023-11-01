@@ -1,6 +1,6 @@
 /// @description Damage enemy
 
-if(!other.is_dead && other.current_i_frames <= 0) {
+if(!other.is_dead && other.current_iframes <= 0) {
 	other.hp -= damage;
 	other.red_frames = 10;
 }

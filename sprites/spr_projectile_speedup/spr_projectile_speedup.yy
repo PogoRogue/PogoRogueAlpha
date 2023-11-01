@@ -13,8 +13,8 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"aff4ed3f-0fc8-415a-8b54-cbcdab211e51",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a3104c51-59a3-4035-b2ff-fff823936c76",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"aff4ed3f-0fc8-415a-8b54-cbcdab211e51",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"aff4ed3f-0fc8-415a-8b54-cbcdab211e51","path":"sprites/spr_projectile_speedup/spr_projectile_speedup.yy",},},},"Disabled":false,"id":"7c84912e-ff92-4cb1-94f9-8af8ce423a5e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a3104c51-59a3-4035-b2ff-fff823936c76","path":"sprites/spr_projectile_speedup/spr_projectile_speedup.yy",},},},"Disabled":false,"id":"cb41ef38-9e09-4026-aefe-661ca8e015e4","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a3104c51-59a3-4035-b2ff-fff823936c76","path":"sprites/spr_projectile_speedup/spr_projectile_speedup.yy",},},},"Disabled":false,"id":"cb41ef38-9e09-4026-aefe-661ca8e015e4","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"aff4ed3f-0fc8-415a-8b54-cbcdab211e51","path":"sprites/spr_projectile_speedup/spr_projectile_speedup.yy",},},},"Disabled":false,"id":"7c84912e-ff92-4cb1-94f9-8af8ce423a5e","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

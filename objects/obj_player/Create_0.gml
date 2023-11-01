@@ -75,7 +75,6 @@ state_rising = function() {
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
-		image_index = 0;
 	}
 	
 	if (place_meeting(x,y+vspeed,obj_ground)) and free = true {
@@ -178,10 +177,6 @@ state_bouncing = function() {
 		gun.current_bullets = gun.bullets_per_bounce; //reload bullets
 		state = state_rising;
 	}
-}
-
-state_wallstun = function() {
-	
 }
 
 state = state_falling;

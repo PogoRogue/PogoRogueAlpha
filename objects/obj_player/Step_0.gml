@@ -157,6 +157,15 @@ if keyboard_check_pressed(ord("Q")) || gamepad_button_check_released(0,gp_should
 	gun = gun_array[current_gun];
 }
 
+// Update iframes
+current_i_frames = max(current_i_frames - 1, 0);
+
+// Handle death
+dead = hp <= 0;
+if(dead && current_i_frames <= 0) {
+	room_restart(); // TODO: Handle death screen or whatever we want to do	
+}
+
 
 /*
 if (jump_count % 20 == 0 && jump_count > 0) {

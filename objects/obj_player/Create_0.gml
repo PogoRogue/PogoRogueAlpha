@@ -31,6 +31,13 @@ falling_sprite2 = spr_player_zekai2;
 
 dead = false;
 
+// Stats
+hp = 24;
+max_hp = 24;
+stomp_damage = 8;
+num_i_frames = room_speed;
+current_i_frames = 0;
+
 image_speed = 0;
 
 depth = -10;

@@ -16,6 +16,8 @@ mouse_sensitivity = 150; //the lower the value, the more sensitive the player is
 mouse_reanglespeed = 4; //the lower the value, the faster the player will reangle itself and vice versa
 invert = false;
 free = true; //pogo not colliding with wall, this variable ensures the player doesn't get stuck in walls
+charge = 0;
+charge_max = vsp_basicjump;
 
 //set controls variables
 key_right = 0;
@@ -24,6 +26,7 @@ key_fire_projectile = 0;
 key_right_pressed = 0;
 key_left_pressed = 0;
 key_fire_projectile_pressed = 0;
+key_charge_jump = 0;
 
 player_sprite = spr_player_zekai;
 falling_sprite = spr_player_zekai_falling;
@@ -169,14 +172,34 @@ state_bouncing = function() {
 	}
 	
 	//bounce after animation is complete
-	if (animation_complete) {
-		speed = vsp_basicjump; //bounce speed
+	if (animation_complete and !key_charge_jump) {
+		speed = vsp_basicjump; //bounce spee
 		direction = angle - 90; //bounce angle
 		image_index = 0; //reset animation to starting frame
 		animation_complete = false;
 		gun.current_bullets = gun.bullets_per_bounce; //reload bullets
 		state = state_rising;
+	}else if (animation_complete) {
+		state = state_charging;
 	}
+}
+
+state_charging = function() {
+	
+	if !(key_charge_jump) {
+		speed = vsp_basicjump+charge; //bounce speed
+		direction = angle - 90; //bounce angle
+		image_index = 0; //reset animation to starting frame
+		animation_complete = false;
+		gun.current_bullets = gun.bullets_per_bounce; //reload bullets
+		state = state_rising;
+		charge = 0;
+	}else {
+		if (charge > charge_max) {
+			charge += charge_max/80; //80 = how many frames until max charge
+		}
+	}
+	
 }
 
 state = state_falling;

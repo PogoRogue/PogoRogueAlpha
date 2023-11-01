@@ -1,9 +1,13 @@
 /// @description Instantiate varaibles
 
 // Stats
-hp = 100;
-attack_dmg = 1;
+hp = 8; 
+damage = 8;
 spd = 0;
 
 // State
 is_dead = false;
+num_i_frames = room_speed / 2;
+current_i_frames = 0;
+red_frames = 0;
+

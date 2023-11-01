@@ -5,7 +5,7 @@ if(red_frames > 0) {
 }
 
 if(!is_dead) {
-	image_alpha = abs(cos(current_i_frames / 5)) + 0.2;
+	image_alpha = abs(cos(current_iframes / 5)) + 0.2;
 }
 
 draw_self();

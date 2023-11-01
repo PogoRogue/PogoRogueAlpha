@@ -38,8 +38,10 @@ dead = false;
 hp = 24;
 max_hp = 24;
 stomp_damage = 8;
-num_i_frames = room_speed;
-current_i_frames = 0;
+num_iframes = room_speed;
+current_iframes = 0;
+
+conveyor_speed = 0;
 
 image_speed = 0;
 
@@ -169,6 +171,24 @@ state_bouncing = function() {
 		animation_complete = true;
 	}else if (animation_complete = false) {
 		image_index += 1;
+	}
+	
+	// Conveyor belt handling
+	if place_meeting(x, y+1, obj_conveyor_belt) {
+		conveyor_speed = 4;
+		if (instance_place(x, y+1, obj_conveyor_belt).image_xscale > 0) {
+			x += conveyor_speed;
+		}
+		else {
+			conveyor_speed *= -1;
+			x -= conveyor_speed;
+		}
+		image_xscale = sign(conveyor_speed);
+	}
+	else if conveyor_speed != 0 {
+		hspeed = conveyor_speed;
+		conveyor_speed = 0;
+		state = state_falling;
 	}
 	
 	//bounce after animation is complete

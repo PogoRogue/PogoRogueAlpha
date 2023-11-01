@@ -1,19 +1,17 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_enemy_explode",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,},
-  ],
+  "name": "obj_conveyor_belt",
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Enemy",
-    "path": "folders/Objects/Enemy.yy",
+    "name": "Environmental",
+    "path": "folders/Objects/Environmental.yy",
   },
   "parentObjectId": {
-    "name": "obj_enemy_generic",
-    "path": "objects/obj_enemy_generic/obj_enemy_generic.yy",
+    "name": "obj_ground",
+    "path": "objects/obj_ground/obj_ground.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -31,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_enemy_explode",
-    "path": "sprites/spr_enemy_explode/spr_enemy_explode.yy",
+    "name": "spr_conveyor_belt",
+    "path": "sprites/spr_conveyor_belt/spr_conveyor_belt.yy",
   },
   "spriteMaskId": null,
   "visible": true,

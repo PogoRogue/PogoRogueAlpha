@@ -174,31 +174,11 @@ state_bouncing = function() {
 	}
 	
 	// Conveyor belt handling
-	if place_meeting(x, y+1, obj_conveyor_belt) {
-		conveyor_speed = 4;
-		if (instance_place(x, y+1, obj_conveyor_belt).image_xscale > 0) {
-			x += conveyor_speed;
-		}
-		else {
-			conveyor_speed *= -1;
-			x -= conveyor_speed;
-		}
-		image_xscale = sign(conveyor_speed);
-	}
-	else if conveyor_speed != 0 {
-		hspeed = conveyor_speed;
-		conveyor_speed = 0;
-		state = state_falling;
-	}
+	scr_Conveyor_Belt();
 	
 	//bounce after animation is complete
 	if (animation_complete and !key_charge_jump) {
-		speed = vsp_basicjump; //bounce spee
-		direction = angle - 90; //bounce angle
-		image_index = 0; //reset animation to starting frame
-		animation_complete = false;
-		gun.current_bullets = gun.bullets_per_bounce; //reload bullets
-		state = state_rising;
+		scr_Jump(0);
 	}else if (animation_complete) {
 		state = state_charging;
 	}
@@ -206,14 +186,11 @@ state_bouncing = function() {
 
 state_charging = function() {
 	
+	// Conveyor belt handling
+	scr_Conveyor_Belt();
+	
 	if !(key_charge_jump) {
-		speed = vsp_basicjump+charge; //bounce speed
-		direction = angle - 90; //bounce angle
-		image_index = 0; //reset animation to starting frame
-		animation_complete = false;
-		gun.current_bullets = gun.bullets_per_bounce; //reload bullets
-		state = state_rising;
-		charge = 0;
+		scr_Jump(charge);
 	}else {
 		if (charge > charge_max) {
 			charge += charge_max/80; //80 = how many frames until max charge

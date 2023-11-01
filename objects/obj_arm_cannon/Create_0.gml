@@ -10,6 +10,7 @@ dead = false;
 #region //bullets
 default_bullet = {
 	sprite: spr_projectile_default,//bullet sprite
+	gui_sprite: spr_projectile_default_gui, //bullet gui sprite
 	spd: 15,                        //speed of bullet
 	firerate_start: 1,              //initial firerate, higher = slower
 	firerate_end: 1,                //max firerate, higher = slower
@@ -20,6 +21,7 @@ default_bullet = {
 
 paintball_bullet = {
 	sprite: spr_projectile_paintball1,
+	gui_sprite: spr_projectile_paintball_gui,
 	spd: 15,                          
 	firerate_start: 5,               
 	firerate_end: 5,                 
@@ -29,17 +31,19 @@ paintball_bullet = {
 };
 
 shotgun_bullet = {
-	sprite: spr_projectile_nerfdart,//bullet sprite
-	spd: 15,                        //speed of bullet
-	firerate_start: 1,              //initial firerate, higher = slower
-	firerate_end: 1,                //max firerate, higher = slower
-	firerate_mult: 0,               //multiplication of firerate per shot
-	firerate: 1,                    //current firerate, higher = slower
-	destroy_on_impact: true         //destroy when touching ground or not
+	sprite: spr_projectile_nerfdart,
+	gui_sprite: spr_projectile_nerfdart_gui,
+	spd: 15,                        
+	firerate_start: 1,              
+	firerate_end: 1,                
+	firerate_mult: 0,               
+	firerate: 1,                    
+	destroy_on_impact: true         
 };
 
 speedup_bullet = {
 	sprite: spr_projectile_speedup,
+	gui_sprite: spr_projectile_speedup_gui,
 	spd: 15,                         
 	firerate_start: 10,               
 	firerate_end: 2,                
@@ -50,6 +54,7 @@ speedup_bullet = {
 
 burstfire_bullet = {
 	sprite: spr_projectile_burstfire,
+	gui_sprite: spr_projectile_burstfire_gui,
 	spd: 15,                       
 	firerate_start: 30,            
 	firerate_end: 30,           

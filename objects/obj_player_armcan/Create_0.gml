@@ -15,6 +15,8 @@ use_mouse = false; //use mouse to control instead of WASD/Arrow keys?
 mouse_sensitivity = 150; //the lower the value, the more sensitive the player is to mouse movement and vice versa
 mouse_reanglespeed = 4; //the lower the value, the faster the player will reangle itself and vice versa
 invert = false;
+free = true; //pogo not colliding with wall, this variable ensures the player doesn't get stuck in walls
+
 //set controls variables
 key_right = 0;
 key_left = 0;
@@ -65,13 +67,14 @@ state_rising = function() {
 	}
 	
 	//check for collision with ground below
-	if (place_meeting(x+lengthdir_x(vspeed,image_angle-90),y+lengthdir_y(vspeed,image_angle-90),obj_ground)) {
-		while !(place_meeting(x+lengthdir_x(sign(vspeed),image_angle-90),y+lengthdir_y(sign(vspeed),image_angle-90),obj_ground)) {
-			x += (lengthdir_x(sign(vspeed),image_angle-90));
-			y += (lengthdir_y(sign(vspeed),image_angle-90));
+	if (place_meeting(x,y+vspeed,obj_ground)) and free = true {
+		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
+			y += sign(vspeed);
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
+	}else if !(place_meeting(x,y+vspeed,obj_ground)) and free = false {
+		free = true;	
 	}
 		
 	//restart room if reached the top
@@ -105,13 +108,14 @@ state_falling = function() {
 		speed = 0; //stop player movement while bouncing
 	}
 	
-	if (place_meeting(x+lengthdir_x(vspeed,image_angle-90),y+lengthdir_y(vspeed,image_angle-90),obj_ground)) {
-		while !(place_meeting(x+lengthdir_x(sign(vspeed),image_angle-90),y+lengthdir_y(sign(vspeed),image_angle-90),obj_ground)) {
-			x += (lengthdir_x(sign(vspeed),image_angle-90));
-			y += (lengthdir_y(sign(vspeed),image_angle-90));
+	if (place_meeting(x,y+vspeed,obj_ground)) and free = true {
+		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
+			y += sign(vspeed);
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
+	}else if !(place_meeting(x,y+vspeed,obj_ground)) and free = false {
+		free = true;	
 	}
 	
 	if vspeed < 0 {
@@ -127,6 +131,7 @@ state_falling = function() {
 }
 
 state_bouncing = function() {
+	free = false;
 	sprite_index = player_sprite; //set sprite
 	
 	//animate before bouncing

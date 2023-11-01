@@ -1,10 +1,11 @@
-/// @description initialize variables and create walls
+/// @description create tile object and create walls
 
-tile_frame[0][0] = 0;
-xx[0] = x;
-yy[0] = y;
-alarm[0] = 1;
-tileset = tl_ground;
+//create 16x16 ground objects to check for collisions and draw tiles 
+for(i = 0; i < image_xscale; i++) {
+	for(j = 0; j < image_yscale; j++) {
+		instance_create_depth(x+(i*16),y+(j*16),depth-1,obj_ground_tiles);
+	}
+}
 
 //left
 with instance_create_depth(bbox_left,bbox_top,depth-1,obj_wallleft) {

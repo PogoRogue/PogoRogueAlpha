@@ -121,11 +121,12 @@ if (canshoot > 0) {
 		repeat (gun.burst_number - 1) {
 			call_later(delay,time_source_units_frames,scr_Shoot);
 			delay += gun.burst_delay;
-			gun.current_bullets -= 1;
 		}
 		
-		//decrease ammo count
-		gun.current_bullets -= 1;
+		//decrease ammo count for spread weapons
+		if gun.spread_number > 1 {
+			gun.current_bullets -= 1;
+		}
 	}
 }
 

@@ -14,87 +14,73 @@ function scr_Draw_Tiles(xx,yy,tile_size,tileset,object){
 	surrounded_corners = top_left_corner and top_right_corner and bottom_left_corner and bottom_right_corner;
 	
 	if (surrounded) {
-		tile_frame[i][j] = 34;
+		tile_frame = 34;
 		draw_tile(tl_ground,34,0,xx,yy);
 	}
 	
 	//top left
 	if (!left and right and bottom and !top) {
-		tile_frame[i][j] = 23;
-		draw_tile(tl_ground,23,0,xx,yy);
+		tile_frame = 23;
 	}
 	
 	//top right
 	if (left and !right and bottom and !top) {
-		tile_frame[i][j] = 25;
-		draw_tile(tl_ground,25,0,xx,yy);
+		tile_frame = 25;
 	}
 	
 	//bottom left
 	if (!left and right and !bottom and top) {
-		tile_frame[i][j] = 43;
-		draw_tile(tl_ground,43,0,xx,yy);
+		tile_frame = 43;
 	}
 	
 	//bottom right
 	if (left and !right and !bottom and top) {
-		tile_frame[i][j] = 45;
-		draw_tile(tl_ground,45,0,xx,yy);
+		tile_frame = 45;
 	}
 	
 	//middle left
 	if (!left and right and bottom and top) {
-		tile_frame[i][j] = 33;
-		draw_tile(tl_ground,33,0,xx,yy);
+		tile_frame = 33;
 	}
 	
 	//middle right
 	if (left and !right and bottom and top) {
-		tile_frame[i][j] = 35;
-		draw_tile(tl_ground,35,0,xx,yy);
+		tile_frame = 35;
 	}
 	
 	//middle top
 	if (left and right and bottom and !top) {
-		tile_frame[i][j] = 24;
-		draw_tile(tl_ground,24,0,xx,yy);
+		tile_frame = 24;
 	}
 	
 	//middle bottom
 	if (left and right and !bottom and top) {
-		tile_frame[i][j] = 44;
-		draw_tile(tl_ground,44,0,xx,yy);
+		tile_frame = 44;
 	}
 	
 	//corners
 	if (surrounded and !top_left_corner and bottom_left_corner) {
-		tile_frame[i][j] = 49;
-		draw_tile(tl_ground,49,0,xx,yy);
+		tile_frame = 49;
 	}
 	
 	if (surrounded and !top_right_corner and bottom_right_corner) {
-		tile_frame[i][j] = 47;
-		draw_tile(tl_ground,47,0,xx,yy);
+		tile_frame = 47;
 	}
 	
 	if (surrounded and !bottom_left_corner) {
-		tile_frame[i][j] = 29;
-		draw_tile(tl_ground,29,0,xx,yy);
+		tile_frame = 29;
 	}
 	
 	if (surrounded and !bottom_right_corner) {
-		tile_frame[i][j] = 27;
-		draw_tile(tl_ground,27,0,xx,yy);
+		tile_frame = 27;
 	}
 	
 	//middle corners
 	if (surrounded and !top_left_corner and !bottom_left_corner) {
-		tile_frame[i][j] = 94;
-		draw_tile(tl_ground,94,0,xx,yy);
+		tile_frame = 94;
 	}
 	
 	if (surrounded and !top_right_corner and !bottom_right_corner) {
-		tile_frame[i][j] = 95;
-		draw_tile(tl_ground,95,0,xx,yy);
+		tile_frame = 95;
 	}
 }

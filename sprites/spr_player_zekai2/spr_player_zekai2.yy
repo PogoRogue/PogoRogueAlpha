@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_player_zekai2",
-  "bbox_bottom": 44,
+  "bbox_bottom": 45,
   "bbox_left": 14,
   "bbox_right": 16,
   "bbox_top": 36,

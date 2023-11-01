@@ -15,6 +15,7 @@ use_mouse = false; //use mouse to control instead of WASD/Arrow keys?
 mouse_sensitivity = 150; //the lower the value, the more sensitive the player is to mouse movement and vice versa
 mouse_reanglespeed = 4; //the lower the value, the faster the player will reangle itself and vice versa
 invert = false;
+free = true; //pogo not colliding with wall, this variable ensures the player doesn't get stuck in walls
 
 //set controls variables
 key_right = 0;
@@ -55,8 +56,6 @@ msk_index = instance_nearest(x,y,obj_player_mask); //references obj_playermask o
 has_item = false; // // Whether the player is equipped with a weapon
 equipped_item = noone; // The weapon that initializes the equipment is none
 
-
-
 #region //STATES
 
 state_rising = function() {
@@ -70,13 +69,14 @@ state_rising = function() {
 	}
 	
 	//check for collision with ground below
-	if (place_meeting(x+lengthdir_x(vspeed,image_angle-90),y+lengthdir_y(vspeed,image_angle-90),obj_ground)) {
-		while !(place_meeting(x+lengthdir_x(sign(vspeed),image_angle-90),y+lengthdir_y(sign(vspeed),image_angle-90),obj_ground)) {
-			x += (lengthdir_x(sign(vspeed),image_angle-90));
-			y += (lengthdir_y(sign(vspeed),image_angle-90));
+	if (place_meeting(x,y+vspeed,obj_ground)) and free = true {
+		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
+			y += sign(vspeed);
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
+	}else if !(place_meeting(x,y+vspeed,obj_ground)) and free = false {
+		free = true;	
 	}
 		
 	//restart room if reached the top
@@ -110,13 +110,14 @@ state_falling = function() {
 		speed = 0; //stop player movement while bouncing
 	}
 	
-	if (place_meeting(x+lengthdir_x(vspeed,image_angle-90),y+lengthdir_y(vspeed,image_angle-90),obj_ground)) {
-		while !(place_meeting(x+lengthdir_x(sign(vspeed),image_angle-90),y+lengthdir_y(sign(vspeed),image_angle-90),obj_ground)) {
-			x += (lengthdir_x(sign(vspeed),image_angle-90));
-			y += (lengthdir_y(sign(vspeed),image_angle-90));
+	if (place_meeting(x,y+vspeed,obj_ground)) and free = true {
+		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
+			y += sign(vspeed);
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
+	}else if !(place_meeting(x,y+vspeed,obj_ground)) and free = false {
+		free = true;	
 	}
 	
 	if vspeed < 0 {
@@ -132,6 +133,7 @@ state_falling = function() {
 }
 
 state_bouncing = function() {
+	free = false;
 	sprite_index = player_sprite; //set sprite
 	
 	//animate before bouncing
@@ -170,6 +172,7 @@ oy = y; //original y position
 #region //bullets
 default_bullet = {
 	sprite: spr_projectile_default,//bullet sprite
+	gui_sprite: spr_projectile_default_gui, //bullet gui sprite
 	spd: 15,                        //speed of bullet
 	firerate_start: 1,              //initial firerate, higher = slower
 	firerate_end: 1,                //max firerate, higher = slower
@@ -180,6 +183,7 @@ default_bullet = {
 
 paintball_bullet = {
 	sprite: spr_projectile_paintball1,
+	gui_sprite: spr_projectile_paintball_gui,
 	spd: 15,                          
 	firerate_start: 5,               
 	firerate_end: 5,                 
@@ -189,17 +193,19 @@ paintball_bullet = {
 };
 
 shotgun_bullet = {
-	sprite: spr_projectile_nerfdart,//bullet sprite
-	spd: 15,                        //speed of bullet
-	firerate_start: 1,              //initial firerate, higher = slower
-	firerate_end: 1,                //max firerate, higher = slower
-	firerate_mult: 0,               //multiplication of firerate per shot
-	firerate: 1,                    //current firerate, higher = slower
-	destroy_on_impact: true         //destroy when touching ground or not
+	sprite: spr_projectile_nerfdart,
+	gui_sprite: spr_projectile_nerfdart_gui,
+	spd: 15,                        
+	firerate_start: 1,              
+	firerate_end: 1,                
+	firerate_mult: 0,               
+	firerate: 1,                    
+	destroy_on_impact: true         
 };
 
 speedup_bullet = {
 	sprite: spr_projectile_speedup,
+	gui_sprite: spr_projectile_speedup_gui,
 	spd: 15,                         
 	firerate_start: 10,               
 	firerate_end: 2,                
@@ -210,6 +216,7 @@ speedup_bullet = {
 
 burstfire_bullet = {
 	sprite: spr_projectile_burstfire,
+	gui_sprite: spr_projectile_burstfire_gui,
 	spd: 15,                       
 	firerate_start: 30,            
 	firerate_end: 30,           

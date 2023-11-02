@@ -1,3 +1,3 @@
 /// @description Initialize strings by column
 
-height_text = "Regular Bounce: 8 tiles"
+height_text = "Regular Bounce: 8 tiles";

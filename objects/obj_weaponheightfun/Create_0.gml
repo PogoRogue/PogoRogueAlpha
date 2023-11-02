@@ -1,3 +1,3 @@
 /// @description Initialize strings by column
 
-height_text = "Yee haw!"
+height_text = "Yee haw!";

@@ -141,6 +141,7 @@
     {"id":{"name":"scr_Shoot_Arm_Cannon","path":"scripts/scr_Shoot_Arm_Cannon/scr_Shoot_Arm_Cannon.yy",},},
     {"id":{"name":"spr_player_zekai_jumping","path":"sprites/spr_player_zekai_jumping/spr_player_zekai_jumping.yy",},},
     {"id":{"name":"obj_explode_projectile","path":"objects/obj_explode_projectile/obj_explode_projectile.yy",},},
+    {"id":{"name":"scr_Generate_Layout","path":"scripts/scr_Generate_Layout/scr_Generate_Layout.yy",},},
     {"id":{"name":"obj_env_air_effect","path":"objects/obj_env_air_effect/obj_env_air_effect.yy",},},
     {"id":{"name":"obj_arrowL","path":"objects/obj_arrowL/obj_arrowL.yy",},},
     {"id":{"name":"spr_player_falling2hurt_red","path":"sprites/spr_player_falling2hurt_red/spr_player_falling2hurt_red.yy",},},

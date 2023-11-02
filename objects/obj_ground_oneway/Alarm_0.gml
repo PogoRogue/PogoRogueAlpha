@@ -1,4 +1,5 @@
 /// @description check collisions for tiles
+
 for(i=0;i<image_xscale;i++) {
 	if position_meeting(x+(i*16)-1,y,obj_ground_parent) and position_meeting(x+(i*16)+17,y,obj_ground_parent) {
 		tile_frame[i] = 4;

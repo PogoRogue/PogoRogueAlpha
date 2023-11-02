@@ -121,11 +121,12 @@ if (canshoot > 0) {
 		repeat (gun.burst_number - 1) {
 			call_later(delay,time_source_units_frames,scr_Shoot);
 			delay += gun.burst_delay;
-			gun.current_bullets -= 1;
 		}
 		
-		//decrease ammo count
-		gun.current_bullets -= 1;
+		//decrease ammo count for spread weapons
+		if gun.spread_number > 1 {
+			gun.current_bullets -= 1;
+		}
 	}
 }
 
@@ -154,6 +155,15 @@ if keyboard_check_pressed(ord("Q")) || gamepad_button_check_released(0,gp_should
 	}
 	
 	gun = gun_array[current_gun];
+}
+
+// Update iframes
+current_iframes = max(current_iframes - 1, 0);
+
+// Handle death
+dead = hp <= 0;
+if(dead && current_iframes <= 0) {
+	room_restart(); // TODO: Handle death screen or whatever we want to do	
 }
 
 

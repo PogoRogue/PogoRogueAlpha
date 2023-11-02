@@ -1,4 +1,4 @@
-image_index = 1; //flash effect
+image_index = 0; //flash effect
 
 x += lengthdir_x(spd,image_angle);
 y += lengthdir_y(spd,image_angle);

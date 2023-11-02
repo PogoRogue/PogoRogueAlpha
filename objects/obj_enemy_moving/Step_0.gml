@@ -11,4 +11,8 @@ if (at_edge or at_wall) {
 	spd *= -1;
 }
 
+if(is_dead) {
+	spd = 0;	
+}
+
 x += spd;

@@ -5,6 +5,8 @@ colliding_with_ground = place_meeting(x,y,obj_ground);
 colliding_with_ground_left = place_meeting(x-2,y,obj_ground)
 colliding_with_ground_right = place_meeting(x+2,y,obj_ground)
 
+if (parent_index.state != parent_index.state_bouncing)
+
 //left correct direction
 if (place_meeting(x+parent_index.hspeed,y,obj_wallleft)) and parent_index.hspeed > 0 {
 	parent_index.hspeed *= -0.5;
@@ -23,7 +25,7 @@ if (place_meeting(x,y+parent_index.vspeed,obj_wallbottom) and parent_index.vspee
 }
 
 //top left corner
-if (place_meeting(x,y+parent_index.vspeed,obj_walltopleftcorner)) {
+if (place_meeting(x,y+parent_index.vspeed,obj_walltopleftcorner) and parent_index.vspeed > 0) {
 	if (hspeed > 0) {
 		parent_index.hspeed *= -0.5;
 	}else {
@@ -35,7 +37,7 @@ if (place_meeting(x,y+parent_index.vspeed,obj_walltopleftcorner)) {
 
 
 //top right corner
-if (place_meeting(x,y+parent_index.vspeed,obj_walltoprightcorner)) {
+if (place_meeting(x,y+parent_index.vspeed,obj_walltoprightcorner) and parent_index.vspeed > 0) {
 	if (hspeed < 0) {
 		parent_index.hspeed *= -0.5;
 	}else {
@@ -43,3 +45,4 @@ if (place_meeting(x,y+parent_index.vspeed,obj_walltoprightcorner)) {
 	}
 	parent_index.vspeed *= -0.5;
 }
+

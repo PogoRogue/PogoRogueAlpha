@@ -17,6 +17,9 @@ function scr_Shoot(){
 				spd: gun.ammo[bullet_index].spd,
 				destroy_on_impact: gun.ammo[bullet_index].destroy_on_impact
 			});
+			if gun.spread_number = 1 {
+				gun.current_bullets -= 1;
+			}
 		}
 		
 		//Gun kick and knockback

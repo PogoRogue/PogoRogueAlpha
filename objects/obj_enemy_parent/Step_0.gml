@@ -6,3 +6,9 @@ if(is_dead) {
 	is_dead = true;
 	alarm_set(0, room_speed);
 }
+
+// Update iframes
+current_iframes = max(current_iframes - 1, 0);
+
+// Update red shader frames
+red_frames = max(red_frames - 1, 0);

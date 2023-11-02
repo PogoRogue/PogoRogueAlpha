@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_player_ziteng",
-  "bbox_bottom": 64,
+  "bbox_bottom": 65,
   "bbox_left": 17,
   "bbox_right": 23,
   "bbox_top": 61,

@@ -3,7 +3,7 @@
 //feel free to make copies of this object to mess around with movement values
 grv = 0.21; //gravity
 h_grv = 0.01; //horizontal drag
-rotation_speed = 2.75; //rotation speed
+rotation_speed = 3; //rotation speed
 current_rotation_speed = rotation_speed;
 rotation_delay = rotation_speed / 5; //0.5
 vsp_basicjump = -6.6; //bounce height
@@ -15,6 +15,7 @@ use_mouse = false; //use mouse to control instead of WASD/Arrow keys?
 mouse_sensitivity = 150; //the lower the value, the more sensitive the player is to mouse movement and vice versa
 mouse_reanglespeed = 4; //the lower the value, the faster the player will reangle itself and vice versa
 invert = false;
+free = true; //pogo not colliding with wall, this variable ensures the player doesn't get stuck in walls
 
 //set controls variables
 key_right = 0;
@@ -25,10 +26,19 @@ key_left_pressed = 0;
 key_fire_projectile_pressed = 0;
 
 player_sprite = spr_player_zekai;
-falling_sprite = spr_player_zekai2;
-falling_sprite2 = spr_player_zekai2;
+falling_sprite = spr_player_zekai_falling;
+falling_sprite2 = spr_player_zekai_falling;
 
 dead = false;
+
+// Stats
+hp = 24;
+max_hp = 24;
+stomp_damage = 8;
+num_iframes = room_speed;
+current_iframes = 0;
+
+conveyor_speed = 0;
 
 image_speed = 0;
 
@@ -48,8 +58,6 @@ msk_index = instance_nearest(x,y,obj_player_mask); //references obj_playermask o
 has_item = false; // // Whether the player is equipped with a weapon
 equipped_item = noone; // The weapon that initializes the equipment is none
 
-
-
 #region //STATES
 
 state_rising = function() {
@@ -62,14 +70,24 @@ state_rising = function() {
 		motion_add(0,h_grv);
 	}
 	
-	//check for collision with ground below
-	if (place_meeting(x+lengthdir_x(vspeed,image_angle-90),y+lengthdir_y(vspeed,image_angle-90),obj_ground)) {
-		while !(place_meeting(x+lengthdir_x(sign(vspeed),image_angle-90),y+lengthdir_y(sign(vspeed),image_angle-90),obj_ground)) {
-			x += (lengthdir_x(sign(vspeed),image_angle-90));
-			y += (lengthdir_y(sign(vspeed),image_angle-90));
+	//check for collision with ground
+	if (place_meeting(x+hspeed,y,obj_ground)) and free = true {
+		while !(place_meeting(x+sign(hspeed),y,obj_ground)) {
+			x += sign(hspeed);
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
+	}
+	
+	if (place_meeting(x,y+vspeed,obj_ground)) and free = true {
+		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
+			y += sign(vspeed);
+		}
+		state = state_bouncing;
+		speed = 0; //stop player movement while bouncing
+	}
+	if !(place_meeting(x+hspeed,y+vspeed,obj_ground)) and free = false {
+		free = true;	
 	}
 		
 	//restart room if reached the top
@@ -77,9 +95,9 @@ state_rising = function() {
 		room_restart();
 	}
 	
-	sprite_index = player_sprite; //set player sprite
+	sprite_index = falling_sprite; //set player sprite
 	
-	if vspeed >= 0 {
+	if vspeed > 0 {
 		state = state_falling;
 	}
 }
@@ -103,13 +121,24 @@ state_falling = function() {
 		speed = 0; //stop player movement while bouncing
 	}
 	
-	if (place_meeting(x+lengthdir_x(vspeed,image_angle-90),y+lengthdir_y(vspeed,image_angle-90),obj_ground)) {
-		while !(place_meeting(x+lengthdir_x(sign(vspeed),image_angle-90),y+lengthdir_y(sign(vspeed),image_angle-90),obj_ground)) {
-			x += (lengthdir_x(sign(vspeed),image_angle-90));
-			y += (lengthdir_y(sign(vspeed),image_angle-90));
+	//check for collision with ground
+	if (place_meeting(x+hspeed,y,obj_ground)) and free = true {
+		while !(place_meeting(x+sign(hspeed),y,obj_ground)) {
+			x += sign(hspeed);
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
+	}
+	
+	if (place_meeting(x,y+vspeed,obj_ground)) and free = true {
+		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
+			y += sign(vspeed);
+		}
+		state = state_bouncing;
+		speed = 0; //stop player movement while bouncing
+	}
+	if !(place_meeting(x+hspeed,y+vspeed,obj_ground)) and free = false {
+		free = true;	
 	}
 	
 	if vspeed < 0 {
@@ -117,14 +146,21 @@ state_falling = function() {
 	}
 	
 	//falling animation
-	if (vspeed > 1.4) {
-		sprite_index = falling_sprite2;
+	sprite_index = falling_sprite;
+	if (vspeed > 3) {
+		image_index = 3;
+	}else if (vspeed > 2) {
+		image_index = 2;
+	}else if (vspeed > 1) {
+		image_index = 1;
 	}else {
-		sprite_index = falling_sprite;
+		image_index = 0;
 	}
 }
 
 state_bouncing = function() {
+	
+	free = false;
 	sprite_index = player_sprite; //set sprite
 	
 	//animate before bouncing
@@ -132,6 +168,24 @@ state_bouncing = function() {
 		animation_complete = true;
 	}else if (animation_complete = false) {
 		image_index += 1;
+	}
+	
+	// Conveyor belt handling
+	if place_meeting(x, y+1, obj_conveyor_belt) {
+		conveyor_speed = 4;
+		if (instance_place(x, y+1, obj_conveyor_belt).image_xscale > 0) {
+			x += conveyor_speed;
+		}
+		else {
+			conveyor_speed *= -1;
+			x -= conveyor_speed;
+		}
+		image_xscale = sign(conveyor_speed);
+	}
+	else if conveyor_speed != 0 {
+		hspeed = conveyor_speed;
+		conveyor_speed = 0;
+		state = state_falling;
 	}
 	
 	//bounce after animation is complete
@@ -143,10 +197,6 @@ state_bouncing = function() {
 		gun.current_bullets = gun.bullets_per_bounce; //reload bullets
 		state = state_rising;
 	}
-}
-
-state_wallstun = function() {
-	
 }
 
 state = state_falling;
@@ -163,6 +213,7 @@ oy = y; //original y position
 #region //bullets
 default_bullet = {
 	sprite: spr_projectile_default,//bullet sprite
+	gui_sprite: spr_projectile_default_gui, //bullet gui sprite
 	spd: 15,                        //speed of bullet
 	firerate_start: 1,              //initial firerate, higher = slower
 	firerate_end: 1,                //max firerate, higher = slower
@@ -173,6 +224,7 @@ default_bullet = {
 
 paintball_bullet = {
 	sprite: spr_projectile_paintball1,
+	gui_sprite: spr_projectile_paintball_gui,
 	spd: 15,                          
 	firerate_start: 5,               
 	firerate_end: 5,                 
@@ -182,17 +234,19 @@ paintball_bullet = {
 };
 
 shotgun_bullet = {
-	sprite: spr_projectile_nerfdart,//bullet sprite
-	spd: 15,                        //speed of bullet
-	firerate_start: 1,              //initial firerate, higher = slower
-	firerate_end: 1,                //max firerate, higher = slower
-	firerate_mult: 0,               //multiplication of firerate per shot
-	firerate: 1,                    //current firerate, higher = slower
-	destroy_on_impact: true         //destroy when touching ground or not
+	sprite: spr_projectile_nerfdart,
+	gui_sprite: spr_projectile_nerfdart_gui,
+	spd: 15,                        
+	firerate_start: 1,              
+	firerate_end: 1,                
+	firerate_mult: 0,               
+	firerate: 1,                    
+	destroy_on_impact: true         
 };
 
 speedup_bullet = {
 	sprite: spr_projectile_speedup,
+	gui_sprite: spr_projectile_speedup_gui,
 	spd: 15,                         
 	firerate_start: 10,               
 	firerate_end: 2,                
@@ -203,6 +257,7 @@ speedup_bullet = {
 
 burstfire_bullet = {
 	sprite: spr_projectile_burstfire,
+	gui_sprite: spr_projectile_burstfire_gui,
 	spd: 15,                       
 	firerate_start: 30,            
 	firerate_end: 30,           

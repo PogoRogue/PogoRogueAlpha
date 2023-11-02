@@ -13,8 +13,8 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"10ab7268-00df-4d61-a85f-dec8c83007fe",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"beb925bd-455a-4d9a-883e-e18abc97500e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"10ab7268-00df-4d61-a85f-dec8c83007fe",},
   ],
   "gridX": 13,
   "gridY": 16,
@@ -24,7 +24,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ed67c8f4-6810-49de-887f-92ec78cea280","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 3,
+  "origin": 4,
   "parent": {
     "name": "Projectiles",
     "path": "folders/Sprites/Projectiles.yy",
@@ -55,13 +55,13 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"10ab7268-00df-4d61-a85f-dec8c83007fe","path":"sprites/spr_projectile_burstfire/spr_projectile_burstfire.yy",},},},"Disabled":false,"id":"158c0aab-5b94-4244-ab1a-1fbf17169d89","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"beb925bd-455a-4d9a-883e-e18abc97500e","path":"sprites/spr_projectile_burstfire/spr_projectile_burstfire.yy",},},},"Disabled":false,"id":"7cd51c21-34c3-465f-9e6a-6b7cb04cc5b4","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"beb925bd-455a-4d9a-883e-e18abc97500e","path":"sprites/spr_projectile_burstfire/spr_projectile_burstfire.yy",},},},"Disabled":false,"id":"7cd51c21-34c3-465f-9e6a-6b7cb04cc5b4","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"10ab7268-00df-4d61-a85f-dec8c83007fe","path":"sprites/spr_projectile_burstfire/spr_projectile_burstfire.yy",},},},"Disabled":false,"id":"158c0aab-5b94-4244-ab1a-1fbf17169d89","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 0,
+    "xorigin": 13,
     "yorigin": 8,
   },
   "swatchColours": null,

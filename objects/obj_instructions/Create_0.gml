@@ -6,9 +6,11 @@ controls_left =	  "Controls:\n\n" +
 				  "Shoot\n" +
 				  "Switch Weapon\n" +
 				  "Super Jump\n" +
-				  "Restart Room\n";
+				  "Restart Room\n" +
+				  "Change Rooms";
 					
 controls_middle = "\n\n" +
+				  "->\n" +
 				  "->\n" +
 				  "->\n" +
 				  "->\n" +
@@ -20,4 +22,5 @@ controls_right =  "\n\n" +
 				  "Spacebar/Left Click/Right Trigger\n" + 
 				  "Q/E/Bumpers\n" +
 				  "Shift/A Button\n" +
-				  "R / Start Button";
+				  "R / Start Button\n" +
+				  "Tab/Select";

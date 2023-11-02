@@ -1,3 +1,8 @@
+tile_frame[0] = 0;
+xx[0] = x;
+alarm[0] = 1; //check collisions for tiles
+tileset = tl_ground;
+
 //left
 with instance_create_depth(bbox_left,bbox_top,depth-1,obj_wallleft) {
 	image_xscale = 0.5 * sign(other.image_xscale);

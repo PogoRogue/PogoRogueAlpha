@@ -1,6 +1,7 @@
 /// @description Draw strings by column
 
 draw_set_halign(fa_left);
+draw_set_valign(fa_center);
 draw_set_font(fnt_combo2);
 
 // Draw left column

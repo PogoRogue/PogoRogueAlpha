@@ -15,6 +15,7 @@ if (dead = false) {
 		key_fire_projectile_pressed = keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0,gp_shoulderrb);
 		key_fire_projectile_released = keyboard_check_released(vk_space) || gamepad_button_check_released(0,gp_shoulderrb);
 	}
+	key_charge_jump = keyboard_check(vk_shift) || gamepad_button_check(0,gp_face1);
 }else {
 	key_right = 0;
 	key_left = 0;
@@ -23,6 +24,7 @@ if (dead = false) {
 	key_left_pressed = 0;
 	key_fire_projectile_pressed = 0;
 	key_fire_projectile_released = 0;
+	key_charge_jump = 0;
 }
 #endregion
 
@@ -114,7 +116,7 @@ if (canshoot > 0) {
 	//lerp firerate to end while shooting
 	ammo.firerate = lerp(ammo.firerate, ammo.firerate_end, ammo.firerate_mult);
 	
-	if ((gun.current_bullets) > 0 and state != state_bouncing) {
+	if ((gun.current_bullets) > 0 and state != state_bouncing and state != state_charging) {
 		scr_Shoot();
 	
 		var delay = gun.burst_delay;

@@ -5,7 +5,7 @@ function scr_Shoot(){
 		//play sound
 		//audio_play_sound(gun.sound,10,false,random_range(0.8,1),0,random_range(0.8,1)); //play shooting sound, randomize gain and pitch
 		
-		//calculate distance from center to tip of gun
+		//calculate distaence from center to tip of gun
 		var dist = sprite_get_width(gun.sprite) - sprite_get_xoffset(gun.sprite);
 		
 		for (var i = 0; i < gun.spread_number; i++;) {

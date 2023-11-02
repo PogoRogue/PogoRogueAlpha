@@ -120,6 +120,8 @@
     {"name":"inst_7B1183FB","path":"rooms/room_large/room_large.yy",},
     {"name":"inst_363850A2","path":"rooms/room_large/room_large.yy",},
     {"name":"inst_3BE08E80","path":"rooms/room_large/room_large.yy",},
+    {"name":"inst_4F014AEC","path":"rooms/room_large/room_large.yy",},
+    {"name":"inst_404F91E5","path":"rooms/room_large/room_large.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -237,6 +239,8 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7B1183FB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_explode","path":"objects/obj_enemy_explode/obj_enemy_explode.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1088.0,"y":1392.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_363850A2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_explode","path":"objects/obj_enemy_explode/obj_enemy_explode.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1232.0,"y":1392.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3BE08E80","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_explode","path":"objects/obj_enemy_explode/obj_enemy_explode.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1424.0,"y":1392.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4F014AEC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_conveyor_belt","path":"objects/obj_conveyor_belt/obj_conveyor_belt.yy",},"properties":[],"rotation":0.0,"scaleX":16.0,"scaleY":1.0,"x":1136.0,"y":1264.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_404F91E5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_conveyor_belt","path":"objects/obj_conveyor_belt/obj_conveyor_belt.yy",},"properties":[],"rotation":0.0,"scaleX":-20.0,"scaleY":1.0,"x":1328.0,"y":864.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":{"name":"spr_background2","path":"sprites/spr_background2/spr_background2.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
   ],

@@ -9,7 +9,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Player",
-    "path": "folders/Objects/Ground/Player.yy",
+    "path": "folders/Objects/Player.yy",
   },
   "parentObjectId": {
     "name": "obj_item_parent",

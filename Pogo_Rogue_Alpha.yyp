@@ -21,7 +21,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Hitbox","folderPath":"folders/Objects/Enemy/Hitbox.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Environmental","folderPath":"folders/Objects/Environmental.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Ground","folderPath":"folders/Objects/Ground.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Player","folderPath":"folders/Objects/Ground/Player.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Player","folderPath":"folders/Objects/Player.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"item","folderPath":"folders/Objects/item.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sliders","folderPath":"folders/Objects/Sliders.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Text","folderPath":"folders/Objects/Text.yy",},

@@ -13,11 +13,11 @@ cooldown_length = 1.5 * room_speed;
 
 // Determine which surface the turret is on
 rotation = -90;
-if(collision_point(x + sprite_width, y, obj_ground_parent, true, true)) {
+if(collision_point(x + 16, y, obj_ground_parent, true, true)) {
 	rotation = 180;
-} else if (collision_point(x - sprite_width, y, obj_ground_parent, true, true)) {
+} else if (collision_point(x - 32, y, obj_ground_parent, true, true)) {
 	rotation = 0;
-} else if (collision_point(x, y + sprite_height, obj_ground_parent, true, true)) {
+} else if (collision_point(x, y -16, obj_ground_parent, true, true)) {
 	rotation = 90;
 }
 

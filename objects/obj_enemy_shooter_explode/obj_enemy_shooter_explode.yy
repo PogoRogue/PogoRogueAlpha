@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_enemy_shooter",
-    "path": "sprites/spr_enemy_shooter/spr_enemy_shooter.yy",
+    "name": "spr_enemy_shooting_explosion",
+    "path": "sprites/spr_enemy_shooting_explosion/spr_enemy_shooting_explosion.yy",
   },
   "spriteMaskId": null,
   "visible": true,

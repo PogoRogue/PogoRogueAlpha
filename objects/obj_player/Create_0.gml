@@ -16,6 +16,8 @@ mouse_sensitivity = 150; //the lower the value, the more sensitive the player is
 mouse_reanglespeed = 4; //the lower the value, the faster the player will reangle itself and vice versa
 invert = false;
 free = true; //pogo not colliding with wall, this variable ensures the player doesn't get stuck in walls
+charge = 0;
+charge_max = vsp_basicjump;
 
 //set controls variables
 key_right = 0;
@@ -24,6 +26,7 @@ key_fire_projectile = 0;
 key_right_pressed = 0;
 key_left_pressed = 0;
 key_fire_projectile_pressed = 0;
+key_charge_jump = 0;
 
 player_sprite = spr_player_zekai;
 falling_sprite = spr_player_zekai_falling;
@@ -171,32 +174,29 @@ state_bouncing = function() {
 	}
 	
 	// Conveyor belt handling
-	if place_meeting(x, y+1, obj_conveyor_belt) {
-		conveyor_speed = 4;
-		if (instance_place(x, y+1, obj_conveyor_belt).image_xscale > 0) {
-			x += conveyor_speed;
-		}
-		else {
-			conveyor_speed *= -1;
-			x -= conveyor_speed;
-		}
-		image_xscale = sign(conveyor_speed);
-	}
-	else if conveyor_speed != 0 {
-		hspeed = conveyor_speed;
-		conveyor_speed = 0;
-		state = state_falling;
-	}
+	scr_Conveyor_Belt();
 	
 	//bounce after animation is complete
-	if (animation_complete) {
-		speed = vsp_basicjump; //bounce speed
-		direction = angle - 90; //bounce angle
-		image_index = 0; //reset animation to starting frame
-		animation_complete = false;
-		gun.current_bullets = gun.bullets_per_bounce; //reload bullets
-		state = state_rising;
+	if (animation_complete and !key_charge_jump) {
+		scr_Jump(0);
+	}else if (animation_complete) {
+		state = state_charging;
 	}
+}
+
+state_charging = function() {
+	
+	// Conveyor belt handling
+	scr_Conveyor_Belt();
+	
+	if !(key_charge_jump) {
+		scr_Jump(charge);
+	}else {
+		if (charge > charge_max) {
+			charge += charge_max/80; //80 = how many frames until max charge
+		}
+	}
+	
 }
 
 state = state_falling;

@@ -57,6 +57,7 @@
     {"id":{"name":"spr_enemy_shoot_only","path":"sprites/spr_enemy_shoot_only/spr_enemy_shoot_only.yy",},},
     {"id":{"name":"spr_explosion","path":"sprites/spr_explosion/spr_explosion.yy",},},
     {"id":{"name":"spr_slider_bar","path":"sprites/spr_slider_bar/spr_slider_bar.yy",},},
+    {"id":{"name":"room_gym_enemy","path":"rooms/room_gym_enemy/room_gym_enemy.yy",},},
     {"id":{"name":"spr_slider_switch_outline","path":"sprites/spr_slider_switch_outline/spr_slider_switch_outline.yy",},},
     {"id":{"name":"spr_player_hurt","path":"sprites/spr_player_hurt/spr_player_hurt.yy",},},
     {"id":{"name":"spr_background","path":"sprites/spr_background/spr_background.yy",},},
@@ -205,6 +206,7 @@
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"room_large","path":"rooms/room_large/room_large.yy",},},
+    {"roomId":{"name":"room_gym_enemy","path":"rooms/room_gym_enemy/room_gym_enemy.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

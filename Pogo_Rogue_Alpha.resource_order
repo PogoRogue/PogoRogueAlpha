@@ -17,6 +17,7 @@
     {"name":"scr_Shoot","order":1,"path":"scripts/scr_Shoot/scr_Shoot.yy",},
     {"name":"spr_enemy_generic","order":1,"path":"sprites/spr_enemy_generic/spr_enemy_generic.yy",},
     {"name":"spr_enemy_shoot_only","order":4,"path":"sprites/spr_enemy_shoot_only/spr_enemy_shoot_only.yy",},
+    {"name":"room_gym_enemy","order":1,"path":"rooms/room_gym_enemy/room_gym_enemy.yy",},
     {"name":"spr_slider_switch_outline","order":5,"path":"sprites/spr_slider_switch_outline/spr_slider_switch_outline.yy",},
     {"name":"spr_player_hurt","order":8,"path":"sprites/spr_player_hurt/spr_player_hurt.yy",},
     {"name":"spr_background","order":11,"path":"sprites/spr_background/spr_background.yy",},

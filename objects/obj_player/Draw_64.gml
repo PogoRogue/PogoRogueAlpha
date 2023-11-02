@@ -3,8 +3,8 @@
 //weapon text
 display_set_gui_size(640,360);
 draw_set_font(fnt_combo2);
-draw_set_halign(fa_left);
-scr_Draw_Text_Outlined(16,16,gun.name,c_white);
+draw_set_halign(fa_right);
+scr_Draw_Text_Outlined(624,40,gun.name,c_white);
 
 //draw ammo
 var ammo = gun.ammo[bullet_index];

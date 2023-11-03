@@ -39,6 +39,8 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sliders","folderPath":"folders/Sprites/Sliders.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Shield","folderPath":"folders/Sprites/Enemy/Shield.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Shield","folderPath":"folders/Objects/Enemy/Shield.yy",},
   ],
   "IncludedFiles": [],
   "isEcma": false,
@@ -49,6 +51,7 @@
   "resources": [
     {"id":{"name":"scr_Shoot","path":"scripts/scr_Shoot/scr_Shoot.yy",},},
     {"id":{"name":"spr_enemy_generic","path":"sprites/spr_enemy_generic/spr_enemy_generic.yy",},},
+    {"id":{"name":"obj_softshield","path":"objects/obj_softshield/obj_softshield.yy",},},
     {"id":{"name":"spr_enemy_shoot_only","path":"sprites/spr_enemy_shoot_only/spr_enemy_shoot_only.yy",},},
     {"id":{"name":"spr_slider_bar","path":"sprites/spr_slider_bar/spr_slider_bar.yy",},},
     {"id":{"name":"spr_slider_switch_outline","path":"sprites/spr_slider_switch_outline/spr_slider_switch_outline.yy",},},
@@ -87,13 +90,24 @@
     {"id":{"name":"spr_purplesquare","path":"sprites/spr_purplesquare/spr_purplesquare.yy",},},
     {"id":{"name":"obj_presets","path":"objects/obj_presets/obj_presets.yy",},},
     {"id":{"name":"spr_bluesquare","path":"sprites/spr_bluesquare/spr_bluesquare.yy",},},
+<<<<<<< Updated upstream
+=======
+    {"id":{"name":"obj_walljump","path":"objects/obj_walljump/obj_walljump.yy",},},
+    {"id":{"name":"spr_shield","path":"sprites/spr_shield/spr_shield.yy",},},
+    {"id":{"name":"obj_weaponheight3","path":"objects/obj_weaponheight3/obj_weaponheight3.yy",},},
+>>>>>>> Stashed changes
     {"id":{"name":"spr_player_falling2","path":"sprites/spr_player_falling2/spr_player_falling2.yy",},},
     {"id":{"name":"obj_item_parentweapon","path":"objects/obj_item_parentweapon/obj_item_parentweapon.yy",},},
     {"id":{"name":"obj_enemy_projectile","path":"objects/obj_enemy_projectile/obj_enemy_projectile.yy",},},
     {"id":{"name":"obj_item_parent","path":"objects/obj_item_parent/obj_item_parent.yy",},},
     {"id":{"name":"spr_slider_bar_outline","path":"sprites/spr_slider_bar_outline/spr_slider_bar_outline.yy",},},
     {"id":{"name":"obj_ground_parent","path":"objects/obj_ground_parent/obj_ground_parent.yy",},},
+<<<<<<< Updated upstream
     {"id":{"name":"spr_enemy_moving","path":"sprites/spr_enemy_moving/spr_enemy_moving.yy",},},
+=======
+    {"id":{"name":"obj_enemy_shieldtest","path":"objects/obj_enemy_shieldtest/obj_enemy_shieldtest.yy",},},
+    {"id":{"name":"spr_player_mask_zekai","path":"sprites/spr_player_mask_zekai/spr_player_mask_zekai.yy",},},
+>>>>>>> Stashed changes
     {"id":{"name":"spr_player_falling_hurt","path":"sprites/spr_player_falling_hurt/spr_player_falling_hurt.yy",},},
     {"id":{"name":"obj_enemy_jump","path":"objects/obj_enemy_jump/obj_enemy_jump.yy",},},
     {"id":{"name":"spr_enemy_projectile","path":"sprites/spr_enemy_projectile/spr_enemy_projectile.yy",},},
@@ -109,7 +123,16 @@
     {"id":{"name":"spr_explosion","path":"sprites/spr_explosion/spr_explosion.yy",},},
     {"id":{"name":"spr_brownsquare","path":"sprites/spr_brownsquare/spr_brownsquare.yy",},},
     {"id":{"name":"spr_projectile_paintball","path":"sprites/spr_projectile_paintball/spr_projectile_paintball.yy",},},
+<<<<<<< Updated upstream
     {"id":{"name":"spr_env_air_effect","path":"sprites/spr_env_air_effect/spr_env_air_effect.yy",},},
+=======
+    {"id":{"name":"obj_shield_parent","path":"objects/obj_shield_parent/obj_shield_parent.yy",},},
+    {"id":{"name":"scr_Draw_Tiles","path":"scripts/scr_Draw_Tiles/scr_Draw_Tiles.yy",},},
+    {"id":{"name":"obj_conveyor_belt","path":"objects/obj_conveyor_belt/obj_conveyor_belt.yy",},},
+    {"id":{"name":"spr_env_air_effect","path":"sprites/spr_env_air_effect/spr_env_air_effect.yy",},},
+    {"id":{"name":"spr_shield_break","path":"sprites/spr_shield_break/spr_shield_break.yy",},},
+    {"id":{"name":"spr_conveyor_belt","path":"sprites/spr_conveyor_belt/spr_conveyor_belt.yy",},},
+>>>>>>> Stashed changes
     {"id":{"name":"spr_player_dead","path":"sprites/spr_player_dead/spr_player_dead.yy",},},
     {"id":{"name":"obj_instructions","path":"objects/obj_instructions/obj_instructions.yy",},},
 
@@ -136,6 +159,14 @@
     {"id":{"name":"spr_player_falling_hurt_red","path":"sprites/spr_player_falling_hurt_red/spr_player_falling_hurt_red.yy",},},
     {"id":{"name":"spr_enemy_flying","path":"sprites/spr_enemy_flying/spr_enemy_flying.yy",},},
     {"id":{"name":"obj_player_mask","path":"objects/obj_player_mask/obj_player_mask.yy",},},
+<<<<<<< Updated upstream
+=======
+    {"id":{"name":"obj_weaponheight2","path":"objects/obj_weaponheight2/obj_weaponheight2.yy",},},
+    {"id":{"name":"obj_weaponheight6","path":"objects/obj_weaponheight6/obj_weaponheight6.yy",},},
+    {"id":{"name":"spr_player_ziteng_fullanimation","path":"sprites/spr_player_ziteng_fullanimation/spr_player_ziteng_fullanimation.yy",},},
+    {"id":{"name":"spr_projectile_speedup_gui","path":"sprites/spr_projectile_speedup_gui/spr_projectile_speedup_gui.yy",},},
+    {"id":{"name":"spr_enemy_shield","path":"sprites/spr_enemy_shield/spr_enemy_shield.yy",},},
+>>>>>>> Stashed changes
     {"id":{"name":"obj_item_parentbuff","path":"objects/obj_item_parentbuff/obj_item_parentbuff.yy",},},
     {"id":{"name":"obj_slider_bounceheight","path":"objects/obj_slider_bounceheight/obj_slider_bounceheight.yy",},},
     {"id":{"name":"spr_player_mask","path":"sprites/spr_player_mask/spr_player_mask.yy",},},
@@ -147,6 +178,11 @@
     {"id":{"name":"spr_pogo","path":"sprites/spr_pogo/spr_pogo.yy",},},
     {"id":{"name":"obj_item_parentfootpads","path":"objects/obj_item_parentfootpads/obj_item_parentfootpads.yy",},},
     {"id":{"name":"spr_enemy_shooter","path":"sprites/spr_enemy_shooter/spr_enemy_shooter.yy",},},
+<<<<<<< Updated upstream
+=======
+    {"id":{"name":"spr_player_zekai_charging","path":"sprites/spr_player_zekai_charging/spr_player_zekai_charging.yy",},},
+    {"id":{"name":"obj_hardshield","path":"objects/obj_hardshield/obj_hardshield.yy",},},
+>>>>>>> Stashed changes
     {"id":{"name":"spr_env_fan","path":"sprites/spr_env_fan/spr_env_fan.yy",},},
     {"id":{"name":"spr_greensquare","path":"sprites/spr_greensquare/spr_greensquare.yy",},},
     {"id":{"name":"obj_wallleft","path":"objects/obj_wallleft/obj_wallleft.yy",},},

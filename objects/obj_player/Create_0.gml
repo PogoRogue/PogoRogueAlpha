@@ -154,6 +154,7 @@ state_charging = function() {
 	scr_Conveyor_Belt();
 	
 	if !(key_charge_jump) {
+		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*15)
 		scr_Jump(charge);
 	}else {
 		if (charge > charge_max) {

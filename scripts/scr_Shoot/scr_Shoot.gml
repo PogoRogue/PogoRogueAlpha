@@ -15,7 +15,9 @@ function scr_Shoot(){
 				image_angle: angle_ + random_range(-gun.inaccuracy,gun.inaccuracy)  - 90,
 				sprite_index: gun.ammo[bullet_index].sprite,
 				spd: gun.ammo[bullet_index].spd,
-				destroy_on_impact: gun.ammo[bullet_index].destroy_on_impact
+				destroy_on_impact: gun.ammo[bullet_index].destroy_on_impact,
+				destroy_time: gun.ammo[bullet_index].destroy_time,
+				flash_frame: gun.ammo[bullet_index].flash_frame
 			});
 			
 			//screen shake

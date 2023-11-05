@@ -11,7 +11,9 @@ function scr_Bullets(){
 		firerate_mult: 0,               //multiplication of firerate per shot
 		firerate: 1,                    //current firerate, higher = slower
 		destroy_on_impact: true,        //destroy when touching ground or not
-		screen_shake: {magnitude: 2.5, frames: 10} //screen shake, magnitude = distance rance in pixels, frames = # of frames (60 = 1 second)
+		screen_shake: {magnitude: 2.5, frames: 10}, //screen shake, magnitude = distance rance in pixels, frames = # of frames (60 = 1 second)
+		destroy_time: 0,                 //frames to destroy projectile after spawn, 0 = no destroy time
+		flash_frame: 2                //how big of a flash you want the bullet to make, 0 = biggest, 12 = nothing/smallest
 	};
 
 	paintball_bullet = {
@@ -23,7 +25,9 @@ function scr_Bullets(){
 		firerate_mult: 0,               
 		firerate: 5,                     
 		destroy_on_impact: true,
-		screen_shake: {magnitude: 2, frames: 8}
+		screen_shake: {magnitude: 2, frames: 8},
+		destroy_time: 0,
+		flash_frame: 4
 	};
 
 	shotgun_bullet = {
@@ -35,19 +39,23 @@ function scr_Bullets(){
 		firerate_mult: 0,               
 		firerate: 1,                    
 		destroy_on_impact: true,
-		screen_shake: {magnitude: 6, frames: 15}
+		screen_shake: {magnitude: 6, frames: 15},
+		destroy_time: 10,
+		flash_frame: 0
 	};
 
 	speedup_bullet = {
 		sprite: spr_projectile_speedup,
 		gui_sprite: spr_projectile_speedup_gui,
-		spd: 10,                         
+		spd: 6,                         
 		firerate_start: 2, //10            
 		firerate_end: 2,                
 		firerate_mult: 0.6,                
 		firerate: 3,                     
 		destroy_on_impact: true,
-		screen_shake: {magnitude: 1.5, frames: 5}
+		screen_shake: {magnitude: 1.5, frames: 5},
+		destroy_time: 18,
+		flash_frame: 5
 	};
 
 	burstfire_bullet = {
@@ -60,5 +68,7 @@ function scr_Bullets(){
 		firerate: 30,                 
 		destroy_on_impact: true,
 		screen_shake: {magnitude: 3, frames: 6},
+		destroy_time: 0,
+		flash_frame: 1
 	};
 }

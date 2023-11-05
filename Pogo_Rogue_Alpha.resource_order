@@ -153,6 +153,7 @@
     {"name":"obj_player_mask","order":1,"path":"objects/obj_player_mask/obj_player_mask.yy",},
     {"name":"obj_weaponheight2","order":12,"path":"objects/obj_weaponheight2/obj_weaponheight2.yy",},
     {"name":"obj_weaponheight6","order":16,"path":"objects/obj_weaponheight6/obj_weaponheight6.yy",},
+    {"name":"obj_projectile_flash_effect","order":8,"path":"objects/obj_projectile_flash_effect/obj_projectile_flash_effect.yy",},
     {"name":"spr_player_ziteng_fullanimation","order":18,"path":"sprites/spr_player_ziteng_fullanimation/spr_player_ziteng_fullanimation.yy",},
     {"name":"spr_projectile_speedup_gui","order":11,"path":"sprites/spr_projectile_speedup_gui/spr_projectile_speedup_gui.yy",},
     {"name":"obj_walljumpdistance1","order":9,"path":"objects/obj_walljumpdistance1/obj_walljumpdistance1.yy",},

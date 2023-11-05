@@ -10,7 +10,8 @@ function scr_Bullets(){
 		firerate_end: 1,                //max firerate, higher = slower
 		firerate_mult: 0,               //multiplication of firerate per shot
 		firerate: 1,                    //current firerate, higher = slower
-		destroy_on_impact: true         //destroy when touching ground or not
+		destroy_on_impact: true,        //destroy when touching ground or not
+		screen_shake: {magnitude: 2.5, frames: 10} //screen shake, magnitude = distance rance in pixels, frames = # of frames (60 = 1 second)
 	};
 
 	paintball_bullet = {
@@ -21,7 +22,8 @@ function scr_Bullets(){
 		firerate_end: 5,                 
 		firerate_mult: 0,               
 		firerate: 5,                     
-		destroy_on_impact: true         
+		destroy_on_impact: true,
+		screen_shake: {magnitude: 2, frames: 8}
 	};
 
 	shotgun_bullet = {
@@ -32,7 +34,8 @@ function scr_Bullets(){
 		firerate_end: 1,                
 		firerate_mult: 0,               
 		firerate: 1,                    
-		destroy_on_impact: true         
+		destroy_on_impact: true,
+		screen_shake: {magnitude: 6, frames: 15}
 	};
 
 	speedup_bullet = {
@@ -43,7 +46,8 @@ function scr_Bullets(){
 		firerate_end: 2,                
 		firerate_mult: 0.6,                
 		firerate: 3,                     
-		destroy_on_impact: true          
+		destroy_on_impact: true,
+		screen_shake: {magnitude: 1.5, frames: 5}
 	};
 
 	burstfire_bullet = {
@@ -54,6 +58,7 @@ function scr_Bullets(){
 		firerate_end: 30,           
 		firerate_mult: 0,              
 		firerate: 30,                 
-		destroy_on_impact: true      
+		destroy_on_impact: true,
+		screen_shake: {magnitude: 3, frames: 6},
 	};
 }

@@ -17,6 +17,12 @@ function scr_Shoot(){
 				spd: gun.ammo[bullet_index].spd,
 				destroy_on_impact: gun.ammo[bullet_index].destroy_on_impact
 			});
+			
+			//screen shake
+			scr_Screen_Shake(gun.ammo[bullet_index].screen_shake.magnitude, gun.ammo[bullet_index].screen_shake.frames)
+			gamepad_set_vibration(0, 1, 1);
+			
+			//decrease ammo
 			if gun.spread_number = 1 {
 				gun.current_bullets -= 1;
 			}

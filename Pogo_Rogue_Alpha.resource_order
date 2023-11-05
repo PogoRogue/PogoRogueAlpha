@@ -100,6 +100,7 @@
     {"name":"spr_player_falling2","order":5,"path":"sprites/spr_player_falling2/spr_player_falling2.yy",},
     {"name":"obj_item_parentweapon","order":7,"path":"objects/obj_item_parentweapon/obj_item_parentweapon.yy",},
     {"name":"obj_enemy_projectile_lob","order":4,"path":"objects/obj_enemy_projectile_lob/obj_enemy_projectile_lob.yy",},
+    {"name":"scr_Player_Damaged","order":9,"path":"scripts/scr_Player_Damaged/scr_Player_Damaged.yy",},
     {"name":"spr_slider_bar_outline","order":1,"path":"sprites/spr_slider_bar_outline/spr_slider_bar_outline.yy",},
     {"name":"obj_ground_parent","order":2,"path":"objects/obj_ground_parent/obj_ground_parent.yy",},
     {"name":"spr_player_mask_zekai","order":20,"path":"sprites/spr_player_mask_zekai/spr_player_mask_zekai.yy",},

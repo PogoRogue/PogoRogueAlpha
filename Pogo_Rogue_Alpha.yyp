@@ -135,6 +135,7 @@
     {"id":{"name":"spr_player_falling2","path":"sprites/spr_player_falling2/spr_player_falling2.yy",},},
     {"id":{"name":"obj_item_parentweapon","path":"objects/obj_item_parentweapon/obj_item_parentweapon.yy",},},
     {"id":{"name":"obj_enemy_projectile_lob","path":"objects/obj_enemy_projectile_lob/obj_enemy_projectile_lob.yy",},},
+    {"id":{"name":"scr_Player_Damaged","path":"scripts/scr_Player_Damaged/scr_Player_Damaged.yy",},},
     {"id":{"name":"obj_item_parent","path":"objects/obj_item_parent/obj_item_parent.yy",},},
     {"id":{"name":"obj_player_health","path":"objects/obj_player_health/obj_player_health.yy",},},
     {"id":{"name":"spr_slider_bar_outline","path":"sprites/spr_slider_bar_outline/spr_slider_bar_outline.yy",},},

@@ -18,7 +18,7 @@ function scr_Guns(){
 		reset_momentum: true, //reset player speed to 0 for each bullet (false), or just add to current speed (false)
 		bullets_per_bounce: 3,//Number of bullets per clip
 		current_bullets: 3,   //current number of bullets left
-		max_speed: 5          //player cant move faster than this if full_auto = true
+		max_speed: -vsp_basicjump          //player cant move faster than this if full_auto = true
 	};
 
 	paintball_gun = {
@@ -37,7 +37,7 @@ function scr_Guns(){
 		reset_momentum: false, 
 		bullets_per_bounce: 10,
 		current_bullets: 10,   
-		max_speed: 6           
+		max_speed: -vsp_basicjump           
 	};
 
 	shotgun_gun = {
@@ -56,7 +56,7 @@ function scr_Guns(){
 		reset_momentum: true, 
 		bullets_per_bounce: 2,
 		current_bullets: 2,  
-		max_speed: 6          
+		max_speed: -vsp_basicjump          
 	};
 
 	negev_gun = {
@@ -94,6 +94,6 @@ function scr_Guns(){
 		reset_momentum: false, 
 		bullets_per_bounce: 9,
 		current_bullets: 9,  
-		max_speed: 6.6
+		max_speed: -vsp_basicjump
 	};	
 }

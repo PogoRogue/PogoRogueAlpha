@@ -18,6 +18,8 @@ invert = false;
 free = true; //pogo not colliding with wall, this variable ensures the player doesn't get stuck in walls
 charge = 0;
 charge_max = vsp_basicjump;
+slower_than_max = false; //ammo momentum for super jump
+current_max = 0;
 
 //set controls variables
 key_right = 0;

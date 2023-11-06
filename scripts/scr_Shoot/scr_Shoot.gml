@@ -30,16 +30,28 @@ function scr_Shoot(){
 			}
 		}
 		
-		//Gun kick and knockback
-		//x -= gun.kick * image_yscale;
-		//knockback_angle += gun.kick * image_yscale;
-		if (gun.reset_momentum) {
-			speed = 0;
+		//check if speed slower or faster than max speed to preserve momentum
+		if (speed > gun.max_speed and vspeed < 0) {
+			slower_than_max = false;
+			current_max = speed;
+		}else {
+			slower_than_max = true;	
+			current_max = 0;
 		}
+		
+		//reset/preserve momentum
+		if (gun.reset_momentum and slower_than_max) {
+			speed = 0;
+		}else if (gun.reset_momentum) {
+			speed = current_max + (vsp_basicjump*gun.momentum_added);	
+		}
+		
+		//add momentum
 		motion_add(angle - 90, vsp_basicjump * gun.momentum_added);
+		
+		//set max speed for auto weapons
 		if (speed > gun.max_speed and gun.full_auto = true) { //player cant exceed certain speed if full_auto = true
-			
-			speed = gun.max_speed;
+			speed = max(gun.max_speed, current_max);
 		}
 		
 		//iterate through ammo types

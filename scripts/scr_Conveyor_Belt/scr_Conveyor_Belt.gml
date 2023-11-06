@@ -16,5 +16,7 @@ function scr_Conveyor_Belt(){
 		image_index = 0;
 		animation_complete = false;
 		free = true;
+	}else {
+		speed = 0;	
 	}
 }

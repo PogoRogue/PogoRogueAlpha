@@ -108,6 +108,7 @@
     {"id":{"name":"spr_projectile_burstfire","path":"sprites/spr_projectile_burstfire/spr_projectile_burstfire.yy",},},
     {"id":{"name":"spr_background2","path":"sprites/spr_background2/spr_background2.yy",},},
     {"id":{"name":"obj_switch_rooms","path":"objects/obj_switch_rooms/obj_switch_rooms.yy",},},
+    {"id":{"name":"spr_enemy_jump","path":"sprites/spr_enemy_jump/spr_enemy_jump.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"spr_enemy_turret_barrel","path":"sprites/spr_enemy_turret_barrel/spr_enemy_turret_barrel.yy",},},
     {"id":{"name":"spr_projectile_paintball_gui","path":"sprites/spr_projectile_paintball_gui/spr_projectile_paintball_gui.yy",},},

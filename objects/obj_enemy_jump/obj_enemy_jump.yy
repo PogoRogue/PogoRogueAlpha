@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_enemy_flying",
-    "path": "sprites/spr_enemy_flying/spr_enemy_flying.yy",
+    "name": "spr_enemy_jump",
+    "path": "sprites/spr_enemy_jump/spr_enemy_jump.yy",
   },
   "spriteMaskId": null,
   "visible": true,

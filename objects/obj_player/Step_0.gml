@@ -31,6 +31,8 @@ if (dead = false) {
 //run state machine
 state();
 
+show_debug_message(speed);
+
 #region //angling
 if (use_mouse = false) { //use WASD/Arrow Keys to angle player
 	if (angle >= -anglemax and key_right and !invert) and !(msk_index.colliding_with_ground_right)

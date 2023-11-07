@@ -11,10 +11,12 @@ function scr_Conveyor_Belt(){
 	}else if (conveyor_speed != 0) and !(place_meeting(x+4*sign(conveyor_speed),y-3,obj_ground)) {
 		hspeed = conveyor_speed;
 		conveyor_speed = 0;
-		state = state_falling;
+		state = state_free;
 		charge = 0;
 		image_index = 0;
 		animation_complete = false;
 		free = true;
+	}else {
+		speed = 0;	
 	}
 }

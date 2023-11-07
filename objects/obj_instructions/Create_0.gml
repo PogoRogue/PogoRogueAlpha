@@ -18,9 +18,9 @@ controls_middle = "\n\n" +
 				  "->\n";
 					
 controls_right =  "\n\n" +
-				  "WASD/Arrow Keys/Left Joystick\n" +
-				  "Spacebar/Left Click/Right Trigger\n" + 
-				  "Q/E/Bumpers\n" +
-				  "Shift/A Button\n" +
+				  "WASD/Arrow Keys / Left Joystick\n" +
+				  "Spacebar / Right Trigger\n" + 
+				  "Q / E / Bumpers\n" +
+				  "Shift / A Button\n" +
 				  "R / Start Button\n" +
-				  "Tab/Select";
+				  "Tab / Select Button";

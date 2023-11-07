@@ -76,6 +76,7 @@
     {"name":"spr_projectile_burstfire","order":6,"path":"sprites/spr_projectile_burstfire/spr_projectile_burstfire.yy",},
     {"name":"spr_background2","order":12,"path":"sprites/spr_background2/spr_background2.yy",},
     {"name":"obj_switch_rooms","order":8,"path":"objects/obj_switch_rooms/obj_switch_rooms.yy",},
+    {"name":"spr_enemy_jump","order":36,"path":"sprites/spr_enemy_jump/spr_enemy_jump.yy",},
     {"name":"spr_enemy_turret_barrel","order":33,"path":"sprites/spr_enemy_turret_barrel/spr_enemy_turret_barrel.yy",},
     {"name":"spr_projectile_paintball_gui","order":10,"path":"sprites/spr_projectile_paintball_gui/spr_projectile_paintball_gui.yy",},
     {"name":"obj_enemy_stomp_only","order":2,"path":"objects/obj_enemy_stomp_only/obj_enemy_stomp_only.yy",},

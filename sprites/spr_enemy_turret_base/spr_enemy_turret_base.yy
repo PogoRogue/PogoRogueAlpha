@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "spr_enemy_turret_base",
   "bbox_bottom": 30,
-  "bbox_left": 16,
-  "bbox_right": 46,
+  "bbox_left": 11,
+  "bbox_right": 52,
   "bbox_top": 1,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"79bcd693-8a42-44b3-b269-d4ac7b327542",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ca3d699c-0c2d-4b7c-a81b-078ad5d5943f",},
   ],
-  "gridX": 8,
-  "gridY": 8,
+  "gridX": 0,
+  "gridY": 0,
   "height": 32,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"2109a4f1-472f-40c6-9d91-d04d60ddc829","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"7fc9851b-53d4-412d-8ce9-a864f691e323","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"79bcd693-8a42-44b3-b269-d4ac7b327542","path":"sprites/spr_enemy_turret_base/spr_enemy_turret_base.yy",},},},"Disabled":false,"id":"9777dd84-c327-4e0f-a8f8-f502ae15a136","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ca3d699c-0c2d-4b7c-a81b-078ad5d5943f","path":"sprites/spr_enemy_turret_base/spr_enemy_turret_base.yy",},},},"Disabled":false,"id":"d80725dd-6790-489b-9985-1eb99945ff6e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

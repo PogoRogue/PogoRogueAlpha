@@ -34,6 +34,7 @@
     {"name":"spr_dot","order":10,"path":"sprites/spr_dot/spr_dot.yy",},
     {"name":"scr_Shoot","order":1,"path":"scripts/scr_Shoot/scr_Shoot.yy",},
     {"name":"spr_enemy_generic","order":1,"path":"sprites/spr_enemy_generic/spr_enemy_generic.yy",},
+    {"name":"obj_enemy_chasing","order":9,"path":"objects/obj_enemy_chasing/obj_enemy_chasing.yy",},
     {"name":"spr_enemy_shoot_only","order":4,"path":"sprites/spr_enemy_shoot_only/spr_enemy_shoot_only.yy",},
     {"name":"room_gym_enemy","order":1,"path":"rooms/room_gym_enemy/room_gym_enemy.yy",},
     {"name":"spr_heart","order":2,"path":"sprites/spr_heart/spr_heart.yy",},

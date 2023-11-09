@@ -4,7 +4,7 @@
 grv = 0.21; //gravity
 h_grv = 0.01; //horizontal drag
 rotation_speed = 3; //rotation speed
-current_rotation_speed = rotation_speed;
+current_rotation_speed = 0;
 rotation_delay = rotation_speed / 7; //0.5
 vsp_basicjump = -6.6; //bounce height
 angle = 0;

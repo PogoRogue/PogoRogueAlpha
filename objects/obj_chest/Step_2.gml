@@ -6,7 +6,7 @@ with (obj_player) {
 	or (place_meeting(x,y+1,other) and !place_meeting(x,y-1,other) and vspeed = 0) {
 		other.image_index = 1;
 		other.colliding = true;	
-	}else if (other.colliding and other.open = false and state != state_bouncing) {
+	}else if (other.colliding and other.open = false and state != state_bouncing and state != state_charging) {
 		other.open = true;
 		other.alarm[0] = 1;
 	}

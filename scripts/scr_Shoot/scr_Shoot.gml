@@ -22,7 +22,9 @@ function scr_Shoot(){
 			
 			//screen shake
 			scr_Screen_Shake(gun.ammo[bullet_index].screen_shake.magnitude, gun.ammo[bullet_index].screen_shake.frames)
-			gamepad_set_vibration(0, 1, 1);
+			if (global.allow_screenshake) {
+				gamepad_set_vibration(0, 1, 1);
+			}
 			
 			//decrease ammo
 			if gun.spread_number = 1 {

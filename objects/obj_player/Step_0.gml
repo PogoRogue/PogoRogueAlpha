@@ -77,31 +77,6 @@ if (use_mouse = false) { //use WASD/Arrow Keys to angle player
 image_angle = angle;
 #endregion
 
-#region //moving and shooting
-//gun position and angle
-
-/* THIS CODE IS MEANT FOR THE ARM CANNON OBJECT, commented out until implemented
-//sprite_index = gun.sprite
-
-//flip gun
-if (mouse_x > x) {
-	image_yscale = 1
-}else {
-	image_yscale = -1
-}
-
-//lerp angle
-mouse_angle -= angle_difference(mouse_angle,point_direction(x,y,mouse_x,mouse_y)) * 0.5
-knockback_angle -= angle_difference(mouse_angle,point_direction(x,y,mouse_x,mouse_y)) * 0.05
-
-image_angle = mouse_angle + knockback_angle
-
-//lerp position
-x = lerp(x,ox,0.05)
-y = lerp(y,oy,0.05)
-*/
-#endregion
-
 #region shooting
 
 var shoot = gun.full_auto ? key_fire_projectile : key_fire_projectile_pressed;

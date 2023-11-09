@@ -4,3 +4,4 @@ endgame_button = 0;
 window_set_cursor(spr_nothing);
 cursor_sprite = spr_nothing;
 global.draw_collision_walls = false;
+global.allow_screenshake = true;

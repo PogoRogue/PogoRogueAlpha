@@ -1,1 +1,1 @@
-surface_resize(application_surface,window_get_width(),window_get_height());
+surface_resize(application_surface,view_wport[0]*2,view_hport[0]*2);

@@ -4,7 +4,7 @@
 display_set_gui_size(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));
 draw_set_font(fnt_combo2);
 draw_set_halign(fa_right);
-scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16,40,gun.name,c_white);
+scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16,40,gun.name,make_color_rgb(242,240,229));
 
 //draw ammo
 var ammo = gun.ammo[bullet_index];

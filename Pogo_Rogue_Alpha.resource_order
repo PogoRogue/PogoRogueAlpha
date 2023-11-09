@@ -39,6 +39,7 @@
     {"name":"spr_heart","order":2,"path":"sprites/spr_heart/spr_heart.yy",},
     {"name":"spr_slider_switch_outline","order":5,"path":"sprites/spr_slider_switch_outline/spr_slider_switch_outline.yy",},
     {"name":"spr_player_hurt","order":8,"path":"sprites/spr_player_hurt/spr_player_hurt.yy",},
+    {"name":"spr_palette","order":13,"path":"sprites/spr_palette/spr_palette.yy",},
     {"name":"spr_background","order":11,"path":"sprites/spr_background/spr_background.yy",},
     {"name":"obj_slider_grav","order":10,"path":"objects/obj_slider_grav/obj_slider_grav.yy",},
     {"name":"obj_walltoprightcorner","order":7,"path":"objects/obj_walltoprightcorner/obj_walltoprightcorner.yy",},

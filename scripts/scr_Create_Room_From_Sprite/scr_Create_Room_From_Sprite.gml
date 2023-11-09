@@ -1,8 +1,6 @@
 //Functions needed to read proc gen room sprites
 //ONLY CALL THESE FUNCTIONS IN THE DRAW EVENT
 
-//TODO: Complete implementation and test
-
 ///@description Creates a 1024x1024 proc gen room from sprite data whose bottom left corner is located at x_offset, y_offset
 /// @param spriteIndex
 /// @param x_offset
@@ -31,6 +29,7 @@ function Read_Sprite_To_Array(spriteIndex){
 	
 	//Read it into a buffer
 	buffer = buffer_getpixel_begin(surface)
+	var total = 0;
 	
 	//Create Array to store pixel data for easy access
 	for(var i = 0; i < width; i++)
@@ -41,7 +40,11 @@ function Read_Sprite_To_Array(spriteIndex){
 			pixelData[i][j] = 
 			[buffer_getpixel_r(buffer, i, j, width, height),
 			buffer_getpixel_g(buffer, i, j, width, height),
-			buffer_getpixel_b(buffer, i, j, width, height)];
+			buffer_getpixel_b(buffer, i, j, width, height),
+			buffer_getpixel_a(buffer, i, j, width, height)];
+			total++;
+			show_debug_message("Read buffer");
+			show_debug_message(total);
 		}
 	}
 	return pixelData;
@@ -49,20 +52,25 @@ function Read_Sprite_To_Array(spriteIndex){
 
 function Generate_Block_From_Pixel_Array(pixelArray, x_offset, y_offset)
 {
-	for(var i = 0; i < width; i++)
+	for(var i = 0; i < array_length(pixelArray); i++)
 	{
-		for(var j = 0; j < height; j++)
+		for(var j = 0; j <  array_length(pixelArray[0]); j++)
 		{
 			var RGB = pixelArray[i][j]
-			//TODO: Need to change offsets to be based on location of pixel in array
-			Create_Instance_From_RGB(RGB, x_offset, y_offset)
+			//Objects are placed within the pixel editor in 16 pixel increments, so offsets 
+			//are the initial block offset + 16 * their grid location
+			object_x_offset = x_offset + 16 * i;
+			object_y_offset = y_offset + 16 * j;
+			Create_Instance_From_RGB(RGB, object_x_offset, object_y_offset)
 		}
 	}
 }
 
-//TODO: Finish function
+
 function Create_Instance_From_RGB(RGB, x_offset, y_offset)
 {
-	objectToCreate = scr_Get_Object_From_RGB(RGB);
-	//instance_create
+	objectToCreate = scr_Get_Object_From_RGB(RGB[0], RGB[1], RGB[2], RGB[3]);
+	
+	if(objectToCreate != -1)
+	test = instance_create_layer(x_offset, y_offset, "Instances", objectToCreate);
 }

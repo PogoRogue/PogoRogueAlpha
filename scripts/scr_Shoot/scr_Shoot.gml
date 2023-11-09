@@ -44,12 +44,10 @@ function scr_Shoot(){
 			speed = 0;
 		}else if (gun.reset_momentum) {
 			speed = current_max + (vsp_basicjump*gun.momentum_added);	
-			show_debug_message("did not reset");
 		}
 		
 		//add momentum
 		motion_add(angle - 90, vsp_basicjump * gun.momentum_added);
-		show_debug_message("fired");
 		
 		//set max speed for auto weapons
 		if (speed > gun.max_speed and gun.full_auto = true) { //player cant exceed certain speed if full_auto = true

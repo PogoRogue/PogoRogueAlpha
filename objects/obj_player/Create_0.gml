@@ -186,7 +186,7 @@ scr_Guns();
 canshoot = 0; //shooting timer
 bullet_index = 0; //current bullet
 
-gun_array = [default_gun,paintball_gun,shotgun_gun,negev_gun,burstfire_gun];
+gun_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun];
 current_gun = 0;
 gun = gun_array[current_gun];
 

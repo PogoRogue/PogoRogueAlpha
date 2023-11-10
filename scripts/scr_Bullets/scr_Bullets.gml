@@ -44,16 +44,16 @@ function scr_Bullets(){
 		flash_frame: 0
 	};
 
-	speedup_bullet = {
-		sprite: spr_projectile_speedup,
-		gui_sprite: spr_projectile_speedup_gui,
+	bubble_bullet = {
+		sprite: spr_projectile_bubble,
+		gui_sprite: spr_projectile_bubble_gui,
 		spd: 6,                         
 		firerate_start: 2, //10            
 		firerate_end: 2,                
 		firerate_mult: 0.6,                
 		firerate: 3,                     
 		destroy_on_impact: true,
-		screen_shake: {magnitude: 1.5, frames: 5},
+		screen_shake: {magnitude: 0, frames: 0},
 		destroy_time: 18,
 		flash_frame: 5
 	};

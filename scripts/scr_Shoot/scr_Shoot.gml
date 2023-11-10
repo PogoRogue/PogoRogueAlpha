@@ -17,7 +17,8 @@ function scr_Shoot(){
 				spd: gun.ammo[bullet_index].spd,
 				destroy_on_impact: gun.ammo[bullet_index].destroy_on_impact,
 				destroy_time: gun.ammo[bullet_index].destroy_time,
-				flash_frame: gun.ammo[bullet_index].flash_frame
+				flash_frame: gun.ammo[bullet_index].flash_frame,
+				gun_name: gun.name
 			});
 			
 			//screen shake

@@ -15,3 +15,8 @@ with instance_create_depth(x,y,depth-1,obj_projectile_flash_effect) {
 if destroy_time != 0 {
 	alarm[0] = destroy_time;
 }
+
+//specific conditions
+if (gun_name = "Bubble Gun") {
+	spd += irandom_range(-4,0); //random speed for bubbles
+}

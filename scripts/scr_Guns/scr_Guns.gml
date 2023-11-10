@@ -59,10 +59,10 @@ function scr_Guns(){
 		max_speed: -vsp_basicjump          
 	};
 
-	negev_gun = {
-		name: "Frenzy Gun",  
+	bubble_gun = {
+		name: "Bubble Gun",  
 		sprite: spr_player,   
-		ammo: [speedup_bullet],
+		ammo: [bubble_bullet],
 		inaccuracy: 35,       
 		kick: 2,              
 		//sound: snd_nothing,
@@ -73,9 +73,9 @@ function scr_Guns(){
 		burst_delay: 0,     
 		momentum_added: 0.2, 
 		reset_momentum: false, 
-		bullets_per_bounce: 30,
-		current_bullets: 30,  
-		max_speed: 9       
+		bullets_per_bounce: 25,
+		current_bullets: 25,  
+		max_speed: 8.5  
 	};
 
 	burstfire_gun = {

@@ -8,7 +8,7 @@ show_debug_message("Random seed: " + string(seed));
 
 // What coordinate should our first room be at?
 startCoord = irandom(gridSize);
-var currentY = gridSize;
+var currentY = gridSize+1;
 var currentX = startCoord;
 
 // Our prebuilt rooms and their dimensions
@@ -19,7 +19,6 @@ ds_list_add(prebuilt_rooms, [4, 3, "b2"]);
 ds_list_add(prebuilt_rooms, [3, 4, "b3"]);
 ds_list_add(prebuilt_rooms, [4, 4, "b4"]);
 
-ds_grid_set(layoutGrid, currentX, currentY, "s"); // Set our starting point
 ds_list_shuffle(prebuilt_rooms); // Shuffle our rooms, THIS IS SEEDED!
 
 room_number = 4; // !! TEMP VARIABLE. How many rooms to generate
@@ -31,22 +30,26 @@ for (var rCount = 0; rCount < room_number; rCount++) {
 	var rHeight = r[1];
 	var room_id = r[2];
 	show_debug_message(room_id)
-	
-	var randomnum = irandom_range(1, 7);
-	//show_debug_message(randomnum);
-	currentY -= rHeight; // Move up by the height of our current room & random spacing
+	show_debug_message("before subtraction " + string(currentY));
+	currentY -= rHeight;
 	show_debug_message("Y" + string(currentY));
 	currentX = irandom(gridSize - rWidth); // Random X axis placement
 	show_debug_message("X:" + string(currentX));
 	
 	// Ensure rooms are in the grid bounds
-	if (currentY >= 0 && currentX >= 0 && currentY + rHeight < gridSize && currentX + rWidth < gridSize) {
+	if (
+		currentY >= 0 && 
+		currentX >= 0 && 
+		currentY + rHeight <= gridSize+1 && 
+		currentX + rWidth <= gridSize
+	) {
 		for (var roomX = currentX; roomX < currentX + rWidth; roomX++) {
 			for (var roomY = currentY; roomY < currentY + rHeight; roomY++) {
 				ds_grid_set(layoutGrid, roomX, roomY, room_id)
 			}
 		}
 	}
+	currentY -= irandom_range(1, 3) // Move up by the height of our current room & random spacing
 }
 
 // Show the grid in the console

@@ -55,7 +55,7 @@ function scr_Bullets(){
 		destroy_on_impact: true,
 		screen_shake: {magnitude: 0, frames: 0},
 		destroy_time: 18,
-		flash_frame: 5
+		flash_frame: 11
 	};
 
 	burstfire_bullet = {

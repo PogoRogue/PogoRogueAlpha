@@ -9,7 +9,11 @@ scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16,40,gun.name,make
 //draw ammo
 var ammo = gun.ammo[bullet_index];
 for(i = 0; i < gun.bullets_per_bounce; i++) {
-	draw_sprite(ammo.gui_sprite,i+gun.current_bullets<gun.bullets_per_bounce,(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),16);
+	if (gun_array[current_gun] != paintball_gun) {
+		draw_sprite(ammo.gui_sprite,i+gun.current_bullets<gun.bullets_per_bounce,(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),16); 
+	}else {
+		draw_sprite(ammo.gui_sprite,((i+gun.current_bullets<gun.bullets_per_bounce)*10)+((i+gun.current_bullets>=gun.bullets_per_bounce)*i),(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),16); 
+	}
 }
 
 //coins

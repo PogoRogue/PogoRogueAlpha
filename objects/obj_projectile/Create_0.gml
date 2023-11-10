@@ -1,5 +1,6 @@
 /// @description initialize variables
 image_index = 0;
+image_speed = 0;
 damage = 4;
 
 with instance_create_depth(x,y,depth-1,obj_projectile_flash_effect) {
@@ -19,4 +20,9 @@ if destroy_time != 0 {
 //specific conditions
 if (gun_name = "Bubble Gun") {
 	spd += irandom_range(-4,0); //random speed for bubbles
+}
+if (gun_name = "Paintball Gun") {
+	with obj_player {
+		other.image_index = gun.bullets_per_bounce - gun.current_bullets;
+	}
 }

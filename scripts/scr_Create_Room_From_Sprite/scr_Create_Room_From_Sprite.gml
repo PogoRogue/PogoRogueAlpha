@@ -10,7 +10,7 @@ function scr_Create_Room_From_Sprite(spriteIndex, x_offset, y_offset){
 	pixelArray = Read_Sprite_To_Array(spriteIndex);
 	
 	//Create all objects corresponding to the pixel data with matching offsets
-	Generate_Block_From_Pixel_Array(pixelArray, x_offset, y_offset)	
+	return Generate_Block_From_Pixel_Array(pixelArray, x_offset, y_offset)	
 }
 
 
@@ -52,6 +52,7 @@ function Read_Sprite_To_Array(spriteIndex){
 
 function Generate_Block_From_Pixel_Array(pixelArray, x_offset, y_offset)
 {
+	object_queue = ds_queue_create();
 	for(var i = 0; i < array_length(pixelArray); i++)
 	{
 		for(var j = 0; j <  array_length(pixelArray[0]); j++)
@@ -59,11 +60,13 @@ function Generate_Block_From_Pixel_Array(pixelArray, x_offset, y_offset)
 			var RGB = pixelArray[i][j]
 			//Objects are placed within the pixel editor in 16 pixel increments, so offsets 
 			//are the initial block offset + 16 * their grid location
-			object_x_offset = x_offset + 16 * i;
-			object_y_offset = y_offset + 16 * j;
-			Create_Instance_From_RGB(RGB, object_x_offset, object_y_offset)
+			var object_x_offset = x_offset + 16 * i;
+			var object_y_offset = y_offset + 16 * j;
+			var new_object = Create_Instance_From_RGB(RGB, object_x_offset, object_y_offset)
+			ds_queue_enqueue(object_queue, new_object);
 		}
 	}
+	return object_queue;
 }
 
 
@@ -72,5 +75,6 @@ function Create_Instance_From_RGB(RGB, x_offset, y_offset)
 	objectToCreate = scr_Get_Object_From_RGB(RGB[0], RGB[1], RGB[2], RGB[3]);
 	
 	if(objectToCreate != -1)
-	test = instance_create_layer(x_offset, y_offset, "Instances", objectToCreate);
+	return instance_create_layer(x_offset, y_offset, "Instances", objectToCreate);
+	
 }

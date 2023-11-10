@@ -1,166 +1,53 @@
 // Create a grid to hold our layout
-gridSize = 12;
+gridSize = 20;
 layoutGrid = ds_grid_create(gridSize+1, gridSize+1); // +1 since we start at 0
-downEnable = true;
-randomize();
 
+// Print what seed we're currently on
+var seed = randomize();
+show_debug_message("Random seed: " + string(seed));
 
 // What coordinate should our first room be at?
 startCoord = irandom(gridSize);
 var currentY = gridSize;
 var currentX = startCoord;
-	
-ds_grid_set(layoutGrid, currentX, currentY, "s");
-while(currentY != 0) {
-	var nextCoord = chooseNext(currentX, currentY);	
-	if (nextCoord = 0) { // up
-		currentY--;
-		ds_grid_set(layoutGrid, currentX, currentY, 1);
-	}
-	if (nextCoord = 1) { // left
-		currentX--;
-		ds_grid_set(layoutGrid, currentX, currentY, 1);
-	}
-	if (nextCoord = 2) { // right
-		currentX++;
-		ds_grid_set(layoutGrid, currentX, currentY, 1);
-	}
-	if (nextCoord = 3) { // down
-		currentY++;
-		ds_grid_set(layoutGrid, currentX, currentY, 1);
-	}
-}
-ds_grid_set(layoutGrid, currentX, currentY, "f");
-//change_grid_numbers();
 
-function chooseNext(currentX, currentY) {
-	// look at points around current, pick valid points
-	current_grid = ds_grid_get(layoutGrid, currentX, currentY);
-	var up, left, right, down = false;
-	up = isValidGrid(currentX, currentY-1);
-	left = isValidGrid(currentX-1, currentY);
-	right = isValidGrid(currentX+1, currentY);
-	down = isValidGrid(currentX, currentY+1);
-	
-	list = ds_list_create();
-	if (up) {
-		ds_list_add(list, 0);
-	}
-	if (left) {
-		ds_list_add(list, 1);
-	}
-	if (right) {
-		ds_list_add(list, 2);
-	}
-	if (down && downEnable) {
-		ds_list_add(list, 3);
-	}
-	rand = irandom(ds_list_size(list)-1);
-	return ds_list_find_value(list, rand);
-}
+// Our prebuilt rooms and their dimensions
+// Room format: [width, height, room_id]
+var prebuilt_rooms = ds_list_create();
+ds_list_add(prebuilt_rooms, [3, 3, "b1"]);
+ds_list_add(prebuilt_rooms, [4, 3, "b2"]);
+ds_list_add(prebuilt_rooms, [3, 4, "b3"]);
+ds_list_add(prebuilt_rooms, [4, 4, "b4"]);
 
-function isValidGrid(curX, curY) {
-	if (curX > gridSize || curX < 0 || curY > gridSize || curY < 0) {
-		return false;	
-	}
-	current_grid = ds_grid_get(layoutGrid, curX, curY);
-	if (current_grid != 0) {
-		return false;
-	}
-	
-	var adjacents = 0;
-	if (curX+1 <= gridSize && curX+1 >= 0) {
-		if (ds_grid_get(layoutGrid, curX+1, curY) != 0) {
-			adjacents++;
-		}
-	}
-	if (curX-1 <= gridSize && curX-1 >= 0) {
-		if (ds_grid_get(layoutGrid, curX-1, curY) != 0) {
-			adjacents++;
-		}
-	}
-	if (curY+1 <= gridSize && curY+1 >= 0) {
-		if (ds_grid_get(layoutGrid, curX, curY+1) != 0) {
-			adjacents++;
-		}
-	}
-	if (curY-1 <= gridSize && curY-1 >= 0) {
-		if (ds_grid_get(layoutGrid, curX, curY-1) != 0) {
-			adjacents++;
-		}
-	}
-	if (adjacents > 1) {
-		return false;
-	}
-	
-	return true; // Valid room
-}
+ds_grid_set(layoutGrid, currentX, currentY, "s"); // Set our starting point
+ds_list_shuffle(prebuilt_rooms); // Shuffle our rooms, THIS IS SEEDED!
 
-/* Go through our grid and decide what numbers should be placed
- 1 for up+down
- 2 for left+right
- 3 for up+right
- 4 for up+left
- 5 for down+right
- 6 for down+left
- 7 for up+right+left
- 8 for up+down+right
- 9 for up+down+left 
-*/
-/*
-function change_grid_numbers() {
-	currentY = gridSize;
-	currentX = startCoord;
-	var number = 1;
-	up = holds_room(currentX, currentY-1);
-	left = holds_room(currentX-1, currentY);
-	right = holds_room(currentX+1, currentY);
-	down = holds_room(currentX, currentY+1);
-	
-	switch (number) {
-		case (up and down):
-			number = 1;
-		break;
-	}
-}
+room_number = 4; // !! TEMP VARIABLE. How many rooms to generate
 
-function holds_room(curX, curY) {
-	if (curX > gridSize || curX < 0 || curY > gridSize || curY < 0) {
-		return false;	
-	}
-	current_grid = ds_grid_get(layoutGrid, curX, curY);
-	if (current_grid != 0) {
-		return true;
-	}
+for (var rCount = 0; rCount < room_number; rCount++) {
+	var room_index = choose(0,1,2,3); // Pick a random prebuilt_room
+	var r = ds_list_find_value(prebuilt_rooms, room_index); 
+	var rWidth = r[0];
+	var rHeight = r[1];
+	var room_id = r[2];
+	show_debug_message(room_id)
 	
-	var adjacents = 0;
-	if (curX+1 <= gridSize && curX+1 >= 0) {
-		if (ds_grid_get(layoutGrid, curX+1, curY) != 0) {
-			adjacents++;
-		}
-	}
-	if (curX-1 <= gridSize && curX-1 >= 0) {
-		if (ds_grid_get(layoutGrid, curX-1, curY) != 0) {
-			adjacents++;
-		}
-	}
-	if (curY+1 <= gridSize && curY+1 >= 0) {
-		if (ds_grid_get(layoutGrid, curX, curY+1) != 0) {
-			adjacents++;
-		}
-	}
-	if (curY-1 <= gridSize && curY-1 >= 0) {
-		if (ds_grid_get(layoutGrid, curX, curY-1) != 0) {
-			adjacents++;
-		}
-	}
-	if (adjacents > 1) {
-		return false;
-	}
+	var randomnum = irandom_range(1, 7);
+	//show_debug_message(randomnum);
+	currentY -= rHeight; // Move up by the height of our current room & random spacing
+	show_debug_message("Y" + string(currentY));
+	currentX = irandom(gridSize - rWidth); // Random X axis placement
+	show_debug_message("X:" + string(currentX));
 	
-	return true; // Room exists
+	// Ensure rooms are in the grid bounds
+	if (currentY >= 0 && currentX >= 0 && currentY + rHeight < gridSize && currentX + rWidth < gridSize) {
+		for (var roomX = currentX; roomX < currentX + rWidth; roomX++) {
+			for (var roomY = currentY; roomY < currentY + rHeight; roomY++) {
+				ds_grid_set(layoutGrid, roomX, roomY, room_id)
+			}
+		}
+	}
 }
-*/
 
 // Show the grid in the console
 for (var i = 0; i < gridSize+1; i++) {

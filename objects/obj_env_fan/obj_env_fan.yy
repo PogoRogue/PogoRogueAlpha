@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_env_fan",
-    "path": "sprites/spr_env_fan/spr_env_fan.yy",
+    "name": "spr_env_fan2",
+    "path": "sprites/spr_env_fan2/spr_env_fan2.yy",
   },
   "spriteMaskId": null,
   "visible": true,

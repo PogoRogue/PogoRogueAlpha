@@ -29,6 +29,7 @@
     {"name":"Tile Sets","order":13,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":14,"path":"folders/Timelines.yy",},
     {"name":"Items","order":14,"path":"folders/Sprites/Items.yy",},
+    {"name":"Sandbox Rooms","order":2,"path":"folders/Rooms/Sandbox Rooms.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_textgoal","order":23,"path":"objects/obj_textgoal/obj_textgoal.yy",},
@@ -130,6 +131,7 @@
     {"name":"spr_env_air_effect","order":4,"path":"sprites/spr_env_air_effect/spr_env_air_effect.yy",},
     {"name":"spr_conveyor_belt","order":2,"path":"sprites/spr_conveyor_belt/spr_conveyor_belt.yy",},
     {"name":"spr_player_dead","order":1,"path":"sprites/spr_player_dead/spr_player_dead.yy",},
+    {"name":"spr_electric_floor_powering_on","order":5,"path":"sprites/spr_electric_floor_powering_on/spr_electric_floor_powering_on.yy",},
     {"name":"obj_instructions","order":6,"path":"objects/obj_instructions/obj_instructions.yy",},
     {"name":"spr_electric_floor_on","order":1,"path":"sprites/spr_electric_floor_on/spr_electric_floor_on.yy",},
     {"name":"spr_player_falling2_hurt","order":6,"path":"sprites/spr_player_falling2_hurt/spr_player_falling2_hurt.yy",},

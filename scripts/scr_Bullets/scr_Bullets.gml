@@ -13,7 +13,11 @@ function scr_Bullets(){
 		destroy_on_impact: true,        //destroy when touching ground or not
 		screen_shake: {magnitude: 2.5, frames: 10}, //screen shake, magnitude = distance rance in pixels, frames = # of frames (60 = 1 second)
 		destroy_time: 0,                 //frames to destroy projectile after spawn, 0 = no destroy time
-		flash_frame: 2                //how big of a flash you want the bullet to make, 0 = biggest, 12 = nothing/smallest
+		flash_frame: 2,                  //how big of a flash you want the bullet to make, 0 = biggest, 12 = nothing/smallest
+		grav_affected: false,            //is this bullet affected by gravity
+		grv: obj_player.grv,             //amount of gravity added per frame
+		num_of_bounces: 0,               //how many times will this bullet bounce before being destroyed
+		bounce_amount: 1                 //multiply hspeed/vspeed by this amount per bounce, 1 = no slowdown 
 	};
 
 	paintball_bullet = {
@@ -27,7 +31,11 @@ function scr_Bullets(){
 		destroy_on_impact: true,
 		screen_shake: {magnitude: 2, frames: 8},
 		destroy_time: 0,
-		flash_frame: 4
+		flash_frame: 4,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0,
+		bounce_amount: 1
 	};
 
 	shotgun_bullet = {
@@ -41,7 +49,11 @@ function scr_Bullets(){
 		destroy_on_impact: true,
 		screen_shake: {magnitude: 6, frames: 15},
 		destroy_time: 10,
-		flash_frame: 0
+		flash_frame: 0,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0,
+		bounce_amount: 1
 	};
 
 	bubble_bullet = {
@@ -54,8 +66,12 @@ function scr_Bullets(){
 		firerate: 3,                     
 		destroy_on_impact: true,
 		screen_shake: {magnitude: 0, frames: 0},
-		destroy_time: 18,
-		flash_frame: 11
+		destroy_time: 20,
+		flash_frame: 11,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0,
+		bounce_amount: 1
 	};
 
 	burstfire_bullet = {
@@ -69,6 +85,28 @@ function scr_Bullets(){
 		destroy_on_impact: true,
 		screen_shake: {magnitude: 3, frames: 6},
 		destroy_time: 0,
-		flash_frame: 1
+		flash_frame: 1,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0,
+		bounce_amount: 1
+	};
+	
+	grenade_bullet = {
+		sprite: spr_projectile_grenade,
+		gui_sprite: spr_projectile_grenade_gui,
+		spd: 5,                       
+		firerate_start: 1,            
+		firerate_end: 1,           
+		firerate_mult: 0,              
+		firerate: 1,                 
+		destroy_on_impact: true,
+		screen_shake: {magnitude: 3, frames: 6},
+		destroy_time: 0,
+		flash_frame: 1,
+		grav_affected: true,
+		grv: obj_player.grv,
+		num_of_bounces: 1,
+		bounce_amount: 0.8
 	};
 }

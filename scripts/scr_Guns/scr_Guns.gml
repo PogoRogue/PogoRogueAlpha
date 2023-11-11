@@ -96,4 +96,23 @@ function scr_Guns(){
 		current_bullets: 9,  
 		max_speed: -vsp_basicjump
 	};	
+	
+	grenade_gun = {
+		name: "Grenade Launcher",  
+		sprite: spr_player,   
+		ammo: [grenade_bullet],
+		inaccuracy: 0,       
+		kick: 2,              
+		//sound: snd_nothing,
+		spread_number: 1,    
+		spread_angle: 0,    
+		full_auto: false,     
+		burst_number: 1,     
+		burst_delay: 0,     
+		momentum_added: 0.9, 
+		reset_momentum: true, 
+		bullets_per_bounce: 3,
+		current_bullets: 3,  
+		max_speed: -vsp_basicjump
+	};	
 }

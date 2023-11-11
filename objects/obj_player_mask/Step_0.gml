@@ -10,13 +10,11 @@ if (parent_index.state != parent_index.state_bouncing)
 //left correct direction
 if (place_meeting(x+parent_index.hspeed,y,obj_wallleft)) and parent_index.hspeed > 0 {
 	parent_index.hspeed *= -0.5;
-	//parent_index.state = state_wallstun;
 }
 
 //right correct direction
 if (place_meeting(x+parent_index.hspeed,y,obj_wallright)) and parent_index.hspeed < 0 {
 	parent_index.hspeed *= -0.5;
-	//parent_index.state = state_wallstun;
 }
 
 //bottom

@@ -7,4 +7,5 @@ function scr_Retract_Laser(){
 		other.sprite_index = other.init_sprite;
 		other.image_index = sprite_get_number(other.sprite_index)-3;
 	}
+	rotation_speed = other.rotation_speed;
 }

@@ -54,6 +54,8 @@ if (gun_name = "Laser Gun") {
 		//screen shake
 		if (other.laser_boost){
 			scr_Screen_Shake(2,1);
+			gamepad_set_vibration(0, 0.25, 0.25);
+			rotation_speed = other.rotation_speed * 0.75;
 		}
 		
 		//retract laser if not firing

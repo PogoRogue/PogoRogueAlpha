@@ -31,6 +31,11 @@ if (place_meeting(x,y+parent_index.vspeed,obj_walltopleftcorner) and parent_inde
 	}
 	
 	parent_index.vspeed *= -0.5;
+	
+	//prevent groundpound collision glitch
+	if parent_index.state = parent_index.state_groundpound {
+		parent_index.state = parent_index.state_free;
+	}
 }
 
 
@@ -42,5 +47,10 @@ if (place_meeting(x,y+parent_index.vspeed,obj_walltoprightcorner) and parent_ind
 		parent_index.hspeed = 2;
 	}
 	parent_index.vspeed *= -0.5;
+	
+	//prevent groundpound collision glitch
+	if parent_index.state = parent_index.state_groundpound {
+		parent_index.state = parent_index.state_free;
+	}
 }
 

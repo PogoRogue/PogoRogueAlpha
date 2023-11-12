@@ -44,6 +44,7 @@ if (gun_name = "Laser Gun") {
 	laser_boost = false; //only apply momentum if this is true
 	mask_index = spr_nothing;
 	image_speed = 1;
+	rotation_speed = obj_player.rotation_speed;
 	
 	//create rest of laser
 	for (i = 2; i < 48; i++) {
@@ -55,6 +56,7 @@ if (gun_name = "Laser Gun") {
 			destroy_on_impact: destroy_on_impact,
 			full_sprite: spr_projectile_laser,
 			mask_index: spr_nothing,
+			rotation_speed: rotation_speed
 		});
 	}
 }

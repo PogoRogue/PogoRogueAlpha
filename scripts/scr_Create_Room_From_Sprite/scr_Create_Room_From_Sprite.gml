@@ -43,8 +43,6 @@ function Read_Sprite_To_Array(spriteIndex){
 			buffer_getpixel_b(buffer, i, j, width, height),
 			buffer_getpixel_a(buffer, i, j, width, height)];
 			total++;
-			show_debug_message("Read buffer");
-			show_debug_message(total);
 		}
 	}
 	return pixelData;

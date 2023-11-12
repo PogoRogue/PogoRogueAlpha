@@ -38,6 +38,8 @@
     {"name":"DL","order":6,"path":"folders/Sprites/ProcGenLevelData/DL.yy",},
     {"name":"UL","order":7,"path":"folders/Sprites/ProcGenLevelData/UL.yy",},
     {"name":"UR","order":8,"path":"folders/Sprites/ProcGenLevelData/UR.yy",},
+    {"name":"PrebuiltRooms","order":9,"path":"folders/Sprites/ProcGenLevelData/PrebuiltRooms.yy",},
+    {"name":"3x3","order":1,"path":"folders/Sprites/ProcGenLevelData/PrebuiltRooms/3x3.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_textgoal","order":23,"path":"objects/obj_textgoal/obj_textgoal.yy",},

@@ -15,16 +15,16 @@ var currentX = startCoord;
 // Room format: [width, height, room_id]
 var prebuilt_rooms = ds_list_create();
 ds_list_add(prebuilt_rooms, [3, 3, "b1"]);
-ds_list_add(prebuilt_rooms, [4, 3, "b2"]);
-ds_list_add(prebuilt_rooms, [3, 4, "b3"]);
-ds_list_add(prebuilt_rooms, [4, 4, "b4"]);
+//ds_list_add(prebuilt_rooms, [4, 3, "b2"]);
+//ds_list_add(prebuilt_rooms, [3, 4, "b3"]);
+//ds_list_add(prebuilt_rooms, [4, 4, "b4"]);
 
 ds_list_shuffle(prebuilt_rooms); // Shuffle our rooms, THIS IS SEEDED!
 
 room_number = 4; // !! TEMP VARIABLE. How many rooms to generate
 
 for (var rCount = 0; rCount < room_number; rCount++) {
-	var room_index = choose(0,1,2,3); // Pick a random prebuilt_room
+	var room_index = choose(0);//,1,2,3); // Pick a random prebuilt_room
 	var r = ds_list_find_value(prebuilt_rooms, room_index); 
 	var rWidth = r[0];
 	var rHeight = r[1];
@@ -61,3 +61,7 @@ for (var i = 0; i < gridSize+1; i++) {
 	}
 	show_debug_message(row);	
 }
+
+show_debug_message("done");
+
+return layoutGrid;

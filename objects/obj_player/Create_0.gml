@@ -204,10 +204,11 @@ state_groundpound = function() {
 		can_rotate = false;
 		vspeed = 0;
 		if (angle != 0)	{
-			var angle_side = sign(angle)
+			var angle_side = sign(angle);
 			angle += rotation_speed*sign(-angle);
 			if (sign(angle) != angle_side) {
 				angle = 0;
+				current_rotation_speed = 0;
 			}
 		}
 		

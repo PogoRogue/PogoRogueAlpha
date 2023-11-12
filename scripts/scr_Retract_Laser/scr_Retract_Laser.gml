@@ -8,4 +8,6 @@ function scr_Retract_Laser(){
 		other.image_index = sprite_get_number(other.sprite_index)-3;
 	}
 	rotation_speed = other.rotation_speed;
+	rotation_delay = rotation_speed / 7;
+	angle = round(angle / other.rotation_speed)*other.rotation_speed;
 }

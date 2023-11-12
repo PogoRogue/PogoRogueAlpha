@@ -177,6 +177,8 @@ state_bouncing = function() {
 
 state_charging = function() {
 	
+	vsp_basicjump = -6.6;
+	
 	// Conveyor belt handling
 	scr_Conveyor_Belt();
 	

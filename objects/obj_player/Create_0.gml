@@ -49,8 +49,8 @@ falling_sprite = spr_player_zekai_falling;
 falling_sprite2 = spr_player_zekai_falling;
 
 // Stats
-hp = 24;
-max_hp = 24;
+hp = 40;
+max_hp = 40;
 stomp_damage = 8;
 num_iframes = room_speed;
 current_iframes = 0;
@@ -215,7 +215,7 @@ state_groundpound = function() {
 			ground_pound_distance_risen += 1;
 			with (msk_index) {
 				if !place_meeting(x,y-1,obj_ground) {
-					other.y -= 1;	
+					other.vspeed = -1;	
 				}
 			}
 		}else {
@@ -261,7 +261,7 @@ scr_Guns();
 canshoot = 0; //shooting timer
 bullet_index = 0; //current bullet
 
-gun_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun];
+gun_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun];
 current_gun = 0;
 gun = gun_array[current_gun];
 

@@ -5,4 +5,6 @@ if(!other.is_dead && other.current_iframes <= 0) {
 	other.red_frames = 10;
 }
 
-instance_destroy();
+if (destroy_on_impact) {
+	instance_destroy();
+}

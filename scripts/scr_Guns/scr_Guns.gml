@@ -115,4 +115,23 @@ function scr_Guns(){
 		current_bullets: 3,  
 		max_speed: -vsp_basicjump
 	};	
+	
+	laser_gun = {
+		name: "Laser Gun",  
+		sprite: spr_player,   
+		ammo: [laser_bullet],
+		inaccuracy: 0,       
+		kick: 2,              
+		//sound: snd_nothing,
+		spread_number: 1,    
+		spread_angle: 0,    
+		full_auto: false,     
+		burst_number: 1,     
+		burst_delay: 0,     
+		momentum_added: 0.075, 
+		reset_momentum: false, 
+		bullets_per_bounce: 80,
+		current_bullets: 80,  
+		max_speed: -vsp_basicjump
+	};	
 }

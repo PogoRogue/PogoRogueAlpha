@@ -10,10 +10,9 @@ if instance_exists(obj_player) {
 	//launch player
 	if (place_meeting(x-obj_player.hspeed,y-obj_player.vspeed,obj_player_mask) and launched = false)
 	or (place_meeting(x-obj_player.hspeed,y-obj_player.vspeed,obj_player) and launched = false) {
-		obj_player.speed = clamp(512/point_distance(x,y,player_x,player_y),0,8);
+		obj_player.speed = clamp(512/point_distance(x,y,player_x,player_y)+1,0,8);
 		obj_player.direction = point_direction(x,y,player_x,player_y);
 		obj_player.free = true;
-		//obj_player.state = obj_player.state_free;
 		launched = true;
 	}
 

@@ -129,6 +129,7 @@
     {"name":"inst_29F8CBF3","path":"rooms/room_sam_movement/room_sam_movement.yy",},
     {"name":"inst_2978B6ED","path":"rooms/room_sam_movement/room_sam_movement.yy",},
     {"name":"inst_261E3F8","path":"rooms/room_sam_movement/room_sam_movement.yy",},
+    {"name":"inst_10F8C523","path":"rooms/room_sam_movement/room_sam_movement.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -255,6 +256,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_29F8CBF3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_conveyor_belt","path":"objects/obj_conveyor_belt/obj_conveyor_belt.yy",},"properties":[],"rotation":0.0,"scaleX":-23.0,"scaleY":1.0,"x":2240.0,"y":2416.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2978B6ED","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_conveyor_belt","path":"objects/obj_conveyor_belt/obj_conveyor_belt.yy",},"properties":[],"rotation":0.0,"scaleX":23.0,"scaleY":1.0,"x":1760.0,"y":2224.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_261E3F8","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_player_health","path":"objects/obj_player_health/obj_player_health.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":80.0,"y":96.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_10F8C523","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_shieldtest","path":"objects/obj_enemy_shieldtest/obj_enemy_shieldtest.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1024.0,"y":2832.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":{"name":"spr_background2","path":"sprites/spr_background2/spr_background2.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
   ],

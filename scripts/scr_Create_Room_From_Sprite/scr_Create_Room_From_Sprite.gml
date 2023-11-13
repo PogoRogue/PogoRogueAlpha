@@ -56,10 +56,11 @@ function Generate_Block_From_Pixel_Array(pixelArray, x_offset, y_offset)
 		for(var j = 0; j <  array_length(pixelArray[0]); j++)
 		{
 			var RGB = pixelArray[i][j]
+			var grid_size = 16;
 			//Objects are placed within the pixel editor in 16 pixel increments, so offsets 
 			//are the initial block offset + 16 * their grid location
-			var object_x_offset = x_offset + 16 * i;
-			var object_y_offset = y_offset + 16 * j;
+			var object_x_offset = x_offset + grid_size * i;
+			var object_y_offset = y_offset + grid_size * j;
 			var new_object = Create_Instance_From_RGB(RGB, object_x_offset, object_y_offset)
 			ds_queue_enqueue(object_queue, new_object);
 		}

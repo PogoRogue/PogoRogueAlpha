@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "spritePixelReading",
-    "path": "folders/Scripts/spritePixelReading.yy",
+    "name": "Proc Gen",
+    "path": "folders/Scripts/Proc Gen.yy",
   },
 }

@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "buffer_getpixel_r",
+  "name": "scr_Convert_Layout_To_Rooms",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

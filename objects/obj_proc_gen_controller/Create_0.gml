@@ -4,10 +4,10 @@ block_to_create = choose(spr_u1);
 x_offset = 0;
 y_offset = 1000;
 
-global.BLOCK_SIZE = 64; //The size of the proc gen blocks. This is the size all
-//proc gen sprites need to be. Don't change this number unless you change every proc gen sprite
+rooms_to_generate = 3;
 
-scr_Generate_Level_Layout();
+layoutGrid = scr_Generate_Level_Layout(rooms_to_generate);
 
+show_debug_message("done generating layout");
 
 

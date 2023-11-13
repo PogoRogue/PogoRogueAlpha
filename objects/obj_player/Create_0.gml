@@ -121,10 +121,11 @@ state_free = function() {
 		image_index = 0;
 	}
 	
-	//restart room if reached the top
-	if (bbox_bottom < 0 and mask_index != spr_nothing) {
-		room_restart();
-	}
+	//Turned off for proc gen
+	////restart room if reached the top
+	//if (bbox_bottom < 0 and mask_index != spr_nothing) {
+	//	room_restart();
+	//}
 }
 
 state_bouncing = function() {

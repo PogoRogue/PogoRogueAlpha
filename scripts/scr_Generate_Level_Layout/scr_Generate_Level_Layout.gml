@@ -1,13 +1,13 @@
 // Create a grid to hold our layout
-gridSize = 20;
-layoutGrid = ds_grid_create(gridSize+1, gridSize+1); // +1 since we start at 0
+var gridSize = 20;
+var layoutGrid = ds_grid_create(gridSize+1, gridSize+1); // +1 since we start at 0
 
 // Print what seed we're currently on
 var seed = randomize();
 show_debug_message("Random seed: " + string(seed));
 
 // What coordinate should our first room be at?
-startCoord = irandom(gridSize);
+var startCoord = irandom(gridSize);
 var currentY = gridSize+1;
 var currentX = startCoord;
 
@@ -21,7 +21,7 @@ ds_list_add(prebuilt_rooms, [3, 3, "b1"]);
 
 ds_list_shuffle(prebuilt_rooms); // Shuffle our rooms, THIS IS SEEDED!
 
-room_number = 4; // !! TEMP VARIABLE. How many rooms to generate
+var room_number = 4; // !! TEMP VARIABLE. How many rooms to generate
 
 for (var rCount = 0; rCount < room_number; rCount++) {
 	var room_index = choose(0);//,1,2,3); // Pick a random prebuilt_room
@@ -64,4 +64,4 @@ for (var i = 0; i < gridSize+1; i++) {
 
 show_debug_message("done");
 
-return layoutGrid;
+return [layoutGrid];

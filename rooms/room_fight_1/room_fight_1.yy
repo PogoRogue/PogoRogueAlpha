@@ -63,9 +63,10 @@
     {"name":"inst_397A28FF","path":"rooms/room_fight_1/room_fight_1.yy",},
     {"name":"inst_49D16397","path":"rooms/room_fight_1/room_fight_1.yy",},
     {"name":"inst_6DDB4B6B","path":"rooms/room_fight_1/room_fight_1.yy",},
-    {"name":"inst_19E96777","path":"rooms/room_fight_1/room_fight_1.yy",},
     {"name":"inst_1004A556","path":"rooms/room_fight_1/room_fight_1.yy",},
     {"name":"inst_35AC9D42","path":"rooms/room_fight_1/room_fight_1.yy",},
+    {"name":"inst_3A5C08B0","path":"rooms/room_fight_1/room_fight_1.yy",},
+    {"name":"inst_6B4DBCAC","path":"rooms/room_fight_1/room_fight_1.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -83,7 +84,8 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_397A28FF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_flying","path":"objects/obj_enemy_flying/obj_enemy_flying.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":912.0,"y":464.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_49D16397","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_generic","path":"objects/obj_enemy_generic/obj_enemy_generic.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":656.0,"y":640.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6DDB4B6B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_turret","path":"objects/obj_enemy_turret/obj_enemy_turret.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":672.0,"y":592.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_19E96777","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_shooter_explode","path":"objects/obj_enemy_shooter_explode/obj_enemy_shooter_explode.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":752.0,"y":240.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3A5C08B0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_shoot_only","path":"objects/obj_enemy_shoot_only/obj_enemy_shoot_only.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1040.0,"y":1056.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6B4DBCAC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_shooter_explode_r","path":"objects/obj_enemy_shooter_explode_r/obj_enemy_shooter_explode_r.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":752.0,"y":240.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"hazards","depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_28AFEFB9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_env_fan","path":"objects/obj_env_fan/obj_env_fan.yy",},"properties":[],"rotation":90.0,"scaleX":1.0,"scaleY":1.0,"x":224.0,"y":1088.0,},

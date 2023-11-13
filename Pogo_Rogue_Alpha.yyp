@@ -89,6 +89,7 @@
     {"id":{"name":"scr_Conveyor_Belt","path":"scripts/scr_Conveyor_Belt/scr_Conveyor_Belt.yy",},},
     {"id":{"name":"buffer_getpixel_ext","path":"scripts/buffer_getpixel_ext/buffer_getpixel_ext.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
+    {"id":{"name":"scr_Choose_Block_To_Generate","path":"scripts/scr_Choose_Block_To_Generate/scr_Choose_Block_To_Generate.yy",},},
     {"id":{"name":"spr_enemy_stomp_only","path":"sprites/spr_enemy_stomp_only/spr_enemy_stomp_only.yy",},},
     {"id":{"name":"obj_ground_tiles","path":"objects/obj_ground_tiles/obj_ground_tiles.yy",},},
     {"id":{"name":"spr_player_hurt_red","path":"sprites/spr_player_hurt_red/spr_player_hurt_red.yy",},},

@@ -62,6 +62,7 @@
     {"name":"scr_Conveyor_Belt","order":4,"path":"scripts/scr_Conveyor_Belt/scr_Conveyor_Belt.yy",},
     {"name":"buffer_getpixel_ext","order":4,"path":"scripts/buffer_getpixel_ext/buffer_getpixel_ext.yy",},
     {"name":"obj_camera","order":1,"path":"objects/obj_camera/obj_camera.yy",},
+    {"name":"scr_Choose_Block_To_Generate","order":12,"path":"scripts/scr_Choose_Block_To_Generate/scr_Choose_Block_To_Generate.yy",},
     {"name":"spr_enemy_stomp_only","order":31,"path":"sprites/spr_enemy_stomp_only/spr_enemy_stomp_only.yy",},
     {"name":"obj_ground_tiles","order":9,"path":"objects/obj_ground_tiles/obj_ground_tiles.yy",},
     {"name":"spr_player_hurt_red","order":9,"path":"sprites/spr_player_hurt_red/spr_player_hurt_red.yy",},

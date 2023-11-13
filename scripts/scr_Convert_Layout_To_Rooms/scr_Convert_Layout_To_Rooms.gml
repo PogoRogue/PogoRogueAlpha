@@ -12,7 +12,8 @@ function scr_Convert_Layout_To_Rooms(layout_grid){
 				var x_offset = block_room_size * i;
 				var y_offset = block_room_size * j;
 				//Create each block with the proper offset
-				scr_Create_Room_From_Sprite(spr_u195, x_offset, y_offset);
+				block_to_generate = scr_Choose_Block_To_Generate(layout_grid, i, j);
+				scr_Create_Room_From_Sprite(block_to_generate, x_offset, y_offset);
 			}
 		}
 	}

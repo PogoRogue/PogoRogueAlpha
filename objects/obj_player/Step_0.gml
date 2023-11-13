@@ -4,7 +4,7 @@
 if (dead = false) {
 	key_right = keyboard_check(vk_right) || keyboard_check(ord("D")) || gamepad_axis_value(0,gp_axislh) > 0.5;
 	key_left = keyboard_check(vk_left) || keyboard_check(ord("A")) || gamepad_axis_value(0,gp_axislh) < -0.5;
-	key_fire_projectile = keyboard_check(vk_space) || mouse_check_button(mb_left) || gamepad_button_check(0,gp_shoulderrb);
+	key_fire_projectile = keyboard_check(vk_space) || gamepad_button_check(0,gp_shoulderrb);
 
 	key_right_pressed = keyboard_check(vk_right) || keyboard_check(ord("D")) || gamepad_axis_value(0,gp_axislh) > 0.5;
 	key_left_pressed = keyboard_check(vk_left) || keyboard_check(ord("A")) || gamepad_axis_value(0,gp_axislh) < -0.5;
@@ -15,10 +15,10 @@ if (dead = false) {
 		key_fire_projectile_pressed = keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0,gp_shoulderrb);
 		key_fire_projectile_released = keyboard_check_released(vk_space) || gamepad_button_check_released(0,gp_shoulderrb);
 	}
-	key_pickup_1 = keyboard_check(vk_shift) || gamepad_button_check(0,gp_face1);
-	key_pickup_2 = keyboard_check(vk_control) || gamepad_button_check(0,gp_face2);
-	key_pickup_1_pressed = keyboard_check_pressed(vk_shift) || gamepad_button_check_pressed(0,gp_face1);
-	key_pickup_2_pressed = keyboard_check_pressed(vk_control) || gamepad_button_check_pressed(0,gp_face2);
+	key_pickup_1 = keyboard_check(vk_shift) || mouse_check_button(mb_left) || gamepad_button_check(0,gp_face1);
+	key_pickup_2 = keyboard_check(vk_control) || mouse_check_button(mb_right) || gamepad_button_check(0,gp_face2);
+	key_pickup_1_pressed = keyboard_check_pressed(vk_shift) || mouse_check_button_pressed(mb_left) || gamepad_button_check_pressed(0,gp_face1);
+	key_pickup_2_pressed = keyboard_check_pressed(vk_control) || mouse_check_button(mb_right) || gamepad_button_check_pressed(0,gp_face2);
 }else {
 	key_right = 0;
 	key_left = 0;
@@ -137,7 +137,7 @@ if !(key_fire_projectile) { //lerp back to starting firerate while not shooting
 #endregion
 
 //switch between weapons
-if keyboard_check_pressed(ord("E")) || gamepad_button_check_released(0,gp_shoulderr) {
+if keyboard_check_pressed(ord("E")) || mouse_wheel_up() || gamepad_button_check_released(0,gp_shoulderr) {
 	if (current_gun) < array_length(gun_array)-1 {
 		current_gun += 1;
 	}else {
@@ -147,7 +147,7 @@ if keyboard_check_pressed(ord("E")) || gamepad_button_check_released(0,gp_should
 	gun = gun_array[current_gun];
 }
 
-if keyboard_check_pressed(ord("Q")) || gamepad_button_check_released(0,gp_shoulderl) {
+if keyboard_check_pressed(ord("Q")) || mouse_wheel_down() || gamepad_button_check_released(0,gp_shoulderl) {
 	if (current_gun) > 0 {
 		current_gun -= 1;
 	}else {

@@ -20,8 +20,6 @@ if (gun_array[current_gun] = laser_gun) {
 	value_ = gun.current_bullets / gun.bullets_per_bounce;
 	draw_sprite(ammo.gui_sprite,0,(camera_get_view_width(view_camera[0])-16),16);
 	draw_sprite_part(ammo.gui_sprite,1,0,0,sprite_get_width(ammo.gui_sprite)*value_,sprite_height,(camera_get_view_width(view_camera[0])-16)-sprite_get_width(ammo.gui_sprite),16-(sprite_get_height(ammo.gui_sprite)/2));
-		
-	//draw_sprite(ammo.gui_sprite,((i+gun.current_bullets<gun.bullets_per_bounce)*10)+((i+gun.current_bullets>=gun.bullets_per_bounce)*i),(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),16); 
 }
 
 //coins

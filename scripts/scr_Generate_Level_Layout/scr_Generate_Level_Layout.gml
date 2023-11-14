@@ -11,7 +11,7 @@ function scr_Generate_Level_Layout(room_number)
 	var seed = randomize();
 	show_debug_message("Random seed: " + string(seed));
 
-	var currentY = 0;
+	var currentY = 1; //Start above the bottom of the grid so that we can put walls below it
 	var currentX = 0;
 	// Our prebuilt rooms and their dimensions
 	// Room format: [width, height, room_id]
@@ -53,8 +53,20 @@ function scr_Generate_Level_Layout(room_number)
 	    for (var roomX = currentX; roomX < currentX + rWidth; roomX++) {
 	        for (var roomY = currentY; roomY < currentY + rHeight; roomY++) {
 	            ds_grid_set(layoutGrid, roomX, roomY, room_id);
+				//Mark corners of rooms
+				if(roomX == currentX && roomY == currentY + rHeight - 1)
+				{
+					ds_grid_set(layoutGrid, roomX, roomY, room_id + "c")
+				}
 	        }
 	    }
+		
+		//Set player starting point if this is the first room
+		if(previousRoom = -1)
+		{
+			//Marks the center of the room as the starting point
+			ds_grid_set(layoutGrid, currentX + floor(rWidth/2), currentY + floor(rHeight/2), "s");
+		}
 
 	    // Update the previous room
 	    previousRoom = [currentX, currentY, rWidth, rHeight];

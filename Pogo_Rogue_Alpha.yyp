@@ -59,6 +59,7 @@
     {"id":{"name":"spr_dot","path":"sprites/spr_dot/spr_dot.yy",},},
     {"id":{"name":"scr_Shoot","path":"scripts/scr_Shoot/scr_Shoot.yy",},},
     {"id":{"name":"spr_enemy_generic","path":"sprites/spr_enemy_generic/spr_enemy_generic.yy",},},
+    {"id":{"name":"obj_enemy_chasing","path":"objects/obj_enemy_chasing/obj_enemy_chasing.yy",},},
     {"id":{"name":"spr_enemy_shoot_only","path":"sprites/spr_enemy_shoot_only/spr_enemy_shoot_only.yy",},},
     {"id":{"name":"scr_Enemy_Collision_Check","path":"scripts/scr_Enemy_Collision_Check/scr_Enemy_Collision_Check.yy",},},
     {"id":{"name":"spr_explosion","path":"sprites/spr_explosion/spr_explosion.yy",},},

@@ -1,3 +1,4 @@
 /// @description draw self
-//uncomment if you want to see
-//draw_self()
+if (global.draw_collision_walls) {
+	draw_self();
+}

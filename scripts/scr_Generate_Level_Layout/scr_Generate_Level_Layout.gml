@@ -3,7 +3,7 @@ function scr_Generate_Level_Layout(room_number)
 
 	// Create a grid to hold our layout
 	var grid_height = 10;
-	var grid_width = 10;
+	var grid_width = 15;
 
 	var layoutGrid = ds_grid_create(grid_width + 1, grid_height + 1); // +1 since we start at 0
 
@@ -32,7 +32,8 @@ function scr_Generate_Level_Layout(room_number)
 	    var rHeight = r[1];
 	    var room_id = r[2];
 	    //show_debug_message("Y: " + string(currentY));
-	    currentX = irandom(grid_width - rWidth); // Random X axis placement
+	    currentX = irandom_range(1, grid_width - rWidth - 1); // Random X axis placement 
+		//within room with at least 1 space between room and grid edge
 
 	    // Ensure rooms are in the grid bounds
 	    if (!(

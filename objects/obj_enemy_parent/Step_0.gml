@@ -8,6 +8,10 @@ if(is_dead) {
 	
 	//screen shake
 	scr_Screen_Shake(6, 10);
+	
+	//combo
+	global.combo += 1;
+	global.combo_length = global.combo_max;
 }
 
 // Update iframes

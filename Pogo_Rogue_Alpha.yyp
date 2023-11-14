@@ -219,6 +219,7 @@
     {"id":{"name":"spr_projectile_grenade_gui","path":"sprites/spr_projectile_grenade_gui/spr_projectile_grenade_gui.yy",},},
     {"id":{"name":"obj_slider_switch_invert","path":"objects/obj_slider_switch_invert/obj_slider_switch_invert.yy",},},
     {"id":{"name":"spr_player_ziteng","path":"sprites/spr_player_ziteng/spr_player_ziteng.yy",},},
+    {"id":{"name":"obj_combo","path":"objects/obj_combo/obj_combo.yy",},},
     {"id":{"name":"obj_slider_parent","path":"objects/obj_slider_parent/obj_slider_parent.yy",},},
     {"id":{"name":"obj_enemy_shooter_explode_r","path":"objects/obj_enemy_shooter_explode_r/obj_enemy_shooter_explode_r.yy",},},
     {"id":{"name":"spr_slider_button_outline","path":"sprites/spr_slider_button_outline/spr_slider_button_outline.yy",},},

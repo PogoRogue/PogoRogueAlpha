@@ -34,17 +34,17 @@ function scr_Choose_Block_To_Generate(layout_grid, grid_x, grid_y){
 		{
 			if(up_val == "1") //Proc gen above us
 			{
-				if(down_val != "0")
+				if(down_val != "w")
 				{
 					//Combat room below
 					return spr_ud1;
 				}
-				else if(left_val != "0")
+				else if(left_val != "w")
 				{
 					//Combat room left
 					return spr_ul1;
 				}
-				else if(right_val != "0")
+				else if(right_val != "w")
 				{
 					//Combat room right
 					return spr_ur1;
@@ -52,17 +52,17 @@ function scr_Choose_Block_To_Generate(layout_grid, grid_x, grid_y){
 			}
 			else if(down_val == "1") //Proc gen block below
 			{
-				if(up_val != "0")
+				if(up_val != "w")
 				{
 					//Combat room above
 					return spr_ud1;
 				}
-				else if(left_val != "0")
+				else if(left_val != "w")
 				{
 					//Combat room left
 					return spr_dl1;
 				}
-				else if(right_val != "0")
+				else if(right_val != "w")
 				{
 					//Combat room right
 					return spr_dr1;
@@ -70,17 +70,17 @@ function scr_Choose_Block_To_Generate(layout_grid, grid_x, grid_y){
 			}
 			else if(left_val == "1") //Proc gen block left
 			{
-				if(up_val != "0")
+				if(up_val != "w")
 				{
 					//Combat room above
 					return spr_ul1;
 				}
-				else if(down_val != "0")
+				else if(down_val != "w")
 				{
 					//Combat room below
 					return spr_dl1;
 				}
-				else if(right_val != "0")
+				else if(right_val != "w")
 				{
 					//Combat room right
 					return spr_lr;
@@ -88,17 +88,17 @@ function scr_Choose_Block_To_Generate(layout_grid, grid_x, grid_y){
 			}
 			else if(right_val == "1") //proc gen right
 			{
-				if(up_val != "0") 
+				if(up_val != "w") 
 				{
 					//Combat room above
 					return spr_ur1;
 				}
-				else if(down_val != "0")
+				else if(down_val != "w")
 				{
 					//Combat room below
 					return spr_dr1;					
 				}
-				else if(left_val != "0")
+				else if(left_val != "w")
 				{
 					//Combat room left
 					return spr_lr;

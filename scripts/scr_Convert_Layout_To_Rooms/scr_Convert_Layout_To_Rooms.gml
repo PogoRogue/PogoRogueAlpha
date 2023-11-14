@@ -10,40 +10,43 @@ function scr_Convert_Layout_To_Rooms(layout_grid){
 			var x_offset = block_room_size * i;
 			var y_offset = -1 * block_room_size * j; //Negative since gamemaker y coords decrease upwards
 			if(ds_grid_get(layout_grid, i, j) != 0)
-			{				
-				//Create each block with the proper offset
-				var block_to_generate = scr_Choose_Block_To_Generate(layout_grid, i, j);
-				if(block_to_generate != -1)
+			{	
+				if(ds_grid_get(layout_grid, i, j) == "w")
 				{
-					if(block_to_generate == 0)
+					//Generate large wall to fill block
+					//Don't necessarilly need to fill the entire grid this way, only the borders of the rooms
+					//For now just fill the whole grid with wall blocks
+					var wall = instance_create_depth(x_offset, y_offset, depth, obj_ground)
+					wall.image_xscale = block_grid_size;
+					wall.image_yscale = block_grid_size;
+				}
+				else
+				{
+					//Create each block with the proper offset
+					var block_to_generate = scr_Choose_Block_To_Generate(layout_grid, i, j);
+					if(block_to_generate != -1)
 					{
-						//Move the player to this location
-						if(instance_exists(obj_player))
+						if(block_to_generate == 0)
 						{
-							show_debug_message("Moved player!")
-							var player = instance_nearest(x,y,obj_player);
-							player.x = x_offset + block_room_size/2;
-							player.y = y_offset + block_room_size/2;
+							//Move the player to this location
+							if(instance_exists(obj_player))
+							{
+								show_debug_message("Moved player!")
+								var player = instance_nearest(x,y,obj_player);
+								player.x = x_offset + block_room_size/2;
+								player.y = y_offset + block_room_size/2;
+							}
+							else
+							{
+								show_debug_message("Didn't move player!")
+							}
 						}
 						else
 						{
-							show_debug_message("Didn't move player!")
+							scr_Create_Room_From_Sprite(block_to_generate, x_offset, y_offset);
 						}
-					}
-					else
-					{
-						scr_Create_Room_From_Sprite(block_to_generate, x_offset, y_offset);
-					}
-				}				
-			}
-			else if(ds_grid_get(layout_grid, i, j) == "0")
-			{
-				//Generate large wall to fill block
-				//Don't necessarilly need to fill the entire grid this way, only the borders of the rooms
-				//For now just fill the whole grid with wall blocks
-				var wall = instance_create_depth(x_offset, y_offset, depth, obj_ground)
-				wall.image_xscale = block_grid_size;
-				wall.image_yscale = block_grid_size;
+					}	
+				}
 			}
 		}
 	}

@@ -72,9 +72,10 @@ function scr_Generate_Level_Layout(room_number)
 	    // Update the previous room
 	    previousRoom = [currentX, currentY, rWidth, rHeight];
 		
-	    currentY += rHeight + irandom_range(2, 5) // Move up by the height of our current room & random spacing
+	    currentY += rHeight + irandom_range(2, 5); // Move up by the height of our current room & random spacing
 	}
-
+	
+	remove_useless_tiles(layoutGrid);
 
 	// Show the grid in the console
 	for (var i = grid_height; i >= 0; i--) {
@@ -119,5 +120,63 @@ function connectRooms(layoutGrid, room1X, room1Y, room1Width, room1Height, room2
 			}
 			startX += (endX - startX) / abs(endX - startX);
 		}
+	}
+}
+
+function remove_useless_tiles(layout_grid)
+{
+	var grid_height = ds_grid_height(layout_grid);
+	var grid_width = ds_grid_width(layout_grid);
+	for (var i = 0; i < grid_width; i++) {
+	    for (var j = 0; j < grid_height; j++) {
+			if(ds_grid_get(layout_grid, i, j) == "0")
+			{
+				var upGrid = "0";
+				var downGrid = "0";
+				var leftGrid = "0";
+				var rightGrid = "0";
+				var upLeftGrid = "0";
+				var upRightGrid = "0";
+				var downLeftGrid = "0";
+				var downRightGrid = "0";
+				
+				if(j < grid_height - 1)
+				{
+				upGrid = ds_grid_get(layout_grid, i, j + 1);
+				if(i > 0)
+				upLeftGrid = ds_grid_get(layout_grid, i - 1, j + 1);
+				if(i < grid_width - 1)
+				upRightGrid = ds_grid_get(layout_grid, i + 1, j + 1);
+				}
+				
+				if(j > 0)
+				{					
+				downGrid = ds_grid_get(layout_grid, i, j - 1);
+				if(i > 0)
+				downLeftGrid = ds_grid_get(layout_grid, i - 1, j - 1);
+				if(i < grid_width - 1)
+				downRightGrid = ds_grid_get(layout_grid, i + 1, j - 1);	
+				}
+				
+				if(i > 0)
+				leftGrid = ds_grid_get(layout_grid, i - 1, j);
+				
+				if(i < grid_width - 1)
+				rightGrid = ds_grid_get(layout_grid, i + 1, j);
+	
+			
+				//Big check to see if any of the grids next to this (including diagonals) are non empty and non wall
+				if((upGrid != "0" && upGrid != "w") ||
+				(downGrid != "0" && downGrid != "w") ||
+				(leftGrid != "0" && leftGrid != "w") ||
+				(rightGrid != "0" && rightGrid != "w") ||
+				(upLeftGrid != "0" && upLeftGrid != "w") ||
+				(upRightGrid != "0" && upRightGrid != "w") ||
+				(downLeftGrid != "0" && downLeftGrid != "w") ||
+				(downRightGrid != "0" && downRightGrid != "w")){
+					ds_grid_set(layout_grid, i, j, "w")
+				}
+			}
+	    }
 	}
 }

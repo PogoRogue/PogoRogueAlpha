@@ -23,7 +23,7 @@ controls_right =  "\n\n" +
 				  "WASD/Arrow Keys / Left Joystick\n" +
 				  "Spacebar / Right Trigger\n" + 
 				  "Q / E / Bumpers\n" +
-				  "Shift / A Button\n" +
-				  "Ctrl / B Button\n" +
+				  "Shift / LMB / A Button\n" +
+				  "Ctrl / RMB / B Button\n" +
 				  "R / Start Button\n" +
 				  "Tab / Select Button";

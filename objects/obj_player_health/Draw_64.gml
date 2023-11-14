@@ -9,6 +9,3 @@ for(var _i = 0; _i < max_hp; _i += 8) {
 		draw_sprite(spr_heart, 1, 8 + (_i * 3), 32);
 	}
 }
-
-
-

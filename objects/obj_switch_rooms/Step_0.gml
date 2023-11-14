@@ -1,0 +1,8 @@
+/// @description switch rooms
+if (keyboard_check_pressed(vk_tab) || gamepad_button_check_pressed(0,gp_select)) {
+	if (room = room_sam_movement) {
+		room = room_gym_enemy;
+	}else if (room = room_gym_enemy) {
+		room = room_sam_movement;
+	} 
+}

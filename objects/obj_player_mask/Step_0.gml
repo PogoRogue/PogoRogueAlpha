@@ -1,18 +1,56 @@
 /// @description check for collisions
-//collision check
-if (place_meeting(x+parent_index.hspeed,y,obj_ground)) {
-	while !(place_meeting(x+sign(parent_index.hspeed),y,obj_ground)) {
-		parent_index.x += sign(parent_index.hspeed)
-		x += sign(parent_index.hspeed)
+//bounce off
+
+colliding_with_ground = place_meeting(x,y,obj_ground);	
+colliding_with_ground_left = place_meeting(x-2,y,obj_wallright)
+colliding_with_ground_right = place_meeting(x+2,y,obj_wallleft)
+
+if (parent_index.state != parent_index.state_bouncing)
+
+//left correct direction
+if (place_meeting(x+parent_index.hspeed,y,obj_wallleft)) and parent_index.hspeed > 0 {
+	parent_index.hspeed *= -0.5;
+}
+
+//right correct direction
+if (place_meeting(x+parent_index.hspeed,y,obj_wallright)) and parent_index.hspeed < 0 {
+	parent_index.hspeed *= -0.5;
+}
+
+//bottom
+if (place_meeting(x,y+parent_index.vspeed,obj_wallbottom) and parent_index.vspeed < 0) {
+	parent_index.vspeed *= -0.5;
+}
+
+//top left corner
+if (place_meeting(x,y+parent_index.vspeed,obj_walltopleftcorner) and parent_index.vspeed > 0) {
+	if (hspeed > 0) {
+		parent_index.hspeed *= -0.5;
+	}else {
+		parent_index.hspeed = -2;
 	}
-	parent_index.hspeed = 0
+	
+	parent_index.vspeed *= -0.5;
+	
+	//prevent groundpound collision glitch
+	if parent_index.state = parent_index.state_groundpound {
+		parent_index.state = parent_index.state_free;
+	}
 }
 
 
-if (place_meeting(x,y+parent_index.vspeed,obj_ground) and parent_index.vspeed < 0) {
-	while !(place_meeting(x,y+sign(parent_index.vspeed),obj_ground)) {
-		parent_index.y += sign(parent_index.vspeed)
-		y += sign(parent_index.vspeed)
+//top right corner
+if (place_meeting(x,y+parent_index.vspeed,obj_walltoprightcorner) and parent_index.vspeed > 0) {
+	if (hspeed < 0) {
+		parent_index.hspeed *= -0.5;
+	}else {
+		parent_index.hspeed = 2;
 	}
-	parent_index.vspeed = 0
+	parent_index.vspeed *= -0.5;
+	
+	//prevent groundpound collision glitch
+	if parent_index.state = parent_index.state_groundpound {
+		parent_index.state = parent_index.state_free;
+	}
 }
+

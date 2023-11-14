@@ -5,7 +5,7 @@
   "bbox_bottom": 58,
   "bbox_left": 10,
   "bbox_right": 13,
-  "bbox_top": 54,
+  "bbox_top": 55,
   "bboxMode": 2,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -57,8 +57,8 @@
   },
   "origin": 7,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Old",
+    "path": "folders/Sprites/Player/Old.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

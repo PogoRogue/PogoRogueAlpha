@@ -1,2 +1,2 @@
 /// @description Draw tiles
-draw_self()
+draw_self();

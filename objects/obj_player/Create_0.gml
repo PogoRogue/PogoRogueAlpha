@@ -1,10 +1,10 @@
 /// @description initialize variables
 
-//feel free to make copies of this object to mess around with movement values
+//movement stats
 grv = 0.21; //gravity
 h_grv = 0.01; //horizontal drag
 rotation_speed = 3; //rotation speed
-current_rotation_speed = rotation_speed;
+current_rotation_speed = 0;
 rotation_delay = rotation_speed / 7; //0.5
 vsp_basicjump = -6.6; //bounce height
 angle = 0;
@@ -16,10 +16,20 @@ mouse_sensitivity = 150; //the lower the value, the more sensitive the player is
 mouse_reanglespeed = 4; //the lower the value, the faster the player will reangle itself and vice versa
 invert = false;
 free = true; //pogo not colliding with wall, this variable ensures the player doesn't get stuck in walls
+conveyor_speed = 0;
+can_rotate = true;
+can_shoot = true;
+
+//pickups
 charge = 0;
 charge_max = vsp_basicjump;
 slower_than_max = false; //ammo momentum for super jump
 current_max = 0;
+ground_pound_rise = false;
+ground_pound_distance_risen = 0;
+ground_pound_slam = false;
+slam_speed = 12;
+slam_trail_distance = 0;
 
 //set controls variables
 key_right = 0;
@@ -28,22 +38,23 @@ key_fire_projectile = 0;
 key_right_pressed = 0;
 key_left_pressed = 0;
 key_fire_projectile_pressed = 0;
-key_charge_jump = 0;
+key_pickup_1 = 0;
+key_pickup_2 = 0;
+key_pickup_1_pressed = 0;
+key_pickup_2_pressed = 0;
 
+//player sprite
 player_sprite = spr_player_zekai;
 falling_sprite = spr_player_zekai_falling;
 falling_sprite2 = spr_player_zekai_falling;
 
-dead = false;
-
 // Stats
-hp = 24;
-max_hp = 24;
+hp = 40;
+max_hp = 40;
 stomp_damage = 8;
 num_iframes = room_speed;
 current_iframes = 0;
-
-conveyor_speed = 0;
+dead = false;
 
 image_speed = 0;
 
@@ -67,7 +78,11 @@ equipped_item = noone; // The weapon that initializes the equipment is none
 
 state_free = function() {
 	
+	can_rotate = true;
+	can_shoot = true;
+	
 	vspeed += grv; //falling
+	vsp_basicjump = -6.6;
 	
 	//horizontal drag
 	if hspeed > 0 {
@@ -125,10 +140,20 @@ state_free = function() {
 	if (bbox_bottom < 0 and mask_index != spr_nothing) {
 		room_restart();
 	}
+	
+	//ground pound
+	if (key_pickup_2_pressed) {
+		state = state_groundpound;	
+		ground_pound_rise = true;
+		ground_pound_slam = false;
+		ground_pound_distance_risen = 0;
+	}
 }
 
 state_bouncing = function() {
 	
+	can_rotate = true;
+	can_shoot = true;
 	free = false;
 	sprite_index = player_sprite; //set sprite
 	
@@ -143,7 +168,7 @@ state_bouncing = function() {
 	scr_Conveyor_Belt();
 	
 	//bounce after animation is complete
-	if (animation_complete and !key_charge_jump) {
+	if (animation_complete and !key_pickup_1) {
 		scr_Jump(0);
 	}else if (animation_complete) {
 		state = state_charging;
@@ -152,10 +177,12 @@ state_bouncing = function() {
 
 state_charging = function() {
 	
+	vsp_basicjump = -6.6;
+	
 	// Conveyor belt handling
 	scr_Conveyor_Belt();
 	
-	if !(key_charge_jump) {
+	if !(key_pickup_1) {
 		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5)
 		scr_Jump(charge);
 	}else {
@@ -164,6 +191,55 @@ state_charging = function() {
 		}
 	}
 	
+}
+
+state_groundpound = function() {
+	hspeed = hspeed * 0.9;
+	can_shoot = false;
+	if slam_speed < 15.9 { //15.9 because dont wanna glitch through 16px platforms
+		slam_speed += 0.1;
+	}
+	//rise
+	if ground_pound_rise = true {
+		can_rotate = false;
+		vspeed = 0;
+		if (angle != 0)	{
+			var angle_side = sign(angle);
+			angle += rotation_speed*sign(-angle);
+			if (sign(angle) != angle_side) {
+				angle = 0;
+				current_rotation_speed = 0;
+			}
+		}
+		
+		if (ground_pound_distance_risen) < 32 {
+			ground_pound_distance_risen += 1;
+			with (msk_index) {
+				if !place_meeting(x,y-1,obj_ground) {
+					other.vspeed = -1;	
+				}
+			}
+		}else {
+			ground_pound_rise = false;
+			ground_pound_slam = true;
+		}
+	}
+	//slam
+	if ground_pound_slam = true {
+		vspeed = slam_speed;
+		can_rotate = true; //allow rotation again
+		vsp_basicjump = -8;
+		//switch states
+		if place_meeting(x,y+vspeed,obj_ground_parent) or place_meeting(x,y+vspeed,obj_enemy_parent) { 
+			while !(place_meeting(x,y+sign(vspeed),obj_ground_parent)) and !(place_meeting(x,y+sign(vspeed),obj_enemy_parent)) {
+				y += sign(vspeed);
+			}
+			state = state_bouncing;
+			vspeed = 0;
+			scr_Screen_Shake(6, 15);
+		}
+		
+	}
 }
 
 state = state_free;
@@ -186,7 +262,7 @@ scr_Guns();
 canshoot = 0; //shooting timer
 bullet_index = 0; //current bullet
 
-gun_array = [default_gun,paintball_gun,shotgun_gun,negev_gun,burstfire_gun];
+gun_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun];
 current_gun = 0;
 gun = gun_array[current_gun];
 

@@ -17,12 +17,19 @@ function scr_Shoot(){
 				spd: gun.ammo[bullet_index].spd,
 				destroy_on_impact: gun.ammo[bullet_index].destroy_on_impact,
 				destroy_time: gun.ammo[bullet_index].destroy_time,
-				flash_frame: gun.ammo[bullet_index].flash_frame
+				flash_frame: gun.ammo[bullet_index].flash_frame,
+				gun_name: gun.name,
+				grav_affected: gun.ammo[bullet_index].grav_affected,
+				grv: gun.ammo[bullet_index].grv,
+				num_of_bounces: gun.ammo[bullet_index].num_of_bounces,
+				bounce_amount: gun.ammo[bullet_index].bounce_amount
 			});
 			
 			//screen shake
 			scr_Screen_Shake(gun.ammo[bullet_index].screen_shake.magnitude, gun.ammo[bullet_index].screen_shake.frames)
-			gamepad_set_vibration(0, 1, 1);
+			if (global.allow_screenshake) {
+				gamepad_set_vibration(0, 1, 1);
+			}
 			
 			//decrease ammo
 			if gun.spread_number = 1 {
@@ -44,12 +51,10 @@ function scr_Shoot(){
 			speed = 0;
 		}else if (gun.reset_momentum) {
 			speed = current_max + (vsp_basicjump*gun.momentum_added);	
-			show_debug_message("did not reset");
 		}
 		
 		//add momentum
 		motion_add(angle - 90, vsp_basicjump * gun.momentum_added);
-		show_debug_message("fired");
 		
 		//set max speed for auto weapons
 		if (speed > gun.max_speed and gun.full_auto = true) { //player cant exceed certain speed if full_auto = true

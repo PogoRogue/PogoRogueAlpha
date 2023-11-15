@@ -136,10 +136,12 @@ state_free = function() {
 		image_index = 0;
 	}
 	
-	//restart room if reached the top
-	if (bbox_bottom < 0 and mask_index != spr_nothing) {
-		room_restart();
-	}
+	//Turned off for proc gen
+	////restart room if reached the top
+	//if (bbox_bottom < 0 and mask_index != spr_nothing) {
+	//	room_restart();
+	//}
+
 	
 	//ground pound
 	if (key_pickup_2_pressed) {
@@ -148,6 +150,7 @@ state_free = function() {
 		ground_pound_slam = false;
 		ground_pound_distance_risen = 0;
 	}
+
 }
 
 state_bouncing = function() {

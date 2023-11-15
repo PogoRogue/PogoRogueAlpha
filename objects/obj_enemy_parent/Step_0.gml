@@ -12,6 +12,11 @@ if(is_dead) {
 	//combo
 	global.combo += 1;
 	global.combo_length = global.combo_max;
+	
+	//create coins and items
+	with instance_create_depth(x,y,depth-1,obj_coin_spawner) {
+		num_of_coins = global.combo;
+	}
 }
 
 // Update iframes

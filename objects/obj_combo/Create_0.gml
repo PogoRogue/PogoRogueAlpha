@@ -1,5 +1,5 @@
-global.combo = 1;
+global.combo = 0;
 
 global.combo_length = 0;
-global.combo_max = 100;
-combo_decrease_speed = 0.25;
+global.combo_max = 32;
+combo_decrease_speed = global.combo_max/400; //# of frames for each combo to last

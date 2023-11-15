@@ -9,7 +9,7 @@ function scr_Player_Damaged(damage){
 		vspeed = 0;
 		
 		//combo reset
-		global.combo = 1;
+		global.combo = 0;
 		global.combo_length = 0;
 	}
 	

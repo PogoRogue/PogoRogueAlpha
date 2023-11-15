@@ -1,13 +1,9 @@
-if global.combo_length > 0
-{
-	if global.combo > 1
-	{
+if global.combo_length > 0 {
+	if global.combo > 0 {
 		global.combo_length -= combo_decrease_speed;
-	}else
-	{
+	}else {
 		global.combo_length = 0;
 	}
-}else
-{
-	global.combo = 1;
+}else {
+	global.combo = 0;
 }

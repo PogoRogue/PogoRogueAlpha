@@ -136,11 +136,12 @@ state_free = function() {
 		image_index = 0;
 	}
 	
-	//Turned off for proc gen
-	////restart room if reached the top
-	//if (bbox_bottom < 0 and mask_index != spr_nothing) {
-	//	room_restart();
-	//}
+	//restart room if reached the top unless procgen room
+	if room != room_proc_gen_test {
+		if (bbox_bottom < 0 and mask_index != spr_nothing) {
+			room_restart();
+		}
+	}
 
 	
 	//ground pound

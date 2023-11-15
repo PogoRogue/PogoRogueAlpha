@@ -16,9 +16,11 @@ function scr_Convert_Layout_To_Rooms(layout_grid){
 					//Generate large wall to fill block
 					//Don't necessarilly need to fill the entire grid this way, only the borders of the rooms
 					//For now just fill the whole grid with wall blocks
-					var wall = instance_create_depth(x_offset, y_offset, depth, obj_ground)
-					wall.image_xscale = block_grid_size;
-					wall.image_yscale = block_grid_size;
+					var wall = instance_create_depth(x_offset, y_offset, depth, obj_ground_outer, 
+					{
+						image_xscale : block_grid_size,
+						image_yscale : block_grid_size
+					});
 				}
 				else
 				{

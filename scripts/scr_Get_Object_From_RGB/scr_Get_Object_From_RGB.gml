@@ -74,7 +74,7 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 	{
 		if(Red < 10)
 		{
-			return obj_ground;
+			return obj_ground_outer;
 		}
 		else if(Red > 10)
 		{

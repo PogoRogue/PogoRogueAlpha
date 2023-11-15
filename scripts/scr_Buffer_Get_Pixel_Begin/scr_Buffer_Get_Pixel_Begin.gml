@@ -1,6 +1,6 @@
 /// @description
 /// @param {real} surface
-function buffer_getpixel_begin(argument0) {
+function Buffer_Get_Pixel_Begin(argument0) {
 	var ww = surface_get_width(argument0);
 	var hh = surface_get_height(argument0);
 

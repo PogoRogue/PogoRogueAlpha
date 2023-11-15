@@ -4,7 +4,7 @@
 /// @param {real} y
 /// @param {real} width
 /// @param {real} height
-function buffer_getpixel_ext(argument0, argument1, argument2, argument3, argument4) {
+function Buffer_Get_Pixel_Ext(argument0, argument1, argument2, argument3, argument4) {
 
 	var buff1 = argument0;
 	if (argument1 >= argument3) || (argument2 >= argument4) return 0;

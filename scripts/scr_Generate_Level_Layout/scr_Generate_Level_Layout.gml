@@ -1,11 +1,11 @@
-function scr_Generate_Level_Layout(room_number)
+function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms)
 {
 
 	// Create a grid to hold our layout
 	var grid_height = 10;
-	var grid_width = 15;
+	var grid_width = max_gen_width;
 
-	var layoutGrid = ds_grid_create(grid_width + 1, grid_height + 1); // +1 since we start at 0
+	var layout_grid = ds_grid_create(grid_width + 1, grid_height + 1); // +1 since we start at 0
 
 	// Print what seed we're currently on
 	var seed = randomize();
@@ -13,17 +13,10 @@ function scr_Generate_Level_Layout(room_number)
 
 	var currentY = 1; //Start above the bottom of the grid so that we can put walls below it
 	var currentX = 0;
-	// Our prebuilt rooms and their dimensions
-	// Room format: [width, height, room_id]
-	var prebuilt_rooms = ds_list_create();
-	ds_list_add(prebuilt_rooms, [3, 3, "b1"]);
-	//ds_list_add(prebuilt_rooms, [4, 3, "b2"]);
-	//ds_list_add(prebuilt_rooms, [3, 4, "b3"]);
-	//ds_list_add(prebuilt_rooms, [4, 4, "b4"]);
 
 	ds_list_shuffle(prebuilt_rooms); // Shuffle our rooms, THIS IS SEEDED!
 
-	var previousRoom = -1;
+	var previous_room = -1;
 
 	for (var rCount = 0; rCount < room_number; rCount++) {
 	    var room_index = choose(0);//, 1, 2, 3); // Pick a random prebuilt_room
@@ -42,88 +35,88 @@ function scr_Generate_Level_Layout(room_number)
 	        currentY + rHeight <= grid_height + 1 &&
 	        currentX + rWidth <= grid_width
 	    )) {
-				ds_grid_resize(layoutGrid, grid_width+1, (grid_height*2)+1);
+				ds_grid_resize(layout_grid, grid_width+1, (grid_height*2)+1);
 				grid_height *= 2;
 			}
 		// Connect the rooms with winding paths
-	    if (previousRoom != -1) {
-	        connectRooms(layoutGrid, previousRoom[0], previousRoom[1]+rHeight, previousRoom[2], previousRoom[3], currentX, currentY, rWidth, rHeight);
+	    if (previous_room != -1) {
+	        Connect_Rooms(layout_grid, previous_room[0], previous_room[1]+rHeight, previous_room[2], previous_room[3], currentX, currentY, rWidth, rHeight);
 	    }
 
 	    // Place the current room
 	    for (var roomX = currentX; roomX < currentX + rWidth; roomX++) {
 	        for (var roomY = currentY; roomY < currentY + rHeight; roomY++) {
-	            ds_grid_set(layoutGrid, roomX, roomY, room_id);
+	            ds_grid_set(layout_grid, roomX, roomY, room_id);
 				//Mark corners of rooms
 				if(roomX == currentX && roomY == currentY + rHeight - 1)
 				{
-					ds_grid_set(layoutGrid, roomX, roomY, room_id + "c")
+					ds_grid_set(layout_grid, roomX, roomY, room_id + "c")
 				}
 	        }
 	    }
 		
 		//Set player starting point if this is the first room
-		if(previousRoom = -1)
+		if(previous_room = -1)
 		{
 			//Marks the center of the room as the starting point
-			ds_grid_set(layoutGrid, currentX + floor(rWidth/2), currentY + floor(rHeight/2), "s");
+			ds_grid_set(layout_grid, currentX + floor(rWidth/2), currentY + floor(rHeight/2), "s");
 		}
 
 	    // Update the previous room
-	    previousRoom = [currentX, currentY, rWidth, rHeight];
+	    previous_room = [currentX, currentY, rWidth, rHeight];
 		
 	    currentY += rHeight + irandom_range(2, 5); // Move up by the height of our current room & random spacing
 	}
 	
-	remove_useless_tiles(layoutGrid);
+	Remove_Useless_Tiles(layout_grid);
 
 	// Show the grid in the console
 	for (var i = grid_height; i >= 0; i--) {
 	    var row = "";
 	    for (var j = 0; j < grid_width + 1; j++) {
 	        row += " ";
-	        row += string(ds_grid_get(layoutGrid, j, i));
-			if (string_length(ds_grid_get(layoutGrid, j, i)) == 1) {
+	        row += string(ds_grid_get(layout_grid, j, i));
+			if (string_length(ds_grid_get(layout_grid, j, i)) == 1) {
 				row += "  ";
 			}
 	    }
 	    show_debug_message(row);
 	}
 	
-	return layoutGrid;
+	return layout_grid;
 }
 
 	// Function to connect two rooms with a winding path
-function connectRooms(layoutGrid, room1X, room1Y, room1Width, room1Height, room2X, room2Y, room2Width, room2Height) {
-	var startX = room1X + irandom(room1Width - 1);
-	var startY = room1Y-1;
-	var endX = room2X + irandom(room2Width - 1);
-	var endY = room2Y;
+function Connect_Rooms(layout_grid, room1_x, room1_y, room1_width, room1_height, room2_x, room2_y, room2_width, room2_height) {
+	var start_x = room1_x + irandom(room1_width - 1);
+	var start_y = room1_y-1;
+	var end_x = room2_x + irandom(room2_width - 1);
+	var end_y = room2_y;
 	
-	while (startX != endX || startY != endY) {
-		var pathRandomizer = random_range(0,1);
-		if (startX == endX) {
-			pathRandomizer = 0;
+	while (start_x != end_x || start_y != end_y) {
+		var path_randomizer = random_range(0,1);
+		if (start_x == end_x) {
+			path_randomizer = 0;
 		}
-		else if (startY == endY) {
-			pathRandomizer = 1;
+		else if (start_y == end_y) {
+			path_randomizer = 1;
 		}
-		if (pathRandomizer <= 0.6) {
-			if (ds_grid_get(layoutGrid, startX, startY) == "0") {
-				ds_grid_set(layoutGrid, startX, startY, "1");
+		if (path_randomizer <= 0.6) {
+			if (ds_grid_get(layout_grid, start_x, start_y) == "0") {
+				ds_grid_set(layout_grid, start_x, start_y, "1");
 			}
-			startY += 1;
+			start_y += 1;
 		}
 		else {
-			if (ds_grid_get(layoutGrid, startX, startY) == "0") {
-				ds_grid_set(layoutGrid, startX, startY, "1");
+			if (ds_grid_get(layout_grid, start_x, start_y) == "0") {
+				ds_grid_set(layout_grid, start_x, start_y, "1");
 			}
-			startX += (endX - startX) / abs(endX - startX);
+			start_x += (end_x - start_x) / abs(end_x - start_x);
 		}
 	}
 }
 
-function remove_useless_tiles(layout_grid)
+function Remove_Useless_Tiles(layout_grid)
 {
 	var grid_height = ds_grid_height(layout_grid);
 	var grid_width = ds_grid_width(layout_grid);
@@ -131,49 +124,49 @@ function remove_useless_tiles(layout_grid)
 	    for (var j = 0; j < grid_height; j++) {
 			if(ds_grid_get(layout_grid, i, j) == "0")
 			{
-				var upGrid = "0";
-				var downGrid = "0";
-				var leftGrid = "0";
-				var rightGrid = "0";
-				var upLeftGrid = "0";
-				var upRightGrid = "0";
-				var downLeftGrid = "0";
-				var downRightGrid = "0";
+				var up_grid = "0";
+				var down_grid = "0";
+				var left_grid = "0";
+				var right_grid = "0";
+				var up_left_grid = "0";
+				var up_right_grid = "0";
+				var down_left_grid = "0";
+				var down_right_grid = "0";
 				
 				if(j < grid_height - 1)
 				{
-				upGrid = ds_grid_get(layout_grid, i, j + 1);
+				up_grid = ds_grid_get(layout_grid, i, j + 1);
 				if(i > 0)
-				upLeftGrid = ds_grid_get(layout_grid, i - 1, j + 1);
+				up_left_grid = ds_grid_get(layout_grid, i - 1, j + 1);
 				if(i < grid_width - 1)
-				upRightGrid = ds_grid_get(layout_grid, i + 1, j + 1);
+				up_right_grid = ds_grid_get(layout_grid, i + 1, j + 1);
 				}
 				
 				if(j > 0)
 				{					
-				downGrid = ds_grid_get(layout_grid, i, j - 1);
+				down_grid = ds_grid_get(layout_grid, i, j - 1);
 				if(i > 0)
-				downLeftGrid = ds_grid_get(layout_grid, i - 1, j - 1);
+				down_left_grid = ds_grid_get(layout_grid, i - 1, j - 1);
 				if(i < grid_width - 1)
-				downRightGrid = ds_grid_get(layout_grid, i + 1, j - 1);	
+				down_right_grid = ds_grid_get(layout_grid, i + 1, j - 1);	
 				}
 				
 				if(i > 0)
-				leftGrid = ds_grid_get(layout_grid, i - 1, j);
+				left_grid = ds_grid_get(layout_grid, i - 1, j);
 				
 				if(i < grid_width - 1)
-				rightGrid = ds_grid_get(layout_grid, i + 1, j);
+				right_grid = ds_grid_get(layout_grid, i + 1, j);
 	
 			
 				//Big check to see if any of the grids next to this (including diagonals) are non empty and non wall
-				if((upGrid != "0" && upGrid != "w") ||
-				(downGrid != "0" && downGrid != "w") ||
-				(leftGrid != "0" && leftGrid != "w") ||
-				(rightGrid != "0" && rightGrid != "w") ||
-				(upLeftGrid != "0" && upLeftGrid != "w") ||
-				(upRightGrid != "0" && upRightGrid != "w") ||
-				(downLeftGrid != "0" && downLeftGrid != "w") ||
-				(downRightGrid != "0" && downRightGrid != "w")){
+				if((up_grid != "0" && up_grid != "w") ||
+				(down_grid != "0" && down_grid != "w") ||
+				(left_grid != "0" && left_grid != "w") ||
+				(right_grid != "0" && right_grid != "w") ||
+				(up_left_grid != "0" && up_left_grid != "w") ||
+				(up_right_grid != "0" && up_right_grid != "w") ||
+				(down_left_grid != "0" && down_left_grid != "w") ||
+				(down_right_grid != "0" && down_right_grid != "w")){
 					ds_grid_set(layout_grid, i, j, "w")
 				}
 			}

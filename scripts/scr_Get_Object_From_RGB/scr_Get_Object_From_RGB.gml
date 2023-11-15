@@ -16,7 +16,7 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			if(Red == 255)
 			{
-				return get_random_enemy();
+				return Get_Random_Enemy();
 			}
 			else if(Red > 228)
 			{			
@@ -87,7 +87,7 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 	
 }
 
-function get_random_enemy()
+function Get_Random_Enemy()
 {	
 	return choose(obj_enemy_explode, obj_enemy_flying, obj_enemy_moving, obj_enemy_shoot_only,
 		obj_enemy_shooter, obj_enemy_stomp_only);

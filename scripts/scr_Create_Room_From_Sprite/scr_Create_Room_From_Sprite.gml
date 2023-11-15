@@ -7,10 +7,10 @@
 /// @param y_offset
 function scr_Create_Room_From_Sprite(spriteIndex, x_offset, y_offset){
 	//Read the sprite into an array
-	var pixelArray = Read_Sprite_To_Array(spriteIndex);
+	var pixel_array = Read_Sprite_To_Array(spriteIndex);
 	
 	//Create all objects corresponding to the pixel data with matching offsets
-	return Generate_Block_From_Pixel_Array(pixelArray, x_offset, y_offset)	
+	return Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset)	
 }
 
 
@@ -28,34 +28,34 @@ function Read_Sprite_To_Array(spriteIndex){
 	surface_reset_target();
 	
 	//Read it into a buffer
-	var buffer = buffer_getpixel_begin(surface)
+	var buffer = Buffer_Get_Pixel_Begin(surface)
 	var total = 0;
-	var pixelData = 0;
+	var pixel_data = 0;
 	//Create Array to store pixel data for easy access
 	for(var i = 0; i < width; i++)
 	{
 		for(var j = 0; j < height; j++)
 		{
 			//Store pixel data in a 2D array containing an array with [R,G,B] values
-			pixelData[i][j] = 
-			[buffer_getpixel_r(buffer, i, j, width, height),
-			buffer_getpixel_g(buffer, i, j, width, height),
-			buffer_getpixel_b(buffer, i, j, width, height),
-			buffer_getpixel_a(buffer, i, j, width, height)];
+			pixel_data[i][j] = 
+			[Buffer_Get_Pixel_R(buffer, i, j, width, height),
+			Buffer_Get_Pixel_G(buffer, i, j, width, height),
+			Buffer_Get_Pixel_B(buffer, i, j, width, height),
+			Buffer_Get_Pixel_A(buffer, i, j, width, height)];
 			total++;
 		}
 	}
-	return pixelData;
+	return pixel_data;
 }
 
-function Generate_Block_From_Pixel_Array(pixelArray, x_offset, y_offset)
+function Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset)
 {
 	var object_queue = ds_queue_create();
-	for(var i = 0; i < array_length(pixelArray); i++)
+	for(var i = 0; i < array_length(pixel_array); i++)
 	{
-		for(var j = 0; j <  array_length(pixelArray[0]); j++)
+		for(var j = 0; j <  array_length(pixel_array[0]); j++)
 		{
-			var RGB = pixelArray[i][j]
+			var RGB = pixel_array[i][j]
 			var grid_size = 16;
 			//Objects are placed within the pixel editor in 16 pixel increments, so offsets 
 			//are the initial block offset + 16 * their grid location
@@ -74,11 +74,11 @@ function Generate_Block_From_Pixel_Array(pixelArray, x_offset, y_offset)
 
 function Create_Instance_From_RGB(RGB, x_offset, y_offset)
 {
-	var objectToCreate = scr_Get_Object_From_RGB(RGB[0], RGB[1], RGB[2], RGB[3]);
+	var object_to_create = scr_Get_Object_From_RGB(RGB[0], RGB[1], RGB[2], RGB[3]);
 	
-	if(objectToCreate != -1)
+	if(object_to_create != -1)
 	{
-	return instance_create_layer(x_offset, y_offset, "Instances", objectToCreate);
+	return instance_create_layer(x_offset, y_offset, "Instances", object_to_create);
 	}
 	else
 	{

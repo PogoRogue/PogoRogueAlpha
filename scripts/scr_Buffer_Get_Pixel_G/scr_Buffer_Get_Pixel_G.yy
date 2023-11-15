@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "buffer_getpixel_begin",
+  "name": "scr_Buffer_Get_Pixel_G",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

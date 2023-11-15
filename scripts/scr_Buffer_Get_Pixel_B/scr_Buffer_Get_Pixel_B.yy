@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "buffer_getpixel_ext",
+  "name": "scr_Buffer_Get_Pixel_B",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

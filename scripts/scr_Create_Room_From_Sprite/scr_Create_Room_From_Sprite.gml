@@ -5,16 +5,16 @@
 /// @param spriteIndex
 /// @param x_offset
 /// @param y_offset
-function scr_Create_Room_From_Sprite(spriteIndex, x_offset, y_offset){
+function scr_Create_Room_From_Sprite(spriteIndex, sprite_sub_image, x_offset, y_offset){
 	//Read the sprite into an array
-	var pixel_array = Read_Sprite_To_Array(spriteIndex);
+	var pixel_array = Read_Sprite_To_Array(spriteIndex, sprite_sub_image);
 	
 	//Create all objects corresponding to the pixel data with matching offsets
 	return Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset)	
 }
 
 
-function Read_Sprite_To_Array(spriteIndex){
+function Read_Sprite_To_Array(spriteIndex, sprite_sub_image){
 	
 	var width = sprite_get_width(spriteIndex);
 	var height = sprite_get_height(spriteIndex);
@@ -24,7 +24,7 @@ function Read_Sprite_To_Array(spriteIndex){
 	
 	//Apply the sprite to it
 	surface_set_target(surface);
-	draw_sprite(spriteIndex, 0,0,0);
+	draw_sprite(spriteIndex, sprite_sub_image,0,0);
 	surface_reset_target();
 	
 	//Read it into a buffer

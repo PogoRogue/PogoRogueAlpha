@@ -47,6 +47,7 @@ key_pickup_2_pressed = 0;
 player_sprite = spr_player_zekai;
 falling_sprite = spr_player_zekai_falling;
 falling_sprite2 = spr_player_zekai_falling;
+charging_sprite = spr_player_zekai_charging;
 
 // Stats
 hp = 40;
@@ -180,7 +181,8 @@ state_bouncing = function() {
 }
 
 state_charging = function() {
-	
+	sprite_index = charging_sprite;
+	image_speed = 1;
 	vsp_basicjump = -6.6;
 	
 	// Conveyor belt handling

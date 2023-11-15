@@ -1,10 +1,11 @@
 x += hspd;
 y += vspd;
 
-var padding = 64;
-if !(point_in_rectangle(x,y,-padding,-padding,room_width+padding,room_height+padding)) {
-	instance_destroy(); //destroy if outside room
-}
+//Turned off for proc gen
+//var padding = 64;
+//if !(point_in_rectangle(x,y,-padding,-padding,room_width+padding,room_height+padding)) {
+//	instance_destroy(); //destroy if outside room
+//}
 
 //destroy when touching ground
 if (destroy_on_impact and num_of_bounces <= 0) {

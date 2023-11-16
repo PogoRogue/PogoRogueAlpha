@@ -21,9 +21,23 @@
     {"name":"Sounds","order":11,"path":"folders/Sounds.yy",},
     {"name":"Sprites","order":12,"path":"folders/Sprites.yy",},
     {"name":"Enemy","order":6,"path":"folders/Sprites/Enemy.yy",},
+    {"name":"Enviornmetal hazards","order":1,"path":"folders/Sprites/Enviornmetal hazards.yy",},
     {"name":"Ground","order":9,"path":"folders/Sprites/Ground.yy",},
     {"name":"Player","order":5,"path":"folders/Sprites/Player.yy",},
     {"name":"Old","order":22,"path":"folders/Sprites/Player/Old.yy",},
+<<<<<<< Updated upstream
+=======
+    {"name":"ProcGenLevelData","order":13,"path":"folders/Sprites/ProcGenLevelData.yy",},
+    {"name":"DL","order":6,"path":"folders/Sprites/ProcGenLevelData/DL.yy",},
+    {"name":"DR","order":5,"path":"folders/Sprites/ProcGenLevelData/DR.yy",},
+    {"name":"LR","order":4,"path":"folders/Sprites/ProcGenLevelData/LR.yy",},
+    {"name":"PrebuiltRooms","order":9,"path":"folders/Sprites/ProcGenLevelData/PrebuiltRooms.yy",},
+    {"name":"3x3","order":1,"path":"folders/Sprites/ProcGenLevelData/PrebuiltRooms/3x3.yy",},
+    {"name":"testRooms","order":1,"path":"folders/Sprites/ProcGenLevelData/testRooms.yy",},
+    {"name":"UD","order":3,"path":"folders/Sprites/ProcGenLevelData/UD.yy",},
+    {"name":"UL","order":7,"path":"folders/Sprites/ProcGenLevelData/UL.yy",},
+    {"name":"UR","order":8,"path":"folders/Sprites/ProcGenLevelData/UR.yy",},
+>>>>>>> Stashed changes
     {"name":"Projectiles","order":7,"path":"folders/Sprites/Projectiles.yy",},
     {"name":"Sliders","order":8,"path":"folders/Sprites/Sliders.yy",},
     {"name":"Tile Sets","order":13,"path":"folders/Tile Sets.yy",},
@@ -56,8 +70,17 @@
     {"name":"obj_slider_switch","order":19,"path":"objects/obj_slider_switch/obj_slider_switch.yy",},
     {"name":"spr_arm_cannon","order":13,"path":"sprites/spr_arm_cannon/spr_arm_cannon.yy",},
     {"name":"obj_walltop","order":8,"path":"objects/obj_walltop/obj_walltop.yy",},
+<<<<<<< Updated upstream
+=======
+    {"name":"room_fight_1","order":3,"path":"rooms/room_fight_1/room_fight_1.yy",},
+>>>>>>> Stashed changes
     {"name":"obj_enemy_moving","order":7,"path":"objects/obj_enemy_moving/obj_enemy_moving.yy",},
     {"name":"obj_walljumpdistancetip","order":10,"path":"objects/obj_walljumpdistancetip/obj_walljumpdistancetip.yy",},
+<<<<<<< Updated upstream
+=======
+    {"name":"scr_Convert_Layout_To_Rooms","order":11,"path":"scripts/scr_Convert_Layout_To_Rooms/scr_Convert_Layout_To_Rooms.yy",},
+    {"name":"scr_Guns","order":7,"path":"scripts/scr_Guns/scr_Guns.yy",},
+>>>>>>> Stashed changes
     {"name":"spr_projectile_nerfdart","order":1,"path":"sprites/spr_projectile_nerfdart/spr_projectile_nerfdart.yy",},
     {"name":"obj_bounceheight2","order":1,"path":"objects/obj_bounceheight2/obj_bounceheight2.yy",},
     {"name":"obj_platformingzone","order":19,"path":"objects/obj_platformingzone/obj_platformingzone.yy",},
@@ -82,6 +105,10 @@
     {"name":"obj_enemy_stomp_only","order":2,"path":"objects/obj_enemy_stomp_only/obj_enemy_stomp_only.yy",},
     {"name":"spr_chargebar","order":24,"path":"sprites/spr_chargebar/spr_chargebar.yy",},
     {"name":"obj_weaponheight0","order":17,"path":"objects/obj_weaponheight0/obj_weaponheight0.yy",},
+<<<<<<< Updated upstream
+=======
+    {"name":"obj_fan_pointer","order":4,"path":"objects/obj_fan_pointer/obj_fan_pointer.yy",},
+>>>>>>> Stashed changes
     {"name":"spr_player_zekai","order":15,"path":"sprites/spr_player_zekai/spr_player_zekai.yy",},
     {"name":"obj_control_armcannon","order":7,"path":"objects/obj_control_armcannon/obj_control_armcannon.yy",},
     {"name":"obj_crosshair","order":6,"path":"objects/obj_crosshair/obj_crosshair.yy",},
@@ -91,6 +118,10 @@
     {"name":"spr_player_health_empty","order":1,"path":"sprites/spr_player_health_empty/spr_player_health_empty.yy",},
     {"name":"spr_purplesquare","order":1,"path":"sprites/spr_purplesquare/spr_purplesquare.yy",},
     {"name":"spr_enemy_shooting_explosion","order":34,"path":"sprites/spr_enemy_shooting_explosion/spr_enemy_shooting_explosion.yy",},
+<<<<<<< Updated upstream
+=======
+    {"name":"spr_u195","order":1,"path":"sprites/spr_u195/spr_u195.yy",},
+>>>>>>> Stashed changes
     {"name":"spr_player_mask_ziteng","order":21,"path":"sprites/spr_player_mask_ziteng/spr_player_mask_ziteng.yy",},
     {"name":"spr_projectile_speedup","order":5,"path":"sprites/spr_projectile_speedup/spr_projectile_speedup.yy",},
     {"name":"obj_presets","order":2,"path":"objects/obj_presets/obj_presets.yy",},
@@ -104,7 +135,14 @@
     {"name":"obj_ground_parent","order":2,"path":"objects/obj_ground_parent/obj_ground_parent.yy",},
     {"name":"spr_player_mask_zekai","order":20,"path":"sprites/spr_player_mask_zekai/spr_player_mask_zekai.yy",},
     {"name":"spr_player_falling_hurt","order":3,"path":"sprites/spr_player_falling_hurt/spr_player_falling_hurt.yy",},
+<<<<<<< Updated upstream
     {"name":"spr_enemy_projectile","order":3,"path":"sprites/spr_enemy_projectile/spr_enemy_projectile.yy",},
+=======
+    {"name":"obj_enemy_jump","order":2,"path":"objects/obj_enemy_jump/obj_enemy_jump.yy",},
+    {"name":"spr_enemy_projectile","order":7,"path":"sprites/spr_enemy_projectile/spr_enemy_projectile.yy",},
+    {"name":"scr_Create_Collision_Walls","order":10,"path":"scripts/scr_Create_Collision_Walls/scr_Create_Collision_Walls.yy",},
+    {"name":"spr_shield_break","order":17,"path":"sprites/spr_shield_break/spr_shield_break.yy",},
+>>>>>>> Stashed changes
     {"name":"obj_wallbottom","order":6,"path":"objects/obj_wallbottom/obj_wallbottom.yy",},
     {"name":"obj_slider_control","order":9,"path":"objects/obj_slider_control/obj_slider_control.yy",},
     {"name":"scr_Shoot_Arm_Cannon","order":2,"path":"scripts/scr_Shoot_Arm_Cannon/scr_Shoot_Arm_Cannon.yy",},
@@ -150,6 +188,10 @@
     {"name":"spr_slider_button_outline","order":3,"path":"sprites/spr_slider_button_outline/spr_slider_button_outline.yy",},
     {"name":"spr_player_falling_hurt_red","order":4,"path":"sprites/spr_player_falling_hurt_red/spr_player_falling_hurt_red.yy",},
     {"name":"spr_projectile_flasheffect","order":12,"path":"sprites/spr_projectile_flasheffect/spr_projectile_flasheffect.yy",},
+<<<<<<< Updated upstream
+=======
+    {"name":"obj_ground_outer","order":11,"path":"objects/obj_ground_outer/obj_ground_outer.yy",},
+>>>>>>> Stashed changes
     {"name":"obj_player_mask","order":1,"path":"objects/obj_player_mask/obj_player_mask.yy",},
     {"name":"obj_weaponheight2","order":12,"path":"objects/obj_weaponheight2/obj_weaponheight2.yy",},
     {"name":"obj_weaponheight6","order":16,"path":"objects/obj_weaponheight6/obj_weaponheight6.yy",},
@@ -161,6 +203,10 @@
     {"name":"spr_player_mask","order":9,"path":"sprites/spr_player_mask/spr_player_mask.yy",},
     {"name":"fnt_combo2","order":1,"path":"fonts/fnt_combo2/fnt_combo2.yy",},
     {"name":"obj_enemy_turret","order":8,"path":"objects/obj_enemy_turret/obj_enemy_turret.yy",},
+<<<<<<< Updated upstream
+=======
+    {"name":"spr_procGenColorPallet","order":2,"path":"sprites/spr_procGenColorPallet/spr_procGenColorPallet.yy",},
+>>>>>>> Stashed changes
     {"name":"spr_player_ziteng2","order":17,"path":"sprites/spr_player_ziteng2/spr_player_ziteng2.yy",},
     {"name":"spr_player_zekai_falling","order":19,"path":"sprites/spr_player_zekai_falling/spr_player_zekai_falling.yy",},
     {"name":"spr_redsquare","order":2,"path":"sprites/spr_redsquare/spr_redsquare.yy",},

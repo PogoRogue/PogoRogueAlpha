@@ -163,10 +163,10 @@ state_bouncing = function() {
 	sprite_index = player_sprite; //set sprite
 	
 	//animate before bouncing
-	if (image_index = sprite_get_number(sprite_index)-1) {
+	if (floor(image_index) = sprite_get_number(sprite_index)-1) {
 		animation_complete = true;
 	}else if (animation_complete = false) {
-		image_index += 1;
+		image_index += 0.9;
 	}
 	
 	// Conveyor belt handling

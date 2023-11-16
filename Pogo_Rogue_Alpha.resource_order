@@ -130,6 +130,7 @@
     {"name":"spr_projectile_speedup","order":5,"path":"sprites/spr_projectile_speedup/spr_projectile_speedup.yy",},
     {"name":"obj_presets","order":2,"path":"objects/obj_presets/obj_presets.yy",},
     {"name":"spr_bluesquare","order":4,"path":"sprites/spr_bluesquare/spr_bluesquare.yy",},
+    {"name":"spr_3x3_Combat_store","order":1,"path":"sprites/spr_3x3_Combat_store/spr_3x3_Combat_store.yy",},
     {"name":"obj_walljump","order":8,"path":"objects/obj_walljump/obj_walljump.yy",},
     {"name":"obj_weaponheight3","order":13,"path":"objects/obj_weaponheight3/obj_weaponheight3.yy",},
     {"name":"spr_player_falling2","order":5,"path":"sprites/spr_player_falling2/spr_player_falling2.yy",},

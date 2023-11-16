@@ -168,6 +168,7 @@
     {"id":{"name":"spr_projectile_speedup","path":"sprites/spr_projectile_speedup/spr_projectile_speedup.yy",},},
     {"id":{"name":"obj_presets","path":"objects/obj_presets/obj_presets.yy",},},
     {"id":{"name":"spr_bluesquare","path":"sprites/spr_bluesquare/spr_bluesquare.yy",},},
+    {"id":{"name":"spr_3x3_Combat_store","path":"sprites/spr_3x3_Combat_store/spr_3x3_Combat_store.yy",},},
     {"id":{"name":"obj_walljump","path":"objects/obj_walljump/obj_walljump.yy",},},
     {"id":{"name":"obj_weaponheight3","path":"objects/obj_weaponheight3/obj_weaponheight3.yy",},},
     {"id":{"name":"spr_player_falling2","path":"sprites/spr_player_falling2/spr_player_falling2.yy",},},
@@ -314,9 +315,9 @@
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
   ],
   "RoomOrderNodes": [
+    {"roomId":{"name":"room_proc_gen_test","path":"rooms/room_proc_gen_test/room_proc_gen_test.yy",},},
     {"roomId":{"name":"room_fight_1","path":"rooms/room_fight_1/room_fight_1.yy",},},
     {"roomId":{"name":"room_sam_movement","path":"rooms/room_sam_movement/room_sam_movement.yy",},},
-    {"roomId":{"name":"room_proc_gen_test","path":"rooms/room_proc_gen_test/room_proc_gen_test.yy",},},
     {"roomId":{"name":"room_large","path":"rooms/room_large/room_large.yy",},},
     {"roomId":{"name":"room_gym_enemy","path":"rooms/room_gym_enemy/room_gym_enemy.yy",},},
   ],

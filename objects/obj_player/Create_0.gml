@@ -278,3 +278,13 @@ shoot_count = 0; // shoot count
 jump_count = 0;  // bounce count
 buff_active = false; // if the buff is active
 buff_duration = 60 * 5; // buff duration timer
+
+
+//create text in proc gen room
+if room = room_proc_gen_test {
+	alarm[2] = 10;
+	/*
+	while(!place_meeting(x,y+16,obj_ground)) {
+		y++;	
+	}*/
+}

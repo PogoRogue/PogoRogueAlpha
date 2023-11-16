@@ -1,5 +1,5 @@
-item_name = "";
-item_description = "";
+item_name = "Heart";
+item_description = "Gives the player one extra heart.";
 health = 0;
 damage = 0;
 speed = 0;

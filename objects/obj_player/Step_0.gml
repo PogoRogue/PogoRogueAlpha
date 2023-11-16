@@ -4,7 +4,7 @@
 if (dead = false) {
 	key_right = keyboard_check(vk_right) || keyboard_check(ord("D")) || gamepad_axis_value(0,gp_axislh) > 0.5;
 	key_left = keyboard_check(vk_left) || keyboard_check(ord("A")) || gamepad_axis_value(0,gp_axislh) < -0.5;
-	key_fire_projectile = keyboard_check(vk_space) || mouse_check_button(mb_left) || gamepad_button_check(0,gp_shoulderrb);
+	key_fire_projectile = keyboard_check(vk_space) || gamepad_button_check(0,gp_shoulderrb);
 
 	key_right_pressed = keyboard_check(vk_right) || keyboard_check(ord("D")) || gamepad_axis_value(0,gp_axislh) > 0.5;
 	key_left_pressed = keyboard_check(vk_left) || keyboard_check(ord("A")) || gamepad_axis_value(0,gp_axislh) < -0.5;
@@ -15,6 +15,10 @@ if (dead = false) {
 		key_fire_projectile_pressed = keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0,gp_shoulderrb);
 		key_fire_projectile_released = keyboard_check_released(vk_space) || gamepad_button_check_released(0,gp_shoulderrb);
 	}
+	key_pickup_1 = keyboard_check(vk_shift) || mouse_check_button(mb_left) || gamepad_button_check(0,gp_face1);
+	key_pickup_2 = keyboard_check(vk_control) || mouse_check_button(mb_right) || gamepad_button_check(0,gp_face2);
+	key_pickup_1_pressed = keyboard_check_pressed(vk_shift) || mouse_check_button_pressed(mb_left) || gamepad_button_check_pressed(0,gp_face1);
+	key_pickup_2_pressed = keyboard_check_pressed(vk_control) || mouse_check_button(mb_right) || gamepad_button_check_pressed(0,gp_face2);
 }else {
 	key_right = 0;
 	key_left = 0;
@@ -23,86 +27,82 @@ if (dead = false) {
 	key_left_pressed = 0;
 	key_fire_projectile_pressed = 0;
 	key_fire_projectile_released = 0;
+	key_pickup_1 = 0;
+	key_pickup_2 = 0;
 }
 #endregion
+
+//land on and damage enemy
+scr_Enemy_Collision_Check();
 
 //run state machine
 state();
 
+//reset ground pount variables
+if state != state_groundpound {
+	ground_pound_slam = false;
+	can_rotate = true;
+	can_shoot = true;
+	slam_speed = 12;
+	slam_trail_distance = 0;
+}
+
+
 #region //angling
-if (use_mouse = false) { //use WASD/Arrow Keys to angle player
-	if (angle >= -anglemax and key_right and !invert) and !(msk_index.colliding_with_ground_right)
-	or (angle >= -anglemax and key_left and invert) and !(msk_index.colliding_with_ground_left) {
-		current_rotation_speed = -rotation_speed;
-	}else if (angle <= anglemax and key_left and !invert) and !(msk_index.colliding_with_ground_left) 
-	or (angle <= anglemax and key_right and invert) and !(msk_index.colliding_with_ground_right) {
-		current_rotation_speed = rotation_speed;
-	}else {
-		if (current_rotation_speed > 0) {
-			current_rotation_speed -= rotation_delay;
-		}else if (current_rotation_speed < 0) {
-			current_rotation_speed += rotation_delay;
-		}
-	}
-	angle += current_rotation_speed;
-	
-	if hspeed > 0.5 {
-		image_xscale = 1;
-	}else if hspeed < -0.5 {
-		image_xscale = -1;
-	}
-	
-}else if (dead = false) { //use mouse to angle player
-	
-		if invert = false {
-			if (angle <= point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90) {
-				angle += ((point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
-			}else if (angle >= point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90) {
-				angle += ((point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
-			}
-		}else{
-			if (angle <= point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90) {
-				angle += ((point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
-			}else if (angle >= point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90) {
-				angle += ((point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
+if (can_rotate) {
+	if (use_mouse = false) { //use WASD/Arrow Keys to angle player
+		if (angle >= -anglemax and key_right and !invert) and !(msk_index.colliding_with_ground_right)
+		or (angle >= -anglemax and key_left and invert) and !(msk_index.colliding_with_ground_left) {
+			current_rotation_speed = -rotation_speed;
+		}else if (angle <= anglemax and key_left and !invert) and !(msk_index.colliding_with_ground_left) 
+		or (angle <= anglemax and key_right and invert) and !(msk_index.colliding_with_ground_right) {
+			current_rotation_speed = rotation_speed;
+		}else {
+			if (current_rotation_speed > 0) {
+				current_rotation_speed -= rotation_delay;
+			}else if (current_rotation_speed < 0) {
+				current_rotation_speed += rotation_delay;
 			}
 		}
+		angle += current_rotation_speed;
+	
+		if hspeed > 0.5 {
+			image_xscale = 1;
+		}else if hspeed < -0.5 {
+			image_xscale = -1;
+		}
+	
+	}else if (dead = false) { //use mouse to angle player
+	
+			if invert = false {
+				if (angle <= point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90) {
+					angle += ((point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
+				}else if (angle >= point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90) {
+					angle += ((point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
+				}
+			}else{
+				if (angle <= point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90) {
+					angle += ((point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
+				}else if (angle >= point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90) {
+					angle += ((point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
+				}
+			}
 			
 		clamp(angle,-anglemax,anglemax); //cant tilt too far
+	}
 }
 
 
 image_angle = angle;
 #endregion
 
-#region //moving and shooting
-//gun position and angle
-
-/* THIS CODE IS MEANT FOR THE ARM CANNON OBJECT, commented out until implemented
-//sprite_index = gun.sprite
-
-//flip gun
-if (mouse_x > x) {
-	image_yscale = 1
-}else {
-	image_yscale = -1
-}
-
-//lerp angle
-mouse_angle -= angle_difference(mouse_angle,point_direction(x,y,mouse_x,mouse_y)) * 0.5
-knockback_angle -= angle_difference(mouse_angle,point_direction(x,y,mouse_x,mouse_y)) * 0.05
-
-image_angle = mouse_angle + knockback_angle
-
-//lerp position
-x = lerp(x,ox,0.05)
-y = lerp(y,oy,0.05)
-*/
-#endregion
-
 #region shooting
 
-var shoot = gun.full_auto ? key_fire_projectile : key_fire_projectile_pressed;
+if can_shoot = true { 
+	var shoot = gun.full_auto ? key_fire_projectile : key_fire_projectile_pressed;
+}else {
+	var shoot = 0;
+}
 var ammo = gun.ammo[bullet_index];
 
 if (canshoot > 0) {
@@ -114,7 +114,7 @@ if (canshoot > 0) {
 	//lerp firerate to end while shooting
 	ammo.firerate = lerp(ammo.firerate, ammo.firerate_end, ammo.firerate_mult);
 	
-	if ((gun.current_bullets) > 0 and state != state_bouncing) {
+	if ((gun.current_bullets) > 0 and state != state_bouncing and state != state_charging) {
 		scr_Shoot();
 	
 		var delay = gun.burst_delay;
@@ -137,7 +137,7 @@ if !(key_fire_projectile) { //lerp back to starting firerate while not shooting
 #endregion
 
 //switch between weapons
-if keyboard_check_pressed(ord("E")) || gamepad_button_check_released(0,gp_shoulderr) {
+if keyboard_check_pressed(ord("E")) || mouse_wheel_up() || gamepad_button_check_released(0,gp_shoulderr) {
 	if (current_gun) < array_length(gun_array)-1 {
 		current_gun += 1;
 	}else {
@@ -147,7 +147,7 @@ if keyboard_check_pressed(ord("E")) || gamepad_button_check_released(0,gp_should
 	gun = gun_array[current_gun];
 }
 
-if keyboard_check_pressed(ord("Q")) || gamepad_button_check_released(0,gp_shoulderl) {
+if keyboard_check_pressed(ord("Q")) || mouse_wheel_down() || gamepad_button_check_released(0,gp_shoulderl) {
 	if (current_gun) > 0 {
 		current_gun -= 1;
 	}else {

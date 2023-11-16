@@ -5,6 +5,9 @@ if(is_dead) {
 } else if (hp <= 0) {
 	is_dead = true;
 	alarm_set(0, room_speed);
+	
+	//screen shake
+	scr_Screen_Shake(6, 10);
 }
 
 // Update iframes

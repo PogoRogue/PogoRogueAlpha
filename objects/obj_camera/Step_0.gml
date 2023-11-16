@@ -10,9 +10,10 @@ if (instance_exists(follow)) {
 	x += (xTo - x) / readjust_speed;
 	y += (yTo - y) / readjust_speed;
 	
+	//Turned off for proc gen
 	//center in room
-	x = clamp(x,view_w_half+buff,room_width - view_w_half-buff);
-	y = clamp(y,view_h_half+buff,room_height - view_h_half-buff);
+	//x = clamp(x,view_w_half+buff,room_width - view_w_half-buff);
+	//y = clamp(y,view_h_half+buff,room_height - view_h_half-buff);
 
 }
 

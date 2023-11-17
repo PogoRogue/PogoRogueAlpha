@@ -24,4 +24,6 @@ if(!is_dead && dist_to_player < range) {
 
 // Inherit the parent event
 event_inherited();
-
+spd = 2;
+at_edge = false;
+at_wall = false;

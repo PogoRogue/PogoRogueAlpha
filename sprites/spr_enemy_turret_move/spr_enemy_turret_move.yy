@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_enemy_turret_barrel",
+  "name": "spr_enemy_turret_move",
   "bbox_bottom": 27,
   "bbox_left": 25,
   "bbox_right": 54,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_enemy_turret_barrel",
+    "name": "spr_enemy_turret_move",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"79bcd693-8a42-44b3-b269-d4ac7b327542","path":"sprites/spr_enemy_turret_barrel/spr_enemy_turret_barrel.yy",},},},"Disabled":false,"id":"9ee52fb9-7b81-4726-97c5-e694f7defaea","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"79bcd693-8a42-44b3-b269-d4ac7b327542","path":"sprites/spr_enemy_turret_move/spr_enemy_turret_move.yy",},},},"Disabled":false,"id":"501c15ae-ae80-491b-8a3b-08b43ebdbe75","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

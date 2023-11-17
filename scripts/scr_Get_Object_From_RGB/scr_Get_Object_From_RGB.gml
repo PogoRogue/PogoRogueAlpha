@@ -41,9 +41,21 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			{
 				return obj_enemy_moving
 			}
-			else
+			else if(Red > 220)
 			{
 				return obj_enemy_explode
+			}
+			else if(Red > 200)
+			{
+				return obj_enemy_chasing;
+			}
+			else if(Red > 170)
+			{
+				return obj_enemy_turret;
+			}
+			else if(Red > 150)
+			{
+				return obj_enemy_jump;
 			}
 		}
 	}
@@ -65,10 +77,11 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_conveyor_belt;
 		}
-		else
+		else if(Blue > 170)
 		{
-			
+			return obj_electric_floor;
 		}
+		
 	}
 	else //All other colors are ground/unassigned
 	{
@@ -90,5 +103,5 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 function Get_Random_Enemy()
 {	
 	return choose(obj_enemy_explode, obj_enemy_flying, obj_enemy_moving, obj_enemy_shoot_only,
-		obj_enemy_shooter, obj_enemy_stomp_only);
+		obj_enemy_shooter, obj_enemy_stomp_only, obj_enemy_chasing);
 }

@@ -1,4 +1,6 @@
 {
   "FolderOrderSettings": [],
-  "ResourceOrderSettings": [],
+  "ResourceOrderSettings": [
+    {"name":"spr_enemy_turret_base_new","order":1,"path":"sprites/spr_enemy_turret_base_new/spr_enemy_turret_base_new.yy",},
+  ],
 }

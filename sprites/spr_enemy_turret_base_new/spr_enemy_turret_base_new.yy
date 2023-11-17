@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_enemy_turret_base",
+  "name": "spr_enemy_turret_base_new",
   "bbox_bottom": 30,
   "bbox_left": 11,
   "bbox_right": 52,
@@ -24,11 +24,15 @@
   ],
   "nineSlice": null,
   "origin": 4,
+  "parent": {
+    "name": "Enemy",
+    "path": "folders/Sprites/Enemy.yy",
+  },
   "preMultiplyAlpha": false,
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_enemy_turret_base",
+    "name": "spr_enemy_turret_base_new",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -50,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ca3d699c-0c2d-4b7c-a81b-078ad5d5943f","path":"sprites/spr_enemy_turret_base/spr_enemy_turret_base.yy",},},},"Disabled":false,"id":"d80725dd-6790-489b-9985-1eb99945ff6e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ca3d699c-0c2d-4b7c-a81b-078ad5d5943f","path":"sprites/spr_enemy_turret_base_new/spr_enemy_turret_base_new.yy",},},},"Disabled":false,"id":"f7683012-3647-4283-9143-253b1f4d93f3","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

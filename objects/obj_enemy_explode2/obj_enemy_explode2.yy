@@ -1,9 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_enemy_explode",
+  "name": "obj_enemy_explode2",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -12,8 +13,8 @@
     "path": "folders/Objects/Enemy.yy",
   },
   "parentObjectId": {
-    "name": "obj_enemy_grounded_parent",
-    "path": "objects/obj_enemy_grounded_parent/obj_enemy_grounded_parent.yy",
+    "name": "obj_enemy_explode",
+    "path": "objects/obj_enemy_explode/obj_enemy_explode.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

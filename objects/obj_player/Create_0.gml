@@ -144,15 +144,6 @@ state_free = function() {
 		}
 	}
 
-	
-	//ground pound
-	if (key_pickup_2_pressed) {
-		state = state_groundpound;	
-		ground_pound_rise = true;
-		ground_pound_slam = false;
-		ground_pound_distance_risen = 0;
-	}
-
 }
 
 state_bouncing = function() {
@@ -173,14 +164,14 @@ state_bouncing = function() {
 	scr_Conveyor_Belt();
 	
 	//bounce after animation is complete
-	if (animation_complete and !key_pickup_1) {
+	var not_charging_1 = !(key_pickup_1 and pickups_array[0] = pickup_chargejump and pickups_array[0].on_cooldown = false);
+	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump and pickups_array[1].on_cooldown = false);
+	if (animation_complete and not_charging_1 and not_charging_2) {
 		scr_Jump(0);
-	}else if (animation_complete) {
-		state = state_charging;
 	}
 }
 
-state_charging = function() {
+state_chargejump = function() {
 	sprite_index = charging_sprite;
 	image_speed = 1;
 	vsp_basicjump = -6.6;
@@ -188,9 +179,13 @@ state_charging = function() {
 	// Conveyor belt handling
 	scr_Conveyor_Belt();
 	
-	if !(key_pickup_1) {
+	var not_charging_1 = !(key_pickup_1 and pickups_array[0] = pickup_chargejump);
+	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump);
+	
+	if not_charging_1 and not_charging_2 {
 		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5)
 		scr_Jump(charge);
+		pickup_chargejump.on_cooldown = true;
 	}else {
 		if (charge > charge_max) {
 			charge += charge_max/80; //80 = how many frames until max charge
@@ -240,6 +235,8 @@ state_groundpound = function() {
 			while !(place_meeting(x,y+sign(vspeed),obj_ground_parent)) and !(place_meeting(x,y+sign(vspeed),obj_enemy_parent)) {
 				y += sign(vspeed);
 			}
+			scr_Enemy_Collision_Check(true);
+			pickup_groundpound.on_cooldown = true;
 			state = state_bouncing;
 			vspeed = 0;
 			scr_Screen_Shake(6, 15);
@@ -279,12 +276,11 @@ jump_count = 0;  // bounce count
 buff_active = false; // if the buff is active
 buff_duration = 60 * 5; // buff duration timer
 
+//pickups
+scr_Pickups();
+pickups_array = [pickup_chargejump,pickup_groundpound];
 
 //create text in proc gen room
 if room = room_proc_gen_test {
 	alarm[2] = 10;
-	/*
-	while(!place_meeting(x,y+16,obj_ground)) {
-		y++;	
-	}*/
 }

@@ -47,6 +47,7 @@ key_pickup_2_pressed = 0;
 player_sprite = spr_player_zekai;
 falling_sprite = spr_player_zekai_falling;
 falling_sprite2 = spr_player_zekai_falling;
+charging_sprite = spr_player_zekai_charging;
 
 // Stats
 hp = 40;
@@ -136,19 +137,11 @@ state_free = function() {
 		image_index = 0;
 	}
 	
-	//Turned off for proc gen
-	////restart room if reached the top
-	//if (bbox_bottom < 0 and mask_index != spr_nothing) {
-	//	room_restart();
-	//}
-
-	
-	//ground pound
-	if (key_pickup_2_pressed) {
-		state = state_groundpound;	
-		ground_pound_rise = true;
-		ground_pound_slam = false;
-		ground_pound_distance_risen = 0;
+	//restart room if reached the top unless procgen room
+	if room != room_proc_gen_test {
+		if (bbox_bottom < 0 and mask_index != spr_nothing) {
+			room_restart();
+		}
 	}
 
 }
@@ -161,33 +154,38 @@ state_bouncing = function() {
 	sprite_index = player_sprite; //set sprite
 	
 	//animate before bouncing
-	if (image_index = sprite_get_number(sprite_index)-1) {
+	if (floor(image_index) = sprite_get_number(sprite_index)-1) {
 		animation_complete = true;
 	}else if (animation_complete = false) {
-		image_index += 1;
+		image_index += 0.9;
 	}
 	
 	// Conveyor belt handling
 	scr_Conveyor_Belt();
 	
 	//bounce after animation is complete
-	if (animation_complete and !key_pickup_1) {
+	var not_charging_1 = !(key_pickup_1 and pickups_array[0] = pickup_chargejump and pickups_array[0].on_cooldown = false);
+	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump and pickups_array[1].on_cooldown = false);
+	if (animation_complete and not_charging_1 and not_charging_2) {
 		scr_Jump(0);
-	}else if (animation_complete) {
-		state = state_charging;
 	}
 }
 
-state_charging = function() {
-	
+state_chargejump = function() {
+	sprite_index = charging_sprite;
+	image_speed = 1;
 	vsp_basicjump = -6.6;
 	
 	// Conveyor belt handling
 	scr_Conveyor_Belt();
 	
-	if !(key_pickup_1) {
+	var not_charging_1 = !(key_pickup_1 and pickups_array[0] = pickup_chargejump);
+	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump);
+	
+	if not_charging_1 and not_charging_2 {
 		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5)
 		scr_Jump(charge);
+		pickup_chargejump.on_cooldown = true;
 	}else {
 		if (charge > charge_max) {
 			charge += charge_max/80; //80 = how many frames until max charge
@@ -237,6 +235,8 @@ state_groundpound = function() {
 			while !(place_meeting(x,y+sign(vspeed),obj_ground_parent)) and !(place_meeting(x,y+sign(vspeed),obj_enemy_parent)) {
 				y += sign(vspeed);
 			}
+			scr_Enemy_Collision_Check(true);
+			pickup_groundpound.on_cooldown = true;
 			state = state_bouncing;
 			vspeed = 0;
 			scr_Screen_Shake(6, 15);
@@ -275,3 +275,12 @@ shoot_count = 0; // shoot count
 jump_count = 0;  // bounce count
 buff_active = false; // if the buff is active
 buff_duration = 60 * 5; // buff duration timer
+
+//pickups
+scr_Pickups();
+pickups_array = [pickup_chargejump,pickup_groundpound];
+
+//create text in proc gen room
+if room = room_proc_gen_test {
+	alarm[2] = 10;
+}

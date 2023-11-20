@@ -7,3 +7,6 @@ create_coins = false;
 num_of_coins = irandom_range(min_num_of_coins,max_num_of_coins); //created in variable definitions tab
 allow_projectile_collision = false;
 image_index = 0;
+
+//drop chances
+heart_chance = 50;

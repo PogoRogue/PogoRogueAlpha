@@ -31,12 +31,43 @@ if (dead = false) {
 	key_pickup_2 = 0;
 }
 #endregion
-
 //land on and damage enemy
-scr_Enemy_Collision_Check();
+var condition = ground_pound_slam = false;
+scr_Enemy_Collision_Check(condition);
 
 //run state machine
 state();
+
+
+#region //pickups
+
+//call pickups
+if pickups_array[0].on_cooldown = false {
+	if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
+	or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
+		pickups_array[0].on_call();
+	}
+}
+	
+//call pickup 2
+if pickups_array[1].on_cooldown = false {
+	if (key_pickup_2) and scr_In_Array(pickups_array[1].states_to_call_in, state) and pickups_array[1].key_held 
+	or (key_pickup_2_pressed) and scr_In_Array(pickups_array[1].states_to_call_in, state) and !pickups_array[1].key_held {
+		pickups_array[1].on_call();
+	}
+}
+
+//cooldowns
+for (i = 0; i <= 1; i++) {
+	if pickups_array[i].on_cooldown and pickups_array[i].cooldown_time > 0 {
+		pickups_array[i].cooldown_time -= 1;
+	}else if pickups_array[i].on_cooldown {
+		pickups_array[i].on_cooldown = false;
+		pickups_array[i].cooldown_time = pickups_array[i].max_cooldown_time;
+	}
+}
+
+#endregion
 
 //reset ground pount variables
 if state != state_groundpound {
@@ -114,7 +145,7 @@ if (canshoot > 0) {
 	//lerp firerate to end while shooting
 	ammo.firerate = lerp(ammo.firerate, ammo.firerate_end, ammo.firerate_mult);
 	
-	if ((gun.current_bullets) > 0 and state != state_bouncing and state != state_charging) {
+	if ((gun.current_bullets) > 0 and state != state_bouncing and state != state_chargejump) {
 		scr_Shoot();
 	
 		var delay = gun.burst_delay;

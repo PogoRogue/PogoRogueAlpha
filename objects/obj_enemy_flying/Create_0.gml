@@ -3,6 +3,6 @@
 event_inherited();
 
 spd = 1;
-image_xscale = -spd;
+image_xscale = spd;
 
 

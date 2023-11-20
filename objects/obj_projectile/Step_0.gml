@@ -1,11 +1,16 @@
 x += hspd;
 y += vspd;
 
-//Turned off for proc gen
-//var padding = 64;
-//if !(point_in_rectangle(x,y,-padding,-padding,room_width+padding,room_height+padding)) {
-//	instance_destroy(); //destroy if outside room
-//}
+//cant damage enemies if out of view
+if instance_exists(obj_camera) {
+	var camera_width = camera_get_view_width(view_camera[0])/2;
+	var camera_height = camera_get_view_height(view_camera[0])/2;
+	var padding = 64;
+
+	if !(point_in_rectangle(x,y,obj_camera.x-camera_width-padding,obj_camera.y-camera_height-padding,obj_camera.x+camera_width+padding,obj_camera.y+camera_height+padding)) {
+		instance_destroy();
+	}
+}
 
 //destroy when touching ground
 if (destroy_on_impact and num_of_bounces <= 0) {

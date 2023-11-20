@@ -15,7 +15,7 @@ function scr_Create_Collision_Walls(){
 
 	//bottom
 	with instance_create_depth(bbox_left,bbox_bottom,depth-2,obj_wallbottom) {
-		image_xscale = other.image_xscale;
+		image_xscale = abs(other.image_xscale);
 		image_yscale = 0.5;
 	}
 

@@ -52,7 +52,7 @@ falling_sprite2 = spr_player_zekai_falling;
 hp = 40;
 max_hp = 40;
 stomp_damage = 8;
-num_iframes = room_speed;
+num_iframes = 1.5 * room_speed;
 current_iframes = 0;
 dead = false;
 

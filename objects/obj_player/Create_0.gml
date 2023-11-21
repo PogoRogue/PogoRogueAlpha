@@ -1,11 +1,11 @@
 /// @description initialize variables
 
-//feel free to make copies of this object to mess around with movement values
+//movement stats
 grv = 0.21; //gravity
 h_grv = 0.01; //horizontal drag
 rotation_speed = 3; //rotation speed
-current_rotation_speed = rotation_speed;
-rotation_delay = rotation_speed / 5; //0.5
+current_rotation_speed = 0;
+rotation_delay = rotation_speed / 7; //0.5
 vsp_basicjump = -6.6; //bounce height
 angle = 0;
 anglemax = 40; //maximum degrees added on either side
@@ -16,8 +16,20 @@ mouse_sensitivity = 150; //the lower the value, the more sensitive the player is
 mouse_reanglespeed = 4; //the lower the value, the faster the player will reangle itself and vice versa
 invert = false;
 free = true; //pogo not colliding with wall, this variable ensures the player doesn't get stuck in walls
+conveyor_speed = 0;
+can_rotate = true;
+can_shoot = true;
+
+//pickups
 charge = 0;
 charge_max = vsp_basicjump;
+slower_than_max = false; //ammo momentum for super jump
+current_max = 0;
+ground_pound_rise = false;
+ground_pound_distance_risen = 0;
+ground_pound_slam = false;
+slam_speed = 12;
+slam_trail_distance = 0;
 
 //set controls variables
 key_right = 0;
@@ -26,22 +38,24 @@ key_fire_projectile = 0;
 key_right_pressed = 0;
 key_left_pressed = 0;
 key_fire_projectile_pressed = 0;
-key_charge_jump = 0;
+key_pickup_1 = 0;
+key_pickup_2 = 0;
+key_pickup_1_pressed = 0;
+key_pickup_2_pressed = 0;
 
+//player sprite
 player_sprite = spr_player_zekai;
 falling_sprite = spr_player_zekai_falling;
 falling_sprite2 = spr_player_zekai_falling;
-
-dead = false;
+charging_sprite = spr_player_zekai_charging;
 
 // Stats
-hp = 24;
-max_hp = 24;
+hp = 40;
+max_hp = 40;
 stomp_damage = 8;
 num_iframes = room_speed;
 current_iframes = 0;
-
-conveyor_speed = 0;
+dead = false;
 
 image_speed = 0;
 
@@ -63,50 +77,13 @@ equipped_item = noone; // The weapon that initializes the equipment is none
 
 #region //STATES
 
-state_rising = function() {
-	//falling
-	vspeed += grv;
-	//horizontal drag
-	if hspeed > 0 {
-		motion_add(180,h_grv);
-	}else if hspeed < 0 {
-		motion_add(0,h_grv);
-	}
+state_free = function() {
 	
-	//check for collision with ground
-	if (place_meeting(x+hspeed,y,obj_ground)) and free = true {
-		while !(place_meeting(x+sign(hspeed),y,obj_ground)) {
-			x += sign(hspeed);
-		}
-		state = state_bouncing;
-		speed = 0; //stop player movement while bouncing
-	}
+	can_rotate = true;
+	can_shoot = true;
 	
-	if (place_meeting(x,y+vspeed,obj_ground)) and free = true {
-		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
-			y += sign(vspeed);
-		}
-		state = state_bouncing;
-		speed = 0; //stop player movement while bouncing
-	}
-	if !(place_meeting(x+hspeed,y+vspeed,obj_ground)) and free = false {
-		free = true;	
-	}
-		
-	//restart room if reached the top
-	if (bbox_bottom < 0 and mask_index != spr_nothing) {
-		room_restart();
-	}
-	
-	sprite_index = falling_sprite; //set player sprite
-	
-	if vspeed > 0 {
-		state = state_falling;
-	}
-}
-
-state_falling = function() {
 	vspeed += grv; //falling
+	vsp_basicjump = -6.6;
 	
 	//horizontal drag
 	if hspeed > 0 {
@@ -115,8 +92,8 @@ state_falling = function() {
 		motion_add(0,h_grv);
 	}
 	
-	//check for collision with ground below
-	if (place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway)) {
+	//check for collision with one way ground
+	if (place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway)) and vspeed > 0 {
 		while !(place_meeting(x,y+sign(vspeed),obj_ground_oneway)) {
 			y += sign(vspeed);
 		}
@@ -124,7 +101,7 @@ state_falling = function() {
 		speed = 0; //stop player movement while bouncing
 	}
 	
-	//check for collision with ground
+	//check for collision with ground x axis
 	if (place_meeting(x+hspeed,y,obj_ground)) and free = true {
 		while !(place_meeting(x+sign(hspeed),y,obj_ground)) {
 			x += sign(hspeed);
@@ -133,6 +110,7 @@ state_falling = function() {
 		speed = 0; //stop player movement while bouncing
 	}
 	
+	//check for collision with ground y axis
 	if (place_meeting(x,y+vspeed,obj_ground)) and free = true {
 		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
 			y += sign(vspeed);
@@ -140,16 +118,15 @@ state_falling = function() {
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
 	}
+	
+	//make sure player isn't colliding with anything before checking for collisions again
 	if !(place_meeting(x+hspeed,y+vspeed,obj_ground)) and free = false {
 		free = true;	
 	}
 	
-	if vspeed < 0 {
-		state = state_rising;
-	}
-	
 	//falling animation
 	sprite_index = falling_sprite;
+	
 	if (vspeed > 3) {
 		image_index = 3;
 	}else if (vspeed > 2) {
@@ -159,38 +136,56 @@ state_falling = function() {
 	}else {
 		image_index = 0;
 	}
+	
+	//restart room if reached the top unless procgen room
+	if room != room_proc_gen_test {
+		if (bbox_bottom < 0 and mask_index != spr_nothing) {
+			room_restart();
+		}
+	}
+
 }
 
 state_bouncing = function() {
 	
+	can_rotate = true;
+	can_shoot = true;
 	free = false;
 	sprite_index = player_sprite; //set sprite
 	
 	//animate before bouncing
-	if (image_index = sprite_get_number(sprite_index)-1) {
+	if (floor(image_index) = sprite_get_number(sprite_index)-1) {
 		animation_complete = true;
 	}else if (animation_complete = false) {
-		image_index += 1;
+		image_index += 0.9;
 	}
 	
 	// Conveyor belt handling
 	scr_Conveyor_Belt();
 	
 	//bounce after animation is complete
-	if (animation_complete and !key_charge_jump) {
+	var not_charging_1 = !(key_pickup_1 and pickups_array[0] = pickup_chargejump and pickups_array[0].on_cooldown = false);
+	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump and pickups_array[1].on_cooldown = false);
+	if (animation_complete and not_charging_1 and not_charging_2) {
 		scr_Jump(0);
-	}else if (animation_complete) {
-		state = state_charging;
 	}
 }
 
-state_charging = function() {
+state_chargejump = function() {
+	sprite_index = charging_sprite;
+	image_speed = 1;
+	vsp_basicjump = -6.6;
 	
 	// Conveyor belt handling
 	scr_Conveyor_Belt();
 	
-	if !(key_charge_jump) {
+	var not_charging_1 = !(key_pickup_1 and pickups_array[0] = pickup_chargejump);
+	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump);
+	
+	if not_charging_1 and not_charging_2 {
+		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5)
 		scr_Jump(charge);
+		pickup_chargejump.on_cooldown = true;
 	}else {
 		if (charge > charge_max) {
 			charge += charge_max/80; //80 = how many frames until max charge
@@ -199,7 +194,58 @@ state_charging = function() {
 	
 }
 
-state = state_falling;
+state_groundpound = function() {
+	hspeed = hspeed * 0.9;
+	can_shoot = false;
+	if slam_speed < 15.9 { //15.9 because dont wanna glitch through 16px platforms
+		slam_speed += 0.1;
+	}
+	//rise
+	if ground_pound_rise = true {
+		can_rotate = false;
+		vspeed = 0;
+		if (angle != 0)	{
+			var angle_side = sign(angle);
+			angle += rotation_speed*sign(-angle);
+			if (sign(angle) != angle_side) {
+				angle = 0;
+				current_rotation_speed = 0;
+			}
+		}
+		
+		if (ground_pound_distance_risen) < 32 {
+			ground_pound_distance_risen += 1;
+			with (msk_index) {
+				if !place_meeting(x,y-1,obj_ground) {
+					other.vspeed = -1;	
+				}
+			}
+		}else {
+			ground_pound_rise = false;
+			ground_pound_slam = true;
+		}
+	}
+	//slam
+	if ground_pound_slam = true {
+		vspeed = slam_speed;
+		can_rotate = true; //allow rotation again
+		vsp_basicjump = -8;
+		//switch states
+		if place_meeting(x,y+vspeed,obj_ground_parent) or place_meeting(x,y+vspeed,obj_enemy_parent) { 
+			while !(place_meeting(x,y+sign(vspeed),obj_ground_parent)) and !(place_meeting(x,y+sign(vspeed),obj_enemy_parent)) {
+				y += sign(vspeed);
+			}
+			scr_Enemy_Collision_Check(true);
+			pickup_groundpound.on_cooldown = true;
+			state = state_bouncing;
+			vspeed = 0;
+			scr_Screen_Shake(6, 15);
+		}
+		
+	}
+}
+
+state = state_free;
 #endregion
 
 #region //weapons
@@ -210,165 +256,16 @@ knockback_angle = 0; //angle of knockback
 ox = x; //original x position
 oy = y; //original y position
 
-#region //bullets
-default_bullet = {
-	sprite: spr_projectile_default,//bullet sprite
-	gui_sprite: spr_projectile_default_gui, //bullet gui sprite
-	spd: 15,                        //speed of bullet
-	firerate_start: 1,              //initial firerate, higher = slower
-	firerate_end: 1,                //max firerate, higher = slower
-	firerate_mult: 0,               //multiplication of firerate per shot
-	firerate: 1,                    //current firerate, higher = slower
-	destroy_on_impact: true         //destroy when touching ground or not
-};
+//bullets
+scr_Bullets();
 
-paintball_bullet = {
-	sprite: spr_projectile_paintball1,
-	gui_sprite: spr_projectile_paintball_gui,
-	spd: 15,                          
-	firerate_start: 5,               
-	firerate_end: 5,                 
-	firerate_mult: 0,               
-	firerate: 5,                     
-	destroy_on_impact: true         
-};
-
-shotgun_bullet = {
-	sprite: spr_projectile_nerfdart,
-	gui_sprite: spr_projectile_nerfdart_gui,
-	spd: 15,                        
-	firerate_start: 1,              
-	firerate_end: 1,                
-	firerate_mult: 0,               
-	firerate: 1,                    
-	destroy_on_impact: true         
-};
-
-speedup_bullet = {
-	sprite: spr_projectile_speedup,
-	gui_sprite: spr_projectile_speedup_gui,
-	spd: 15,                         
-	firerate_start: 10,               
-	firerate_end: 2,                
-	firerate_mult: 0.6,                
-	firerate: 3,                     
-	destroy_on_impact: true          
-};
-
-burstfire_bullet = {
-	sprite: spr_projectile_burstfire,
-	gui_sprite: spr_projectile_burstfire_gui,
-	spd: 15,                       
-	firerate_start: 30,            
-	firerate_end: 30,           
-	firerate_mult: 0,              
-	firerate: 30,                 
-	destroy_on_impact: true      
-};
-#endregion
-
-#region //guns
-default_gun = {
-	name: "Default Gun",  //name of gun
-	sprite: spr_player,   //gun sprite
-	ammo: [default_bullet],//array of ammo
-	inaccuracy: 0,        //random bullet angle inaccuracy
-	kick: 2,              //kickback to position and angle
-	//sound: snd_nothing, //sound effect
-	spread_number: 1,     //number of bullets per shot
-	spread_angle: 0,      //angle between bullets in spread shot
-	full_auto: false,     //hold down mouse to shoot vs click for each shot
-	burst_number: 1,      //number of bullets in burst
-	burst_delay: 0,       //delay between bursts
-	momentum_added: 0.9,  //percentage of vsp_basicjump to apply for each bullet, 1 = 100%
-	reset_momentum: true, //reset player speed to 0 for each bullet (false), or just add to current speed (false)
-	bullets_per_bounce: 3,//Number of bullets per clip
-	current_bullets: 3,   //current number of bullets left
-	max_speed: 5          //player cant move faster than this if full_auto = true
-};
-
-paintball_gun = {
-	name: "Paintball Gun",  
-	sprite: spr_player,   
-	ammo: [paintball_bullet],     
-	inaccuracy: 5,     
-	kick: 2,           
-	//sound: snd_nothing, 
-	spread_number: 1,     
-	spread_angle: 0, 
-	full_auto: true,    
-	burst_number: 1,      
-	burst_delay: 0,       
-	momentum_added: 0.4,  
-	reset_momentum: false, 
-	bullets_per_bounce: 10,
-	current_bullets: 10,   
-	max_speed: 6           
-};
-
-shotgun_gun = {
-	name: "Shotgun",  
-	sprite: spr_player,  
-	ammo: [shotgun_bullet],
-	inaccuracy: 0,       
-	kick: 2,             
-	//sound: snd_nothing,
-	spread_number: 5,     
-	spread_angle: 15,     
-	full_auto: false,     
-	burst_number: 1,    
-	burst_delay: 0,     
-	momentum_added: 1.25, 
-	reset_momentum: true, 
-	bullets_per_bounce: 2,
-	current_bullets: 2,  
-	max_speed: 6          
-};
-
-negev_gun = {
-	name: "Frenzy Gun",  
-	sprite: spr_player,   
-	ammo: [speedup_bullet],
-	inaccuracy: 35,       
-	kick: 2,              
-	//sound: snd_nothing,
-	spread_number: 1,    
-	spread_angle: 15,    
-	full_auto: true,     
-	burst_number: 1,     
-	burst_delay: 0,     
-	momentum_added: 0.2, 
-	reset_momentum: false, 
-	bullets_per_bounce: 30,
-	current_bullets: 30,  
-	max_speed: 9       
-};
-
-burstfire_gun = {
-	name: "Burst Fire Gun",  
-	sprite: spr_player,   
-	ammo: [burstfire_bullet],
-	inaccuracy: 10,       
-	kick: 2,              
-	//sound: snd_nothing,
-	spread_number: 1,    
-	spread_angle: 15,    
-	full_auto: true,     
-	burst_number: 3,     
-	burst_delay: 6,     
-	momentum_added: 1, 
-	reset_momentum: false, 
-	bullets_per_bounce: 9,
-	current_bullets: 9,  
-	max_speed: 6          
-};	
-
-#endregion
+//guns
+scr_Guns();
 
 canshoot = 0; //shooting timer
 bullet_index = 0; //current bullet
 
-gun_array = [default_gun,paintball_gun,shotgun_gun,negev_gun,burstfire_gun];
+gun_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun];
 current_gun = 0;
 gun = gun_array[current_gun];
 
@@ -378,3 +275,12 @@ shoot_count = 0; // shoot count
 jump_count = 0;  // bounce count
 buff_active = false; // if the buff is active
 buff_duration = 60 * 5; // buff duration timer
+
+//pickups
+scr_Pickups();
+pickups_array = [pickup_chargejump,pickup_groundpound];
+
+//create text in proc gen room
+if room = room_proc_gen_test {
+	alarm[2] = 10;
+}

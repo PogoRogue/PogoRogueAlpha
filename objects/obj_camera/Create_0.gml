@@ -11,3 +11,9 @@ readjust_speed = 8; //lower = faster
 x_adjust = 100;
 
 scroll = 0;
+
+//screen shake
+shake_length = 0; //# of frames
+shake_magnitude = 0; //# of pixels in each direction, max value
+shake_remain = 0; //decrease this value until it reaches zero
+buff = 0; //buffer

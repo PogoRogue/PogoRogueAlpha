@@ -7,6 +7,10 @@ function scr_Player_Damaged(damage){
 		current_iframes = num_iframes;
 		hspeed = -2 * sign(hspeed);
 		vspeed = 0;
+		
+		//combo reset
+		global.combo = 0;
+		global.combo_length = 0;
 	}
 	
 	//screen shake

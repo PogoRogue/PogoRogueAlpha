@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_Enemy_Collision_Check(){
-	if place_meeting(x,y+vspeed,obj_enemy_parent) {
+function scr_Enemy_Collision_Check(condition){
+	if place_meeting(x,y+vspeed,obj_enemy_parent) and condition = true {
 		while !(place_meeting(x,y+sign(vspeed),obj_enemy_parent)) {
 			y += sign(vspeed);
 		}

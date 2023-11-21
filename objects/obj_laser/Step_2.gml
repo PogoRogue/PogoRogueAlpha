@@ -35,9 +35,14 @@ with obj_player {
 }
 
 //cant damage enemies if out of view
-var padding = 64;
-if !(point_in_rectangle(x,y,-padding,-padding,room_width+padding,room_height+padding)) {
-	damage = 0;
-}else {
-	damage = init_damage;	
+if instance_exists(obj_camera) {
+	camera_width = camera_get_view_width(view_camera[0])/2;
+	camera_height = camera_get_view_height(view_camera[0])/2;
+	var padding = 64;
+
+	if !(point_in_rectangle(x,y,obj_camera.x-camera_width-padding,obj_camera.y-camera_height-padding,obj_camera.x+camera_width+padding,obj_camera.y+camera_height+padding)) {
+		damage = 0;
+	}else {
+		damage = init_damage;	
+	}
 }

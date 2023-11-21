@@ -24,10 +24,6 @@
   ],
   "nineSlice": null,
   "origin": 4,
-  "parent": {
-    "name": "Enemy",
-    "path": "folders/Sprites/Enemy.yy",
-  },
   "preMultiplyAlpha": false,
   "sequence": {
     "resourceType": "GMSequence",

@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_enemy_turret_dodge",
+  "name": "obj_enemy_turret_mobile",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
@@ -13,8 +13,8 @@
     "path": "folders/Objects/Enemy.yy",
   },
   "parentObjectId": {
-    "name": "obj_enemy_grounded_parent",
-    "path": "objects/obj_enemy_grounded_parent/obj_enemy_grounded_parent.yy",
+    "name": "obj_enemy_turret",
+    "path": "objects/obj_enemy_turret/obj_enemy_turret.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_enemy_turret_move",
-    "path": "sprites/spr_enemy_turret_move/spr_enemy_turret_move.yy",
+    "name": "spr_enemy_turret_barrel",
+    "path": "sprites/spr_enemy_turret_barrel/spr_enemy_turret_barrel.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -12,7 +12,7 @@ if(!is_dead && dist_to_player < range) {
 		// Fire when ready
 		weapon_cooldown--;
 		if(weapon_cooldown <= 0) {
-			//create bullet
+			// Create bullet
 			var _bullet = instance_create_layer(x, y, "Instances", obj_enemy_projectile_bullet);
 			_bullet.direction = point_direction(x, y, player.x, player.y);
 			_bullet.speed = bullet_speed;
@@ -24,6 +24,3 @@ if(!is_dead && dist_to_player < range) {
 
 // Inherit the parent event
 event_inherited();
-spd = 2;
-at_edge = false;
-at_wall = false;

@@ -15,8 +15,8 @@
     "path": "folders/Objects/Enemy.yy",
   },
   "parentObjectId": {
-    "name": "obj_enemy_stomp_only",
-    "path": "objects/obj_enemy_stomp_only/obj_enemy_stomp_only.yy",
+    "name": "obj_enemy_shoot_only",
+    "path": "objects/obj_enemy_shoot_only/obj_enemy_shoot_only.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

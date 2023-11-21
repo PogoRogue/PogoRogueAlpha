@@ -1,10 +1,12 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_enemy_moving2",
+  "name": "obj_enemy_explode_walking",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":1,"eventType":2,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -13,8 +15,8 @@
     "path": "folders/Objects/Enemy.yy",
   },
   "parentObjectId": {
-    "name": "obj_enemy_grounded_parent",
-    "path": "objects/obj_enemy_grounded_parent/obj_enemy_grounded_parent.yy",
+    "name": "obj_enemy_explode",
+    "path": "objects/obj_enemy_explode/obj_enemy_explode.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -32,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_enemy_moving",
-    "path": "sprites/spr_enemy_moving/spr_enemy_moving.yy",
+    "name": "spr_enemy_walking_explosion_idle",
+    "path": "sprites/spr_enemy_walking_explosion_idle/spr_enemy_walking_explosion_idle.yy",
   },
   "spriteMaskId": null,
   "visible": true,

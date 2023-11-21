@@ -7,12 +7,21 @@ function scr_Enemy_Collision_Check(condition){
 		}
 		with instance_place(x,y+1,obj_enemy_parent) {
 			if object_get_parent(object_index) != obj_enemy_shoot_only and object_index != obj_enemy_shoot_only {
-				if (!is_dead && current_iframes <= 0) {
+				if (!is_dead && current_iframes <= 0 && other.current_iframes <= 0) {
 					other.state = other.state_bouncing;
 					other.speed = 0;
 					hp -= other.stomp_damage;
 					red_frames = 10;
 					current_iframes = num_iframes;
+					
+					// For Sphere boss, change its direction when you hit it from above
+					if(object_index == obj_boss_sphere) {
+						x_diff = x - other.x;
+						y_diff = y - other.y;
+						if(x_diff <= y_diff) {
+							vspeed = 1;
+						}
+					}
 				}
 			}else {
 				other.state = other.state_bouncing;

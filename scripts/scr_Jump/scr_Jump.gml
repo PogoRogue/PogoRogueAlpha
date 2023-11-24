@@ -12,4 +12,8 @@ function scr_Jump(add_to_jump){
 	gun.current_bullets = gun.bullets_per_bounce; //reload bullets
 	state = state_free;
 	charge = 0;
+	
+	//flames
+	allow_flames = false;
+	min_flames_speed = 5.6;
 }

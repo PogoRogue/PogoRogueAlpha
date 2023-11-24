@@ -113,7 +113,7 @@ function scr_Guns(){
 		reset_momentum: true, 
 		bullets_per_bounce: 3,
 		current_bullets: 3,  
-		max_speed: -vsp_basicjump
+		max_speed: -vsp_basicjump*0.9
 	};	
 	
 	laser_gun = {

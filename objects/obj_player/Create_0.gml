@@ -31,6 +31,10 @@ ground_pound_slam = false;
 slam_speed = 12;
 slam_trail_distance = 0;
 
+//upward flames
+min_flames_speed = 5.6;
+allow_flames = false;
+
 //set controls variables
 key_right = 0;
 key_left = 0;
@@ -143,6 +147,11 @@ state_free = function() {
 			room_restart();
 		}
 	}
+	
+	//create upward flames if fast enough
+	if speed >= min_flames_speed and !instance_exists(obj_player_flames_upward) and vspeed < 0 and allow_flames = true {
+		instance_create_depth(x,y,depth-1,obj_player_flames_upward);
+	}
 
 }
 
@@ -185,6 +194,8 @@ state_chargejump = function() {
 	if not_charging_1 and not_charging_2 {
 		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5)
 		scr_Jump(charge);
+		allow_flames = true;
+		min_flames_speed = 6.6;
 		pickup_chargejump.on_cooldown = true;
 	}else {
 		if (charge > charge_max) {

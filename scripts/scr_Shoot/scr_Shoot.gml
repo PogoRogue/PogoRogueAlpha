@@ -35,6 +35,10 @@ function scr_Shoot(){
 			if gun.spread_number = 1 {
 				gun.current_bullets -= 1;
 			}
+			
+			//allow upward flames
+			allow_flames = true;
+			min_flames_speed = gun.max_speed - 1.5;
 		}
 		
 		//check if speed slower or faster than max speed to preserve momentum

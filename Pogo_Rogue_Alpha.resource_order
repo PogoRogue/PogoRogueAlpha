@@ -1,4 +1,8 @@
 {
   "FolderOrderSettings": [],
-  "ResourceOrderSettings": [],
+  "ResourceOrderSettings": [
+    {"name":"scr_Reload_On_Kill","order":1,"path":"scripts/scr_Reload_On_Kill/scr_Reload_On_Kill.yy",},
+    {"name":"obj_player_flames_upward","order":1,"path":"objects/obj_player_flames_upward/obj_player_flames_upward.yy",},
+    {"name":"spr_player_flames","order":1,"path":"sprites/spr_player_flames/spr_player_flames.yy",},
+  ],
 }

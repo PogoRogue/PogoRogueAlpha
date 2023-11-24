@@ -17,7 +17,8 @@ function scr_Bullets(){
 		grav_affected: false,            //is this bullet affected by gravity
 		grv: obj_player.grv,             //amount of gravity added per frame
 		num_of_bounces: 0,               //how many times will this bullet bounce before being destroyed
-		bounce_amount: 1                 //multiply hspeed/vspeed by this amount per bounce, 1 = no slowdown 
+		bounce_amount: 1,                //multiply hspeed/vspeed by this amount per bounce, 1 = no slowdown
+		damage: 8                         //how much damage each bullet does
 	};
 
 	paintball_bullet = {
@@ -35,7 +36,8 @@ function scr_Bullets(){
 		grav_affected: false,
 		grv: obj_player.grv,
 		num_of_bounces: 0,
-		bounce_amount: 1
+		bounce_amount: 1,
+		damage: 6
 	};
 
 	shotgun_bullet = {
@@ -53,7 +55,8 @@ function scr_Bullets(){
 		grav_affected: false,
 		grv: obj_player.grv,
 		num_of_bounces: 0,
-		bounce_amount: 1
+		bounce_amount: 1,
+		damage: 10
 	};
 
 	bubble_bullet = {
@@ -71,7 +74,8 @@ function scr_Bullets(){
 		grav_affected: false,
 		grv: obj_player.grv,
 		num_of_bounces: 0,
-		bounce_amount: 1
+		bounce_amount: 1,
+		damage: 4
 	};
 
 	burstfire_bullet = {
@@ -89,7 +93,8 @@ function scr_Bullets(){
 		grav_affected: false,
 		grv: obj_player.grv,
 		num_of_bounces: 0,
-		bounce_amount: 1
+		bounce_amount: 1,
+		damage: 5
 	};
 	
 	grenade_bullet = {
@@ -107,7 +112,8 @@ function scr_Bullets(){
 		grav_affected: true,
 		grv: obj_player.grv,
 		num_of_bounces: 1,
-		bounce_amount: 0.8
+		bounce_amount: 0.8,
+		damage: 15
 	};
 	
 	laser_bullet = {
@@ -125,6 +131,7 @@ function scr_Bullets(){
 		grav_affected: false,
 		grv: obj_player.grv,
 		num_of_bounces: 0,
-		bounce_amount: 1
+		bounce_amount: 1,
+		damage: 0.75 //per frame
 	};
 }

@@ -22,7 +22,8 @@ function scr_Shoot(){
 				grav_affected: gun.ammo[bullet_index].grav_affected,
 				grv: gun.ammo[bullet_index].grv,
 				num_of_bounces: gun.ammo[bullet_index].num_of_bounces,
-				bounce_amount: gun.ammo[bullet_index].bounce_amount
+				bounce_amount: gun.ammo[bullet_index].bounce_amount,
+				damage: gun.ammo[bullet_index].damage,
 			});
 			
 			//screen shake

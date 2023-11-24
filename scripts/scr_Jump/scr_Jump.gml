@@ -12,6 +12,7 @@ function scr_Jump(add_to_jump){
 	gun.current_bullets = gun.bullets_per_bounce; //reload bullets
 	state = state_free;
 	charge = 0;
+	bouncing = false;
 	
 	//flames
 	allow_flames = false;

@@ -8,7 +8,7 @@ current_rotation_speed = 0;
 rotation_delay = rotation_speed / 7; //0.5
 vsp_basicjump = -6.6; //bounce height
 angle = 0;
-anglemax = 40; //maximum degrees added on either side
+anglemax = 45; //maximum degrees added on either side
 bouncing = false; //bouncing animation when true
 animation_complete = false; //bounce animation before jumping
 use_mouse = false; //use mouse to control instead of WASD/Arrow keys?
@@ -82,7 +82,7 @@ equipped_item = noone; // The weapon that initializes the equipment is none
 #region //STATES
 
 state_free = function() {
-	
+	bouncing = false;
 	can_rotate = true;
 	can_shoot = true;
 	
@@ -156,9 +156,12 @@ state_free = function() {
 }
 
 state_bouncing = function() {
-	
-	can_rotate = true;
-	can_shoot = true;
+	bouncing = true;
+	//on create
+	if floor(image_index) = 0 {
+		can_rotate = true;
+		can_shoot = true;
+	}
 	free = false;
 	sprite_index = player_sprite; //set sprite
 	
@@ -166,7 +169,7 @@ state_bouncing = function() {
 	if (floor(image_index) = sprite_get_number(sprite_index)-1) {
 		animation_complete = true;
 	}else if (animation_complete = false) {
-		image_index += 0.9;
+		image_index += 0.75;
 	}
 	
 	// Conveyor belt handling
@@ -181,6 +184,7 @@ state_bouncing = function() {
 }
 
 state_chargejump = function() {
+	bouncing = true;
 	sprite_index = charging_sprite;
 	image_speed = 1;
 	vsp_basicjump = -6.6;

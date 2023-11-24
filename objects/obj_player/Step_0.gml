@@ -69,10 +69,9 @@ for (i = 0; i <= 1; i++) {
 
 #endregion
 
-//reset ground pount variables
+//reset ground pound variables
 if state != state_groundpound {
 	ground_pound_slam = false;
-	can_rotate = true;
 	can_shoot = true;
 	slam_speed = 12;
 	slam_trail_distance = 0;
@@ -118,10 +117,9 @@ if (can_rotate) {
 					angle += ((point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
 				}
 			}
-			
-		clamp(angle,-anglemax,anglemax); //cant tilt too far
 	}
 }
+angle = clamp(angle,-anglemax,anglemax); //cant tilt too far
 
 
 image_angle = angle;

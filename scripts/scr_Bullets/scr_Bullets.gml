@@ -5,7 +5,7 @@ function scr_Bullets(){
 	default_bullet = {
 		sprite: spr_projectile_default, //bullet sprite
 		gui_sprite: spr_projectile_default_gui, //bullet gui sprite
-		spd: 10,                        //speed of bullet
+		spd: 15,                        //speed of bullet
 		firerate_start: 1,              //initial firerate, higher = slower
 		firerate_end: 1,                //max firerate, higher = slower
 		firerate_mult: 0,               //multiplication of firerate per shot
@@ -19,6 +19,25 @@ function scr_Bullets(){
 		num_of_bounces: 0,               //how many times will this bullet bounce before being destroyed
 		bounce_amount: 1,                //multiply hspeed/vspeed by this amount per bounce, 1 = no slowdown
 		damage: 8                         //how much damage each bullet does
+	};
+	
+	hatgun_bullet = {
+		sprite: spr_projectile_default,
+		gui_sprite: spr_projectile_default_gui,
+		spd: 15,                          
+		firerate_start: 1,               
+		firerate_end: 1,                 
+		firerate_mult: 0,               
+		firerate: 1,                     
+		destroy_on_impact: true,
+		screen_shake: {magnitude: 2.5, frames: 10},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0,
+		bounce_amount: 1,
+		damage: 8
 	};
 
 	paintball_bullet = {

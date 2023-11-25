@@ -14,6 +14,15 @@ function scr_Jump(add_to_jump){
 	charge = 0;
 	bouncing = false;
 	
+	if pickups_array[0].reload_on_bounce = true {
+		pickups_array[0].uses_per_bounce = pickups_array[0].max_uses_per_bounce;
+		pickups_array[0].on_cooldown = false;
+	}
+	if pickups_array[1].reload_on_bounce = true {
+		pickups_array[1].uses_per_bounce = pickups_array[1].max_uses_per_bounce;
+		pickups_array[1].on_cooldown = false;
+	}
+	
 	//flames
 	allow_flames = false;
 	min_flames_speed = 5.6;

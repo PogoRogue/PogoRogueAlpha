@@ -18,8 +18,28 @@ function scr_Guns(){
 		reset_momentum: true, //reset player speed to 0 for each bullet (false), or just add to current speed (false)
 		bullets_per_bounce: 3,//Number of bullets per clip
 		current_bullets: 3,   //current number of bullets left
-		max_speed: -vsp_basicjump          //player cant move faster than this if full_auto = true
+		max_speed: -vsp_basicjump //player cant move faster than this if full_auto = true
 	};
+	
+	hat_gun = {
+		name: "Hat Gun",
+		sprite: spr_player,
+		ammo: [hatgun_bullet],
+		inaccuracy: 0,
+		kick: 2,
+		//sound: snd_nothing,
+		spread_number: 1,
+		spread_angle: 0,
+		full_auto: false,
+		burst_number: 1,
+		burst_delay: 0,
+		momentum_added: 0,
+		reset_momentum: false,
+		bullets_per_bounce: 1,
+		current_bullets: 1,
+		max_speed: -vsp_basicjump
+	};
+
 
 	paintball_gun = {
 		name: "Paintball Gun",  

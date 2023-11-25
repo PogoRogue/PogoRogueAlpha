@@ -11,6 +11,9 @@ function scr_Pickups(){
 		on_cooldown: false,                     //is this pickup currently on cooldown
 		states_to_call_in: [state_free],        //when this ability can be activated
 		key_held: false,                        //do you need to hold the key to call this ability (true) or just press it (false)
+		reload_on_bounce: false,                //does this ability recharge on bounce instead of cooldown?
+		max_uses_per_bounce: 0,                 //how many times can you use this per bounce
+		uses_per_bounce: 0,                     //same as max_uses_per_bounce, except this value changes
 		on_call: function() { }                 //specific actions to do when this event is called           
 	};
 	
@@ -23,6 +26,9 @@ function scr_Pickups(){
 		on_cooldown: false,
 		states_to_call_in: [state_bouncing],
 		key_held: true,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
 		on_call: function() {
 			if (obj_player.animation_complete) {
 				obj_player.state = obj_player.state_chargejump;
@@ -39,11 +45,46 @@ function scr_Pickups(){
 		on_cooldown: false,
 		states_to_call_in: [state_free],
 		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
 		on_call: function() {
 			obj_player.state = obj_player.state_groundpound;
 			obj_player.ground_pound_rise = true;
 			obj_player.ground_pound_slam = false;
 			obj_player.ground_pound_distance_risen = 0;
+		}
+	};
+	
+	pickup_hatgun = {
+		name: "Hat Gun",
+		item_description: "Shoot a bullet upwards from your hat",
+		gui_sprite: spr_pickup_hatgun,
+		max_cooldown_time: -1,
+		cooldown_time: -1,
+		on_cooldown: false,
+		states_to_call_in: [state_free,state_bouncing,state_chargejump],
+		key_held: false,
+		reload_on_bounce: true,
+		max_uses_per_bounce: 3,
+		uses_per_bounce: 3,
+		on_call: function() {
+			with obj_player {
+				old_gun = gun;
+				gun = hat_gun;
+				image_angle += 180;
+				x -= lengthdir_x(68,image_angle+90);
+				y -= lengthdir_y(68,image_angle+90);
+				scr_Shoot();
+				x += lengthdir_x(68,image_angle+90);
+				y += lengthdir_y(68,image_angle+90);
+				image_angle -= 180;
+				gun = old_gun;
+			}
+			uses_per_bounce -= 1;
+			if uses_per_bounce <= 0 {
+				on_cooldown = true;
+			}
 		}
 	};
 	

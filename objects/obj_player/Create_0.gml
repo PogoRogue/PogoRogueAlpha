@@ -5,7 +5,7 @@ grv = 0.21; //gravity
 h_grv = 0.01; //horizontal drag
 rotation_speed = 3; //rotation speed
 current_rotation_speed = 0;
-rotation_delay = rotation_speed / 7; //0.5
+rotation_delay = rotation_speed / 10; //0.5
 vsp_basicjump = -6.6; //bounce height
 angle = 0;
 anglemax = 45; //maximum degrees added on either side
@@ -19,6 +19,9 @@ free = true; //pogo not colliding with wall, this variable ensures the player do
 conveyor_speed = 0;
 can_rotate = true;
 can_shoot = true;
+
+//buffs
+laser_sight = true;
 
 //pickups
 charge = 0;
@@ -50,7 +53,6 @@ key_pickup_2_pressed = 0;
 //player sprite
 player_sprite = spr_player_zekai;
 falling_sprite = spr_player_zekai_falling;
-falling_sprite2 = spr_player_zekai_falling;
 charging_sprite = spr_player_zekai_charging;
 
 // Stats
@@ -317,7 +319,31 @@ buff_duration = 60 * 5; // buff duration timer
 
 //pickups
 scr_Pickups();
-pickups_array = [pickup_chargejump,pickup_groundpound];
+
+num_of_pickups = 2; //number of different pickups equipped: only do 1 or 2
+all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun]; //all pickups
+
+if (random_pickup = true) { //choose random pickups
+	randomize();
+	pickup_1 = all_pickups_array[irandom_range(0,array_length(all_pickups_array)-1)];
+	pickup_2 = all_pickups_array[irandom_range(0,array_length(all_pickups_array)-1)];
+
+	while (pickup_2 = pickup_1) { //dont want 2 of the same weapon
+		pickup_2 = all_pickups_array[irandom_range(0,array_length(all_pickups_array)-1)];
+	}
+}else { //decide which pickups we want manually if not random. 
+	//we do this by changing pickup_1_manual and pickup_2_manual in the variable definitions tab. Can be changed room by room.
+	//Integers correspond to values in all_pickups_array, 0 = pickup_chargejump, 1 = pickup_groundpound, etc.
+	pickup_1 = all_pickups_array[pickup_1_manual_value];
+	pickup_2 = all_pickups_array[pickup_2_manual_value];
+}
+
+//set what weapons will actually be equipped at the start
+if (num_of_pickups = 1) {
+	pickups_array = [pickup_1,pickup_nothing];
+}else {
+	pickups_array = [pickup_1, pickup_2];
+}
 
 //create text in proc gen room
 if room = room_proc_gen_test {

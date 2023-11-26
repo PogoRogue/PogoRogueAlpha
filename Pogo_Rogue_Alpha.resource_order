@@ -1,4 +1,8 @@
 {
-  "FolderOrderSettings": [],
-  "ResourceOrderSettings": [],
+  "FolderOrderSettings": [
+    {"name":"subboss_flychasing","order":2,"path":"folders/Objects/Enemy/Boss Sphere/subboss_flychasing.yy",},
+  ],
+  "ResourceOrderSettings": [
+    {"name":"obj_SetupPathway","order":1,"path":"objects/obj_SetupPathway/obj_SetupPathway.yy",},
+  ],
 }

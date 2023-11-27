@@ -7,6 +7,7 @@ event_inherited();
 depth = -6;
 
 boss = instance_nearest(x, y, obj_boss_sphere);
+draw_hp = false;
 
 // Position and rotation variables
 boss_dir = point_direction(x, y, boss.x, boss.y);

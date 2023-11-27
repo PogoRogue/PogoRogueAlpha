@@ -1,4 +1,11 @@
 {
-  "FolderOrderSettings": [],
-  "ResourceOrderSettings": [],
+  "FolderOrderSettings": [
+    {"name":"subboss_flychasing","order":2,"path":"folders/Objects/Enemy/Boss Sphere/subboss_flychasing.yy",},
+  ],
+  "ResourceOrderSettings": [
+    {"name":"obj_enemy_shooter_moving","order":1,"path":"objects/obj_enemy_shooter_moving/obj_enemy_shooter_moving.yy",},
+    {"name":"obj_SetupPathway","order":1,"path":"objects/obj_SetupPathway/obj_SetupPathway.yy",},
+    {"name":"obj_enemy_shoot_only_moving","order":2,"path":"objects/obj_enemy_shoot_only_moving/obj_enemy_shoot_only_moving.yy",},
+    {"name":"obj_enemy_stomp_only_moving","order":3,"path":"objects/obj_enemy_stomp_only_moving/obj_enemy_stomp_only_moving.yy",},
+  ],
 }

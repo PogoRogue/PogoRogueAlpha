@@ -1,19 +1,20 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_boss_brick_yellow",
+  "name": "obj_enemy_shooter_moving",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Boss Sphere",
-    "path": "folders/Objects/Enemy/Boss Sphere.yy",
+    "name": "Enemy",
+    "path": "folders/Objects/Enemy.yy",
   },
   "parentObjectId": {
-    "name": "obj_boss_brick",
-    "path": "objects/obj_boss_brick/obj_boss_brick.yy",
+    "name": "obj_enemy_shooter",
+    "path": "objects/obj_enemy_shooter/obj_enemy_shooter.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -31,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_boss_brick_yellow",
-    "path": "sprites/spr_boss_brick_yellow/spr_boss_brick_yellow.yy",
+    "name": "spr_enemy_shooter",
+    "path": "sprites/spr_enemy_shooter/spr_enemy_shooter.yy",
   },
   "spriteMaskId": null,
   "visible": true,

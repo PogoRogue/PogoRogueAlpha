@@ -33,8 +33,8 @@
   "properties": [],
   "solid": true,
   "spriteId": {
-    "name": "spr_enemy_flying",
-    "path": "sprites/spr_enemy_flying/spr_enemy_flying.yy",
+    "name": "spr_boss_brick_yellow",
+    "path": "sprites/spr_boss_brick_yellow/spr_boss_brick_yellow.yy",
   },
   "spriteMaskId": null,
   "visible": true,

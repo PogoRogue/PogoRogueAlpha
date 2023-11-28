@@ -1,19 +1,21 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_boss_brick_yellow",
+  "name": "obj_subboss_fly_chasing",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":1,"eventType":2,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Boss Sphere",
-    "path": "folders/Objects/Enemy/Boss Sphere.yy",
+    "name": "subboss_flychasing",
+    "path": "folders/Objects/Enemy/Boss Sphere/subboss_flychasing.yy",
   },
   "parentObjectId": {
-    "name": "obj_boss_brick",
-    "path": "objects/obj_boss_brick/obj_boss_brick.yy",
+    "name": "obj_enemy_generic",
+    "path": "objects/obj_enemy_generic/obj_enemy_generic.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -29,7 +31,7 @@
   "physicsShapePoints": [],
   "physicsStartAwake": true,
   "properties": [],
-  "solid": false,
+  "solid": true,
   "spriteId": {
     "name": "spr_boss_brick_yellow",
     "path": "sprites/spr_boss_brick_yellow/spr_boss_brick_yellow.yy",

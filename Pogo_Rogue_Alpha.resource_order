@@ -25,5 +25,13 @@
     {"name":"spr_angled_platform_left_mask","order":5,"path":"sprites/spr_angled_platform_left_mask/spr_angled_platform_left_mask.yy",},
     {"name":"obj_angled_platform_left","order":3,"path":"objects/obj_angled_platform_left/obj_angled_platform_left.yy",},
     {"name":"spr_shop_door","order":6,"path":"sprites/spr_shop_door/spr_shop_door.yy",},
+  "FolderOrderSettings": [
+    {"name":"subboss_flychasing","order":2,"path":"folders/Objects/Enemy/Boss Sphere/subboss_flychasing.yy",},
+  ],
+  "ResourceOrderSettings": [
+    {"name":"obj_enemy_shooter_moving","order":1,"path":"objects/obj_enemy_shooter_moving/obj_enemy_shooter_moving.yy",},
+    {"name":"obj_SetupPathway","order":1,"path":"objects/obj_SetupPathway/obj_SetupPathway.yy",},
+    {"name":"obj_enemy_shoot_only_moving","order":2,"path":"objects/obj_enemy_shoot_only_moving/obj_enemy_shoot_only_moving.yy",},
+    {"name":"obj_enemy_stomp_only_moving","order":3,"path":"objects/obj_enemy_stomp_only_moving/obj_enemy_stomp_only_moving.yy",},
   ],
 }

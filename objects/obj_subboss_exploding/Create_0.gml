@@ -1,9 +1,8 @@
-/// @description Set despawn timer
+/// @description Insert description here
 // You can write your code in this editor
-
 
 
 // Inherit the parent event
 event_inherited();
-damage = 8;
-alarm_set(1, room_speed);
+
+depth = -7;

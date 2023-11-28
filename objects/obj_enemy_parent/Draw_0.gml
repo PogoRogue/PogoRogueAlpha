@@ -14,5 +14,5 @@ shader_reset();
 if(draw_hp) 
 {
 	hp_percent = (hp / hp_max) * 100;
-	draw_healthbar(x - 32, y - 20, x + 32, y - 19, hp_percent, #212123, #B45252, #B45252, 0, true, true);
+	draw_healthbar(x - 32, y - sprite_height, x + 32, y - sprite_height + 1, hp_percent, #212123, #B45252, #B45252, 0, true, true);
 }

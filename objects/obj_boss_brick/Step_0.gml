@@ -8,6 +8,10 @@ event_inherited();
 image_angle = boss.image_angle;
 rad = degtorad(image_angle);
 
+if(is_dead) {
+	image_angle += random(15) - 7.5;
+}
+
 x = boss.x + (cos(rad - boss_dir) * dist);
 y = boss.y - (sin(rad - boss_dir) * dist);
 

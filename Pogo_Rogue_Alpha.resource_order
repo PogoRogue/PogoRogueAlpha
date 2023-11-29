@@ -1,17 +1,17 @@
 {
   "FolderOrderSettings": [
-    {"name":"subboss_flychasing","order":2,"path":"folders/Objects/Enemy/Boss Sphere/subboss_flychasing.yy",},
+    {"name":"Sub-bosses","order":2,"path":"folders/Objects/Enemy/Boss Sphere/Sub-bosses.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_shield_respawning","order":4,"path":"objects/obj_shield_respawning/obj_shield_respawning.yy",},
     {"name":"obj_enemy_shooter_moving","order":1,"path":"objects/obj_enemy_shooter_moving/obj_enemy_shooter_moving.yy",},
     {"name":"spr_shield_small","order":1,"path":"sprites/spr_shield_small/spr_shield_small.yy",},
-    {"name":"obj_subboss_tar","order":5,"path":"objects/obj_subboss_tar/obj_subboss_tar.yy",},
-    {"name":"obj_subboss_exploding","order":3,"path":"objects/obj_subboss_exploding/obj_subboss_exploding.yy",},
+    {"name":"obj_subboss_tar","order":4,"path":"objects/obj_subboss_tar/obj_subboss_tar.yy",},
+    {"name":"obj_subboss_exploding","order":2,"path":"objects/obj_subboss_exploding/obj_subboss_exploding.yy",},
     {"name":"obj_SetupPathway","order":1,"path":"objects/obj_SetupPathway/obj_SetupPathway.yy",},
     {"name":"obj_enemy_shoot_only_moving","order":2,"path":"objects/obj_enemy_shoot_only_moving/obj_enemy_shoot_only_moving.yy",},
     {"name":"obj_enemy_stomp_only_moving","order":3,"path":"objects/obj_enemy_stomp_only_moving/obj_enemy_stomp_only_moving.yy",},
     {"name":"sh_white","order":1,"path":"shaders/sh_white/sh_white.yy",},
-    {"name":"obj_subboss_shield","order":4,"path":"objects/obj_subboss_shield/obj_subboss_shield.yy",},
+    {"name":"obj_subboss_shield","order":3,"path":"objects/obj_subboss_shield/obj_subboss_shield.yy",},
   ],
 }

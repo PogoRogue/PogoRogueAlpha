@@ -19,7 +19,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Control Objects","folderPath":"folders/Objects/Control Objects.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Enemy","folderPath":"folders/Objects/Enemy.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Boss Sphere","folderPath":"folders/Objects/Enemy/Boss Sphere.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"subboss_flychasing","folderPath":"folders/Objects/Enemy/Boss Sphere/subboss_flychasing.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sub-bosses","folderPath":"folders/Objects/Enemy/Boss Sphere/Sub-bosses.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Hitbox","folderPath":"folders/Objects/Enemy/Hitbox.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Environmental","folderPath":"folders/Objects/Environmental.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"ProcGen","folderPath":"folders/Objects/Environmental/ProcGen.yy",},

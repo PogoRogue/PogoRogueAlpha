@@ -1,6 +1,6 @@
 /// @description Instantiate variables
 
-depth = -7;
+depth = -6;
 
 grav = 0.2;
 

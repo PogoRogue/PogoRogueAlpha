@@ -9,3 +9,4 @@ instance_destroy(obj_subboss_fly_chasing);
 instance_destroy(obj_subboss_shield);
 instance_destroy(obj_subboss_tar);
 
+instance_create_layer(x, y, "enemies", obj_explosion);

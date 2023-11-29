@@ -25,5 +25,5 @@ if(place_meeting(x, y, obj_player)) {
 }
 
 if(is_despawning) {
-	image_alpha *= 0.95;
+	image_alpha *= 0.9;
 }

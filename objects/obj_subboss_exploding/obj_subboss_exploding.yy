@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Boss Sphere",
-    "path": "folders/Objects/Enemy/Boss Sphere.yy",
+    "name": "Sub-bosses",
+    "path": "folders/Objects/Enemy/Boss Sphere/Sub-bosses.yy",
   },
   "parentObjectId": {
     "name": "obj_enemy_explode_walking",

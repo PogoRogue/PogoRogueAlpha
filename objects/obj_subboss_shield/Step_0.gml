@@ -11,11 +11,6 @@ if(instance_exists(boss)) {
 	new_x = boss.x - (cos(boss_dir) * dist);
 	new_y = boss.y + (sin(boss_dir) * dist);
 
-	if(distance_to_point(new_x, new_y) >= 0.1) {
-		direction = point_direction(x, y, new_x, new_y);
-		speed = 3.0;
-	} else {
-		x = new_x;
-		y = new_y;
-	}
+	direction = point_direction(x, y, new_x, new_y);
+	speed = min(4.0, distance_to_point(new_x, new_y));
 }

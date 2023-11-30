@@ -4,6 +4,11 @@
     {"name":"spr_electric_current_on","order":1,"path":"sprites/spr_electric_current_on/spr_electric_current_on.yy",},
     {"name":"spr_electric_current_off","order":3,"path":"sprites/spr_electric_current_off/spr_electric_current_off.yy",},
     {"name":"obj_electric_current","order":1,"path":"objects/obj_electric_current/obj_electric_current.yy",},
+    {"name":"obj_temp_platform_off_on","order":4,"path":"objects/obj_temp_platform_off_on/obj_temp_platform_off_on.yy",},
+    {"name":"obj_temp_platform_on_off","order":2,"path":"objects/obj_temp_platform_on_off/obj_temp_platform_on_off.yy",},
     {"name":"spr_electric_current_powering_on","order":2,"path":"sprites/spr_electric_current_powering_on/spr_electric_current_powering_on.yy",},
+    {"name":"spr_off_platform","order":5,"path":"sprites/spr_off_platform/spr_off_platform.yy",},
+    {"name":"spr_on_platform","order":4,"path":"sprites/spr_on_platform/spr_on_platform.yy",},
+    {"name":"room_test_env","order":1,"path":"rooms/room_test_env/room_test_env.yy",},
   ],
 }

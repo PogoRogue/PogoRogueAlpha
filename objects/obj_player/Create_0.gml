@@ -19,6 +19,7 @@ free = true; //pogo not colliding with wall, this variable ensures the player do
 conveyor_speed = 0;
 can_rotate = true;
 can_shoot = true;
+platform_on = true;
 
 //pickups
 charge = 0;
@@ -119,6 +120,24 @@ state_free = function() {
 		speed = 0; //stop player movement while bouncing
 	}
 	
+	//check for collision with on off platform	
+	if (place_meeting(x,y+vspeed,obj_temp_platform_on_off) and !place_meeting(x,y-1,obj_temp_platform_on_off)) and vspeed > 0 and platform_on {
+		while !(place_meeting(x,y+sign(vspeed),obj_temp_platform_on_off)) {
+			y += sign(vspeed);
+		}
+		state = state_bouncing;
+		speed = 0; //stop player movement while bouncing
+	}
+	
+	//check for collision with off on platform	
+	if (place_meeting(x,y+vspeed,obj_temp_platform_off_on) and !place_meeting(x,y-1,obj_temp_platform_off_on)) and vspeed > 0 and !platform_on {
+		while !(place_meeting(x,y+sign(vspeed),obj_temp_platform_off_on)) {
+			y += sign(vspeed);
+		}
+		state = state_bouncing;
+		speed = 0; //stop player movement while bouncing
+	}
+	
 	//make sure player isn't colliding with anything before checking for collisions again
 	if !(place_meeting(x+hspeed,y+vspeed,obj_ground)) and free = false {
 		free = true;	
@@ -168,6 +187,7 @@ state_bouncing = function() {
 	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump and pickups_array[1].on_cooldown = false);
 	if (animation_complete and not_charging_1 and not_charging_2) {
 		scr_Jump(0);
+		platform_on = !platform_on;
 	}
 }
 

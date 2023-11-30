@@ -10,4 +10,7 @@ if room = room_gym_enemy {
 if room = room_fight_1 {
 	text = "Combat room test";
 }
+if room = room_test_env {
+	text = "Sandbox room test";
+}
 

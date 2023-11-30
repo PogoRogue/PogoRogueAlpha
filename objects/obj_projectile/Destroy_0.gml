@@ -13,7 +13,9 @@ if (gun_name = "Grenade Launcher") {
 		var padding = 64;
 		
 		if (point_in_rectangle(x,y,obj_camera.x-camera_width-padding,obj_camera.y-camera_height-padding,obj_camera.x+camera_width+padding,obj_camera.y+camera_height+padding)) {
-			instance_create_depth(x,y,depth,obj_projectile_explosion);
+			with instance_create_depth(x,y,depth,obj_projectile_explosion) {
+				damage = other.damage;
+			}
 		}
 	}
 }

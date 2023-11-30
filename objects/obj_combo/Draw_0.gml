@@ -5,7 +5,9 @@ draw_set_font(fnt_combo2);
 if global.combo > 0 {
 	with obj_player {
 		var distance = 48;
-	
+		if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun { 
+			distance += 18;
+		}
 		draw_sprite_ext(spr_combometer,0,x + lengthdir_x(distance,angle+90),y + lengthdir_y(distance,angle+90),1,1,angle,c_white,1);
 		var _x = -sprite_get_xoffset(spr_combometer);
 		var _y = -sprite_get_yoffset(spr_combometer);

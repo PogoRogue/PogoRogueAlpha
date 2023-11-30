@@ -1,7 +1,6 @@
 /// @description initialize variables
 image_index = 0;
 image_speed = 0;
-damage = 4;
 angle = image_angle;
 hspd = lengthdir_x(spd,angle);
 vspd = lengthdir_y(spd,angle);
@@ -38,7 +37,6 @@ if (gun_name = "Paintball Gun") {
 if (gun_name = "Laser Gun") {
 	laser_x = obj_player.x - x;
 	laser_y = obj_player.y - y;
-	damage = 0.75; //damge per frame touching enemy
 	full_sprite = spr_projectile_laser_start;
 	init_sprite = sprite_index;
 	laser_boost = false; //only apply momentum if this is true

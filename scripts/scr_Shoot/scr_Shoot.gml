@@ -22,7 +22,8 @@ function scr_Shoot(){
 				grav_affected: gun.ammo[bullet_index].grav_affected,
 				grv: gun.ammo[bullet_index].grv,
 				num_of_bounces: gun.ammo[bullet_index].num_of_bounces,
-				bounce_amount: gun.ammo[bullet_index].bounce_amount
+				bounce_amount: gun.ammo[bullet_index].bounce_amount,
+				damage: gun.ammo[bullet_index].damage,
 			});
 			
 			//screen shake
@@ -35,6 +36,10 @@ function scr_Shoot(){
 			if gun.spread_number = 1 {
 				gun.current_bullets -= 1;
 			}
+			
+			//allow upward flames
+			allow_flames = true;
+			min_flames_speed = gun.max_speed - 1.5;
 		}
 		
 		//check if speed slower or faster than max speed to preserve momentum

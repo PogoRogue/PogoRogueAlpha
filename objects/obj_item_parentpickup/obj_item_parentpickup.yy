@@ -1,15 +1,16 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_item_parentrubb",
+  "name": "obj_item_parentpickup",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":10,"eventType":7,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "item",
-    "path": "folders/Objects/item.yy",
+    "name": "Pickups",
+    "path": "folders/Objects/item/Pickups.yy",
   },
   "parentObjectId": {
     "name": "obj_item_parent",

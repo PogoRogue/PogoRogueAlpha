@@ -1,19 +1,20 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_item_parent",
+  "name": "obj_item_pickup_hatgun",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":10,"eventType":7,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "item",
-    "path": "folders/Objects/item.yy",
+    "name": "Pickups",
+    "path": "folders/Objects/item/Pickups.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_item_parentpickup",
+    "path": "objects/obj_item_parentpickup/obj_item_parentpickup.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -29,7 +30,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_pickup_hatgun",
+    "path": "sprites/spr_pickup_hatgun/spr_pickup_hatgun.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }

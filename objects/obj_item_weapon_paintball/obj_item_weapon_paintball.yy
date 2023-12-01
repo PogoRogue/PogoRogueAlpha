@@ -1,19 +1,20 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_item_parent",
+  "name": "obj_item_weapon_paintball",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":10,"eventType":7,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "item",
-    "path": "folders/Objects/item.yy",
+    "name": "Weapons",
+    "path": "folders/Objects/item/Weapons.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_item_parentweapon",
+    "path": "objects/obj_item_parentweapon/obj_item_parentweapon.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -29,7 +30,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_gun_paintball",
+    "path": "sprites/spr_gun_paintball/spr_gun_paintball.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }

@@ -1,17 +1,20 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_item_parentfootpadsenemy",
+  "name": "obj_item_weapon_shotgun",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "item",
-    "path": "folders/Objects/item.yy",
+    "name": "Weapons",
+    "path": "folders/Objects/item/Weapons.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_item_parentweapon",
+    "path": "objects/obj_item_parentweapon/obj_item_parentweapon.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -27,7 +30,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_gun_shotgun",
+    "path": "sprites/spr_gun_shotgun/spr_gun_shotgun.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }

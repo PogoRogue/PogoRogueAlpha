@@ -349,3 +349,8 @@ if (num_of_pickups = 1) {
 if room = room_proc_gen_test {
 	alarm[2] = 10;
 }
+
+//create pause object
+if !instance_exists(obj_pause) {
+	instance_create_depth(0,0,depth,obj_pause);	
+}

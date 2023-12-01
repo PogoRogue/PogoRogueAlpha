@@ -1,4 +1,7 @@
 {
   "FolderOrderSettings": [],
-  "ResourceOrderSettings": [],
+  "ResourceOrderSettings": [
+    {"name":"spr_pause","order":1,"path":"sprites/spr_pause/spr_pause.yy",},
+    {"name":"obj_pause","order":1,"path":"objects/obj_pause/obj_pause.yy",},
+  ],
 }

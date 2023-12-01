@@ -18,7 +18,7 @@ if (dead = false) {
 	key_pickup_1 = keyboard_check(vk_shift) || mouse_check_button(mb_left) || gamepad_button_check(0,gp_face1);
 	key_pickup_2 = keyboard_check(vk_control) || mouse_check_button(mb_right) || gamepad_button_check(0,gp_face2);
 	key_pickup_1_pressed = keyboard_check_pressed(vk_shift) || mouse_check_button_pressed(mb_left) || gamepad_button_check_pressed(0,gp_face1);
-	key_pickup_2_pressed = keyboard_check_pressed(vk_control) || mouse_check_button(mb_right) || gamepad_button_check_pressed(0,gp_face2);
+	key_pickup_2_pressed = keyboard_check_pressed(vk_control) || mouse_check_button_pressed(mb_right) || gamepad_button_check_pressed(0,gp_face2);
 }else {
 	key_right = 0;
 	key_left = 0;

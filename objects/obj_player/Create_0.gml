@@ -126,7 +126,7 @@ state_free = function() {
 	}
 	
 	//make sure player isn't colliding with anything before checking for collisions again
-	if !(place_meeting(x+hspeed,y+vspeed,obj_ground)) and free = false {
+	if !(place_meeting(x,y,obj_ground)) and free = false {
 		free = true;	
 	}
 	

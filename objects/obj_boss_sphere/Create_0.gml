@@ -8,6 +8,7 @@ spd = 0.3;
 rotation_spd = 0.5;
 hp = 128;
 hp_max = hp;
+draw_hp = false;
 
 vspeed = spd;
 hspeed = spd;

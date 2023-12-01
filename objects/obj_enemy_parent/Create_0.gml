@@ -2,6 +2,9 @@
 
 // Stats
 hp = 8; 
+hp_max = hp;
+hp_percent = (hp / hp_max) * 100;
+draw_hp = true;
 damage = 8;
 spd = 0;
 

@@ -1,19 +1,20 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_boss_brick_blue",
+  "name": "obj_subboss_exploding",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Boss Sphere",
-    "path": "folders/Objects/Enemy/Boss Sphere.yy",
+    "name": "Sub-bosses",
+    "path": "folders/Objects/Enemy/Boss Sphere/Sub-bosses.yy",
   },
   "parentObjectId": {
-    "name": "obj_boss_brick",
-    "path": "objects/obj_boss_brick/obj_boss_brick.yy",
+    "name": "obj_enemy_explode_walking",
+    "path": "objects/obj_enemy_explode_walking/obj_enemy_explode_walking.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -31,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_boss_brick_blue",
-    "path": "sprites/spr_boss_brick_blue/spr_boss_brick_blue.yy",
+    "name": "spr_boss_brick_red",
+    "path": "sprites/spr_boss_brick_red/spr_boss_brick_red.yy",
   },
   "spriteMaskId": null,
   "visible": true,

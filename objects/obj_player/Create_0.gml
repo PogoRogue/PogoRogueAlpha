@@ -370,6 +370,9 @@ if room = room_proc_gen_test {
 	alarm[2] = 10;
 }
 
+//testing item swap
+alarm[3] = 120;
+
 //create pause object
 if !instance_exists(obj_pause) {
 	instance_create_depth(0,0,depth,obj_pause);	

@@ -42,12 +42,12 @@ state();
 #region //pickups
 
 //call pickups
-if pickups_array[0].on_cooldown = false and pickups_array[0].reload_on_bounce = false {
+if pickups_array[0].on_cooldown = false and pickups_array[0].reload_on_bounce = false { //cooldown
 	if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
 	or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
 		pickups_array[0].on_call();
 	}
-}else if pickups_array[0].reload_on_bounce = true and pickups_array[0].uses_per_bounce > 0 {
+}else if pickups_array[0].reload_on_bounce = true and pickups_array[0].uses_per_bounce > 0 { //no cooldown
 	if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
 	or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
 		pickups_array[0].on_call();
@@ -55,12 +55,12 @@ if pickups_array[0].on_cooldown = false and pickups_array[0].reload_on_bounce = 
 }
 	
 //call pickup 2
-if pickups_array[1].on_cooldown = false and pickups_array[1].reload_on_bounce = false {
+if pickups_array[1].on_cooldown = false and pickups_array[1].reload_on_bounce = false { //cooldown
 	if (key_pickup_2) and scr_In_Array(pickups_array[1].states_to_call_in, state) and pickups_array[1].key_held 
 	or (key_pickup_2_pressed) and scr_In_Array(pickups_array[1].states_to_call_in, state) and !pickups_array[1].key_held {
 		pickups_array[1].on_call();
 	}
-}else if pickups_array[1].reload_on_bounce = true and pickups_array[1].uses_per_bounce > 0 {
+}else if pickups_array[1].reload_on_bounce = true and pickups_array[1].uses_per_bounce > 0 { //no cooldown
 	if (key_pickup_2) and scr_In_Array(pickups_array[1].states_to_call_in, state) and pickups_array[1].key_held 
 	or (key_pickup_2_pressed) and scr_In_Array(pickups_array[1].states_to_call_in, state) and !pickups_array[1].key_held {
 		pickups_array[1].on_call();

@@ -12,12 +12,14 @@ if (pause) { //draw frozen image to screen while paused
 	surface_reset_target();
 }
 
-if keyboard_check_pressed(ord("P")) || gamepad_button_check_pressed(0,gp_select) {
+if keyboard_check_pressed(ord("P")) || gamepad_button_check_pressed(0,gp_select) || paused_outside {
 	if !pause { //pause now
 		pause = true;
 		
 		//deactivate everything other than this surface
 		instance_deactivate_all(true);
+		instance_activate_object(obj_control);
+		instance_activate_object(obj_item_swap);
 		
 		//if we need to pause anything like animating sprites, tiles, room backgrounds, we need to do that separately
 		
@@ -36,6 +38,9 @@ if keyboard_check_pressed(ord("P")) || gamepad_button_check_pressed(0,gp_select)
 	}else { //unpause now
 		pause = false;
 		instance_activate_all();
+		if instance_exists(obj_item_swap) {
+			instance_destroy(obj_item_swap);
+		}
 		if surface_exists(pause_surf) {
 			surface_free(pause_surf);
 		}
@@ -44,6 +49,7 @@ if keyboard_check_pressed(ord("P")) || gamepad_button_check_pressed(0,gp_select)
 			buffer_delete(pause_surf_buffer);
 		}
 	}
+	paused_outside = false;
 }
 
 //enable alpha blending again

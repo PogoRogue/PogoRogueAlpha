@@ -12,34 +12,34 @@ for (gun_num = 0; gun_num < num_of_weapons; gun_num++) {
 	var black_alpha = 0.5 * (gun != gun_array[gun_num]); //darkening for bottom ammo
 	for(i = 0; i < gun_array[gun_num].bullets_per_bounce; i++) {
 		if (gun_array[gun_num] != paintball_gun) and (gun_array[gun_num] != laser_gun) {
-			draw_sprite(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce,(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),16+yy); 
+			draw_sprite(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce,(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),24+yy); 
 			//darkening
-			draw_sprite_ext(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce,(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),16+yy,1,1,0,c_black,black_alpha);
+			draw_sprite_ext(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce,(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),24+yy,1,1,0,c_black,black_alpha);
 		}else if (gun_array[gun_num] = paintball_gun) {
-			draw_sprite(ammo.gui_sprite,((i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce)*10)+((i+gun_array[gun_num].current_bullets>=gun_array[gun_num].bullets_per_bounce)*i),(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),16+yy); 
+			draw_sprite(ammo.gui_sprite,((i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce)*10)+((i+gun_array[gun_num].current_bullets>=gun_array[gun_num].bullets_per_bounce)*i),(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),24+yy); 
 			//darkening
-			draw_sprite_ext(ammo.gui_sprite,((i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce)*10)+((i+gun_array[gun_num].current_bullets>=gun_array[gun_num].bullets_per_bounce)*i),(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),16+yy,1,1,0,c_black,black_alpha);
+			draw_sprite_ext(ammo.gui_sprite,((i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce)*10)+((i+gun_array[gun_num].current_bullets>=gun_array[gun_num].bullets_per_bounce)*i),(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),24+yy,1,1,0,c_black,black_alpha);
 		}
 	}
 	//laser
 	if (gun_array[gun_num] = laser_gun) {
 		value_ = gun_array[gun_num].current_bullets / gun_array[gun_num].bullets_per_bounce;
-		draw_sprite(ammo.gui_sprite,0,(camera_get_view_width(view_camera[0])-16),16+yy);
-		draw_sprite_part(ammo.gui_sprite,1,0,0,sprite_get_width(ammo.gui_sprite)*value_,sprite_height,(camera_get_view_width(view_camera[0])-16)-sprite_get_width(ammo.gui_sprite),16+yy-(sprite_get_height(ammo.gui_sprite)/2));
+		draw_sprite(ammo.gui_sprite,0,(camera_get_view_width(view_camera[0])-16),24+yy);
+		draw_sprite_part(ammo.gui_sprite,1,0,0,sprite_get_width(ammo.gui_sprite)*value_,sprite_height,(camera_get_view_width(view_camera[0])-16)-sprite_get_width(ammo.gui_sprite),24+yy-(sprite_get_height(ammo.gui_sprite)/2));
 		//darkening
-		draw_sprite_ext(ammo.gui_sprite,0,(camera_get_view_width(view_camera[0])-16),16+yy,1,1,0,c_black,black_alpha);
-		draw_sprite_part_ext(ammo.gui_sprite,1,0,0,sprite_get_width(ammo.gui_sprite)*value_,sprite_height,(camera_get_view_width(view_camera[0])-16)-sprite_get_width(ammo.gui_sprite),16+yy-(sprite_get_height(ammo.gui_sprite)/2),1,1,c_black,black_alpha);
+		draw_sprite_ext(ammo.gui_sprite,0,(camera_get_view_width(view_camera[0])-16),24+yy,1,1,0,c_black,black_alpha);
+		draw_sprite_part_ext(ammo.gui_sprite,1,0,0,sprite_get_width(ammo.gui_sprite)*value_,sprite_height,(camera_get_view_width(view_camera[0])-16)-sprite_get_width(ammo.gui_sprite),24+yy-(sprite_get_height(ammo.gui_sprite)/2),1,1,c_black,black_alpha);
 	}
 	
 	//text
-	scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16,44+yy,gun_array[gun_num].name,make_color_rgb(242,240,229));
+	scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16,52+yy,gun_array[gun_num].name,make_color_rgb(242,240,229));
 	//text darkening
-	draw_text_color(camera_get_view_width(view_camera[0])-16,44+yy,gun_array[gun_num].name,c_black,c_black,c_black,c_black,black_alpha);
+	draw_text_color(camera_get_view_width(view_camera[0])-16,52+yy,gun_array[gun_num].name,c_black,c_black,c_black,c_black,black_alpha);
 }
 
 //coins
-coin_x = 24;
-coin_y = 56;
+coin_x = 32;
+coin_y = 66;
 draw_set_halign(fa_left);
 draw_set_valign(fa_bottom);
 draw_sprite(spr_coingui,0,coin_x,coin_y);

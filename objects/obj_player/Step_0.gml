@@ -31,13 +31,18 @@ if (dead = false) {
 	key_pickup_2 = 0;
 }
 #endregion
+
 //land on and damage enemy
 var condition = ground_pound_slam = false;
 scr_Enemy_Collision_Check(condition);
 
+//shop
+if room = room_shop {
+	state = state_shop;
+}
+
 //run state machine
 state();
-
 
 #region //pickups
 
@@ -139,7 +144,7 @@ image_angle = angle;
 
 #region shooting
 
-if can_shoot = true { 
+if can_shoot = true and room != room_shop { 
 	var shoot = gun.full_auto ? key_fire_projectile : key_fire_projectile_pressed;
 }else {
 	var shoot = 0;
@@ -198,6 +203,7 @@ if keyboard_check_pressed(ord("Q")) || mouse_wheel_down() || gamepad_button_chec
 	gun = gun_array[current_gun];
 }
 
+
 // Update iframes
 current_iframes = max(current_iframes - 1, 0);
 
@@ -206,31 +212,3 @@ dead = hp <= 0;
 if(dead && current_iframes <= 0) {
 	room_restart(); // TODO: Handle death screen or whatever we want to do	
 }
-
-
-/*
-if (jump_count % 20 == 0 && jump_count > 0) {
-    var _trigger_chance = irandom_range(1, 100);
-	jump_count = 0 ;
-    if (_trigger_chance <= 20) {
-        // if buff active
-        speed += 3;
-        current_weapon[0] = current_weapon[0] + 4;
-        projectiles_left = current_weapon[0];
-		buff_active = true; 
-		alarm[1] = buff_duration; 
-    }
-}
-
-if (shoot_count % 20 == 0 && shoot_count > 0) {
-    var _triggerchance = irandom_range(1, 100);
-	shoot_count = 0 ;
-    if (_triggerchance <= 10) {
-        // if buff active
-        speed += 3;
-        current_weapon[0] = current_weapon[0] + 4;
-        projectiles_left = current_weapon[0];
-		buff_active = true; 
-		alarm[1] = buff_duration; 
-    }
-} */

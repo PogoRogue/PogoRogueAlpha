@@ -4,6 +4,7 @@
 display_set_gui_size(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));
 draw_set_font(fnt_combo2);
 draw_set_halign(fa_right);
+draw_set_valign(fa_bottom);
 
 //draw ammo UI
 for (gun_num = 0; gun_num < num_of_weapons; gun_num++) {

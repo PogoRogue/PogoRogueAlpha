@@ -8,5 +8,7 @@ if (keyboard_check_pressed(vk_tab) || gamepad_button_check_pressed(0,gp_shoulder
 		room = room_fight_1;
 	} else if (room = room_fight_1) {
 		room = room_proc_gen_test;
+	}else if (room = room_shop) {
+		room = global.last_room;
 	} 
 }

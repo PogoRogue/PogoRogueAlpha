@@ -10,6 +10,7 @@ vsp_basicjump = -6.6; //bounce height
 angle = 0;
 anglemax = 45; //maximum degrees added on either side
 bouncing = false; //bouncing animation when true
+shop_bouncing = false; //only use this var in the shop
 animation_complete = false; //bounce animation before jumping
 use_mouse = false; //use mouse to control instead of WASD/Arrow keys?
 mouse_sensitivity = 150; //the lower the value, the more sensitive the player is to mouse movement and vice versa
@@ -64,6 +65,12 @@ num_iframes = 1.5 * room_speed;
 current_iframes = 0;
 dead = false;
 
+//starting position
+if global.player_spawn_x = 0 and global.player_spawn_y = 0 {
+	global.player_spawn_x = x;
+	global.player_spawn_y = y;
+}
+
 image_speed = 0;
 
 depth = -10;
@@ -76,7 +83,14 @@ if (global.arm_cannon = true) {
 with (instance_create_depth(x,y,depth-1,obj_player_mask)) {
 	parent_index = other;
 }
+
 msk_index = instance_nearest(x,y,obj_player_mask); //references obj_playermask object
+
+//delete duplicate player 
+if instance_number(obj_player) > 1 {
+	instance_destroy();	
+	instance_destroy(msk_index);
+}
 
 //item Code
 has_item = false; // // Whether the player is equipped with a weapon
@@ -282,6 +296,36 @@ state_groundpound = function() {
 	}
 }
 
+state_shop = function() {
+	angle = 0;	
+	can_rotate = false;
+	can_shoot = false;
+	vspeed += grv;
+	
+	//check for collision with ground y axis
+	if (place_meeting(x,y+vspeed,obj_ground)) {
+		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
+			y += sign(vspeed);
+		}
+		shop_bouncing = true;
+		speed = 0; //stop player movement while bouncing
+	}
+	
+	if shop_bouncing = true {
+		sprite_index = player_sprite; //set sprite
+		//animate before bouncing
+		if (floor(image_index) = sprite_get_number(sprite_index)-1) {
+			animation_complete = true;
+		}else if (animation_complete = false) {
+			image_index += 0.75;
+		}
+		if scr_Animation_Complete() = true {
+			scr_Jump(0);
+			shop_bouncing = false;
+		}
+	}
+}
+
 state = state_free;
 #endregion
 
@@ -371,9 +415,4 @@ if room = room_proc_gen_test {
 }
 
 //testing item swap
-alarm[3] = 120;
-
-//create pause object
-if !instance_exists(obj_pause) {
-	instance_create_depth(0,0,depth,obj_pause);	
-}
+//alarm[3] = 120;

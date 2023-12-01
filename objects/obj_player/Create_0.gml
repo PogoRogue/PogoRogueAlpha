@@ -44,8 +44,6 @@ msk_index = instance_nearest(x,y,obj_player_mask); //references obj_playermask o
 has_item = false; // // Whether the player is equipped with a weapon
 equipped_item = noone; // The weapon that initializes the equipment is none
 
-
-
 #region //STATES
 
 state_rising = function() {
@@ -296,8 +294,8 @@ burstfire_gun = {
 
 canshoot = 0; //shooting timer
 bullet_index = 0; //current bullet
-
-gun_array = [default_gun,paintball_gun,shotgun_gun,negev_gun,burstfire_gun];
+all_gun_array = [default_gun,paintball_gun,shotgun_gun,negev_gun,burstfire_gun];
+gun_array = [default_gun,paintball_gun]; // guns equipped by player
 current_gun = 0;
 gun = gun_array[current_gun];
 

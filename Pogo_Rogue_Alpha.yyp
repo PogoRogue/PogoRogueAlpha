@@ -129,6 +129,7 @@
     {"id":{"name":"spr_player_mask","path":"sprites/spr_player_mask/spr_player_mask.yy",},},
     {"id":{"name":"obj_item_parentfootpadsenemy","path":"objects/obj_item_parentfootpadsenemy/obj_item_parentfootpadsenemy.yy",},},
     {"id":{"name":"obj_item_parentrubb","path":"objects/obj_item_parentrubb/obj_item_parentrubb.yy",},},
+    {"id":{"name":"obj_item_parentpickup","path":"objects/obj_item_parentpickup/obj_item_parentpickup.yy",},},
     {"id":{"name":"fnt_combo2","path":"fonts/fnt_combo2/fnt_combo2.yy",},},
     {"id":{"name":"spr_redsquare","path":"sprites/spr_redsquare/spr_redsquare.yy",},},
     {"id":{"name":"tl_ground","path":"tilesets/tl_ground/tl_ground.yy",},},

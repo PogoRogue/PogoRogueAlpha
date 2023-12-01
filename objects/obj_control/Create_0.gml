@@ -3,7 +3,7 @@ endgame_button = 0;
 //alarm[0] = 300; //set fullscreen
 window_set_cursor(spr_nothing);
 cursor_sprite = spr_nothing;
-global.draw_collision_walls = true;
+global.draw_collision_walls = false;
 global.allow_screenshake = true;
 surface_resize(application_surface,view_wport[0]*2,view_hport[0]*2);
 

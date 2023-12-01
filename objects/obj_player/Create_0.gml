@@ -5,10 +5,10 @@ grv = 0.21; //gravity
 h_grv = 0.01; //horizontal drag
 rotation_speed = 3; //rotation speed
 current_rotation_speed = 0;
-rotation_delay = rotation_speed / 7; //0.5
+rotation_delay = rotation_speed / 10; //0.5
 vsp_basicjump = -6.6; //bounce height
 angle = 0;
-anglemax = 40; //maximum degrees added on either side
+anglemax = 45; //maximum degrees added on either side
 bouncing = false; //bouncing animation when true
 animation_complete = false; //bounce animation before jumping
 use_mouse = false; //use mouse to control instead of WASD/Arrow keys?
@@ -19,6 +19,10 @@ free = true; //pogo not colliding with wall, this variable ensures the player do
 conveyor_speed = 0;
 can_rotate = true;
 can_shoot = true;
+platform_on = true;
+
+//buffs
+laser_sight = true;
 
 //pickups
 charge = 0;
@@ -30,6 +34,10 @@ ground_pound_distance_risen = 0;
 ground_pound_slam = false;
 slam_speed = 12;
 slam_trail_distance = 0;
+
+//upward flames
+min_flames_speed = 5.6;
+allow_flames = false;
 
 //set controls variables
 key_right = 0;
@@ -46,7 +54,6 @@ key_pickup_2_pressed = 0;
 //player sprite
 player_sprite = spr_player_zekai;
 falling_sprite = spr_player_zekai_falling;
-falling_sprite2 = spr_player_zekai_falling;
 charging_sprite = spr_player_zekai_charging;
 
 // Stats
@@ -78,7 +85,7 @@ equipped_item = noone; // The weapon that initializes the equipment is none
 #region //STATES
 
 state_free = function() {
-	
+	bouncing = false;
 	can_rotate = true;
 	can_shoot = true;
 	
@@ -119,6 +126,24 @@ state_free = function() {
 		speed = 0; //stop player movement while bouncing
 	}
 	
+	//check for collision with on off platform	
+	if (place_meeting(x,y+vspeed,obj_temp_platform_on_off) and !place_meeting(x,y-1,obj_temp_platform_on_off)) and vspeed > 0 and platform_on {
+		while !(place_meeting(x,y+sign(vspeed),obj_temp_platform_on_off)) {
+			y += sign(vspeed);
+		}
+		state = state_bouncing;
+		speed = 0; //stop player movement while bouncing
+	}
+	
+	//check for collision with off on platform	
+	if (place_meeting(x,y+vspeed,obj_temp_platform_off_on) and !place_meeting(x,y-1,obj_temp_platform_off_on)) and vspeed > 0 and !platform_on {
+		while !(place_meeting(x,y+sign(vspeed),obj_temp_platform_off_on)) {
+			y += sign(vspeed);
+		}
+		state = state_bouncing;
+		speed = 0; //stop player movement while bouncing
+	}
+	
 	//make sure player isn't colliding with anything before checking for collisions again
 	if !(place_meeting(x+hspeed,y+vspeed,obj_ground)) and free = false {
 		free = true;	
@@ -143,13 +168,21 @@ state_free = function() {
 			room_restart();
 		}
 	}
+	
+	//create upward flames if fast enough
+	if speed >= min_flames_speed and !instance_exists(obj_player_flames_upward) and vspeed < 0 and allow_flames = true {
+		instance_create_depth(x,y,depth-1,obj_player_flames_upward);
+	}
 
 }
 
 state_bouncing = function() {
-	
-	can_rotate = true;
-	can_shoot = true;
+	bouncing = true;
+	//on create
+	if floor(image_index) = 0 {
+		can_rotate = true;
+		can_shoot = true;
+	}
 	free = false;
 	sprite_index = player_sprite; //set sprite
 	
@@ -157,7 +190,7 @@ state_bouncing = function() {
 	if (floor(image_index) = sprite_get_number(sprite_index)-1) {
 		animation_complete = true;
 	}else if (animation_complete = false) {
-		image_index += 0.9;
+		image_index += 0.75;
 	}
 	
 	// Conveyor belt handling
@@ -168,10 +201,12 @@ state_bouncing = function() {
 	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump and pickups_array[1].on_cooldown = false);
 	if (animation_complete and not_charging_1 and not_charging_2) {
 		scr_Jump(0);
+		platform_on = !platform_on;
 	}
 }
 
 state_chargejump = function() {
+	bouncing = true;
 	sprite_index = charging_sprite;
 	image_speed = 1;
 	vsp_basicjump = -6.6;
@@ -185,6 +220,8 @@ state_chargejump = function() {
 	if not_charging_1 and not_charging_2 {
 		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5)
 		scr_Jump(charge);
+		allow_flames = true;
+		min_flames_speed = 6.6;
 		pickup_chargejump.on_cooldown = true;
 	}else {
 		if (charge > charge_max) {
@@ -265,7 +302,31 @@ scr_Guns();
 canshoot = 0; //shooting timer
 bullet_index = 0; //current bullet
 
-gun_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun];
+//EQUIP WEAPONS
+num_of_weapons = 2; //number of different weapons equipped: only do 1 or 2
+all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun]; //all guns
+
+if (random_weapon = true) { //choose random weapons
+	randomize();
+	gun_1 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+	gun_2 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+
+	while (gun_2 = gun_1) { //dont want 2 of the same weapon
+		gun_2 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+	}
+}else { //decide which weapons we want manually if not random. 
+	//we do this by changing gun_1_manual and gun_2_manual in the variable definitions tab. Can be changed room by room.
+	//Integers correspond to values in all_guns_array, 0 = default_gun, 1 = paintball_gun, etc.
+	gun_1 = all_guns_array[gun_1_manual_value];
+	gun_2 = all_guns_array[gun_2_manual_value];
+}
+
+//set what weapons will actually be equipped at the start
+if (num_of_weapons = 1) {
+	gun_array = [gun_1];
+}else {
+	gun_array = [gun_1, gun_2];
+}
 current_gun = 0;
 gun = gun_array[current_gun];
 
@@ -278,7 +339,31 @@ buff_duration = 60 * 5; // buff duration timer
 
 //pickups
 scr_Pickups();
-pickups_array = [pickup_chargejump,pickup_groundpound];
+
+num_of_pickups = 2; //number of different pickups equipped: only do 1 or 2
+all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun]; //all pickups
+
+if (random_pickup = true) { //choose random pickups
+	randomize();
+	pickup_1 = all_pickups_array[irandom_range(0,array_length(all_pickups_array)-1)];
+	pickup_2 = all_pickups_array[irandom_range(0,array_length(all_pickups_array)-1)];
+
+	while (pickup_2 = pickup_1) { //dont want 2 of the same weapon
+		pickup_2 = all_pickups_array[irandom_range(0,array_length(all_pickups_array)-1)];
+	}
+}else { //decide which pickups we want manually if not random. 
+	//we do this by changing pickup_1_manual and pickup_2_manual in the variable definitions tab. Can be changed room by room.
+	//Integers correspond to values in all_pickups_array, 0 = pickup_chargejump, 1 = pickup_groundpound, etc.
+	pickup_1 = all_pickups_array[pickup_1_manual_value];
+	pickup_2 = all_pickups_array[pickup_2_manual_value];
+}
+
+//set what weapons will actually be equipped at the start
+if (num_of_pickups = 1) {
+	pickups_array = [pickup_1,pickup_nothing];
+}else {
+	pickups_array = [pickup_1, pickup_2];
+}
 
 //create text in proc gen room
 if room = room_proc_gen_test {

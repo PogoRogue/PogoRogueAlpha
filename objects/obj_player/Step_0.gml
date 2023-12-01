@@ -42,7 +42,12 @@ state();
 #region //pickups
 
 //call pickups
-if pickups_array[0].on_cooldown = false {
+if pickups_array[0].on_cooldown = false and pickups_array[0].reload_on_bounce = false {
+	if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
+	or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
+		pickups_array[0].on_call();
+	}
+}else if pickups_array[0].reload_on_bounce = true and pickups_array[0].uses_per_bounce > 0 {
 	if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
 	or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
 		pickups_array[0].on_call();
@@ -50,7 +55,12 @@ if pickups_array[0].on_cooldown = false {
 }
 	
 //call pickup 2
-if pickups_array[1].on_cooldown = false {
+if pickups_array[1].on_cooldown = false and pickups_array[1].reload_on_bounce = false {
+	if (key_pickup_2) and scr_In_Array(pickups_array[1].states_to_call_in, state) and pickups_array[1].key_held 
+	or (key_pickup_2_pressed) and scr_In_Array(pickups_array[1].states_to_call_in, state) and !pickups_array[1].key_held {
+		pickups_array[1].on_call();
+	}
+}else if pickups_array[1].reload_on_bounce = true and pickups_array[1].uses_per_bounce > 0 {
 	if (key_pickup_2) and scr_In_Array(pickups_array[1].states_to_call_in, state) and pickups_array[1].key_held 
 	or (key_pickup_2_pressed) and scr_In_Array(pickups_array[1].states_to_call_in, state) and !pickups_array[1].key_held {
 		pickups_array[1].on_call();
@@ -59,20 +69,21 @@ if pickups_array[1].on_cooldown = false {
 
 //cooldowns
 for (i = 0; i <= 1; i++) {
-	if pickups_array[i].on_cooldown and pickups_array[i].cooldown_time > 0 {
-		pickups_array[i].cooldown_time -= 1;
-	}else if pickups_array[i].on_cooldown {
-		pickups_array[i].on_cooldown = false;
-		pickups_array[i].cooldown_time = pickups_array[i].max_cooldown_time;
+	if pickups_array[i].reload_on_bounce = false {
+		if pickups_array[i].on_cooldown and pickups_array[i].cooldown_time > 0 {
+			pickups_array[i].cooldown_time -= 1;
+		}else if pickups_array[i].on_cooldown {
+			pickups_array[i].on_cooldown = false;
+			pickups_array[i].cooldown_time = pickups_array[i].max_cooldown_time;
+		}
 	}
 }
 
 #endregion
 
-//reset ground pount variables
+//reset ground pound variables
 if state != state_groundpound {
 	ground_pound_slam = false;
-	can_rotate = true;
 	can_shoot = true;
 	slam_speed = 12;
 	slam_trail_distance = 0;
@@ -118,10 +129,9 @@ if (can_rotate) {
 					angle += ((point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
 				}
 			}
-			
-		clamp(angle,-anglemax,anglemax); //cant tilt too far
 	}
 }
+angle = clamp(angle,-anglemax,anglemax); //cant tilt too far
 
 
 image_angle = angle;

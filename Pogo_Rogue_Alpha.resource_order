@@ -1,6 +1,8 @@
 {
   "FolderOrderSettings": [],
   "ResourceOrderSettings": [
-    {"name":"spr_3x3_Combat_Zehao","order":1,"path":"sprites/spr_3x3_Combat_Zehao/spr_3x3_Combat_Zehao.yy",},
+    {"name":"spr_3x3_Combat","order":2,"path":"sprites/spr_3x3_Combat/spr_3x3_Combat.yy",},
+    {"name":"spr_3x3_Combat_store","order":1,"path":"sprites/spr_3x3_Combat_store/spr_3x3_Combat_store.yy",},
+    {"name":"spr_3x3_Combat_Zehao","order":3,"path":"sprites/spr_3x3_Combat_Zehao/spr_3x3_Combat_Zehao.yy",},
   ],
 }

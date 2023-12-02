@@ -64,6 +64,10 @@ num_iframes = 1.5 * room_speed;
 current_iframes = 0;
 dead = false;
 
+// Room Gate Handling
+enemies_killed = 0;
+enemies_required = 0;
+
 image_speed = 0;
 
 depth = -10;

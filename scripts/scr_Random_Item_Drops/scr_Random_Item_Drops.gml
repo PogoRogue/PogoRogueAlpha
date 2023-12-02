@@ -15,15 +15,16 @@ function scr_Random_Item_Drops(){
 	
 	//heart
 	if (heart_drop <= heart_chance) {
-		with instance_create_depth(center_x,center_y,depth-1,obj_item_heartbuff) {
+		with instance_create_depth(center_x,center_y+4,depth-2,obj_item_heartbuff) {
 			follow_player = true;
 		}
 	}
 	
 	//buff
 	if (buff_drop <= buff_chance) {
-		with instance_create_depth(center_x,center_y,depth-1,obj_item_parentbuff) {
-			follow_player = true;
+		with instance_create_depth(center_x,center_y+4,depth-2,obj_item_parentbuff) {
+			follow_player = false;
+			alarm[0] = irandom_range(1,other.num_of_coins*2);
 		}
 		//only one powerup per chest
 		pickup_chance = -1;
@@ -32,8 +33,9 @@ function scr_Random_Item_Drops(){
 	
 	//weapon
 	if (weapon_drop <= weapon_chance) {
-		with instance_create_depth(center_x,center_y,depth-1,obj_item_parentweapon) {
-			follow_player = true;
+		with instance_create_depth(center_x,center_y,depth-2,obj_item_parentweapon) {
+			follow_player = false;
+			alarm[0] = irandom_range(1,other.num_of_coins*2);
 		}
 		//only one powerup per chest
 		pickup_chance = -1;
@@ -42,7 +44,8 @@ function scr_Random_Item_Drops(){
 	//pickup
 	if (pickup_drop <= pickup_chance) {
 		with instance_create_depth(center_x,center_y,depth-1,obj_item_parentpickup) {
-			follow_player = true;
+			follow_player = false;
+			alarm[0] = irandom_range(1,other.num_of_coins*2);
 		}
 	}
 }

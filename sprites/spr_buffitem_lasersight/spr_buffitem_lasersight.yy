@@ -1,10 +1,10 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_heart",
+  "name": "spr_buffitem_lasersight",
   "bbox_bottom": 15,
-  "bbox_left": 0,
-  "bbox_right": 15,
+  "bbox_left": 5,
+  "bbox_right": 9,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -23,7 +23,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"99425990-0058-4472-b56c-ae0bc44618e6","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 6,
+  "origin": 4,
   "parent": {
     "name": "Items",
     "path": "folders/Sprites/Items.yy",
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_heart",
+    "name": "spr_buffitem_lasersight",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,13 +54,13 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c05b71ff-0941-4490-9cb4-f386bdf6146f","path":"sprites/spr_heart/spr_heart.yy",},},},"Disabled":false,"id":"54853ac3-a1b0-4487-b032-51e6bce85316","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c05b71ff-0941-4490-9cb4-f386bdf6146f","path":"sprites/spr_buffitem_lasersight/spr_buffitem_lasersight.yy",},},},"Disabled":false,"id":"8a47cb5b-fc68-42ca-8205-8d4079304f64","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 0,
-    "yorigin": 16,
+    "xorigin": 8,
+    "yorigin": 8,
   },
   "swatchColours": [
     4278190335,

@@ -38,9 +38,7 @@ if keyboard_check_pressed(ord("P")) || gamepad_button_check_pressed(0,gp_select)
 	}else { //unpause now
 		pause = false;
 		instance_activate_all();
-		if instance_exists(obj_item_swap) {
-			instance_destroy(obj_item_swap);
-		}
+		
 		if surface_exists(pause_surf) {
 			surface_free(pause_surf);
 		}

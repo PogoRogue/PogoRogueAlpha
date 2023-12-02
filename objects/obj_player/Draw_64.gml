@@ -54,12 +54,12 @@ draw_set_valign(fa_center);
 //cooldowns
 if pickups_array[0].reload_on_bounce = false {
 	if !(pickups_array[0].on_cooldown) {
-		draw_sprite(pickups_array[0].gui_sprite,0,16,72);
+		draw_sprite(pickups_array[0].gui_sprite,0,32,88);
 	}else {
-		draw_sprite_ext(spr_pickup_empty,0,16,72,1,1,0,c_white,0.5);
+		draw_sprite_ext(spr_pickup_empty,0,32,88,1,1,0,c_white,0.5);
 		draw_sprite_part(pickups_array[0].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*(1-(pickups_array[0].cooldown_time/pickups_array[0].max_cooldown_time)),sprite_get_height(spr_pickup_empty),16,72);
 		//darkening
-		draw_sprite_ext(spr_pickup_empty,0,16,72,1,1,0,c_black,0.5);
+		draw_sprite_ext(spr_pickup_empty,0,32,88,1,1,0,c_black,0.5);
 	
 		if pickups_array[0] != pickup_nothing {
 			//draw seconds left
@@ -68,10 +68,10 @@ if pickups_array[0].reload_on_bounce = false {
 	}
 }else {
 	if !(pickups_array[0].on_cooldown) {
-		draw_sprite(pickups_array[0].gui_sprite,0,16,72);
+		draw_sprite(pickups_array[0].gui_sprite,0,32,88);
 	}else {
-		draw_sprite(pickups_array[0].gui_sprite,0,16,72);
-		draw_sprite_ext(spr_pickup_empty,0,16,72,1,1,0,c_black,0.5);
+		draw_sprite(pickups_array[0].gui_sprite,0,32,88);
+		draw_sprite_ext(spr_pickup_empty,0,32,88,1,1,0,c_black,0.5);
 	}
 	if pickups_array[0].max_uses_per_bounce > 1 {
 		//draw uses_left
@@ -81,12 +81,12 @@ if pickups_array[0].reload_on_bounce = false {
 
 if pickups_array[1].reload_on_bounce = false {
 	if !(pickups_array[1].on_cooldown) {
-		draw_sprite(pickups_array[1].gui_sprite,0,52,72);
+		draw_sprite(pickups_array[1].gui_sprite,0,68,88);
 	}else {
-		draw_sprite_ext(spr_pickup_empty,0,52,72,1,1,0,c_white,0.5);
+		draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_white,0.5);
 		draw_sprite_part(pickups_array[1].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*(1-(pickups_array[1].cooldown_time/pickups_array[1].max_cooldown_time)),sprite_get_height(spr_pickup_empty),52,72);
 		//darkening
-		draw_sprite_ext(spr_pickup_empty,0,52,72,1,1,0,c_black,0.5);
+		draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_black,0.5);
 	
 		if pickups_array[1] != pickup_nothing {
 			//draw seconds left
@@ -95,10 +95,10 @@ if pickups_array[1].reload_on_bounce = false {
 	}
 }else {
 	if !(pickups_array[1].on_cooldown) {
-		draw_sprite(pickups_array[1].gui_sprite,0,52,72);
+		draw_sprite(pickups_array[1].gui_sprite,0,68,88);
 	}else {
-		draw_sprite(pickups_array[1].gui_sprite,0,52,72);
-		draw_sprite_ext(spr_pickup_empty,0,52,72,1,1,0,c_black,0.5);
+		draw_sprite(pickups_array[1].gui_sprite,0,68,88);
+		draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_black,0.5);
 	}
 	if pickups_array[1].max_uses_per_bounce > 1 {
 		//draw uses_left
@@ -116,4 +116,9 @@ if (gamepad_is_connected(0)) {
 	if !(pickups_array[1].on_cooldown) and pickups_array[1] != pickup_nothing {
 		draw_sprite(spr_controller_button_right,0,68,104);
 	}
+}
+
+//all buffs
+for (i = 0; i < array_length(all_buff_sprites); i++) {
+	draw_sprite(all_buff_sprites[i],all_buff_sprites_index[i],24+i*24,128);
 }

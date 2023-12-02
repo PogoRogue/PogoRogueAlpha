@@ -7,8 +7,8 @@ draw_set_alpha(alpha);
 scr_Draw_Text_Outlined(center_x,yy-40,"Choose an item to replace:", c_white);
 
 //adjust sprite position for pickup sprites
-var x_adjust = 16*pickups_mode;
-var y_adjust = 16*pickups_mode;
+var x_adjust = 0;
+var y_adjust = 0;
 
 if gamepad_is_connected(0) {
 	select_sprite = select_sprite_controller;

@@ -16,6 +16,8 @@ red_frames = 0;
 
 //drop chances
 heart_chance = 20; //percent
-buff_chance = 0; //percent
+buff_chance = 5; //percent
 pickup_chance = 5; //percent
 weapon_chance = 5; //percent
+
+num_of_coins = global.combo;

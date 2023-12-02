@@ -12,6 +12,6 @@ mask_index = spr_treasurechest_new_mask;
 
 //drop chances
 heart_chance = 50;
-buff_chance = 0;
-pickup_chance = 50;
+buff_chance = 50;
 weapon_chance = 50;
+pickup_chance = 50;

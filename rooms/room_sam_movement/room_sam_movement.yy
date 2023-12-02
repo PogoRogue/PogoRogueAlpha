@@ -154,6 +154,7 @@
     {"name":"inst_7698C51A","path":"rooms/room_sam_movement/room_sam_movement.yy",},
     {"name":"inst_45D9CAC5","path":"rooms/room_sam_movement/room_sam_movement.yy",},
     {"name":"inst_4C61914A","path":"rooms/room_sam_movement/room_sam_movement.yy",},
+    {"name":"inst_486DAC50","path":"rooms/room_sam_movement/room_sam_movement.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -305,6 +306,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7698C51A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_angled_platform_left","path":"objects/obj_angled_platform_left/obj_angled_platform_left.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1440.0,"y":944.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_45D9CAC5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_angled_platform_left","path":"objects/obj_angled_platform_left/obj_angled_platform_left.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1200.0,"y":448.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4C61914A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_angled_platform_right","path":"objects/obj_angled_platform_right/obj_angled_platform_right.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":960.0,"y":304.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_486DAC50","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_flying","path":"objects/obj_enemy_flying/obj_enemy_flying.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":208.0,"y":2800.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":{"name":"spr_background2","path":"sprites/spr_background2/spr_background2.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
   ],

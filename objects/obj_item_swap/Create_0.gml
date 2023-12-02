@@ -6,10 +6,10 @@ num_of_slots = 3;
 select_sprite_keyboard = spr_arrow_up;
 select_sprite_controller = spr_controller_button_bottom;
 select_sprite = select_sprite_keyboard;
-alpha = 1.5;
+alpha = 1.25;
 fade_away = false;
 
 
 with obj_pause {
-	paused_outside = true;	
+	paused_outside = true;
 }

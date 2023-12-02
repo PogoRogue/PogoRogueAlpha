@@ -90,8 +90,10 @@ with obj_player {
 }
 
 //get item sprite
-if pickups_mode = true {
-	sprite_new = new_item.gui_sprite;
-}else if weapons_mode = true {
-	sprite_new = new_item.sprite;
+if fade_away = false {
+	if pickups_mode = true {
+		sprite_new = new_item.gui_sprite;
+	}else if weapons_mode = true {
+		sprite_new = new_item.sprite;
+	}
 }

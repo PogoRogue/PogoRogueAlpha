@@ -94,6 +94,7 @@
     {"name":"inst_63BDFBA8","path":"rooms/room_gym_enemy/room_gym_enemy.yy",},
     {"name":"inst_19672A0A","path":"rooms/room_gym_enemy/room_gym_enemy.yy",},
     {"name":"inst_10B56E7C","path":"rooms/room_gym_enemy/room_gym_enemy.yy",},
+    {"name":"inst_40CAD6D3","path":"rooms/room_gym_enemy/room_gym_enemy.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -130,6 +131,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_63BDFBA8","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_shooter_moving","path":"objects/obj_enemy_shooter_moving/obj_enemy_shooter_moving.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":800.0,"y":1376.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_19672A0A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_shoot_only_moving","path":"objects/obj_enemy_shoot_only_moving/obj_enemy_shoot_only_moving.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":896.0,"y":1376.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_10B56E7C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_stomp_only_moving","path":"objects/obj_enemy_stomp_only_moving/obj_enemy_stomp_only_moving.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1120.0,"y":1376.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_40CAD6D3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":5,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_planetarybullets","path":"objects/obj_planetarybullets/obj_planetarybullets.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":336.0,"y":1344.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"hazards","depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_293AC629","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_env_fan","path":"objects/obj_env_fan/obj_env_fan.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":32.0,"y":1264.0,},

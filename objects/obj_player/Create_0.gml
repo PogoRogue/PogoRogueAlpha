@@ -23,7 +23,10 @@ can_shoot = true;
 platform_on = true;
 
 //buffs
-laser_sight = true;
+laser_sight = false;
+planetary_bullets = 0;
+all_buff_sprites = [];
+all_buff_sprites_index = [];
 
 //pickups
 charge = 0;
@@ -408,6 +411,9 @@ if (num_of_pickups = 1) {
 }else {
 	pickups_array = [pickup_1, pickup_2];
 }
+
+//buffs
+scr_Buffs();
 
 //create text in proc gen room
 if room = room_proc_gen_test {

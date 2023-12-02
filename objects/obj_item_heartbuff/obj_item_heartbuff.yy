@@ -4,14 +4,12 @@
   "name": "obj_item_heartbuff",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":10,"eventType":7,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "item",
-    "path": "folders/Objects/item.yy",
+    "name": "Buffs",
+    "path": "folders/Objects/item/Buffs.yy",
   },
   "parentObjectId": {
     "name": "obj_item_parentbuff",
@@ -33,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_heart",
-    "path": "sprites/spr_heart/spr_heart.yy",
+    "name": "spr_buffitem_heart",
+    "path": "sprites/spr_buffitem_heart/spr_buffitem_heart.yy",
   },
   "spriteMaskId": null,
   "visible": true,

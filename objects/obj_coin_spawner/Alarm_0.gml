@@ -5,9 +5,3 @@ if num_of_coins > 0 {
 	alarm[0] = time_between_spawns;
 	num_of_coins -= 1;
 }
-
-
-
-
-
-

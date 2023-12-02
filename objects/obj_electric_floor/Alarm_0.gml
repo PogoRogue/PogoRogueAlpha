@@ -1,6 +1,6 @@
 /// @description Floor Off
 power_on = false;
 sprite_index = spr_electric_floor_off;
-alarm[1] = room_speed * cycle_time;
+alarm[2] = room_speed * powering_up_time;
 
 

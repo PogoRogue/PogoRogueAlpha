@@ -5,5 +5,5 @@
 
 // Inherit the parent event
 event_inherited();
-damage = 16;
+damage = 8;
 alarm_set(1, room_speed);

@@ -67,6 +67,7 @@ if key_select and fade_away = false {
 		with obj_pause {
 			paused_outside = true;	
 		}
+		alarm[1] = 1; //dont lose any coins in shop
 	}
 	fade_away = true;
 }

@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_item_heartbuff",
+  "name": "obj_item_buff_planetarybullets",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_buffitem_heart",
-    "path": "sprites/spr_buffitem_heart/spr_buffitem_heart.yy",
+    "name": "spr_buffitem_planetarybullets",
+    "path": "sprites/spr_buffitem_planetarybullets/spr_buffitem_planetarybullets.yy",
   },
   "spriteMaskId": null,
   "visible": true,

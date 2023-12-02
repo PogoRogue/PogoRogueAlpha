@@ -25,6 +25,7 @@ function scr_Shoot(){
 				bounce_amount: gun.ammo[bullet_index].bounce_amount,
 				damage: gun.ammo[bullet_index].damage,
 			});
+			audio_play_sound(gun.sound,0,false);
 			
 			//screen shake
 			scr_Screen_Shake(gun.ammo[bullet_index].screen_shake.magnitude, gun.ammo[bullet_index].screen_shake.frames)

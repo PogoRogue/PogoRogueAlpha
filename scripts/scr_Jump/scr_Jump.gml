@@ -30,4 +30,15 @@ function scr_Jump(add_to_jump){
 	//flames
 	allow_flames = false;
 	min_flames_speed = 5.6;
+	
+	//bounce sound
+	if !audio_is_playing(snd_groundpound) {
+		if bounce_sound = true {
+			audio_play_sound(snd_bounce,0,false);
+			bounce_sound = not bounce_sound;
+		}else {
+			audio_play_sound(snd_bounce2,0,false);
+			bounce_sound = not bounce_sound;
+		}
+	}
 }

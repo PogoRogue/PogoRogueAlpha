@@ -55,6 +55,10 @@ draw_set_valign(fa_center);
 if pickups_array[0].reload_on_bounce = false {
 	if !(pickups_array[0].on_cooldown) {
 		draw_sprite(pickups_array[0].gui_sprite,0,32,88);
+		//shield bubble darkening
+		if pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble) {
+			draw_sprite_ext(spr_pickup_empty,0,32,88,1,1,0,c_black,0.5);
+		}
 	}else {
 		draw_sprite_ext(spr_pickup_empty,0,32,88,1,1,0,c_white,0.5);
 		draw_sprite_part(pickups_array[0].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*(1-(pickups_array[0].cooldown_time/pickups_array[0].max_cooldown_time)),sprite_get_height(spr_pickup_empty),16,72);
@@ -82,6 +86,10 @@ if pickups_array[0].reload_on_bounce = false {
 if pickups_array[1].reload_on_bounce = false {
 	if !(pickups_array[1].on_cooldown) {
 		draw_sprite(pickups_array[1].gui_sprite,0,68,88);
+		//shield bubble darkening
+		if pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble) {
+			draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_black,0.5);
+		}
 	}else {
 		draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_white,0.5);
 		draw_sprite_part(pickups_array[1].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*(1-(pickups_array[1].cooldown_time/pickups_array[1].max_cooldown_time)),sprite_get_height(spr_pickup_empty),52,72);
@@ -109,11 +117,11 @@ if pickups_array[1].reload_on_bounce = false {
 //show buttons
 if (gamepad_is_connected(0)) {
 	//button 1
-	if !(pickups_array[0].on_cooldown) and pickups_array[0] != pickup_nothing {
+	if !(pickups_array[0].on_cooldown) and pickups_array[0] != pickup_nothing and !(pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble)) {
 		draw_sprite(spr_controller_button_bottom,0,32,104);
 	}
 	//button 2
-	if !(pickups_array[1].on_cooldown) and pickups_array[1] != pickup_nothing {
+	if !(pickups_array[1].on_cooldown) and pickups_array[1] != pickup_nothing and !(pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble)) {
 		draw_sprite(spr_controller_button_right,0,68,104);
 	}
 }

@@ -10,6 +10,7 @@ vsp_basicjump = -6.6; //bounce height
 angle = 0;
 anglemax = 45; //maximum degrees added on either side
 bouncing = false; //bouncing animation when true
+bounce_sound = true; //alternating pitch
 shop_bouncing = false; //only use this var in the shop
 animation_complete = false; //bounce animation before jumping
 use_mouse = false; //use mouse to control instead of WASD/Arrow keys?
@@ -223,6 +224,10 @@ state_bouncing = function() {
 }
 
 state_chargejump = function() {
+	if !audio_is_playing(snd_chargejump) { //sound
+		audio_play_sound(snd_chargejump,0,false);
+	}
+	
 	bouncing = true;
 	sprite_index = charging_sprite;
 	image_speed = 1;
@@ -234,9 +239,10 @@ state_chargejump = function() {
 	var not_charging_1 = !(key_pickup_1 and pickups_array[0] = pickup_chargejump);
 	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump);
 	
-	if not_charging_1 and not_charging_2 {
+	if not_charging_1 and not_charging_2 or charge <= charge_max {
 		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5)
 		scr_Jump(charge);
+		audio_stop_sound(snd_chargejump);
 		allow_flames = true;
 		min_flames_speed = 6.6;
 		pickup_chargejump.on_cooldown = true;
@@ -294,6 +300,7 @@ state_groundpound = function() {
 			state = state_bouncing;
 			vspeed = 0;
 			scr_Screen_Shake(6, 15);
+			audio_play_sound(snd_groundpound,0,false);
 		}
 		
 	}
@@ -388,7 +395,7 @@ buff_duration = 60 * 5; // buff duration timer
 scr_Pickups();
 
 num_of_pickups = 2; //number of different pickups equipped: only do 1 or 2
-all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun]; //all pickups
+all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble]; //all pickups
 
 if (random_pickup = true) { //choose random pickups
 	randomize();

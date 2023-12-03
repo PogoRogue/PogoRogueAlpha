@@ -118,7 +118,7 @@ if created_items = false {
 				}
 				
 				slot_items_array[i] = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
-				while slot_items_array[4] = slot_items_array[5] { //change if 2 of same item
+				while slot_items_array[6] = slot_items_array[7] { //change if 2 of same item
 					slot_items_array[i] = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
 				}
 				with instance_create_depth(xx,yy,depth-1,slot_items_array[i]) {

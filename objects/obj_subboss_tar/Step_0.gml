@@ -8,7 +8,7 @@ if(!place_meeting(x, y + 1, obj_ground_parent)) {
 } else {
 	vspeed = 0;
 	image_xscale = min(image_xscale + 0.02, 3.0);	
-	image_yscale = max( image_yscale - 0.01, 0.2);
+	image_yscale = max( image_yscale - 0.01, 0.6);
 	
 	while(!place_meeting(x, y, obj_ground_parent)) {
 		y++;
@@ -27,3 +27,5 @@ if(place_meeting(x, y, obj_player)) {
 if(is_despawning) {
 	image_alpha *= 0.9;
 }
+
+if(image_index==6) {image_speed=0}

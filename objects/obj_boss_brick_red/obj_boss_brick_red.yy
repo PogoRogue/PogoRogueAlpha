@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_boss_brick_red",
-    "path": "sprites/spr_boss_brick_red/spr_boss_brick_red.yy",
+    "name": "spr_B1_Explode_Attached",
+    "path": "sprites/spr_B1_Explode_Attached/spr_B1_Explode_Attached.yy",
   },
   "spriteMaskId": null,
   "visible": true,

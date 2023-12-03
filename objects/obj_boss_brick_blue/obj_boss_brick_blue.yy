@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_boss_brick_blue",
-    "path": "sprites/spr_boss_brick_blue/spr_boss_brick_blue.yy",
+    "name": "spr_B1_Shield_Attached",
+    "path": "sprites/spr_B1_Shield_Attached/spr_B1_Shield_Attached.yy",
   },
   "spriteMaskId": null,
   "visible": true,

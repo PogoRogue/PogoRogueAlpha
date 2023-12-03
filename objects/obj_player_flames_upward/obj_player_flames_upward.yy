@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_player_flames",
-    "path": "sprites/spr_player_flames/spr_player_flames.yy",
+    "name": "spr_dash_flames",
+    "path": "sprites/spr_dash_flames/spr_dash_flames.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -4,6 +4,6 @@ if (floor(image_index) = sprite_get_number(sprite_index)-1) {
 }
 
 //remove collision mask after certain frame
-if (floor(image_index) > 7) {
+if (floor(image_index) > 0) {
 	mask_index = spr_nothing;
 }

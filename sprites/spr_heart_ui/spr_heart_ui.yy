@@ -24,7 +24,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"99425990-0058-4472-b56c-ae0bc44618e6","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 6,
+  "origin": 4,
   "parent": {
     "name": "UI",
     "path": "folders/Sprites/UI.yy",
@@ -61,8 +61,8 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 0,
-    "yorigin": 24,
+    "xorigin": 12,
+    "yorigin": 12,
   },
   "swatchColours": [
     4278190335,

@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "subboss_flychasing",
-    "path": "folders/Objects/Enemy/Boss Sphere/subboss_flychasing.yy",
+    "name": "Sub-bosses",
+    "path": "folders/Objects/Enemy/Boss Sphere/Sub-bosses.yy",
   },
   "parentObjectId": {
     "name": "obj_enemy_generic",

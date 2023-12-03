@@ -7,11 +7,10 @@ event_inherited();
 depth = -6;
 
 boss = instance_nearest(x, y, obj_boss_sphere);
+draw_hp = false;
 
 // Position and rotation variables
 boss_dir = point_direction(x, y, boss.x, boss.y);
 boss_dir = degtorad(boss_dir);
 dist = point_distance(x, y, boss.x, boss.y);
-new_x = x;
-new_y = y;
 rad = degtorad(image_angle);

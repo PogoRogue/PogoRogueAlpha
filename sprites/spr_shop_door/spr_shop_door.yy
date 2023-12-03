@@ -13,7 +13,8 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d2ebf831-bfaa-474c-83c2-8c6349ba3fb3",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f34d6816-a324-4b97-a227-50075326289f",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d5281bad-f511-4b72-9828-de0e42c1dde5",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -43,7 +44,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 1.0,
+    "length": 2.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -54,7 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d2ebf831-bfaa-474c-83c2-8c6349ba3fb3","path":"sprites/spr_shop_door/spr_shop_door.yy",},},},"Disabled":false,"id":"498dfcd1-0532-4671-9879-d166740f94f0","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f34d6816-a324-4b97-a227-50075326289f","path":"sprites/spr_shop_door/spr_shop_door.yy",},},},"Disabled":false,"id":"eb2567ed-ed7f-46dc-bb5c-6866e79b11be","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d5281bad-f511-4b72-9828-de0e42c1dde5","path":"sprites/spr_shop_door/spr_shop_door.yy",},},},"Disabled":false,"id":"38397d82-3f05-4b96-8672-23ca436fd78f","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

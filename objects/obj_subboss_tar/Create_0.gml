@@ -8,3 +8,5 @@ is_despawning = false;
 is_touching_player = false;
 
 alarm_set(0, 45 * room_speed); // Despawn after 60 seconds
+
+drop_coins = false;

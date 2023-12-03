@@ -14,6 +14,7 @@ if (despawn = false) {
 	}else {
 		reached_max_alpha = true;	
 	}
+	obj_player.invincible = true;
 }else if despawn = true {
 	image_alpha -= 0.1;
 	

@@ -8,6 +8,8 @@ if (place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask)) {
 	colliding = false;	
 }
 
+image_index = room = room_shop;
+
 //check for button press
 if (colliding and key_open_door) {
 	if room != room_shop {

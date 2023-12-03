@@ -108,6 +108,7 @@ function scr_Pickups(){
 		max_uses_per_bounce: 0,
 		uses_per_bounce: 0,
 		on_call: function() {
+			cooldown_time = max_cooldown_time;
 			obj_player.state = obj_player.state_firedash;
 			on_cooldown = true;
 			audio_play_sound(snd_whoosh,0,false);

@@ -6,3 +6,5 @@
 event_inherited();
 
 depth = -7;
+
+drop_coins= false;

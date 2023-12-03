@@ -18,3 +18,5 @@ rad = degtorad(image_angle);
 // Create shield object
 shield = instance_create_layer(x, y, "enemies", obj_shield_respawning);
 shield.parent = self;
+
+drop_coins = false;

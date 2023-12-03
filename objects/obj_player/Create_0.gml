@@ -250,6 +250,9 @@ state_chargejump = function() {
 		allow_flames = true;
 		min_flames_speed = 6.6;
 		pickup_chargejump.on_cooldown = true;
+		if !instance_exists(obj_player_flames_upward) {
+			instance_create_depth(x,y,depth+1,obj_player_flames_upward);	
+		}
 	}else {
 		if (charge > charge_max) {
 			charge += charge_max/80; //80 = how many frames until max charge

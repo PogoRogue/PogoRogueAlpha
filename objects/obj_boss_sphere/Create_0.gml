@@ -47,3 +47,5 @@ for(var i = -3; i < 4; i++) {
 		}
 	}
 }
+
+drop_coins = false;

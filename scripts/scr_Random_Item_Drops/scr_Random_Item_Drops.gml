@@ -15,7 +15,7 @@ function scr_Random_Item_Drops(){
 	
 	//heart
 	if (heart_drop <= heart_chance) {
-		with instance_create_depth(center_x,center_y+4,depth-2,obj_item_heartbuff) {
+		with instance_create_depth(center_x,center_y+4,depth-2,obj_item_buff_heart) {
 			follow_player = true;
 		}
 	}

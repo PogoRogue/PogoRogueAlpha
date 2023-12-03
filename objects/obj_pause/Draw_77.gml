@@ -15,6 +15,7 @@ if (pause) { //draw frozen image to screen while paused
 if keyboard_check_pressed(ord("P")) || gamepad_button_check_pressed(0,gp_select) || paused_outside {
 	if !pause { //pause now
 		pause = true;
+		audio_stop_all();
 		
 		//deactivate everything other than this surface
 		instance_deactivate_all(true);

@@ -14,7 +14,7 @@ if (colliding and key_open_door) {
 		room = room_shop;
 		global.player_spawn_x_prev = x;
 		global.player_spawn_y_prev = y - 64;
-	}else {
+	}else if !instance_exists(obj_coin_spawner) {
 		room = global.last_room;
 		global.player_spawn_x = global.player_spawn_x_prev;
 		global.player_spawn_y = global.player_spawn_y_prev;

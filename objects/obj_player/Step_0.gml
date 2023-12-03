@@ -89,7 +89,7 @@ for (i = 0; i <= 1; i++) {
 //reset ground pound variables
 if state != state_groundpound {
 	ground_pound_slam = false;
-	can_shoot = true;
+	//can_shoot = true;
 	slam_speed = 12;
 	slam_trail_distance = 0;
 }
@@ -146,6 +146,9 @@ image_angle = angle;
 
 if can_shoot = true and room != room_shop { 
 	var shoot = gun.full_auto ? key_fire_projectile : key_fire_projectile_pressed;
+	if key_fire_projectile_pressed and gun.current_bullets <= 0 {
+		audio_play_sound(snd_outofammo,0,false);
+	}
 }else {
 	var shoot = 0;
 }

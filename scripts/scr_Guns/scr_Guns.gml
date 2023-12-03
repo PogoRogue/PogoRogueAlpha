@@ -8,7 +8,7 @@ function scr_Guns(){
 		ammo: [default_bullet],//array of ammo
 		inaccuracy: 0,        //random bullet angle inaccuracy
 		kick: 2,              //kickback to position and angle
-		//sound: snd_nothing, //sound effect
+		sound: snd_defaultgun,    //sound effect
 		spread_number: 1,     //number of bullets per shot
 		spread_angle: 0,      //angle between bullets in spread shot
 		full_auto: false,     //hold down mouse to shoot vs click for each shot
@@ -27,7 +27,7 @@ function scr_Guns(){
 		ammo: [hatgun_bullet],
 		inaccuracy: 0,
 		kick: 2,
-		//sound: snd_nothing,
+		sound: snd_defaultgun,
 		spread_number: 1,
 		spread_angle: 0,
 		full_auto: false,
@@ -47,7 +47,7 @@ function scr_Guns(){
 		ammo: [paintball_bullet],     
 		inaccuracy: 5,     
 		kick: 2,           
-		//sound: snd_nothing, 
+		sound: snd_paintball, 
 		spread_number: 1,     
 		spread_angle: 0, 
 		full_auto: true,    
@@ -66,7 +66,7 @@ function scr_Guns(){
 		ammo: [shotgun_bullet],
 		inaccuracy: 0,       
 		kick: 2,             
-		//sound: snd_nothing,
+		sound: snd_shotgun,
 		spread_number: 5,     
 		spread_angle: 15,     
 		full_auto: false,     
@@ -85,7 +85,7 @@ function scr_Guns(){
 		ammo: [bubble_bullet],
 		inaccuracy: 35,       
 		kick: 2,              
-		//sound: snd_nothing,
+		sound: snd_bubble,
 		spread_number: 1,    
 		spread_angle: 15,    
 		full_auto: true,     
@@ -104,7 +104,7 @@ function scr_Guns(){
 		ammo: [burstfire_bullet],
 		inaccuracy: 10,       
 		kick: 2,              
-		//sound: snd_nothing,
+		sound: snd_burstfire,
 		spread_number: 1,    
 		spread_angle: 15,    
 		full_auto: true,     
@@ -123,7 +123,7 @@ function scr_Guns(){
 		ammo: [grenade_bullet],
 		inaccuracy: 0,       
 		kick: 2,              
-		//sound: snd_nothing,
+		sound: snd_grenade,
 		spread_number: 1,    
 		spread_angle: 0,    
 		full_auto: false,     
@@ -142,7 +142,7 @@ function scr_Guns(){
 		ammo: [laser_bullet],
 		inaccuracy: 0,       
 		kick: 2,              
-		//sound: snd_nothing,
+		sound: snd_laser,
 		spread_number: 1,    
 		spread_angle: 0,    
 		full_auto: false,     

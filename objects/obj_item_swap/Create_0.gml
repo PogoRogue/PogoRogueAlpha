@@ -13,3 +13,10 @@ fade_away = false;
 with obj_pause {
 	paused_outside = true;
 }
+
+//shop
+if room = room_shop {
+	if instance_exists(obj_player) {
+		center_x = obj_player.x;
+	}	
+}

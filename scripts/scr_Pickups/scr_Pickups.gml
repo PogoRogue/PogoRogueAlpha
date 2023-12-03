@@ -92,8 +92,25 @@ function scr_Pickups(){
 		uses_per_bounce: 0,
 		on_call: function() {
 			if !instance_exists(obj_shieldbubble) {
-				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth+1,obj_shieldbubble);
+				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth+2,obj_shieldbubble);
 			}
+		}
+	};
+	
+	pickup_firedash = {
+		gui_sprite: spr_pickup_firedash,
+		max_cooldown_time: 300,
+		cooldown_time: 300,
+		on_cooldown: false,
+		states_to_call_in: [state_free],
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		on_call: function() {
+			obj_player.state = obj_player.state_firedash;
+			on_cooldown = true;
+			audio_play_sound(snd_whoosh,0,false);
 		}
 	};
 	

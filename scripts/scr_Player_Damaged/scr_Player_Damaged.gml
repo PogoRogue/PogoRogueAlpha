@@ -3,7 +3,7 @@
 function scr_Player_Damaged(damage){
 	
 	with obj_player {
-		if !instance_exists(obj_shieldbubble) {
+		if !instance_exists(obj_shieldbubble) and invincible = false {
 			hp -= damage;
 			current_iframes = num_iframes;
 			hspeed = -2 * sign(hspeed);
@@ -12,7 +12,10 @@ function scr_Player_Damaged(damage){
 			//combo reset
 			global.combo = 0;
 			global.combo_length = 0;
-		}else {
+			
+			//screen shake
+			scr_Screen_Shake(8, 15);
+		}else if invincible = false {
 			current_iframes = num_iframes;
 			hspeed = -2 * sign(hspeed);
 			vspeed = 0;
@@ -22,8 +25,5 @@ function scr_Player_Damaged(damage){
 			}
 		}
 	}
-	
-	//screen shake
-	scr_Screen_Shake(8, 15);
 	
 }

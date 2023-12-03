@@ -89,7 +89,7 @@ for (i = 0; i <= 1; i++) {
 //reset ground pound variables
 if state != state_groundpound {
 	ground_pound_slam = false;
-	can_shoot = true;
+	//can_shoot = true;
 	slam_speed = 12;
 	slam_trail_distance = 0;
 }

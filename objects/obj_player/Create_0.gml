@@ -39,6 +39,9 @@ ground_pound_distance_risen = 0;
 ground_pound_slam = false;
 slam_speed = 12;
 slam_trail_distance = 0;
+invincible = false;
+max_dash_time = 15;
+dash_time = 15;
 
 //upward flames
 min_flames_speed = 5.6;
@@ -189,7 +192,8 @@ state_free = function() {
 	
 	//create upward flames if fast enough
 	if speed >= min_flames_speed and !instance_exists(obj_player_flames_upward) and vspeed < 0 and allow_flames = true {
-		instance_create_depth(x,y,depth-1,obj_player_flames_upward);
+		//temporarily disabled
+		//instance_create_depth(x,y,depth+1,obj_player_flames_upward);
 	}
 
 }
@@ -306,6 +310,28 @@ state_groundpound = function() {
 	}
 }
 
+state_firedash = function() {
+	can_rotate = false;
+	can_shoot = false;
+	if dash_time > 0 {
+		invincible = true;
+		speed = 8;
+		direction = image_angle+90;
+		min_flames_speed = speed;
+		scr_Screen_Shake(4, 4);
+		if !instance_exists(obj_player_flames_upward) {
+			instance_create_depth(x,y,depth+1,obj_player_flames_upward);	
+		}
+		dash_time -= 1;
+	}else {
+		state = state_free;
+		dash_time = max_dash_time;
+		if instance_exists(obj_player_flames_upward) {
+			obj_player_flames_upward.despawn = true;	
+		}
+	}
+}
+
 state_shop = function() {
 	angle = 0;	
 	can_rotate = false;
@@ -395,7 +421,7 @@ buff_duration = 60 * 5; // buff duration timer
 scr_Pickups();
 
 num_of_pickups = 2; //number of different pickups equipped: only do 1 or 2
-all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble]; //all pickups
+all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash]; //all pickups
 
 if (random_pickup = true) { //choose random pickups
 	randomize();

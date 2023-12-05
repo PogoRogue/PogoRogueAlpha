@@ -5,6 +5,8 @@ event_inherited();
 
 depth = -7;
 
+drop = false
+
 boss = instance_nearest(x, y, obj_boss_sphere);
 
 // Position and rotation variables

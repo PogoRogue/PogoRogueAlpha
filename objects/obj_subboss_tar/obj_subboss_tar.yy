@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_boss_brick_black",
-    "path": "sprites/spr_boss_brick_black/spr_boss_brick_black.yy",
+    "name": "B1_Tar_Drop",
+    "path": "sprites/B1_Tar_Drop/B1_Tar_Drop.yy",
   },
   "spriteMaskId": null,
   "visible": true,

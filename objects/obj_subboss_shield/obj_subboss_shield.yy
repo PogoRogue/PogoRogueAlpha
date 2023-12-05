@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_boss_brick_blue",
-    "path": "sprites/spr_boss_brick_blue/spr_boss_brick_blue.yy",
+    "name": "spr_B1_Shield_Drop",
+    "path": "sprites/spr_B1_Shield_Drop/spr_B1_Shield_Drop.yy",
   },
   "spriteMaskId": null,
   "visible": true,

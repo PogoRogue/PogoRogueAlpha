@@ -213,5 +213,5 @@ current_iframes = max(current_iframes - 1, 0);
 // Handle death
 dead = hp <= 0;
 if(dead && current_iframes <= 0) {
-	room_restart(); // TODO: Handle death screen or whatever we want to do	
+	game_restart(); // TODO: Handle death screen or whatever we want to do	
 }

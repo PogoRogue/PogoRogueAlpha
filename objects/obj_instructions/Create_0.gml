@@ -5,10 +5,10 @@ controls_left =	  "Controls:\n\n" +
 				  "Rotate\n" +
 				  "Shoot\n" +
 				  "Switch Weapon\n" +
-				  "Super Jump\n" +
-				  "Ground Pound\n" +
+				  "Powerup 1\n" +
+				  "Powerup 2\n" +
 				  "Restart Room\n" +
-				  "Change Rooms";
+				  "Boss Fight";
 					
 controls_middle = "\n\n" +
 				  "->\n" +

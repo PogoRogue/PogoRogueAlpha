@@ -9,6 +9,13 @@ if (keyboard_check_pressed(vk_tab) || gamepad_button_check_pressed(0,gp_shoulder
 	} else if (room = room_fight_1) {
 		room = room_proc_gen_test;
 	}else if (room = room_shop) {
-		room = global.last_room;
+		//temporarily commented out
+		//room = global.last_room;
 	} 
+	
+	if (room = room_gameplay_video) {
+		room = room_boss_test;
+	} else if (room = room_boss_test) {
+		game_restart();
+	}
 }

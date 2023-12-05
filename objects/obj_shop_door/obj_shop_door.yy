@@ -30,8 +30,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_shop_door",
-    "path": "sprites/spr_shop_door/spr_shop_door.yy",
+    "name": "spr_shop_door2",
+    "path": "sprites/spr_shop_door2/spr_shop_door2.yy",
   },
   "spriteMaskId": null,
   "visible": true,

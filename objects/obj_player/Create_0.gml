@@ -1,5 +1,5 @@
 /// @description initialize variables
-
+show_debug_message("Players: " + string(instance_number(obj_player)));
 //movement stats
 grv = 0.21; //gravity
 h_grv = 0.01; //horizontal drag
@@ -243,15 +243,16 @@ state_chargejump = function() {
 	var not_charging_1 = !(key_pickup_1 and pickups_array[0] = pickup_chargejump);
 	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump);
 	
-	if not_charging_1 and not_charging_2 or charge <= charge_max {
+	if not_charging_1 and not_charging_2 {
 		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5)
 		scr_Jump(charge);
 		audio_stop_sound(snd_chargejump);
 		allow_flames = true;
-		min_flames_speed = 6.6;
+		min_flames_speed = 7;
 		pickup_chargejump.on_cooldown = true;
 		if !instance_exists(obj_player_flames_upward) {
-			instance_create_depth(x,y,depth+1,obj_player_flames_upward);	
+			//temporarily commented out
+			//instance_create_depth(x,y,depth+1,obj_player_flames_upward);	
 		}
 	}else {
 		if (charge > charge_max) {
@@ -318,7 +319,7 @@ state_firedash = function() {
 	can_shoot = false;
 	if dash_time > 0 {
 		invincible = true;
-		speed = 8;
+		speed = 10;
 		direction = image_angle+90;
 		min_flames_speed = speed;
 		scr_Screen_Shake(4, 4);
@@ -327,6 +328,7 @@ state_firedash = function() {
 		}
 		dash_time -= 1;
 	}else {
+		speed = speed/1.5;
 		state = state_free;
 		dash_time = max_dash_time;
 		if instance_exists(obj_player_flames_upward) {

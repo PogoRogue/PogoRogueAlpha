@@ -3,7 +3,7 @@ endgame_button = keyboard_check_pressed(vk_escape); //press escape key to restar
 screenshake_button = keyboard_check_pressed(vk_backspace); //press escape key to restart room
 
 if (restart_button) {
-	room_restart(); //restart room
+	game_restart(); //restart room
 }
 
 if (endgame_button) {

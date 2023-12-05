@@ -1,6 +1,6 @@
 key_left = keyboard_check(ord("A")) || keyboard_check(vk_left) || gamepad_axis_value(0,gp_axislh) < -0.5;
 key_right = keyboard_check(ord("D")) || keyboard_check(vk_right) || gamepad_axis_value(0,gp_axislh) > 0.5;
-key_select = keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_up) || gamepad_button_check_pressed(0,gp_face1);
+key_select = keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_up) || keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0,gp_face1);
 
 if selected = false and fade_away = false {
 	if key_left {

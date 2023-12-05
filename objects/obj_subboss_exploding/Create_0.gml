@@ -6,3 +6,8 @@
 event_inherited();
 
 depth = -7;
+
+drop = false
+reset = false
+
+image_speed = 0

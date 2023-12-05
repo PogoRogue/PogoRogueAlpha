@@ -22,8 +22,8 @@
   ],
   "ResourceOrderSettings": [
     {"name":"spr_dot","order":8,"path":"sprites/spr_dot/spr_dot.yy",},
-    {"name":"room_gameplay_video","order":1,"path":"rooms/room_gameplay_video/room_gameplay_video.yy",},
     {"name":"B1_Tar_Attached","order":1,"path":"sprites/B1_Tar_Attached/B1_Tar_Attached.yy",},
+    {"name":"room_gameplay_video","order":1,"path":"rooms/room_gameplay_video/room_gameplay_video.yy",},
     {"name":"spr_treasurechest_new_mask","order":6,"path":"sprites/spr_treasurechest_new_mask/spr_treasurechest_new_mask.yy",},
     {"name":"spr_gun_bubble","order":3,"path":"sprites/spr_gun_bubble/spr_gun_bubble.yy",},
     {"name":"obj_projectile_bubble_pop","order":11,"path":"objects/obj_projectile_bubble_pop/obj_projectile_bubble_pop.yy",},

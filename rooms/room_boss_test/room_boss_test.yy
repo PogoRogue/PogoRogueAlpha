@@ -23,11 +23,13 @@
     {"name":"inst_1C080CDF","path":"rooms/room_boss_test/room_boss_test.yy",},
     {"name":"inst_3B4B9855","path":"rooms/room_boss_test/room_boss_test.yy",},
     {"name":"inst_44BCCAC6","path":"rooms/room_boss_test/room_boss_test.yy",},
+    {"name":"inst_E2B2749","path":"rooms/room_boss_test/room_boss_test.yy",},
   ],
   "isDnd": false,
   "layers": [
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"enemies","depth":0,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_44BCCAC6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_boss_sphere","path":"objects/obj_boss_sphere/obj_boss_sphere.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":272.0,"y":272.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_E2B2749","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_subboss_exploding","path":"objects/obj_subboss_exploding/obj_subboss_exploding.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":176.0,"y":112.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"hazards","depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"ground","depth":200,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[

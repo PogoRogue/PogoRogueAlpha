@@ -26,7 +26,7 @@ function scr_Pickups(){
 		max_uses_per_bounce: 0,
 		uses_per_bounce: 0,
 		on_call: function() {
-			if (obj_player.animation_complete) {
+			if (obj_player.animation_complete) and obj_player.state != obj_player.state_chargejump {
 				obj_player.state = obj_player.state_chargejump;
 			}
 		}                  

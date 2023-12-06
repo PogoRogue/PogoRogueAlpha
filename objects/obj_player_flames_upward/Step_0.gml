@@ -17,7 +17,6 @@ if (despawn = false) {
 	obj_player.invincible = true;
 }else if despawn = true {
 	image_alpha -= 0.1;
-	
 	//destroy
 	if image_alpha <= 0 {
 		instance_destroy();	

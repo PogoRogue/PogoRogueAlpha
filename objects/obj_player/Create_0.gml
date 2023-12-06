@@ -232,8 +232,13 @@ state_bouncing = function() {
 }
 
 state_chargejump = function() {
+	var end_of_charge = false;
 	if !audio_is_playing(snd_chargejump) { //sound
-		audio_play_sound(snd_chargejump,0,false);
+		if (charge > charge_max) {
+			audio_play_sound(snd_chargejump,0,false);
+		}else {
+			end_of_charge = true;
+		}
 	}
 	
 	bouncing = true;
@@ -247,16 +252,15 @@ state_chargejump = function() {
 	var not_charging_1 = !(key_pickup_1 and pickups_array[0] = pickup_chargejump);
 	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump);
 	
-	if not_charging_1 and not_charging_2 {
+	if not_charging_1 and not_charging_2 or end_of_charge {
 		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5)
 		scr_Jump(charge);
 		audio_stop_sound(snd_chargejump);
 		allow_flames = true;
-		min_flames_speed = 7;
+		min_flames_speed = 7.2;
 		pickup_chargejump.on_cooldown = true;
 		if !instance_exists(obj_player_flames_upward) {
-			//temporarily commented out
-			//instance_create_depth(x,y,depth+1,obj_player_flames_upward);	
+			instance_create_depth(x,y,depth+1,obj_player_flames_upward);	
 		}
 	}else {
 		if (charge > charge_max) {

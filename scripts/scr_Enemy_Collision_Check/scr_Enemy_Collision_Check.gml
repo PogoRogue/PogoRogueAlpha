@@ -8,7 +8,9 @@ function scr_Enemy_Collision_Check(condition){
 		with instance_place(x,y+1,obj_enemy_parent) {
 			if object_get_parent(object_index) != obj_enemy_shoot_only and object_index != obj_enemy_shoot_only {
 				if (!is_dead && current_iframes <= 0 && other.current_iframes <= 0) {
-					other.state = other.state_bouncing;
+					if other.state != other.state_chargejump {
+						other.state = other.state_bouncing;
+					}
 					other.speed = 0;
 					hp -= other.stomp_damage;
 					red_frames = 10;
@@ -24,7 +26,9 @@ function scr_Enemy_Collision_Check(condition){
 					}
 				}
 			}else {
-				other.state = other.state_bouncing;
+				if other.state != other.state_chargejump {
+					other.state = other.state_bouncing;
+				}
 				other.speed = 0;	
 			}
 		}

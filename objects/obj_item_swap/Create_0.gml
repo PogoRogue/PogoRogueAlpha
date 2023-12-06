@@ -8,6 +8,8 @@ select_sprite_controller = spr_controller_button_bottom;
 select_sprite = select_sprite_keyboard;
 alpha = 1.25;
 fade_away = false;
+item1_name = "";
+item2_name = "";
 
 
 with obj_pause {

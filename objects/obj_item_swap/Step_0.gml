@@ -26,6 +26,7 @@ if key_select and fade_away = false {
 	if select = 1 {
 		sprite_1 = sprite_new;
 		sprite_new = spr_nothing;
+		item_name = "";
 		with obj_pause {
 			paused_outside = true;	
 		}
@@ -46,6 +47,7 @@ if key_select and fade_away = false {
 	if select = 2 {
 		sprite_2 = sprite_new;
 		sprite_new = spr_nothing;
+		item_name = "";
 		with obj_pause {
 			paused_outside = true;	
 		}
@@ -84,9 +86,13 @@ with obj_player {
 	if other.pickups_mode = true {
 		other.sprite_1 = pickup_1.gui_sprite;
 		other.sprite_2 = pickup_2.gui_sprite;
+		other.item1_name = pickup_1._name;
+		other.item2_name = pickup_2._name;
 	}else if other.weapons_mode = true {
 		other.sprite_1 = gun_1.sprite;
 		other.sprite_2 = gun_2.sprite;
+		other.item1_name = gun_1._name;
+		other.item2_name = gun_2._name;
 	}
 }
 

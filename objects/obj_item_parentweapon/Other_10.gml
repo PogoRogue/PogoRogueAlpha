@@ -19,6 +19,9 @@ or weapon != obj_player.gun_1 and weapon != obj_player.gun_2 and obj_player.num_
 			sprite_1 = obj_player.gun_1.sprite;
 			sprite_2 = obj_player.gun_2.sprite;
 			new_item = other.weapon;
+			item_name = other.item_name;
+			item1_name = obj_player.gun_1._name;
+			item2_name = obj_player.gun_2._name;
 		}
 	}
 }

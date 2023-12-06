@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_item_slot_buy",
-  "bbox_bottom": 23,
+  "bbox_bottom": 27,
   "bbox_left": 0,
-  "bbox_right": 47,
+  "bbox_right": 51,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -19,7 +19,7 @@
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 24,
+  "height": 28,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"500a33ca-bb34-498c-a2d6-82f645d634a6","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
@@ -63,8 +63,8 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 24,
-    "yorigin": 12,
+    "xorigin": 26,
+    "yorigin": 14,
   },
   "swatchColours": [
     4278190335,
@@ -153,5 +153,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 48,
+  "width": 52,
 }

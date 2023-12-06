@@ -33,9 +33,9 @@ for (gun_num = 0; gun_num < num_of_weapons; gun_num++) {
 	}
 	
 	//text
-	scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16,52+yy,gun_array[gun_num].name,make_color_rgb(242,240,229));
+	scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16,52+yy,gun_array[gun_num]._name,make_color_rgb(242,240,229));
 	//text darkening
-	draw_text_color(camera_get_view_width(view_camera[0])-16,52+yy,gun_array[gun_num].name,c_black,c_black,c_black,c_black,black_alpha);
+	draw_text_color(camera_get_view_width(view_camera[0])-16,52+yy,gun_array[gun_num]._name,c_black,c_black,c_black,c_black,black_alpha);
 }
 
 //coins

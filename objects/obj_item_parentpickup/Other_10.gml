@@ -17,6 +17,9 @@ or pickup != obj_player.pickup_1 and pickup != obj_player.pickup_2 and obj_playe
 			sprite_1 = obj_player.pickup_1.gui_sprite;
 			sprite_2 = obj_player.pickup_2.gui_sprite;
 			new_item = other.pickup;
+			item_name = other.item_name;
+			item1_name = obj_player.pickup_1._name;
+			item2_name = obj_player.pickup_2._name;
 		}
 	}
 }

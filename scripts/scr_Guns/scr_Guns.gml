@@ -4,11 +4,11 @@ function scr_Guns(){
 	
 	default_gun = {
 		name: "Default Gun",  //name of gun
-		sprite: spr_player,   //gun sprite
+		sprite: spr_gun_default,   //gun sprite
 		ammo: [default_bullet],//array of ammo
 		inaccuracy: 0,        //random bullet angle inaccuracy
 		kick: 2,              //kickback to position and angle
-		//sound: snd_nothing, //sound effect
+		sound: snd_defaultgun,    //sound effect
 		spread_number: 1,     //number of bullets per shot
 		spread_angle: 0,      //angle between bullets in spread shot
 		full_auto: false,     //hold down mouse to shoot vs click for each shot
@@ -23,11 +23,11 @@ function scr_Guns(){
 	
 	hat_gun = {
 		name: "Hat Gun",
-		sprite: spr_player,
+		sprite: spr_nothing,
 		ammo: [hatgun_bullet],
 		inaccuracy: 0,
 		kick: 2,
-		//sound: snd_nothing,
+		sound: snd_defaultgun,
 		spread_number: 1,
 		spread_angle: 0,
 		full_auto: false,
@@ -43,11 +43,11 @@ function scr_Guns(){
 
 	paintball_gun = {
 		name: "Paintball Gun",  
-		sprite: spr_player,   
+		sprite: spr_gun_paintball,   
 		ammo: [paintball_bullet],     
 		inaccuracy: 5,     
 		kick: 2,           
-		//sound: snd_nothing, 
+		sound: snd_paintball, 
 		spread_number: 1,     
 		spread_angle: 0, 
 		full_auto: true,    
@@ -62,11 +62,11 @@ function scr_Guns(){
 
 	shotgun_gun = {
 		name: "Shotgun",  
-		sprite: spr_player,  
+		sprite: spr_gun_shotgun,  
 		ammo: [shotgun_bullet],
 		inaccuracy: 0,       
 		kick: 2,             
-		//sound: snd_nothing,
+		sound: snd_shotgun,
 		spread_number: 5,     
 		spread_angle: 15,     
 		full_auto: false,     
@@ -81,11 +81,11 @@ function scr_Guns(){
 
 	bubble_gun = {
 		name: "Bubble Gun",  
-		sprite: spr_player,   
+		sprite: spr_gun_bubble,   
 		ammo: [bubble_bullet],
 		inaccuracy: 35,       
 		kick: 2,              
-		//sound: snd_nothing,
+		sound: snd_bubble,
 		spread_number: 1,    
 		spread_angle: 15,    
 		full_auto: true,     
@@ -100,11 +100,11 @@ function scr_Guns(){
 
 	burstfire_gun = {
 		name: "Burst Fire Gun",  
-		sprite: spr_player,   
+		sprite: spr_gun_burstfire,   
 		ammo: [burstfire_bullet],
 		inaccuracy: 10,       
 		kick: 2,              
-		//sound: snd_nothing,
+		sound: snd_burstfire,
 		spread_number: 1,    
 		spread_angle: 15,    
 		full_auto: true,     
@@ -119,11 +119,11 @@ function scr_Guns(){
 	
 	grenade_gun = {
 		name: "Grenade Launcher",  
-		sprite: spr_player,   
+		sprite: spr_gun_grenade,   
 		ammo: [grenade_bullet],
 		inaccuracy: 0,       
 		kick: 2,              
-		//sound: snd_nothing,
+		sound: snd_grenade,
 		spread_number: 1,    
 		spread_angle: 0,    
 		full_auto: false,     
@@ -138,11 +138,11 @@ function scr_Guns(){
 	
 	laser_gun = {
 		name: "Laser Gun",  
-		sprite: spr_player,   
+		sprite: spr_gun_laser,   
 		ammo: [laser_bullet],
 		inaccuracy: 0,       
 		kick: 2,              
-		//sound: snd_nothing,
+		sound: snd_laser,
 		spread_number: 1,    
 		spread_angle: 0,    
 		full_auto: false,     

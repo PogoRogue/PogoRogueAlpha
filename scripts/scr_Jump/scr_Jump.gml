@@ -9,7 +9,11 @@ function scr_Jump(add_to_jump){
 	image_speed = 0;
 	image_index = 0; //reset animation to starting frame
 	animation_complete = false;
-	gun.current_bullets = gun.bullets_per_bounce; //reload bullets
+	if gun.current_bullets != gun.bullets_per_bounce { //reload bullets
+		//reload sound
+		audio_play_sound(snd_reload,0,false);
+		gun.current_bullets = gun.bullets_per_bounce; 
+	}
 	state = state_free;
 	charge = 0;
 	bouncing = false;
@@ -26,4 +30,15 @@ function scr_Jump(add_to_jump){
 	//flames
 	allow_flames = false;
 	min_flames_speed = 5.6;
+	
+	//bounce sound
+	if !audio_is_playing(snd_groundpound) {
+		if bounce_sound = true {
+			audio_play_sound(snd_bounce,0,false);
+			bounce_sound = not bounce_sound;
+		}else {
+			audio_play_sound(snd_bounce2,0,false);
+			bounce_sound = not bounce_sound;
+		}
+	}
 }

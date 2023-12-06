@@ -1,3 +1,4 @@
+
 path_delete(follow_path);
 follow_path = path_add();
 

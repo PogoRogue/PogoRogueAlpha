@@ -10,6 +10,8 @@ vsp_basicjump = -6.6; //bounce height
 angle = 0;
 anglemax = 45; //maximum degrees added on either side
 bouncing = false; //bouncing animation when true
+bounce_sound = true; //alternating pitch
+shop_bouncing = false; //only use this var in the shop
 animation_complete = false; //bounce animation before jumping
 use_mouse = false; //use mouse to control instead of WASD/Arrow keys?
 mouse_sensitivity = 150; //the lower the value, the more sensitive the player is to mouse movement and vice versa
@@ -22,7 +24,10 @@ can_shoot = true;
 platform_on = true;
 
 //buffs
-laser_sight = true;
+laser_sight = false;
+planetary_bullets = 0;
+all_buff_sprites = [];
+all_buff_sprites_index = [];
 
 //pickups
 charge = 0;
@@ -34,6 +39,9 @@ ground_pound_distance_risen = 0;
 ground_pound_slam = false;
 slam_speed = 12;
 slam_trail_distance = 0;
+invincible = false;
+max_dash_time = 15;
+dash_time = 15;
 
 //upward flames
 min_flames_speed = 5.6;
@@ -64,6 +72,12 @@ num_iframes = 1.5 * room_speed;
 current_iframes = 0;
 dead = false;
 
+//starting position
+if global.player_spawn_x = 0 and global.player_spawn_y = 0 {
+	global.player_spawn_x = x;
+	global.player_spawn_y = y;
+}
+
 image_speed = 0;
 
 depth = -10;
@@ -76,7 +90,14 @@ if (global.arm_cannon = true) {
 with (instance_create_depth(x,y,depth-1,obj_player_mask)) {
 	parent_index = other;
 }
+
 msk_index = instance_nearest(x,y,obj_player_mask); //references obj_playermask object
+
+//delete duplicate player 
+if instance_number(obj_player) > 1 {
+	instance_destroy();	
+	instance_destroy(msk_index);
+}
 
 //item Code
 has_item = false; // // Whether the player is equipped with a weapon
@@ -145,7 +166,7 @@ state_free = function() {
 	}
 	
 	//make sure player isn't colliding with anything before checking for collisions again
-	if !(place_meeting(x+hspeed,y+vspeed,obj_ground)) and free = false {
+	if !(place_meeting(x,y,obj_ground)) and free = false {
 		free = true;	
 	}
 	
@@ -171,7 +192,8 @@ state_free = function() {
 	
 	//create upward flames if fast enough
 	if speed >= min_flames_speed and !instance_exists(obj_player_flames_upward) and vspeed < 0 and allow_flames = true {
-		instance_create_depth(x,y,depth-1,obj_player_flames_upward);
+		//temporarily disabled
+		//instance_create_depth(x,y,depth+1,obj_player_flames_upward);
 	}
 
 }
@@ -206,6 +228,10 @@ state_bouncing = function() {
 }
 
 state_chargejump = function() {
+	if !audio_is_playing(snd_chargejump) { //sound
+		audio_play_sound(snd_chargejump,0,false);
+	}
+	
 	bouncing = true;
 	sprite_index = charging_sprite;
 	image_speed = 1;
@@ -217,9 +243,10 @@ state_chargejump = function() {
 	var not_charging_1 = !(key_pickup_1 and pickups_array[0] = pickup_chargejump);
 	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump);
 	
-	if not_charging_1 and not_charging_2 {
+	if not_charging_1 and not_charging_2 or charge <= charge_max {
 		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5)
 		scr_Jump(charge);
+		audio_stop_sound(snd_chargejump);
 		allow_flames = true;
 		min_flames_speed = 6.6;
 		pickup_chargejump.on_cooldown = true;
@@ -277,8 +304,61 @@ state_groundpound = function() {
 			state = state_bouncing;
 			vspeed = 0;
 			scr_Screen_Shake(6, 15);
+			audio_play_sound(snd_groundpound,0,false);
 		}
 		
+	}
+}
+
+state_firedash = function() {
+	can_rotate = false;
+	can_shoot = false;
+	if dash_time > 0 {
+		invincible = true;
+		speed = 8;
+		direction = image_angle+90;
+		min_flames_speed = speed;
+		scr_Screen_Shake(4, 4);
+		if !instance_exists(obj_player_flames_upward) {
+			instance_create_depth(x,y,depth+1,obj_player_flames_upward);	
+		}
+		dash_time -= 1;
+	}else {
+		state = state_free;
+		dash_time = max_dash_time;
+		if instance_exists(obj_player_flames_upward) {
+			obj_player_flames_upward.despawn = true;	
+		}
+	}
+}
+
+state_shop = function() {
+	angle = 0;	
+	can_rotate = false;
+	can_shoot = false;
+	vspeed += grv;
+	
+	//check for collision with ground y axis
+	if (place_meeting(x,y+vspeed,obj_ground)) {
+		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
+			y += sign(vspeed);
+		}
+		shop_bouncing = true;
+		speed = 0; //stop player movement while bouncing
+	}
+	
+	if shop_bouncing = true {
+		sprite_index = player_sprite; //set sprite
+		//animate before bouncing
+		if (floor(image_index) = sprite_get_number(sprite_index)-1) {
+			animation_complete = true;
+		}else if (animation_complete = false) {
+			image_index += 0.75;
+		}
+		if scr_Animation_Complete() = true {
+			scr_Jump(0);
+			shop_bouncing = false;
+		}
 	}
 }
 
@@ -341,7 +421,7 @@ buff_duration = 60 * 5; // buff duration timer
 scr_Pickups();
 
 num_of_pickups = 2; //number of different pickups equipped: only do 1 or 2
-all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun]; //all pickups
+all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash]; //all pickups
 
 if (random_pickup = true) { //choose random pickups
 	randomize();
@@ -365,7 +445,13 @@ if (num_of_pickups = 1) {
 	pickups_array = [pickup_1, pickup_2];
 }
 
+//buffs
+scr_Buffs();
+
 //create text in proc gen room
 if room = room_proc_gen_test {
 	alarm[2] = 10;
 }
+
+//testing item swap
+//alarm[3] = 120;

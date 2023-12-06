@@ -72,6 +72,10 @@ num_iframes = 1.5 * room_speed;
 current_iframes = 0;
 dead = false;
 
+// Room Gate Handling
+enemies_killed = 0;
+enemies_required = 0;
+
 //starting position
 if global.player_spawn_x = 0 and global.player_spawn_y = 0 {
 	global.player_spawn_x = x;

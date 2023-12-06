@@ -1,7 +1,7 @@
 /// @description switch rooms
 if (keyboard_check_pressed(vk_tab) || gamepad_button_check_pressed(0,gp_shoulderlb)) {
 	if (room = room_proc_gen_test) {
-		room = room_sam_movement;
+		game_restart();
 	}else if (room = room_sam_movement) {
 		room = room_gym_enemy;
 	}else if (room = room_gym_enemy) {
@@ -9,8 +9,7 @@ if (keyboard_check_pressed(vk_tab) || gamepad_button_check_pressed(0,gp_shoulder
 	} else if (room = room_fight_1) {
 		room = room_proc_gen_test;
 	}else if (room = room_shop) {
-		//temporarily commented out
-		//room = global.last_room;
+		room = global.last_room;
 	} 
 	
 	if (room = room_gameplay_video) {

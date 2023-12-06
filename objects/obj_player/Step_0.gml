@@ -18,7 +18,7 @@ if (dead = false) {
 	key_pickup_1 = keyboard_check(vk_shift) || mouse_check_button(mb_left) || gamepad_button_check(0,gp_face1);
 	key_pickup_2 = keyboard_check(vk_control) || mouse_check_button(mb_right) || gamepad_button_check(0,gp_face2);
 	key_pickup_1_pressed = keyboard_check_pressed(vk_shift) || mouse_check_button_pressed(mb_left) || gamepad_button_check_pressed(0,gp_face1);
-	key_pickup_2_pressed = keyboard_check_pressed(vk_control) || mouse_check_button(mb_right) || gamepad_button_check_pressed(0,gp_face2);
+	key_pickup_2_pressed = keyboard_check_pressed(vk_control) || mouse_check_button_pressed(mb_right) || gamepad_button_check_pressed(0,gp_face2);
 }else {
 	key_right = 0;
 	key_left = 0;
@@ -31,23 +31,28 @@ if (dead = false) {
 	key_pickup_2 = 0;
 }
 #endregion
+
 //land on and damage enemy
 var condition = ground_pound_slam = false;
 scr_Enemy_Collision_Check(condition);
 
+//shop
+if room = room_shop {
+	state = state_shop;
+}
+
 //run state machine
 state();
-
 
 #region //pickups
 
 //call pickups
-if pickups_array[0].on_cooldown = false and pickups_array[0].reload_on_bounce = false {
+if pickups_array[0].on_cooldown = false and pickups_array[0].reload_on_bounce = false { //cooldown
 	if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
 	or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
 		pickups_array[0].on_call();
 	}
-}else if pickups_array[0].reload_on_bounce = true and pickups_array[0].uses_per_bounce > 0 {
+}else if pickups_array[0].reload_on_bounce = true and pickups_array[0].uses_per_bounce > 0 { //no cooldown
 	if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
 	or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
 		pickups_array[0].on_call();
@@ -55,12 +60,12 @@ if pickups_array[0].on_cooldown = false and pickups_array[0].reload_on_bounce = 
 }
 	
 //call pickup 2
-if pickups_array[1].on_cooldown = false and pickups_array[1].reload_on_bounce = false {
+if pickups_array[1].on_cooldown = false and pickups_array[1].reload_on_bounce = false { //cooldown
 	if (key_pickup_2) and scr_In_Array(pickups_array[1].states_to_call_in, state) and pickups_array[1].key_held 
 	or (key_pickup_2_pressed) and scr_In_Array(pickups_array[1].states_to_call_in, state) and !pickups_array[1].key_held {
 		pickups_array[1].on_call();
 	}
-}else if pickups_array[1].reload_on_bounce = true and pickups_array[1].uses_per_bounce > 0 {
+}else if pickups_array[1].reload_on_bounce = true and pickups_array[1].uses_per_bounce > 0 { //no cooldown
 	if (key_pickup_2) and scr_In_Array(pickups_array[1].states_to_call_in, state) and pickups_array[1].key_held 
 	or (key_pickup_2_pressed) and scr_In_Array(pickups_array[1].states_to_call_in, state) and !pickups_array[1].key_held {
 		pickups_array[1].on_call();
@@ -84,7 +89,7 @@ for (i = 0; i <= 1; i++) {
 //reset ground pound variables
 if state != state_groundpound {
 	ground_pound_slam = false;
-	can_shoot = true;
+	//can_shoot = true;
 	slam_speed = 12;
 	slam_trail_distance = 0;
 }
@@ -139,8 +144,11 @@ image_angle = angle;
 
 #region shooting
 
-if can_shoot = true { 
+if can_shoot = true and room != room_shop { 
 	var shoot = gun.full_auto ? key_fire_projectile : key_fire_projectile_pressed;
+	if key_fire_projectile_pressed and gun.current_bullets <= 0 {
+		audio_play_sound(snd_outofammo,0,false);
+	}
 }else {
 	var shoot = 0;
 }
@@ -198,6 +206,7 @@ if keyboard_check_pressed(ord("Q")) || mouse_wheel_down() || gamepad_button_chec
 	gun = gun_array[current_gun];
 }
 
+
 // Update iframes
 current_iframes = max(current_iframes - 1, 0);
 
@@ -206,31 +215,3 @@ dead = hp <= 0;
 if(dead && current_iframes <= 0) {
 	room_restart(); // TODO: Handle death screen or whatever we want to do	
 }
-
-
-/*
-if (jump_count % 20 == 0 && jump_count > 0) {
-    var _trigger_chance = irandom_range(1, 100);
-	jump_count = 0 ;
-    if (_trigger_chance <= 20) {
-        // if buff active
-        speed += 3;
-        current_weapon[0] = current_weapon[0] + 4;
-        projectiles_left = current_weapon[0];
-		buff_active = true; 
-		alarm[1] = buff_duration; 
-    }
-}
-
-if (shoot_count % 20 == 0 && shoot_count > 0) {
-    var _triggerchance = irandom_range(1, 100);
-	shoot_count = 0 ;
-    if (_triggerchance <= 10) {
-        // if buff active
-        speed += 3;
-        current_weapon[0] = current_weapon[0] + 4;
-        projectiles_left = current_weapon[0];
-		buff_active = true; 
-		alarm[1] = buff_duration; 
-    }
-} */

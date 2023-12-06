@@ -10,7 +10,13 @@ if (place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask)) {
 
 //check for button press
 if (colliding and key_open_door) {
-	show_debug_message("Going to shop");
-	//uncomment this when shop room is implemented
-	//room = Shop;
+	if room != room_shop {
+		room = room_shop;
+		global.player_spawn_x_prev = x;
+		global.player_spawn_y_prev = y - 64;
+	}else if !instance_exists(obj_coin_spawner) {
+		room = global.last_room;
+		global.player_spawn_x = global.player_spawn_x_prev;
+		global.player_spawn_y = global.player_spawn_y_prev;
+	}
 }

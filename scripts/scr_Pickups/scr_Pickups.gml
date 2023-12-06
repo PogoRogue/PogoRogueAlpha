@@ -3,8 +3,6 @@
 function scr_Pickups(){
 	
 	pickup_nothing = {
-		name: "",                               //name of the pickup
-		item_description: "",                   //description of what the pickup does
 		gui_sprite: spr_pickup_empty,           //pickup gui sprite
 		max_cooldown_time: 0,                   //reset cooldown time to this value on every use
 		cooldown_time: 0,                       //actual cooldown value that decreases over time when used
@@ -18,8 +16,6 @@ function scr_Pickups(){
 	};
 	
 	pickup_chargejump = {
-		name: "Charge Jump",
-		item_description: "Charge up a very powerful jump.",
 		gui_sprite: spr_pickup_chargejump,
 		max_cooldown_time: 300,
 		cooldown_time: 300,
@@ -37,8 +33,6 @@ function scr_Pickups(){
 	};
 	
 	pickup_groundpound = {
-		name: "Ground Pound",
-		item_description: "Slam to the ground with tremendous speed.",
 		gui_sprite: spr_pickup_groundpound,
 		max_cooldown_time: 180,
 		cooldown_time: 180,
@@ -57,8 +51,6 @@ function scr_Pickups(){
 	};
 	
 	pickup_hatgun = {
-		name: "Hat Gun",
-		item_description: "Shoot a bullet upwards from your hat",
 		gui_sprite: spr_pickup_hatgun,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
@@ -85,6 +77,40 @@ function scr_Pickups(){
 			if uses_per_bounce <= 0 {
 				on_cooldown = true;
 			}
+		}
+	};
+	
+	pickup_shieldbubble = {
+		gui_sprite: spr_pickup_shieldbubble,
+		max_cooldown_time: 600,
+		cooldown_time: 600,
+		on_cooldown: false,
+		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_groundpound],
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		on_call: function() {
+			if !instance_exists(obj_shieldbubble) {
+				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth+2,obj_shieldbubble);
+			}
+		}
+	};
+	
+	pickup_firedash = {
+		gui_sprite: spr_pickup_firedash,
+		max_cooldown_time: 300,
+		cooldown_time: 300,
+		on_cooldown: false,
+		states_to_call_in: [state_free],
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		on_call: function() {
+			obj_player.state = obj_player.state_firedash;
+			on_cooldown = true;
+			audio_play_sound(snd_whoosh,0,false);
 		}
 	};
 	

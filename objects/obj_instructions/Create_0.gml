@@ -26,4 +26,4 @@ controls_right =  "\n\n" +
 				  "Shift / LMB / A Button\n" +
 				  "Ctrl / RMB / B Button\n" +
 				  "R / Start Button\n" +
-				  "Tab / Select Button";
+				  "Tab / Left Trigger";

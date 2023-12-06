@@ -6,6 +6,7 @@
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":1,"eventType":2,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -33,8 +34,8 @@
   "properties": [],
   "solid": true,
   "spriteId": {
-    "name": "spr_boss_brick_yellow",
-    "path": "sprites/spr_boss_brick_yellow/spr_boss_brick_yellow.yy",
+    "name": "spr_B1_Fly_Drop",
+    "path": "sprites/spr_B1_Fly_Drop/spr_B1_Fly_Drop.yy",
   },
   "spriteMaskId": null,
   "visible": true,

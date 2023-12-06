@@ -38,8 +38,8 @@
   ],
   "solid": false,
   "spriteId": {
-    "name": "spr_treasurechest2",
-    "path": "sprites/spr_treasurechest2/spr_treasurechest2.yy",
+    "name": "spr_treasurechest_new",
+    "path": "sprites/spr_treasurechest_new/spr_treasurechest_new.yy",
   },
   "spriteMaskId": null,
   "visible": true,

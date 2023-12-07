@@ -1,20 +1,21 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_enemy_shoot_only_moving",
+  "name": "obj_subboss_shield_isolated",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Enemy",
-    "path": "folders/Objects/Enemy.yy",
+    "name": "Sub-bosses",
+    "path": "folders/Objects/Enemy/Boss Sphere/Sub-bosses.yy",
   },
   "parentObjectId": {
-    "name": "obj_enemy_shoot_only",
-    "path": "objects/obj_enemy_shoot_only/obj_enemy_shoot_only.yy",
+    "name": "obj_enemy_generic",
+    "path": "objects/obj_enemy_generic/obj_enemy_generic.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -32,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_enemy_shoot_only",
-    "path": "sprites/spr_enemy_shoot_only/spr_enemy_shoot_only.yy",
+    "name": "spr_B1_Shield_Move",
+    "path": "sprites/spr_B1_Shield_Move/spr_B1_Shield_Move.yy",
   },
   "spriteMaskId": null,
   "visible": true,

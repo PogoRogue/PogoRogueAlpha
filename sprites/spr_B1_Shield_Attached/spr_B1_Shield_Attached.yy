@@ -2,10 +2,10 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_B1_Shield_Attached",
-  "bbox_bottom": 40,
+  "bbox_bottom": 41,
   "bbox_left": 0,
   "bbox_right": 31,
-  "bbox_top": 6,
+  "bbox_top": 7,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -15,8 +15,8 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"bf43cc9b-caca-498f-b8cd-cf01271f607d",},
   ],
-  "gridX": 0,
-  "gridY": 0,
+  "gridX": 16,
+  "gridY": 4,
   "height": 46,
   "HTile": false,
   "layers": [

@@ -9,5 +9,5 @@ if(is_active) {
 		y += vspeed;
 	}
 	is_active = false;
-	alarm_set(0, 15);
+	alarm_set(0, 10);
 }

@@ -8,7 +8,12 @@
 // Inherit the parent event
 event_inherited();
 
+is_grounded = false;
+player = instance_nearest(x, y, obj_player);
+jump_range = 100;
+jump_cooldown = 0;
+cooldown_length = 3 * room_speed;
+jump_height = -6;
 
 spd = 0.5;
-at_edge = false;
 at_wall = false;

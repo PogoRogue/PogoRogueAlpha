@@ -146,6 +146,9 @@ image_angle = angle;
 
 if can_shoot = true and room != room_shop { 
 	var shoot = gun.full_auto ? key_fire_projectile : key_fire_projectile_pressed;
+	if gun = laser_gun and !instance_exists(obj_laser) { //special conditions for laser gun
+		shoot = key_fire_projectile;
+	}
 	if key_fire_projectile_pressed and gun.current_bullets <= 0 {
 		audio_play_sound(snd_outofammo,0,false);
 	}

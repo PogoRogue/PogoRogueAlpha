@@ -5,6 +5,7 @@ if(is_dead) {
 } else if (hp <= 0) {
 	is_dead = true;
 	alarm_set(0, room_speed);
+	audio_play_sound(snd_enemyhurt,0,false);
 	
 	//screen shake
 	scr_Screen_Shake(6, 10);

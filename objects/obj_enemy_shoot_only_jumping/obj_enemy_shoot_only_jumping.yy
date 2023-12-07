@@ -1,10 +1,11 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_enemy_stomp_only_moving",
+  "name": "obj_enemy_shoot_only_jumping",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -13,8 +14,8 @@
     "path": "folders/Objects/Enemy/Ready Enemies.yy",
   },
   "parentObjectId": {
-    "name": "obj_enemy_stomp_only",
-    "path": "objects/obj_enemy_stomp_only/obj_enemy_stomp_only.yy",
+    "name": "obj_enemy_shoot_only",
+    "path": "objects/obj_enemy_shoot_only/obj_enemy_shoot_only.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -32,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_enemy_stomp_only",
-    "path": "sprites/spr_enemy_stomp_only/spr_enemy_stomp_only.yy",
+    "name": "spr_enemy_shoot_only",
+    "path": "sprites/spr_enemy_shoot_only/spr_enemy_shoot_only.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -132,7 +132,7 @@ function scr_Bullets(){
 		grv: obj_player.grv,
 		num_of_bounces: 1,
 		bounce_amount: 0.8,
-		damage: 15
+		damage: 8,
 	};
 	
 	laser_bullet = {
@@ -151,6 +151,6 @@ function scr_Bullets(){
 		grv: obj_player.grv,
 		num_of_bounces: 0,
 		bounce_amount: 1,
-		damage: 0.75 //per frame
+		damage: 0.12 //per frame
 	};
 }

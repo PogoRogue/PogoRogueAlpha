@@ -5,4 +5,6 @@ image_alpha = 1;
 despawn = false;
 reached_max_alpha = false;
 
-damage = 20;
+damage = 12;
+
+damaged_list = array_create(100, noone);

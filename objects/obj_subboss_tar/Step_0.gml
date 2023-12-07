@@ -2,12 +2,12 @@
 // You can write your code in this editor
 
 // Fall or expand
-if(!place_meeting(x, y + 1, obj_ground_parent) || !collision_point(x, y + 20, obj_ground_parent, false, false)) {
+if(!place_meeting(x, y + 1, obj_ground_parent) || !collision_point(x, y + 20, obj_ground_parent, true, true)) {
 	vspeed = vspeed + obj_player.grv;
 	image_index = 0;
 } else {
 	vspeed = 0;
-	while(place_meeting(x, y - 1, obj_ground_parent)) {
+	while(collision_point(x, y + 16, obj_ground_parent, true, true)) {
 		y--;
 	}	
 }

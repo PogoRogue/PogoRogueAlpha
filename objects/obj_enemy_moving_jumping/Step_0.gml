@@ -1,4 +1,4 @@
-/// @description Move left and right
+/// @description Move left and right and jump
 
 // Inherit the parent event
 event_inherited();

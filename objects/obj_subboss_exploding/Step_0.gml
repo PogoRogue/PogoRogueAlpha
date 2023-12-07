@@ -9,8 +9,8 @@ if (is_grounded <= 0) {
 	is_falling = instance_place(x, y+vspeed, [obj_ground_parent]);
 	if (is_falling > 0)
 	{
-		image_speed=1
-		if(image_index==4)
+		image_speed = 1;
+		if(image_index == 4)
 		{
 			drop = true
 		}

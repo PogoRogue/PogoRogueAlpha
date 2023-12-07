@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_enemy_stomp_only",
-    "path": "sprites/spr_enemy_stomp_only/spr_enemy_stomp_only.yy",
+    "name": "spr_enemy_stomp_only_moving",
+    "path": "sprites/spr_enemy_stomp_only_moving/spr_enemy_stomp_only_moving.yy",
   },
   "spriteMaskId": null,
   "visible": true,

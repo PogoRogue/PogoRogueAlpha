@@ -58,6 +58,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"UI","folderPath":"folders/Sprites/UI.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Boss Cut-In","folderPath":"folders/Sprites/UI/Boss Cut-In.yy",},
   ],
   "IncludedFiles": [],
   "isEcma": false,
@@ -139,11 +140,25 @@
     {"id":{"name":"spr_enemy_walking_explosion_idle","path":"sprites/spr_enemy_walking_explosion_idle/spr_enemy_walking_explosion_idle.yy",},},
     {"id":{"name":"spr_background2","path":"sprites/spr_background2/spr_background2.yy",},},
     {"id":{"name":"obj_switch_rooms","path":"objects/obj_switch_rooms/obj_switch_rooms.yy",},},
+<<<<<<< Updated upstream
+=======
+    {"id":{"name":"obj_coin_spawner","path":"objects/obj_coin_spawner/obj_coin_spawner.yy",},},
+    {"id":{"name":"spr_boss_cutin_back","path":"sprites/spr_boss_cutin_back/spr_boss_cutin_back.yy",},},
+>>>>>>> Stashed changes
     {"id":{"name":"spr_3x3_Combat","path":"sprites/spr_3x3_Combat/spr_3x3_Combat.yy",},},
     {"id":{"name":"spr_enemy_jump","path":"sprites/spr_enemy_jump/spr_enemy_jump.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"spr_enemy_turret_barrel_old","path":"sprites/spr_enemy_turret_barrel_old/spr_enemy_turret_barrel_old.yy",},},
     {"id":{"name":"spr_projectile_paintball_gui","path":"sprites/spr_projectile_paintball_gui/spr_projectile_paintball_gui.yy",},},
+<<<<<<< Updated upstream
+=======
+    {"id":{"name":"obj_item_weapon_default","path":"objects/obj_item_weapon_default/obj_item_weapon_default.yy",},},
+    {"id":{"name":"spr_gun_shotgun","path":"sprites/spr_gun_shotgun/spr_gun_shotgun.yy",},},
+    {"id":{"name":"obj_item_pickup_hatgun","path":"objects/obj_item_pickup_hatgun/obj_item_pickup_hatgun.yy",},},
+    {"id":{"name":"spr_boss_cutin_words","path":"sprites/spr_boss_cutin_words/spr_boss_cutin_words.yy",},},
+    {"id":{"name":"scr_In_Array","path":"scripts/scr_In_Array/scr_In_Array.yy",},},
+    {"id":{"name":"obj_item_weapon_burstfire","path":"objects/obj_item_weapon_burstfire/obj_item_weapon_burstfire.yy",},},
+>>>>>>> Stashed changes
     {"id":{"name":"obj_enemy_stomp_only","path":"objects/obj_enemy_stomp_only/obj_enemy_stomp_only.yy",},},
     {"id":{"name":"spr_coin","path":"sprites/spr_coin/spr_coin.yy",},},
     {"id":{"name":"spr_chargebar","path":"sprites/spr_chargebar/spr_chargebar.yy",},},
@@ -154,6 +169,14 @@
     {"id":{"name":"obj_env_fan","path":"objects/obj_env_fan/obj_env_fan.yy",},},
     {"id":{"name":"spr_player_zekai","path":"sprites/spr_player_zekai/spr_player_zekai.yy",},},
     {"id":{"name":"scr_Buffer_Get_Pixel_R","path":"scripts/scr_Buffer_Get_Pixel_R/scr_Buffer_Get_Pixel_R.yy",},},
+<<<<<<< Updated upstream
+=======
+    {"id":{"name":"obj_room_gate_close","path":"objects/obj_room_gate_close/obj_room_gate_close.yy",},},
+    {"id":{"name":"spr_enemy_shooter_walking","path":"sprites/spr_enemy_shooter_walking/spr_enemy_shooter_walking.yy",},},
+    {"id":{"name":"obj_subboss_tar","path":"objects/obj_subboss_tar/obj_subboss_tar.yy",},},
+    {"id":{"name":"spr_angled_platform_left","path":"sprites/spr_angled_platform_left/spr_angled_platform_left.yy",},},
+    {"id":{"name":"obj_item_buff_planetarybullets","path":"objects/obj_item_buff_planetarybullets/obj_item_buff_planetarybullets.yy",},},
+>>>>>>> Stashed changes
     {"id":{"name":"scr_Buffer_Get_Pixel","path":"scripts/scr_Buffer_Get_Pixel/scr_Buffer_Get_Pixel.yy",},},
     {"id":{"name":"obj_control_armcannon","path":"objects/obj_control_armcannon/obj_control_armcannon.yy",},},
     {"id":{"name":"obj_crosshair","path":"objects/obj_crosshair/obj_crosshair.yy",},},
@@ -219,6 +242,7 @@
     {"id":{"name":"obj_enemy_shooter_explode","path":"objects/obj_enemy_shooter_explode/obj_enemy_shooter_explode.yy",},},
     {"id":{"name":"spr_lr","path":"sprites/spr_lr/spr_lr.yy",},},
     {"id":{"name":"spr_electric_floor_on","path":"sprites/spr_electric_floor_on/spr_electric_floor_on.yy",},},
+    {"id":{"name":"spr_boss_cutin","path":"sprites/spr_boss_cutin/spr_boss_cutin.yy",},},
     {"id":{"name":"spr_player_falling2_hurt","path":"sprites/spr_player_falling2_hurt/spr_player_falling2_hurt.yy",},},
     {"id":{"name":"obj_weaponheight5","path":"objects/obj_weaponheight5/obj_weaponheight5.yy",},},
     {"id":{"name":"obj_bounceheight","path":"objects/obj_bounceheight/obj_bounceheight.yy",},},
@@ -317,6 +341,7 @@
     {"id":{"name":"spr_projectile_laser_gui","path":"sprites/spr_projectile_laser_gui/spr_projectile_laser_gui.yy",},},
     {"id":{"name":"room_large","path":"rooms/room_large/room_large.yy",},},
     {"id":{"name":"obj_slider_mousesensitivity","path":"objects/obj_slider_mousesensitivity/obj_slider_mousesensitivity.yy",},},
+    {"id":{"name":"spr_enemy_shoot_only_jump","path":"sprites/spr_enemy_shoot_only_jump/spr_enemy_shoot_only_jump.yy",},},
     {"id":{"name":"obj_wallright","path":"objects/obj_wallright/obj_wallright.yy",},},
     {"id":{"name":"obj_player_test","path":"objects/obj_player_test/obj_player_test.yy",},},
     {"id":{"name":"spr_dl1","path":"sprites/spr_dl1/spr_dl1.yy",},},

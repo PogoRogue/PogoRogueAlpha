@@ -36,6 +36,7 @@
     {"name":"snd_explosion","order":4,"path":"sounds/snd_explosion/snd_explosion.yy",},
     {"name":"spr_B1_Explode_Attached","order":1,"path":"sprites/spr_B1_Explode_Attached/spr_B1_Explode_Attached.yy",},
     {"name":"spr_test","order":5,"path":"sprites/spr_test/spr_test.yy",},
+    {"name":"obj_subboss_shield_isolated","order":1,"path":"objects/obj_subboss_shield_isolated/obj_subboss_shield_isolated.yy",},
     {"name":"obj_item_pickup_chargejump","order":1,"path":"objects/obj_item_pickup_chargejump/obj_item_pickup_chargejump.yy",},
     {"name":"spr_arm_cannon","order":18,"path":"sprites/spr_arm_cannon/spr_arm_cannon.yy",},
     {"name":"spr_player_zekai_charging","order":19,"path":"sprites/spr_player_zekai_charging/spr_player_zekai_charging.yy",},

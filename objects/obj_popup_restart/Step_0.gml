@@ -20,8 +20,12 @@ if key_select {
 	if select = 1 {
 		alarm[0] = 1;
 	}else if select = 2 {
-		instance_deactivate_all(false);
-		room_restart();
+		if global.last_room != room_shop {
+			instance_deactivate_all(false);
+			room_restart();
+		}else {
+			game_restart();	
+		}
 	}
 }
 

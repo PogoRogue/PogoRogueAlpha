@@ -81,6 +81,7 @@
   "resources": [
     {"id":{"name":"obj_textgoal","path":"objects/obj_textgoal/obj_textgoal.yy",},},
     {"id":{"name":"spr_projectile_laser_charging_start","path":"sprites/spr_projectile_laser_charging_start/spr_projectile_laser_charging_start.yy",},},
+    {"id":{"name":"spr_item_slot_refresh","path":"sprites/spr_item_slot_refresh/spr_item_slot_refresh.yy",},},
     {"id":{"name":"spr_dot","path":"sprites/spr_dot/spr_dot.yy",},},
     {"id":{"name":"B1_Tar_Attached","path":"sprites/B1_Tar_Attached/B1_Tar_Attached.yy",},},
     {"id":{"name":"scr_Shoot","path":"scripts/scr_Shoot/scr_Shoot.yy",},},

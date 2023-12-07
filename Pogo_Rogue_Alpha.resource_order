@@ -21,6 +21,7 @@
     {"name":"Weapons","order":18,"path":"folders/Sprites/Weapons.yy",},
   ],
   "ResourceOrderSettings": [
+    {"name":"spr_item_slot_refresh","order":10,"path":"sprites/spr_item_slot_refresh/spr_item_slot_refresh.yy",},
     {"name":"spr_dot","order":8,"path":"sprites/spr_dot/spr_dot.yy",},
     {"name":"B1_Tar_Attached","order":1,"path":"sprites/B1_Tar_Attached/B1_Tar_Attached.yy",},
     {"name":"room_gameplay_video","order":1,"path":"rooms/room_gameplay_video/room_gameplay_video.yy",},

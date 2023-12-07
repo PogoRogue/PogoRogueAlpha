@@ -15,7 +15,7 @@
     "name": "obj_item_parentbuff",
     "path": "objects/obj_item_parentbuff/obj_item_parentbuff.yy",
   },
-  "persistent": false,
+  "persistent": true,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
   "physicsFriction": 0.2,

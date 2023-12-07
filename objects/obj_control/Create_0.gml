@@ -11,6 +11,8 @@ global.player_spawn_y = 0;
 global.player_spawn_x_prev = 0;
 global.player_spawn_y_prev = 0;
 global.num_of_coins = 200;
+global.mute = false;
+global.shop_index = 0;
 
 //combo
 global.combo = 0;

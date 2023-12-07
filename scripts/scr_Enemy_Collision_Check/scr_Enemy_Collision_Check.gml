@@ -8,7 +8,7 @@ function scr_Enemy_Collision_Check(condition){
 		free = false;
 		with instance_place(x,y+1,obj_enemy_parent) {
 			if object_get_parent(object_index) != obj_enemy_shoot_only and object_index != obj_enemy_shoot_only {
-				if (!is_dead && current_iframes <= 0 && other.current_iframes <= 0) {
+				if (!is_dead && current_iframes <= 0 && other.current_iframes <= 0) and other.msk_index.colliding_with_enemies = false or other.vspeed > 0 {
 					if other.state != other.state_chargejump {
 						other.state = other.state_bouncing;
 					}

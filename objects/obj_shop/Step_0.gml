@@ -12,6 +12,7 @@ if cant_move = false {
 	key_select = 0;
 }
 
+
 if selected_x = false {
 	if key_left and select % 2 = 0 {
 		if select != 0 {
@@ -32,18 +33,25 @@ if selected_x = false {
 
 if selected_y = false {
 	if key_up and select > 2 {
-		select -= 2;
 		selected_y = true;
+		if refresh_button = true {
+			refresh_button = false;	
+		}else {
+			select -= 2;	
+		}
 	}else if key_down and select < 7 {
 		select += 2;	
 		selected_y = true;
+	}else if key_down {
+		if refresh_button = false {
+			refresh_button = true;	
+		}
 	}
 }else {
 	if !key_up and !key_down {
 		selected_y = false;
 	}
 }
-
 
 
 //create items
@@ -88,8 +96,8 @@ if created_items = false {
 		}
 		
 		//replace weapon with new weapon if player already has it
-		if room = room_shop and i = 4 
-		or room = room_shop and i = 5 {
+		if i = 4 
+		or i = 5 {
 			while (obj_player.gun_array[0] = slot_items_array[i].weapon or obj_player.gun_array[1] = slot_items_array[i].weapon) {
 				if obj_player.gun_array[0] = slot_items_array[i].weapon or obj_player.gun_array[1] = slot_items_array[i].weapon {
 					//destroy old item
@@ -108,8 +116,8 @@ if created_items = false {
 			}
 		}
 		//replace pickup with new pickup if player already has it
-		if room = room_shop and i = 6 
-		or room = room_shop and i = 7 {
+		if i = 6 
+		or i = 7 {
 			while (obj_player.pickups_array[0] = slot_items_array[i].pickup or obj_player.pickups_array[1] = slot_items_array[i].pickup) {
 				if obj_player.pickups_array[0] = slot_items_array[i].pickup or obj_player.pickups_array[1] = slot_items_array[i].pickup {
 					//destroy old item
@@ -127,6 +135,7 @@ if created_items = false {
 				}
 			}
 		}
+		
 	}
 	created_items = true;
 }
@@ -151,10 +160,10 @@ if select != 0 {
 
 //select item 
 if key_select {
-	if select != 0 and instance_exists(slot_items_array[select-1]) {
+	if select != 0 and instance_exists(slot_items_array[select-1]) and refresh_button = false {
 		last_select = select;
 		select = 0;
-	}else if select = 0 {
+	}else if select = 0 and refresh_button = false {
 		select = last_select;
 		if global.num_of_coins >= slot_items_array[last_select-1].item_cost {
 			//item follow player
@@ -167,6 +176,20 @@ if key_select {
 					other.cant_move = true;
 				}
 			}
+		}
+	}else if refresh_button = true {
+		if global.num_of_coins >= refresh_cost {
+			with instance_create_depth(obj_player_mask.x,obj_player_mask.y,obj_player_mask.depth-1,obj_coin_spawner) {
+				num_of_coins = other.refresh_cost;
+			}
+			with obj_item_parent {
+				select = other.select;
+				refresh_button = other.refresh_button;
+				create_coins = false;
+				instance_destroy();	
+			}
+			instance_destroy();
+			instance_create_depth(x,y,depth,obj_shop);
 		}
 	}
 }

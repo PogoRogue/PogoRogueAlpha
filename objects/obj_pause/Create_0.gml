@@ -1,3 +1,7 @@
+if instance_number(obj_pause) > 1 {
+	instance_destroy();	
+}
+
 pause = false;
 pause_surf = -1;
 pause_surf_buffer = -1;

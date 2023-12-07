@@ -464,6 +464,3 @@ scr_Buffs();
 if room = room_proc_gen_test {
 	alarm[2] = 10;
 }
-
-//create pause menu object
-instance_create_depth(x,y,depth-10,obj_pausemenu);

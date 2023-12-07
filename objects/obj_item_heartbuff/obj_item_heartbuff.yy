@@ -33,8 +33,13 @@
   "properties": [],
   "solid": false,
   "spriteId": {
+<<<<<<< Updated upstream:objects/obj_item_heartbuff/obj_item_heartbuff.yy
     "name": "spr_heart",
     "path": "sprites/spr_heart/spr_heart.yy",
+=======
+    "name": "spr_enemy_stomp_only_moving",
+    "path": "sprites/spr_enemy_stomp_only_moving/spr_enemy_stomp_only_moving.yy",
+>>>>>>> Stashed changes:objects/obj_enemy_stomp_only_moving/obj_enemy_stomp_only_moving.yy
   },
   "spriteMaskId": null,
   "visible": true,

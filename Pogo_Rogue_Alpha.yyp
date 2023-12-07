@@ -496,8 +496,8 @@
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
   ],
   "RoomOrderNodes": [
-    {"roomId":{"name":"room_boss_test","path":"rooms/room_boss_test/room_boss_test.yy",},},
     {"roomId":{"name":"room_proc_gen_test","path":"rooms/room_proc_gen_test/room_proc_gen_test.yy",},},
+    {"roomId":{"name":"room_boss_test","path":"rooms/room_boss_test/room_boss_test.yy",},},
     {"roomId":{"name":"room_gym_enemy","path":"rooms/room_gym_enemy/room_gym_enemy.yy",},},
     {"roomId":{"name":"room_sam_movement","path":"rooms/room_sam_movement/room_sam_movement.yy",},},
     {"roomId":{"name":"room_fight_1","path":"rooms/room_fight_1/room_fight_1.yy",},},

@@ -1,6 +1,7 @@
 /// @description check for collisions
 //bounce off
 colliding_with_ground = place_meeting(x,y,obj_ground);	
+colliding_with_enemies = place_meeting(x,y,obj_enemy_parent);
 if place_meeting(x-4,y,obj_ground) {
 	if instance_place(x-4,y,obj_ground).x < x {
 		colliding_with_ground_left = true;

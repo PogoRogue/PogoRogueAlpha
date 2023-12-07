@@ -28,6 +28,7 @@ if key_select and fade_away = false {
 		sprite_new = spr_nothing;
 		item_name = "";
 		with obj_pause {
+			item_swap = false;
 			paused_outside = true;	
 		}
 		//change gun
@@ -49,6 +50,7 @@ if key_select and fade_away = false {
 		sprite_new = spr_nothing;
 		item_name = "";
 		with obj_pause {
+			item_swap = false;
 			paused_outside = true;	
 		}
 		//change gun
@@ -67,6 +69,7 @@ if key_select and fade_away = false {
 	//cancel
 	if select = num_of_slots {
 		with obj_pause {
+			item_swap = false;
 			paused_outside = true;	
 		}
 		alarm[1] = 1; //dont lose any coins in shop

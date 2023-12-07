@@ -1,5 +1,4 @@
 /// @description initialize variables
-show_debug_message("Players: " + string(instance_number(obj_player)));
 //movement stats
 grv = 0.21; //gravity
 h_grv = 0.01; //horizontal drag
@@ -170,7 +169,7 @@ state_free = function() {
 	}
 	
 	//make sure player isn't colliding with anything before checking for collisions again
-	if !(place_meeting(x,y,obj_ground)) and free = false {
+	if !(place_meeting(x,y,obj_ground)) and !(place_meeting(x,y,obj_enemy_parent)) and free = false {
 		free = true;	
 	}
 	
@@ -466,5 +465,5 @@ if room = room_proc_gen_test {
 	alarm[2] = 10;
 }
 
-//testing item swap
-//alarm[3] = 120;
+//create pause menu object
+instance_create_depth(x,y,depth-10,obj_pausemenu);

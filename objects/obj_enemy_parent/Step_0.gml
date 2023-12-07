@@ -19,7 +19,11 @@ if(is_dead) {
 	var center_y = y - sprite_get_yoffset( sprite_index) + sprite_height / 2;
 	if drop_coins = true {
 		with instance_create_depth(center_x,center_y,depth-1,obj_coin_spawner) {
-			num_of_coins = global.combo;
+			if global.combo < global.combo_max_coins {
+				num_of_coins = global.combo + 4;
+			}else {
+				num_of_coins = global.combo_max_coins + 4;
+			}
 		}
 	}
 	

@@ -16,6 +16,7 @@ global.num_of_coins = 200;
 global.combo = 0;
 global.combo_length = 0;
 global.combo_max = 32;
+global.combo_max_coins = 11;
 
 //items unlockable in the shop
 global.all_buffs = [obj_item_buff_lasersight, obj_item_buff_planetarybullets];

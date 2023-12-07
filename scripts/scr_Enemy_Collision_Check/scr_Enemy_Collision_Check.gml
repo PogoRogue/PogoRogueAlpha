@@ -28,7 +28,7 @@ function scr_Enemy_Collision_Check(condition){
 						}
 					}
 				}
-			}else if other.msk_index.colliding_with_enemies = false {
+			}else if other.msk_index.colliding_with_enemies = false or other.vspeed > 0 {
 				if other.state != other.state_chargejump {
 					other.state = other.state_bouncing;
 				}

@@ -259,7 +259,9 @@ state_chargejump = function() {
 		min_flames_speed = 7.2;
 		pickup_chargejump.on_cooldown = true;
 		if !instance_exists(obj_player_flames_upward) {
-			instance_create_depth(x,y,depth+1,obj_player_flames_upward);	
+			with instance_create_depth(x,y,depth+1,obj_player_flames_upward) {
+				chargejump = true;
+			}
 		}
 	}else {
 		if (charge > charge_max) {

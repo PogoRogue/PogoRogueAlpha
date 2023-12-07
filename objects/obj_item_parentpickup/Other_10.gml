@@ -1,4 +1,5 @@
 // Inherit the parent event
+
 event_inherited();
 
 if pickup != obj_player.pickup_1 and obj_player.num_of_pickups = 1

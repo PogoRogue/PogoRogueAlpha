@@ -20,7 +20,7 @@ if key_select {
 	if select = 1 {
 		alarm[0] = 1;
 	}else if select = 2 {
-		if global.last_room != room_shop {
+		if global.last_room != room_shop and global.last_room != room_boss_test {
 			instance_deactivate_all(false);
 			room_restart();
 		}else {

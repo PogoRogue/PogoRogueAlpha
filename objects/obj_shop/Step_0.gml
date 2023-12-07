@@ -1,3 +1,5 @@
+if room = room_shop {
+
 if cant_move = false {
 	key_left = keyboard_check_pressed(ord("A")) || keyboard_check_pressed(vk_left) || gamepad_axis_value(0,gp_axislh) < -0.5;
 	key_right = keyboard_check_pressed(ord("D")) || keyboard_check_pressed(vk_right) || gamepad_axis_value(0,gp_axislh) > 0.5;
@@ -16,13 +18,17 @@ if cant_move = false {
 if selected_x = false {
 	if key_left and select % 2 = 0 {
 		if select != 0 {
-			select -= 1;	
+			if refresh_button = false {
+				select -= 1;
+			}
 		}else {
 			select = last_select;	
 		}
 		selected_x = true;
 	}else if key_right and select % 2 != 0 {
-		select += 1;
+		if refresh_button = false {
+			select += 1;
+		}
 		selected_x = true;
 	}
 }else {
@@ -207,4 +213,6 @@ if recreated_bought_item = true {
 		follow_player = false;
 	}
 	recreated_bought_item = false;
+}
+
 }

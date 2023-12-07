@@ -4,7 +4,7 @@
 event_inherited();
 
 // Move left and right
-at_edge = !collision_point(x + (sign(spd)), y + (sprite_height / 2), obj_ground_parent, false, false); 
+at_edge = !collision_point(x + (sign(spd) * 16), y + (sprite_height / 2), obj_ground_parent, false, false) && place_meeting(x, y + 1, obj_ground_parent); 
 at_wall = place_meeting(x + spd, y, obj_ground_parent);
 
 if (!is_dead) {
@@ -28,3 +28,8 @@ if(is_dead) {
 image_alpha = 1.0;
 
 x += spd;
+
+// Move to top of surface if stuck in floor
+while(place_meeting(x, y, obj_ground_parent)) {
+	y--;
+}	

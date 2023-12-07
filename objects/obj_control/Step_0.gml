@@ -13,3 +13,8 @@ if (endgame_button) {
 if (screenshake_button) {
 	global.allow_screenshake = not global.allow_screenshake;
 }
+
+//last room
+if room != room_shop {
+	global.last_room = room;	
+}

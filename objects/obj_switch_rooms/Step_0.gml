@@ -1,5 +1,5 @@
 /// @description switch rooms
-if (keyboard_check_pressed(vk_tab) || gamepad_button_check_pressed(0,gp_select)) {
+if (keyboard_check_pressed(vk_tab) || gamepad_button_check_pressed(0,gp_shoulderlb)) {
 	if (room = room_proc_gen_test) {
 		room = room_sam_movement;
 	}else if (room = room_sam_movement) {
@@ -8,5 +8,7 @@ if (keyboard_check_pressed(vk_tab) || gamepad_button_check_pressed(0,gp_select))
 		room = room_fight_1;
 	} else if (room = room_fight_1) {
 		room = room_proc_gen_test;
+	}else if (room = room_shop) {
+		room = global.last_room;
 	} 
 }

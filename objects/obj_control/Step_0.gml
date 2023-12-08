@@ -3,7 +3,8 @@ screenshake_button = keyboard_check_pressed(vk_backspace); //press escape key to
 mute_button = keyboard_check_pressed(ord("M")); 
 
 if (restart_button) {
-	game_restart(); //restart room
+	//temporarily commented out
+	//game_restart(); //restart room
 }
 
 if (mute_button) {

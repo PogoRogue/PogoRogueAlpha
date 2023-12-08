@@ -13,7 +13,8 @@ if (keyboard_check_pressed(vk_tab) || gamepad_button_check_pressed(0,gp_shoulder
 	} 
 	
 	if (room = room_gameplay_video) {
-		room = room_boss_test;
+		//temporarily commented out
+		//room = room_boss_test;
 	} else if (room = room_boss_test) {
 		game_restart();
 	}

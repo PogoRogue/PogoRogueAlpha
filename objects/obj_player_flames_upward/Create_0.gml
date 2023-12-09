@@ -4,6 +4,7 @@ other2 = noone;
 image_alpha = 1;
 despawn = false;
 reached_max_alpha = false;
+chargejump = false;
 
 damage = 12;
 

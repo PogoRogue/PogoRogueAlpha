@@ -11,3 +11,5 @@ wobble = 0.0;
 stretch = 0.0;
 
 alarm_set(0, 45 * room_speed); // Despawn after 60 seconds
+
+drop_coins = false;

@@ -27,11 +27,13 @@
   "physicsShape": 1,
   "physicsShapePoints": [],
   "physicsStartAwake": true,
-  "properties": [],
+  "properties": [
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"shop_index","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"0","varType":0,},
+  ],
   "solid": false,
   "spriteId": {
-    "name": "spr_shop_door",
-    "path": "sprites/spr_shop_door/spr_shop_door.yy",
+    "name": "spr_shop_door2",
+    "path": "sprites/spr_shop_door2/spr_shop_door2.yy",
   },
   "spriteMaskId": null,
   "visible": true,

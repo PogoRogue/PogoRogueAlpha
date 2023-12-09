@@ -3,7 +3,7 @@
 function scr_Guns(){
 	
 	default_gun = {
-		name: "Default Gun",  //name of gun
+		_name: "Default Gun",  //name of gun
 		sprite: spr_gun_default,   //gun sprite
 		ammo: [default_bullet],//array of ammo
 		inaccuracy: 0,        //random bullet angle inaccuracy
@@ -22,7 +22,7 @@ function scr_Guns(){
 	};
 	
 	hat_gun = {
-		name: "Hat Gun",
+		_name: "Hat Gun",
 		sprite: spr_nothing,
 		ammo: [hatgun_bullet],
 		inaccuracy: 0,
@@ -42,7 +42,7 @@ function scr_Guns(){
 
 
 	paintball_gun = {
-		name: "Paintball Gun",  
+		_name: "Paintball Gun",  
 		sprite: spr_gun_paintball,   
 		ammo: [paintball_bullet],     
 		inaccuracy: 5,     
@@ -61,7 +61,7 @@ function scr_Guns(){
 	};
 
 	shotgun_gun = {
-		name: "Shotgun",  
+		_name: "Shotgun",  
 		sprite: spr_gun_shotgun,  
 		ammo: [shotgun_bullet],
 		inaccuracy: 0,       
@@ -80,7 +80,7 @@ function scr_Guns(){
 	};
 
 	bubble_gun = {
-		name: "Bubble Gun",  
+		_name: "Bubble Gun",  
 		sprite: spr_gun_bubble,   
 		ammo: [bubble_bullet],
 		inaccuracy: 35,       
@@ -99,7 +99,7 @@ function scr_Guns(){
 	};
 
 	burstfire_gun = {
-		name: "Burst Fire Gun",  
+		_name: "Burst Fire Gun",  
 		sprite: spr_gun_burstfire,   
 		ammo: [burstfire_bullet],
 		inaccuracy: 10,       
@@ -118,7 +118,7 @@ function scr_Guns(){
 	};	
 	
 	grenade_gun = {
-		name: "Grenade Launcher",  
+		_name: "Grenade Launcher",  
 		sprite: spr_gun_grenade,   
 		ammo: [grenade_bullet],
 		inaccuracy: 0,       
@@ -137,7 +137,7 @@ function scr_Guns(){
 	};	
 	
 	laser_gun = {
-		name: "Laser Gun",  
+		_name: "Laser Gun",  
 		sprite: spr_gun_laser,   
 		ammo: [laser_bullet],
 		inaccuracy: 0,       

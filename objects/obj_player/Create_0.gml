@@ -1,5 +1,4 @@
 /// @description initialize variables
-
 //movement stats
 grv = 0.21; //gravity
 h_grv = 0.01; //horizontal drag
@@ -170,7 +169,7 @@ state_free = function() {
 	}
 	
 	//make sure player isn't colliding with anything before checking for collisions again
-	if !(place_meeting(x,y,obj_ground)) and free = false {
+	if !(place_meeting(x,y,obj_ground)) and !(place_meeting(x,y,obj_enemy_parent)) and free = false {
 		free = true;	
 	}
 	
@@ -232,8 +231,13 @@ state_bouncing = function() {
 }
 
 state_chargejump = function() {
+	var end_of_charge = false;
 	if !audio_is_playing(snd_chargejump) { //sound
-		audio_play_sound(snd_chargejump,0,false);
+		if (charge > charge_max) {
+			audio_play_sound(snd_chargejump,0,false);
+		}else {
+			end_of_charge = true;
+		}
 	}
 	
 	bouncing = true;
@@ -247,13 +251,18 @@ state_chargejump = function() {
 	var not_charging_1 = !(key_pickup_1 and pickups_array[0] = pickup_chargejump);
 	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump);
 	
-	if not_charging_1 and not_charging_2 or charge <= charge_max {
+	if not_charging_1 and not_charging_2 or end_of_charge {
 		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5)
 		scr_Jump(charge);
 		audio_stop_sound(snd_chargejump);
 		allow_flames = true;
-		min_flames_speed = 6.6;
+		min_flames_speed = 7.2;
 		pickup_chargejump.on_cooldown = true;
+		if !instance_exists(obj_player_flames_upward) {
+			with instance_create_depth(x,y,depth+1,obj_player_flames_upward) {
+				chargejump = true;
+			}
+		}
 	}else {
 		if (charge > charge_max) {
 			charge += charge_max/80; //80 = how many frames until max charge
@@ -319,7 +328,7 @@ state_firedash = function() {
 	can_shoot = false;
 	if dash_time > 0 {
 		invincible = true;
-		speed = 8;
+		speed = 10;
 		direction = image_angle+90;
 		min_flames_speed = speed;
 		scr_Screen_Shake(4, 4);
@@ -328,6 +337,7 @@ state_firedash = function() {
 		}
 		dash_time -= 1;
 	}else {
+		speed = speed/1.5;
 		state = state_free;
 		dash_time = max_dash_time;
 		if instance_exists(obj_player_flames_upward) {
@@ -456,6 +466,3 @@ scr_Buffs();
 if room = room_proc_gen_test {
 	alarm[2] = 10;
 }
-
-//testing item swap
-//alarm[3] = 120;

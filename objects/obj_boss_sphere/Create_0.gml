@@ -50,3 +50,5 @@ for(var _i = -3; _i < 4; _i++) {
 		}
 	}
 }
+
+drop_coins = false;

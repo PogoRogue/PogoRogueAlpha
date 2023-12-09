@@ -33,9 +33,9 @@ for (gun_num = 0; gun_num < num_of_weapons; gun_num++) {
 	}
 	
 	//text
-	scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16,52+yy,gun_array[gun_num].name,make_color_rgb(242,240,229));
+	scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16,52+yy,gun_array[gun_num]._name,make_color_rgb(242,240,229));
 	//text darkening
-	draw_text_color(camera_get_view_width(view_camera[0])-16,52+yy,gun_array[gun_num].name,c_black,c_black,c_black,c_black,black_alpha);
+	draw_text_color(camera_get_view_width(view_camera[0])-16,52+yy,gun_array[gun_num]._name,c_black,c_black,c_black,c_black,black_alpha);
 }
 
 //coins
@@ -123,6 +123,18 @@ if (gamepad_is_connected(0)) {
 	//button 2
 	if !(pickups_array[1].on_cooldown) and pickups_array[1] != pickup_nothing and !(pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble)) {
 		draw_sprite(spr_controller_button_right,0,68,104);
+	}
+}else { //draw text
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_center);
+	draw_set_font(fnt_itemdescription);
+	//button 1
+	if !(pickups_array[0].on_cooldown) and pickups_array[0] != pickup_nothing and !(pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble)) {
+		scr_Draw_Text_Outlined(32,104,"LMB",c_white); 
+	}
+	//button 2
+	if !(pickups_array[1].on_cooldown) and pickups_array[1] != pickup_nothing and !(pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble)) {
+		scr_Draw_Text_Outlined(68,104,"RMB",c_white); 
 	}
 }
 

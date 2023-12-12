@@ -10,6 +10,7 @@
     {"name":"spr_enemy_turret_base_new","order":18,"path":"sprites/spr_enemy_turret_base_new/spr_enemy_turret_base_new.yy",},
     {"name":"spr_enemy_explode","order":17,"path":"sprites/spr_enemy_explode/spr_enemy_explode.yy",},
     {"name":"spr_enemy_moving_walk","order":16,"path":"sprites/spr_enemy_moving_walk/spr_enemy_moving_walk.yy",},
+    {"name":"spr_start","order":1,"path":"sprites/spr_start/spr_start.yy",},
     {"name":"spr_enemy_jump","order":15,"path":"sprites/spr_enemy_jump/spr_enemy_jump.yy",},
     {"name":"spr_enemy_turret_move","order":14,"path":"sprites/spr_enemy_turret_move/spr_enemy_turret_move.yy",},
     {"name":"spr_enemy_stomp_only_Shield","order":13,"path":"sprites/spr_enemy_stomp_only_Shield/spr_enemy_stomp_only_Shield.yy",},

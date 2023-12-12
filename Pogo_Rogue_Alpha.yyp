@@ -193,6 +193,7 @@
     {"id":{"name":"obj_walltopleftcorner","path":"objects/obj_walltopleftcorner/obj_walltopleftcorner.yy",},},
     {"id":{"name":"spr_enemy_moving_walk","path":"sprites/spr_enemy_moving_walk/spr_enemy_moving_walk.yy",},},
     {"id":{"name":"spr_gate_open","path":"sprites/spr_gate_open/spr_gate_open.yy",},},
+    {"id":{"name":"spr_start","path":"sprites/spr_start/spr_start.yy",},},
     {"id":{"name":"spr_B1_Explode_Fuse","path":"sprites/spr_B1_Explode_Fuse/spr_B1_Explode_Fuse.yy",},},
     {"id":{"name":"scr_Pickups","path":"scripts/scr_Pickups/scr_Pickups.yy",},},
     {"id":{"name":"scr_Laser_Sight","path":"scripts/scr_Laser_Sight/scr_Laser_Sight.yy",},},

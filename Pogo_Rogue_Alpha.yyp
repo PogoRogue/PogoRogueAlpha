@@ -452,6 +452,7 @@
     {"id":{"name":"obj_boss_brick_blue","path":"objects/obj_boss_brick_blue/obj_boss_brick_blue.yy",},},
     {"id":{"name":"spr_buffitem_heart","path":"sprites/spr_buffitem_heart/spr_buffitem_heart.yy",},},
     {"id":{"name":"obj_item_weapon_laser","path":"objects/obj_item_weapon_laser/obj_item_weapon_laser.yy",},},
+    {"id":{"name":"spr_enemy_stomp_only_moving","path":"sprites/spr_enemy_stomp_only_moving/spr_enemy_stomp_only_moving.yy",},},
     {"id":{"name":"sh_outline","path":"shaders/sh_outline/sh_outline.yy",},},
     {"id":{"name":"obj_shop","path":"objects/obj_shop/obj_shop.yy",},},
     {"id":{"name":"scr_Buffer_Get_Pixel_Begin","path":"scripts/scr_Buffer_Get_Pixel_Begin/scr_Buffer_Get_Pixel_Begin.yy",},},
@@ -520,8 +521,8 @@
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
   ],
   "RoomOrderNodes": [
-    {"roomId":{"name":"room_boss_test","path":"rooms/room_boss_test/room_boss_test.yy",},},
     {"roomId":{"name":"room_gameplay_video","path":"rooms/room_gameplay_video/room_gameplay_video.yy",},},
+    {"roomId":{"name":"room_boss_test","path":"rooms/room_boss_test/room_boss_test.yy",},},
     {"roomId":{"name":"room_sam_movement","path":"rooms/room_sam_movement/room_sam_movement.yy",},},
     {"roomId":{"name":"room_proc_gen_test","path":"rooms/room_proc_gen_test/room_proc_gen_test.yy",},},
     {"roomId":{"name":"room_gym_enemy","path":"rooms/room_gym_enemy/room_gym_enemy.yy",},},

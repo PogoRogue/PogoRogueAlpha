@@ -3,6 +3,7 @@
 function scr_Pickups(){
 	
 	pickup_nothing = {
+		_name: "",                               //item name
 		gui_sprite: spr_pickup_empty,           //pickup gui sprite
 		max_cooldown_time: 0,                   //reset cooldown time to this value on every use
 		cooldown_time: 0,                       //actual cooldown value that decreases over time when used
@@ -16,6 +17,7 @@ function scr_Pickups(){
 	};
 	
 	pickup_chargejump = {
+		_name: "Charge Jump",
 		gui_sprite: spr_pickup_chargejump,
 		max_cooldown_time: 300,
 		cooldown_time: 300,
@@ -26,13 +28,14 @@ function scr_Pickups(){
 		max_uses_per_bounce: 0,
 		uses_per_bounce: 0,
 		on_call: function() {
-			if (obj_player.animation_complete) {
+			if (obj_player.animation_complete) and obj_player.state != obj_player.state_chargejump {
 				obj_player.state = obj_player.state_chargejump;
 			}
 		}                  
 	};
 	
 	pickup_groundpound = {
+		_name: "Ground Pound",
 		gui_sprite: spr_pickup_groundpound,
 		max_cooldown_time: 180,
 		cooldown_time: 180,
@@ -51,6 +54,7 @@ function scr_Pickups(){
 	};
 	
 	pickup_hatgun = {
+		_name: "Hat Gun",
 		gui_sprite: spr_pickup_hatgun,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
@@ -81,6 +85,7 @@ function scr_Pickups(){
 	};
 	
 	pickup_shieldbubble = {
+		_name: "Shield Bubble",
 		gui_sprite: spr_pickup_shieldbubble,
 		max_cooldown_time: 600,
 		cooldown_time: 600,
@@ -98,6 +103,7 @@ function scr_Pickups(){
 	};
 	
 	pickup_firedash = {
+		_name: "Fire Dash",
 		gui_sprite: spr_pickup_firedash,
 		max_cooldown_time: 300,
 		cooldown_time: 300,
@@ -108,6 +114,7 @@ function scr_Pickups(){
 		max_uses_per_bounce: 0,
 		uses_per_bounce: 0,
 		on_call: function() {
+			cooldown_time = max_cooldown_time;
 			obj_player.state = obj_player.state_firedash;
 			on_cooldown = true;
 			audio_play_sound(snd_whoosh,0,false);

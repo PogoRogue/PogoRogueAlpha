@@ -5,7 +5,8 @@ if(is_active){
 	obj_player.speed = 0;
 	parent.speed = 0;
 	is_active = false;
-	alarm_set(0, 12 * room_speed); // Reactivate shield after 12 seconds
+	alarm_set(0, restore_duration); // Reactivate shield after 12 seconds
+	parent.current_iframes = 25;
 }
 
 

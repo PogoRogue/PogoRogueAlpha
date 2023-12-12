@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "B1_Tar_Attached",
   "bbox_bottom": 41,
-  "bbox_left": 7,
-  "bbox_right": 38,
+  "bbox_left": 0,
+  "bbox_right": 31,
   "bbox_top": 7,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -15,8 +15,8 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d28aab9b-5697-4810-865d-62ae3b1982a4",},
   ],
-  "gridX": 0,
-  "gridY": 0,
+  "gridX": 16,
+  "gridY": 4,
   "height": 46,
   "HTile": false,
   "layers": [
@@ -59,7 +59,7 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 23,
+    "xorigin": 16,
     "yorigin": 25,
   },
   "swatchColours": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 46,
+  "width": 32,
 }

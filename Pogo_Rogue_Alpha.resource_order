@@ -26,5 +26,7 @@
     {"name":"spr_shield","order":2,"path":"sprites/spr_shield/spr_shield.yy",},
     {"name":"spr_enemy_stomp_only_moving","order":24,"path":"sprites/spr_enemy_stomp_only_moving/spr_enemy_stomp_only_moving.yy",},
     {"name":"spr_enemy_shooter_cannon","order":1,"path":"sprites/spr_enemy_shooter_cannon/spr_enemy_shooter_cannon.yy",},
+    {"name":"spr_trigger","order":1,"path":"sprites/spr_trigger/spr_trigger.yy",},
+    {"name":"obj_boss_trigger","order":1,"path":"objects/obj_boss_trigger/obj_boss_trigger.yy",},
   ],
 }

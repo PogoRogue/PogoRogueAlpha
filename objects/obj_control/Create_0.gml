@@ -10,7 +10,15 @@ global.player_spawn_x = 0;
 global.player_spawn_y = 0;
 global.player_spawn_x_prev = 0;
 global.player_spawn_y_prev = 0;
-global.num_of_coins = 100;
+global.num_of_coins = 200;
+global.mute = false;
+global.shop_index = 0;
+
+//combo
+global.combo = 0;
+global.combo_length = 0;
+global.combo_max = 32;
+global.combo_max_coins = 11;
 
 //items unlockable in the shop
 global.all_buffs = [obj_item_buff_lasersight, obj_item_buff_planetarybullets];

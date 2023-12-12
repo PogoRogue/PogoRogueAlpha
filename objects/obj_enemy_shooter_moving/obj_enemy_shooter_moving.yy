@@ -5,12 +5,13 @@
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":2,"eventType":2,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Enemy",
-    "path": "folders/Objects/Enemy.yy",
+    "name": "Ready Enemies",
+    "path": "folders/Objects/Enemy/Ready Enemies.yy",
   },
   "parentObjectId": {
     "name": "obj_enemy_shooter",
@@ -32,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_enemy_shooter",
-    "path": "sprites/spr_enemy_shooter/spr_enemy_shooter.yy",
+    "name": "spr_enemy_shooter_walking",
+    "path": "sprites/spr_enemy_shooter_walking/spr_enemy_shooter_walking.yy",
   },
   "spriteMaskId": null,
   "visible": true,

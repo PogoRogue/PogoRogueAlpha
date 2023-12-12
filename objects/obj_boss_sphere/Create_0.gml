@@ -25,25 +25,30 @@ hp_percent = (hp / hp_max) * 100;
 // Spawn pieces
 dist_from_center = 0;
 type = irandom(3);
-for(var i = -3; i < 4; i++) {
-	for(var j = -3; j < 4; j++) {
-		dist_from_center = abs(i) + abs(j);
+type_index = noone;
+for(var _i = -3; _i < 4; _i++) {
+	for(var _j = -3; _j < 4; _j++) {
+		dist_from_center = abs(_i) + abs(_j);
 		if(dist_from_center < 5) {
 			switch(type) {
 				case 0: 
-					instance_create_layer(x + (i * 32), y + (j * 32), "enemies", obj_boss_brick_black);
+					type_index = obj_boss_brick_black;
 					break;
 				case 1: 
-					instance_create_layer(x + (i * 32), y + (j * 32), "enemies", obj_boss_brick_blue);
+					type_index = obj_boss_brick_blue;
 					break;
-				case 2: 
-					instance_create_layer(x + (i * 32), y + (j * 32), "enemies", obj_boss_brick_red);
+				case 2:
+					type_index = obj_boss_brick_red;
 					break;
-				case 3: 
-					instance_create_layer(x + (i * 32), y + (j * 32), "enemies", obj_boss_brick_yellow);
+				case 3:
+					type_index = obj_boss_brick_yellow;
 					break;
 			}
+			
+			instance_create_layer(x + (_i * 32), y + (_j * 32), "enemies", type_index);
 			type = irandom(3);
 		}
 	}
 }
+
+drop_coins = false;

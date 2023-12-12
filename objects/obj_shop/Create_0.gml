@@ -1,7 +1,17 @@
+shop_index = global.shop_index;
+
+if instance_number(obj_shop) > 1 {
+	instance_destroy();
+}else {
+	global.shop_index += 1;	
+}
+
 global.player_spawn_x = obj_shop_door.x;
 global.player_spawn_y = obj_shop_door.y - 64;
 
 num_of_slots = 8;
+refresh_button = false;
+refresh_cost = 25;
 
 default_item_1 = obj_item_buff_heart;
 default_item_2 = obj_item_buff_heart;

@@ -1,5 +1,3 @@
-
-path_delete(follow_path);
 follow_path = path_add();
 
 target_x = obj_player.x;

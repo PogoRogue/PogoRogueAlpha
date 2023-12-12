@@ -12,15 +12,19 @@ if (pause) { //draw frozen image to screen while paused
 	surface_reset_target();
 }
 
-if keyboard_check_pressed(ord("P")) || gamepad_button_check_pressed(0,gp_select) || paused_outside {
+if keyboard_check_pressed(ord("P")) || keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(0,gp_start) || paused_outside {
 	if !pause { //pause now
 		pause = true;
-		audio_stop_all();
 		
 		//deactivate everything other than this surface
 		instance_deactivate_all(true);
-		instance_activate_object(obj_control);
-		instance_activate_object(obj_item_swap);
+		instance_activate_object(obj_control);	
+		if paused_outside = true {
+			instance_activate_object(obj_item_swap);
+			item_swap = true;
+		}else {
+			instance_activate_object(obj_pausemenu);
+		}
 		
 		//if we need to pause anything like animating sprites, tiles, room backgrounds, we need to do that separately
 		
@@ -37,15 +41,20 @@ if keyboard_check_pressed(ord("P")) || gamepad_button_check_pressed(0,gp_select)
 		pause_surf_buffer = buffer_create(res_w * res_h * 4, buffer_fixed, 1);
 		buffer_get_surface(pause_surf_buffer, pause_surf, 0);
 	}else { //unpause now
-		pause = false;
-		instance_activate_all();
+		if item_swap = false {
+			pause = false;
+			instance_activate_all();
+			instance_deactivate_object(obj_pausemenu);
+			instance_deactivate_object(obj_popup_exit);
+			instance_deactivate_object(obj_popup_restart);
 		
-		if surface_exists(pause_surf) {
-			surface_free(pause_surf);
-		}
+			if surface_exists(pause_surf) {
+				surface_free(pause_surf);
+			}
 
-		if buffer_exists(pause_surf_buffer) {
-			buffer_delete(pause_surf_buffer);
+			if buffer_exists(pause_surf_buffer) {
+				buffer_delete(pause_surf_buffer);
+			}
 		}
 	}
 	paused_outside = false;

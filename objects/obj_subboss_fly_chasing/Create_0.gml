@@ -15,4 +15,6 @@ drop = false
 
 //mp_grid_add_instances(grid_follow,obj_ground_parent,false);
 
-//alarm[1]=1;
+alarm[1]=1;
+
+drop_coins= false;

@@ -24,4 +24,7 @@ if(is_dead) {
 	spd = 0;	
 }
 
-x += spd;
+if(sprite_index != spr_enemy_shooter_cannon) {
+	x += spd;	
+}
+

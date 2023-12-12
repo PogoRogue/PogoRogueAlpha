@@ -1,10 +1,11 @@
-/// @description Fire projectile
+/// @description Animate firing
 
 if (!is_dead) {
-	instance_create_layer(x - 3, y, "Instances", obj_enemy_projectile_lob);
 	sprite_index = spr_enemy_shooter_cannon;
-	alarm_set(2, 12);
-	alarm_set(1, 3 * room_speed);
+	image_index = 0;
+	alarm_set(3, 40); // Create projectile
+	alarm_set(2, room_speed); // Reset animation
+	alarm_set(1, 3 * room_speed); // Schedule next attack
 }
 
 

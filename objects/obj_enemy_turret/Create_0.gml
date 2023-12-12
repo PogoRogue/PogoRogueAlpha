@@ -12,13 +12,17 @@ weapon_cooldown = 0;
 cooldown_length = 1.5 * room_speed;
 
 // Determine which surface the turret is on
-rotation = -90;
-if(collision_point(x + 16, y, obj_ground_parent, true, true)) {
+rotation = 0;
+is_vertical = true;
+if(place_meeting(x + 20, y, obj_ground_parent)) {
 	rotation = 180;
-} else if (collision_point(x - 32, y, obj_ground_parent, true, true)) {
-	rotation = 0;
-} else if (collision_point(x, y -16, obj_ground_parent, true, true)) {
+	is_vertical = true;
+} else if (place_meeting(x, y + 20, obj_ground_parent)) {
 	rotation = 90;
+	is_vertical = false;
+} else if (place_meeting(x, y - 20, obj_ground_parent)) {
+	rotation = -90;
+	is_vertical = false;
 }
 
 image_angle = rotation;

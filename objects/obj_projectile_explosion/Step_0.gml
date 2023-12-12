@@ -15,10 +15,11 @@ if instance_exists(obj_player) {
 		obj_player.free = true;
 		launched = true;
 	}
-
 }
 
-//remove collision after certain number of frames
-if image_index >= 3 {
+// Only collide on 5th frame
+if(image_index == 5) {
+	mask_index = sprite_index;
+} else {
 	mask_index = spr_nothing;	
 }

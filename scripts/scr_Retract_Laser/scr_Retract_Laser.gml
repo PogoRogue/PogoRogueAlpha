@@ -10,4 +10,5 @@ function scr_Retract_Laser(){
 	rotation_speed = other.rotation_speed;
 	rotation_delay = rotation_speed / 7;
 	angle = round(angle / other.rotation_speed)*other.rotation_speed;
+	current_rotation_speed = 0;
 }

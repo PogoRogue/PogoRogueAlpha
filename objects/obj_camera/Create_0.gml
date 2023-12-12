@@ -17,3 +17,7 @@ shake_length = 0; //# of frames
 shake_magnitude = 0; //# of pixels in each direction, max value
 shake_remain = 0; //decrease this value until it reaches zero
 buff = 0; //buffer
+
+if !instance_exists(obj_control) {
+	instance_create_depth(x,y,depth,obj_control);
+}

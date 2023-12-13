@@ -176,9 +176,9 @@ state_free = function() {
 	//falling animation
 	sprite_index = falling_sprite;
 	
-	if (vspeed > 3) {
+	if (vspeed > 5) {
 		image_index = 3;
-	}else if (vspeed > 2) {
+	}else if (vspeed > 3) {
 		image_index = 2;
 	}else if (vspeed > 1) {
 		image_index = 1;

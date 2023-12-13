@@ -12,7 +12,8 @@ function scr_Jump(add_to_jump){
 	if gun.current_bullets != gun.bullets_per_bounce { //reload bullets
 		//reload sound
 		audio_play_sound(snd_reload,0,false);
-		gun.current_bullets = gun.bullets_per_bounce; 
+		gun.current_bullets = gun.bullets_per_bounce; //reload bullets	
+		instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 	}
 	state = state_free;
 	charge = 0;

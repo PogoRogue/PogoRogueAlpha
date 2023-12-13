@@ -3,7 +3,7 @@
 function scr_Guns(){
 	
 	default_gun = {
-		_name: "Default Gun",  //name of gun
+		_name: "Pistol",  //name of gun
 		sprite: spr_gun_default,   //gun sprite
 		ammo: [default_bullet],//array of ammo
 		inaccuracy: 0,        //random bullet angle inaccuracy
@@ -16,8 +16,8 @@ function scr_Guns(){
 		burst_delay: 0,       //delay between bursts
 		momentum_added: 1,    //0.9, percentage of vsp_basicjump to apply for each bullet, 1 = 100%
 		reset_momentum: true, //reset player speed to 0 for each bullet (false), or just add to current speed (false)
-		bullets_per_bounce: 3,//Number of bullets per clip
-		current_bullets: 3,   //current number of bullets left
+		bullets_per_bounce: 4,//Number of bullets per clip
+		current_bullets: 4,   //current number of bullets left
 		max_speed: -vsp_basicjump //player cant move faster than this if full_auto = true
 	};
 	
@@ -95,7 +95,7 @@ function scr_Guns(){
 		reset_momentum: false, 
 		bullets_per_bounce: 25,
 		current_bullets: 25,  
-		max_speed: 8.5  
+		max_speed: 8
 	};
 
 	burstfire_gun = {
@@ -150,8 +150,8 @@ function scr_Guns(){
 		burst_delay: 0,     
 		momentum_added: 0.075, 
 		reset_momentum: false, 
-		bullets_per_bounce: 80,
-		current_bullets: 80,  
+		bullets_per_bounce: 100,
+		current_bullets: 100,  
 		max_speed: -vsp_basicjump
 	};	
 }

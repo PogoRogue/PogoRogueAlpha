@@ -64,22 +64,35 @@ if pickups_array[0].reload_on_bounce = false {
 		draw_sprite_part(pickups_array[0].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*(1-(pickups_array[0].cooldown_time/pickups_array[0].max_cooldown_time)),sprite_get_height(spr_pickup_empty),16,72);
 		//darkening
 		draw_sprite_ext(spr_pickup_empty,0,32,88,1,1,0,c_black,0.5);
-	
 		if pickups_array[0] != pickup_nothing {
 			//draw seconds left
 			scr_Draw_Text_Outlined(32,104,ceil(pickups_array[0].cooldown_time/60),c_white);
 		}
 	}
 }else {
-	if !(pickups_array[0].on_cooldown) {
+	if !(pickups_array[0].on_cooldown) and pickups_array[0].max_cooldown_time < 0 {
 		draw_sprite(pickups_array[0].gui_sprite,0,32,88);
-	}else {
+	}else if pickups_array[0].max_cooldown_time < 0 {
 		draw_sprite(pickups_array[0].gui_sprite,0,32,88);
 		draw_sprite_ext(spr_pickup_empty,0,32,88,1,1,0,c_black,0.5);
 	}
 	if pickups_array[0].max_uses_per_bounce > 1 {
 		//draw uses_left
 		scr_Draw_Text_Outlined(46,104,pickups_array[0].uses_per_bounce,c_white);
+	}else if pickups_array[0].max_cooldown_time > 0 { //jetpack
+		//darkening
+		draw_sprite_ext(spr_pickup_empty,0,32,88,1,1,0,c_white,0.5);
+		draw_sprite_ext(spr_pickup_empty,0,32,88,1,1,0,c_black,0.5);
+		//show fuel left
+		draw_sprite_part(pickups_array[0].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*(pickups_array[0].cooldown_time/pickups_array[0].max_cooldown_time),sprite_get_height(spr_pickup_empty),16,72);
+		//draw controls
+		if (gamepad_is_connected(0)) and pickups_array[0].cooldown_time > 0 {
+			draw_sprite(spr_controller_button_bottom,0,32,104);
+		}else if pickups_array[0].cooldown_time > 0 {
+			draw_set_font(fnt_itemdescription);
+			scr_Draw_Text_Outlined(32,104,"LMB",c_white); 
+			draw_set_font(fnt_combo2); 
+		}
 	}
 }
 
@@ -102,15 +115,29 @@ if pickups_array[1].reload_on_bounce = false {
 		}
 	}
 }else {
-	if !(pickups_array[1].on_cooldown) {
+	if !(pickups_array[1].on_cooldown) and pickups_array[1].max_cooldown_time < 0 {
 		draw_sprite(pickups_array[1].gui_sprite,0,68,88);
-	}else {
+	}else if pickups_array[1].max_cooldown_time < 0 {
 		draw_sprite(pickups_array[1].gui_sprite,0,68,88);
 		draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_black,0.5);
 	}
 	if pickups_array[1].max_uses_per_bounce > 1 {
 		//draw uses_left
 		scr_Draw_Text_Outlined(82,104,pickups_array[1].uses_per_bounce,c_white); 
+	}else if pickups_array[1].max_cooldown_time > 0 { //jetpack
+		//darkening
+		draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_white,0.5);
+		draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_black,0.5);
+		//show fuel left
+		draw_sprite_part(pickups_array[1].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*(pickups_array[1].cooldown_time/pickups_array[1].max_cooldown_time),sprite_get_height(spr_pickup_empty),52,72);
+		//draw controls
+		if (gamepad_is_connected(0)) and pickups_array[1].cooldown_time > 0 {
+			draw_sprite(spr_controller_button_right,0,68,104);
+		}else if pickups_array[1].cooldown_time > 0 {
+			draw_set_font(fnt_itemdescription);
+			scr_Draw_Text_Outlined(68,104,"RMB",c_white); 
+			draw_set_font(fnt_combo2);
+		}
 	}
 }
 

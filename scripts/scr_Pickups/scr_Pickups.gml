@@ -121,4 +121,56 @@ function scr_Pickups(){
 		}
 	};
 	
+	pickup_jetpack = {
+		_name: "Jetpack",
+		gui_sprite: spr_pickup_jetpack,
+		max_cooldown_time: 60,
+		cooldown_time: 60,
+		on_cooldown: false,
+		states_to_call_in: [state_free],
+		key_held: true,
+		reload_on_bounce: true,
+		max_uses_per_bounce: 1,
+		uses_per_bounce: 1,
+		on_call: function() {
+			if cooldown_time > 0 {
+				cooldown_time -= 1;
+				with obj_player {
+					//check if speed slower or faster than max speed to preserve momentum
+					if (abs(speed) > 5.5 and vspeed < 0) {
+						slower_than_max = false;
+						current_max = speed;
+					}else {
+						slower_than_max = true;	
+						current_max = 0;
+					}
+		
+					//add momentum
+					motion_add(angle - 90, vsp_basicjump * 0.12);
+		
+					//set max speed
+					if (speed > 5.5) {
+						speed = max(5.5, current_max);
+					}
+					
+					//smoke
+					if other.cooldown_time % 2 = 0 { //every other frame
+						instance_create_depth(x+lengthdir_x(16,image_angle)+lengthdir_x(12,image_angle+90),y+lengthdir_y(16,image_angle)+lengthdir_y(12,image_angle+90),depth+1,obj_jetpack_smoke);
+						instance_create_depth(x+lengthdir_x(-16,image_angle)+lengthdir_x(12,image_angle+90),y+lengthdir_y(-16,image_angle)+lengthdir_y(12,image_angle+90),depth+1,obj_jetpack_smoke);
+					}
+					
+					//sound
+					if !audio_is_playing(snd_jetpack) {
+						audio_play_sound(snd_jetpack,0,false);
+					}
+				}
+			}else {
+				if audio_is_playing(snd_jetpack) {
+					audio_stop_sound(snd_jetpack);
+				}	
+			}
+			on_cooldown = true;
+		}                  
+	};
+	
 }

@@ -5,6 +5,17 @@ if(current_iframes >= num_iframes - 10 || dead) {
 
 image_alpha = abs(cos(current_iframes / 5)) + 0.2;
 
+//draw jetpack
+if pickups_array[0] = pickup_jetpack or pickups_array[1] = pickup_jetpack {
+	if sprite_index = player_sprite {
+		draw_sprite_ext(spr_jetpack,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}else if sprite_index = falling_sprite {
+		draw_sprite_ext(spr_jetpack,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}else if sprite_index = charging_sprite {
+		draw_sprite_ext(spr_jetpack_charging,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}
+}
+
 draw_self();
 shader_reset();
 

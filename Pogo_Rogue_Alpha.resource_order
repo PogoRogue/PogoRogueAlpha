@@ -1,7 +1,5 @@
 {
-  "FolderOrderSettings": [
-    {"name":"Boss Sphere","order":23,"path":"folders/Sprites/Enemy/Boss Sphere.yy",},
-  ],
+  "FolderOrderSettings": [],
   "ResourceOrderSettings": [
     {"name":"spr_enemy_generic","order":21,"path":"sprites/spr_enemy_generic/spr_enemy_generic.yy",},
     {"name":"spr_enemy_shoot_only","order":22,"path":"sprites/spr_enemy_shoot_only/spr_enemy_shoot_only.yy",},
@@ -29,5 +27,6 @@
     {"name":"spr_shield","order":2,"path":"sprites/spr_shield/spr_shield.yy",},
     {"name":"spr_enemy_stomp_only_moving","order":24,"path":"sprites/spr_enemy_stomp_only_moving/spr_enemy_stomp_only_moving.yy",},
     {"name":"spr_enemy_shooter_cannon","order":1,"path":"sprites/spr_enemy_shooter_cannon/spr_enemy_shooter_cannon.yy",},
+    {"name":"spr_before_boss","order":1,"path":"sprites/spr_before_boss/spr_before_boss.yy",},
   ],
 }

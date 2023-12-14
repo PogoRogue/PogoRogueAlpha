@@ -10,6 +10,15 @@ function scr_Reload_On_Kill(){
 					audio_play_sound(snd_reload,0,false);
 				}
 			}
+			//reload hat gun on hat gun kill
+			if object_get_name(object_index) = "obj_projectile"  {
+				if (gun_name = "Hat Gun") {
+					with obj_player {
+						pickup_hatgun.uses_per_bounce = pickup_hatgun.max_uses_per_bounce;
+						pickup_hatgun.on_cooldown = false;
+					}
+				}
+			}
 		}
 	}
 }

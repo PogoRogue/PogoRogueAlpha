@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_shieldbubble",
-    "path": "sprites/spr_shieldbubble/spr_shieldbubble.yy",
+    "name": "spr_buffitem_heart_armor",
+    "path": "sprites/spr_buffitem_heart_armor/spr_buffitem_heart_armor.yy",
   },
   "spriteMaskId": null,
   "visible": true,

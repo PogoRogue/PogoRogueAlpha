@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_buffitem_heart",
-    "path": "sprites/spr_buffitem_heart/spr_buffitem_heart.yy",
+    "name": "spr_buffitem_heart_max",
+    "path": "sprites/spr_buffitem_heart_max/spr_buffitem_heart_max.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_test",
-    "path": "sprites/spr_test/spr_test.yy",
+    "name": "spr_buffitem_damage",
+    "path": "sprites/spr_buffitem_damage/spr_buffitem_damage.yy",
   },
   "spriteMaskId": null,
   "visible": true,

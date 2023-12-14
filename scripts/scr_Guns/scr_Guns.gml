@@ -1,7 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Guns(){
-	
 	default_gun = {
 		_name: "Default Gun",  //name of gun
 		sprite: spr_gun_default,   //gun sprite
@@ -16,7 +15,7 @@ function scr_Guns(){
 		burst_delay: 0,       //delay between bursts
 		momentum_added: 1,    //0.9, percentage of vsp_basicjump to apply for each bullet, 1 = 100%
 		reset_momentum: true, //reset player speed to 0 for each bullet (false), or just add to current speed (false)
-		bullets_per_bounce: 3,//Number of bullets per clip
+		bullets_per_bounce: 3 + obj_player.max_ammo_buff,//Number of bullets per clip
 		current_bullets: 3,   //current number of bullets left
 		max_speed: -vsp_basicjump //player cant move faster than this if full_auto = true
 	};
@@ -35,7 +34,7 @@ function scr_Guns(){
 		burst_delay: 0,
 		momentum_added: 0,
 		reset_momentum: false,
-		bullets_per_bounce: 1,
+		bullets_per_bounce: 1 + obj_player.max_ammo_buff,
 		current_bullets: 1,
 		max_speed: -vsp_basicjump
 	};
@@ -55,7 +54,7 @@ function scr_Guns(){
 		burst_delay: 0,       
 		momentum_added: 0.4,  
 		reset_momentum: false, 
-		bullets_per_bounce: 10,
+		bullets_per_bounce: 10 + obj_player.max_ammo_buff,
 		current_bullets: 10,   
 		max_speed: -vsp_basicjump           
 	};
@@ -74,7 +73,7 @@ function scr_Guns(){
 		burst_delay: 0,     
 		momentum_added: 1.25, 
 		reset_momentum: true, 
-		bullets_per_bounce: 2,
+		bullets_per_bounce: 2 + obj_player.max_ammo_buff,
 		current_bullets: 2,  
 		max_speed: -vsp_basicjump          
 	};
@@ -93,7 +92,7 @@ function scr_Guns(){
 		burst_delay: 0,     
 		momentum_added: 0.2, 
 		reset_momentum: false, 
-		bullets_per_bounce: 25,
+		bullets_per_bounce: 25 + obj_player.max_ammo_buff,
 		current_bullets: 25,  
 		max_speed: 8.5  
 	};
@@ -112,7 +111,7 @@ function scr_Guns(){
 		burst_delay: 6,     
 		momentum_added: 1, 
 		reset_momentum: false, 
-		bullets_per_bounce: 9,
+		bullets_per_bounce: 9 + obj_player.max_ammo_buff,
 		current_bullets: 9,  
 		max_speed: -vsp_basicjump
 	};	
@@ -131,7 +130,7 @@ function scr_Guns(){
 		burst_delay: 0,     
 		momentum_added: 0.9, 
 		reset_momentum: true, 
-		bullets_per_bounce: 3,
+		bullets_per_bounce: 3 + obj_player.max_ammo_buff,
 		current_bullets: 3,  
 		max_speed: -vsp_basicjump*0.9
 	};	
@@ -150,7 +149,7 @@ function scr_Guns(){
 		burst_delay: 0,     
 		momentum_added: 0.075, 
 		reset_momentum: false, 
-		bullets_per_bounce: 80,
+		bullets_per_bounce: 80 + obj_player.max_ammo_buff,
 		current_bullets: 80,  
 		max_speed: -vsp_basicjump
 	};	

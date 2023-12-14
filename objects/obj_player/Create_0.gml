@@ -23,6 +23,8 @@ can_shoot = true;
 platform_on = true;
 
 //buffs
+damage_buff = 0;
+max_ammo_buff = 0;
 laser_sight = false;
 planetary_bullets = 0;
 all_buff_sprites = [];
@@ -66,6 +68,7 @@ charging_sprite = spr_player_zekai_charging;
 // Stats
 hp = 40;
 max_hp = 40;
+armor_buff = 0;
 stomp_damage = 8;
 num_iframes = 1.5 * room_speed;
 current_iframes = 0;

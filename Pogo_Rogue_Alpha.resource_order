@@ -3,6 +3,7 @@
   "ResourceOrderSettings": [
     {"name":"spr_enemy_generic","order":21,"path":"sprites/spr_enemy_generic/spr_enemy_generic.yy",},
     {"name":"spr_enemy_shoot_only","order":22,"path":"sprites/spr_enemy_shoot_only/spr_enemy_shoot_only.yy",},
+    {"name":"spr_boss_door","order":1,"path":"sprites/spr_boss_door/spr_boss_door.yy",},
     {"name":"spr_explosion","order":20,"path":"sprites/spr_explosion/spr_explosion.yy",},
     {"name":"spr_enemy_stomp_only","order":19,"path":"sprites/spr_enemy_stomp_only/spr_enemy_stomp_only.yy",},
     {"name":"spr_enemy_turret_base_new","order":18,"path":"sprites/spr_enemy_turret_base_new/spr_enemy_turret_base_new.yy",},
@@ -29,6 +30,7 @@
     {"name":"spr_enemy_flying","order":4,"path":"sprites/spr_enemy_flying/spr_enemy_flying.yy",},
     {"name":"spr_enemy_walking_explosion","order":3,"path":"sprites/spr_enemy_walking_explosion/spr_enemy_walking_explosion.yy",},
     {"name":"spr_shield","order":2,"path":"sprites/spr_shield/spr_shield.yy",},
+    {"name":"obj_boss_door","order":1,"path":"objects/obj_boss_door/obj_boss_door.yy",},
     {"name":"spr_enemy_stomp_only_moving","order":24,"path":"sprites/spr_enemy_stomp_only_moving/spr_enemy_stomp_only_moving.yy",},
     {"name":"obj_item_buff_max_hp","order":4,"path":"objects/obj_item_buff_max_hp/obj_item_buff_max_hp.yy",},
     {"name":"obj_item_buff_dmg","order":1,"path":"objects/obj_item_buff_dmg/obj_item_buff_dmg.yy",},

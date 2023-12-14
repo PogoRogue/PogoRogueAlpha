@@ -30,7 +30,7 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			else if(Red > 177)
 			{
 				//return obj_enemy_shoot_only;
-				return obj_enemy_shoot_only;
+				return obj_enemy_shoot_only_jumping;
 			}
 			else if(Red > 150)
 			{
@@ -57,6 +57,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			{
 				return obj_enemy_turret;
 			}
+			else if(Red > 160)
+			{
+				return obj_enemy_turret_mobile;
+			}
 			else if(Red > 150)
 			{
 				return obj_enemy_moving_jumping;
@@ -73,6 +77,11 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_shop_door;
 		}
+		else if(Green > 200)
+		{
+			return obj_boss_door;
+		}
+		
 	}
 	else if(Blue > 150) //These are environmental hazards!
 	{

@@ -165,6 +165,7 @@ if can_shoot = true and room != room_shop {
 	var shoot = 0;
 }
 var ammo = gun.ammo[bullet_index];
+//ammo += max_ammo_increase;// increase ammo by max ammo increase if players has collected max ammo buffs
 
 if (canshoot > 0) {
 	canshoot -= 1;

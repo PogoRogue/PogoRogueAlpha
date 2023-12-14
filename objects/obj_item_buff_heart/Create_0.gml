@@ -1,4 +1,4 @@
-follow_player = true;
+follow_player = false;
 buff = obj_player.buff_heart;
 item_name = "Heart";
 item_description = "Gives the player one extra heart.";

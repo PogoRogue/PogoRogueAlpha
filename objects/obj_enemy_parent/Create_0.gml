@@ -8,6 +8,9 @@ draw_hp = true;
 damage = 8;
 spd = 0;
 
+stomp_defense = 1; // This is a scalar that gets applied to stomp damage
+bullet_defense = 1; // This is a scalar that gets applied to bullet damage
+
 // State
 is_dead = false;
 num_iframes = room_speed / 2;

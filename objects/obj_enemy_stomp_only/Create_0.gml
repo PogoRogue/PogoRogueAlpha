@@ -7,3 +7,5 @@
 event_inherited();
 
 raise_cd = false
+
+bullet_defense = 0.15;

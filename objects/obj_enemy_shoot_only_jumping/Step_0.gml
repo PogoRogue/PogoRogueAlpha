@@ -11,7 +11,7 @@ event_inherited();
 is_grounded = place_meeting(x, y + 1, obj_ground_parent);
 at_wall = place_meeting(x + spd, y, obj_ground_parent);
 
-if(is_grounded) {
+if(is_grounded && !is_jumping) {
 	vspeed = 0;
 	hspeed = 0;
 	while(place_meeting(x, y, obj_ground_parent)) {
@@ -19,24 +19,28 @@ if(is_grounded) {
 	}
 } else {
 	vspeed += player.grv;
+	is_jumping = false;
 }
 
 // When in range, jump towards the player
 if(!is_dead && distance_to_object(player) < jump_range) {	
 	// Jump towards player
 	if (is_grounded) {
-		// Face the player
-		if(x < player.x) {
-			spd = 0.5;
-		} else {
-			spd = -0.5;
+		// Head towards the player
+		spd = sign(player.x - x);
+		
+		if(jump_cooldown <= 0) {
+			sprite_index = spr_enemy_shoot_only_jump;
+			image_index = 0;
+			jump_cooldown = cooldown_length;
+			alarm_set(1, 1.4 * room_speed);
 		}
 	
-		if(jump_cooldown <= 0) {
+		/*if(jump_cooldown <= 0) {
 			vspeed = jump_height;
 			jump_cooldown = cooldown_length;
 			hspeed = spd;
-		}
+		}*/
 	}
 }
 

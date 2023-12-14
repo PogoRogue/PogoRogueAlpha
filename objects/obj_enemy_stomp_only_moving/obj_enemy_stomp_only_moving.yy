@@ -5,6 +5,7 @@
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":1,"eventType":2,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -32,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_enemy_stomp_only",
-    "path": "sprites/spr_enemy_stomp_only/spr_enemy_stomp_only.yy",
+    "name": "spr_enemy_stomp_only_moving",
+    "path": "sprites/spr_enemy_stomp_only_moving/spr_enemy_stomp_only_moving.yy",
   },
   "spriteMaskId": null,
   "visible": true,

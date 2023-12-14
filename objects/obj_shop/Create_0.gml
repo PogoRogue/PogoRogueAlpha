@@ -19,7 +19,7 @@ buff_1 = obj_item_buff_lasersight;
 buff_2 = obj_item_buff_planetarybullets;
 buff_3 = obj_item_buff_armor;
 buff_4 = obj_item_buff_dmg;
-buff_6 = obj_item_max_ammo;
+buff_6 = obj_item_buff_max_ammo;
 buff_5 = obj_item_buff_max_hp;
 
 weapon_1 = obj_item_weapon_paintball;

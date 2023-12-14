@@ -1,7 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Guns(){
-	with obj_player{
 	default_gun = {
 		_name: "Default Gun",  //name of gun
 		sprite: spr_gun_default,   //gun sprite
@@ -154,5 +153,4 @@ function scr_Guns(){
 		current_bullets: 80,  
 		max_speed: -vsp_basicjump
 	};	
-	}
 }

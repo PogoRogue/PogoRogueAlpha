@@ -59,6 +59,8 @@
     {"name":"inst_76052EC8","path":"rooms/room_test_env/room_test_env.yy",},
     {"name":"inst_267341D0","path":"rooms/room_test_env/room_test_env.yy",},
     {"name":"inst_CE899F7","path":"rooms/room_test_env/room_test_env.yy",},
+    {"name":"inst_546FC255","path":"rooms/room_test_env/room_test_env.yy",},
+    {"name":"inst_C402939","path":"rooms/room_test_env/room_test_env.yy",},
   ],
   "isDnd": false,
   "layers": [

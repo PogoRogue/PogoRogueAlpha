@@ -1,7 +1,7 @@
 follow_player = false;
 buff = obj_player.buff_heart;
 item_name = "Heart";
-item_description = "Gives the player one extra heart.";
+item_description = "Increase the player's health by one heart.";
 add_sprite_to_list = false;
 item_cost = 10;
 max_uses = 0;

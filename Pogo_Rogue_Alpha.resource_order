@@ -146,6 +146,7 @@
     {"name":"spr_electric_floor_powering_on","order":2,"path":"sprites/spr_electric_floor_powering_on/spr_electric_floor_powering_on.yy",},
     {"name":"spr_gun_paintball","order":1,"path":"sprites/spr_gun_paintball/spr_gun_paintball.yy",},
     {"name":"spr_electric_floor_on","order":3,"path":"sprites/spr_electric_floor_on/spr_electric_floor_on.yy",},
+    {"name":"scr_Buff_Stats","order":6,"path":"scripts/scr_Buff_Stats/scr_Buff_Stats.yy",},
     {"name":"obj_camera_constrain_x_right","order":1,"path":"objects/obj_camera_constrain_x_right/obj_camera_constrain_x_right.yy",},
     {"name":"spr_crosshair","order":9,"path":"sprites/spr_crosshair/spr_crosshair.yy",},
     {"name":"obj_enemy_shoot_only_jumping","order":8,"path":"objects/obj_enemy_shoot_only_jumping/obj_enemy_shoot_only_jumping.yy",},

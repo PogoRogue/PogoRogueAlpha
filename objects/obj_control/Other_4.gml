@@ -9,3 +9,4 @@ if !instance_exists(obj_pausemenu) {
 }
 
 audio_stop_all();
+

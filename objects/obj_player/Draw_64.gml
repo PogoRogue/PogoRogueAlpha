@@ -24,7 +24,7 @@ for (gun_num = 0; gun_num < num_of_weapons; gun_num++) {
 	}
 	//laser
 	if (gun_array[gun_num] = laser_gun) {
-		value_ = gun_array[gun_num].current_bullets / gun_array[gun_num].bullets_per_bounce+max_ammo_buff;
+		value_ = gun_array[gun_num].current_bullets / (gun_array[gun_num].bullets_per_bounce+max_ammo_buff);
 		draw_sprite(ammo.gui_sprite,0,(camera_get_view_width(view_camera[0])-16),24+yy);
 		draw_sprite_part(ammo.gui_sprite,1,0,0,sprite_get_width(ammo.gui_sprite)*value_,sprite_height,(camera_get_view_width(view_camera[0])-16)-sprite_get_width(ammo.gui_sprite),24+yy-(sprite_get_height(ammo.gui_sprite)/2));
 		//darkening

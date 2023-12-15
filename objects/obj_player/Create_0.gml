@@ -196,6 +196,7 @@ state_free = function() {
 	//restart room if reached the top unless procgen room
 	if room != room_proc_gen_test {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
+			instance_deactivate_all(false);
 			room_restart();
 		}
 	}

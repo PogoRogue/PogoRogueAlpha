@@ -1,8 +1,6 @@
 /// @description Draw Tiles
-if room != room_proc_gen_test {
+if !(instance_exists(obj_proc_gen_controller)) {
 	for(i=0;i<image_xscale;i++) {
 		draw_tile(tileset,tile_frame[i],0,xx[i],y);
 	}
-}else {
-	draw_self();	
 }

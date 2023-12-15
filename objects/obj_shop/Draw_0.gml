@@ -55,6 +55,5 @@ draw_text(504,120,item_name);
 draw_set_font(fnt_itemdescription);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top)
-draw_text(424,176,scr_Linebreak(item_description,39,99));
-
+draw_text(424,176,scr_Linebreak(item_description,38,99));
 }

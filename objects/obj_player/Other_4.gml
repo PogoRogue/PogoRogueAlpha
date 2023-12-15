@@ -4,6 +4,8 @@ if global.player_spawn_x != 0 and global.player_spawn_y != 0 {
 	y = global.player_spawn_y;
 	global.player_spawn_x = 0;
 	global.player_spawn_y = 0;
+	obj_camera.x = x;
+	obj_camera.y = y-32;
 }
 hspeed = 0;
 vspeed = 0;

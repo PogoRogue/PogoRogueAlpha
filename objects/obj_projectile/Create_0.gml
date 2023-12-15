@@ -28,7 +28,7 @@ if (gun_name = "Bubble Gun") {
 }
 if (gun_name = "Paintball Gun") {
 	with obj_player {
-		other.image_index = gun.bullets_per_bounce - gun.current_bullets;
+		other.image_index = ((gun.bullets_per_bounce + max_ammo_buff) - gun.current_bullets);
 	}
 }
 

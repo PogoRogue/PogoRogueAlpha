@@ -17,9 +17,22 @@ function scr_Weapon_Stats(){
 		autofire = "\nAutofire: no";	
 		firerate = "";
 	}
-	item_stats = ("Bullets per bounce: " + 
-	string(weapon.bullets_per_bounce) + 
-	"\nDamage per bullet: " + string(weapon.ammo[0].damage) + 
+	//additional damage buff
+	if obj_player.damage_buff > 0 {
+		added_damage = " + " + string(obj_player.damage_buff);
+	}else {
+		added_damage = "";
+	}
+	//additional ammo buff
+	if obj_player.max_ammo_buff > 0 {
+		added_bullets = " + " + string(obj_player.max_ammo_buff);
+	}else {
+		added_bullets = "";
+	}
+	//full strring
+	item_stats = ("Bullets per bounce: " +
+	string(weapon.bullets_per_bounce) + added_bullets +
+	"\nDamage per bullet: " + string(weapon.ammo[0].damage) + added_damage +
 	autofire + firerate);
 	
 	item_description = item_tagline + "\n\n" + item_stats;

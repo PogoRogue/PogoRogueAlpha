@@ -9,3 +9,4 @@ buff = obj_player.buff_nothing;
 item_name = "";
 item_description = "";
 add_sprite_to_list = true;
+max_uses = 0; //how many times this buff can be picked up, 0 = infinite

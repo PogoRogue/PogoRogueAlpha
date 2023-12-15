@@ -11,20 +11,20 @@ for (gun_num = 0; gun_num < num_of_weapons; gun_num++) {
 	var ammo = gun_array[gun_num].ammo[bullet_index];
 	var yy = 48 * (gun != gun_array[gun_num]); //add y for other weapons bullets
 	var black_alpha = 0.5 * (gun != gun_array[gun_num]); //darkening for bottom ammo
-	for(i = 0; i < gun_array[gun_num].bullets_per_bounce; i++) {
+	for(i = 0; i < gun_array[gun_num].bullets_per_bounce+max_ammo_buff; i++) {
 		if (gun_array[gun_num] != paintball_gun) and (gun_array[gun_num] != laser_gun) {
-			draw_sprite(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce,(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),24+yy); 
+			draw_sprite(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff,(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),24+yy); 
 			//darkening
-			draw_sprite_ext(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce,(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),24+yy,1,1,0,c_black,black_alpha);
+			draw_sprite_ext(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff,(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),24+yy,1,1,0,c_black,black_alpha);
 		}else if (gun_array[gun_num] = paintball_gun) {
-			draw_sprite(ammo.gui_sprite,((i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce)*10)+((i+gun_array[gun_num].current_bullets>=gun_array[gun_num].bullets_per_bounce)*i),(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),24+yy); 
+			draw_sprite(ammo.gui_sprite,((i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff)*10)+((i+gun_array[gun_num].current_bullets>=gun_array[gun_num].bullets_per_bounce+max_ammo_buff)*i)-((i >= gun_array[gun_num].bullets_per_bounce and (i+gun_array[gun_num].current_bullets>=gun_array[gun_num].bullets_per_bounce+max_ammo_buff))*10),(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),24+yy); 
 			//darkening
-			draw_sprite_ext(ammo.gui_sprite,((i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce)*10)+((i+gun_array[gun_num].current_bullets>=gun_array[gun_num].bullets_per_bounce)*i),(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),24+yy,1,1,0,c_black,black_alpha);
+			draw_sprite_ext(ammo.gui_sprite,((i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff)*10)+((i+gun_array[gun_num].current_bullets>=gun_array[gun_num].bullets_per_bounce+max_ammo_buff)*i),(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),24+yy,1,1,0,c_black,black_alpha);
 		}
 	}
 	//laser
 	if (gun_array[gun_num] = laser_gun) {
-		value_ = gun_array[gun_num].current_bullets / gun_array[gun_num].bullets_per_bounce;
+		value_ = gun_array[gun_num].current_bullets / gun_array[gun_num].bullets_per_bounce+max_ammo_buff;
 		draw_sprite(ammo.gui_sprite,0,(camera_get_view_width(view_camera[0])-16),24+yy);
 		draw_sprite_part(ammo.gui_sprite,1,0,0,sprite_get_width(ammo.gui_sprite)*value_,sprite_height,(camera_get_view_width(view_camera[0])-16)-sprite_get_width(ammo.gui_sprite),24+yy-(sprite_get_height(ammo.gui_sprite)/2));
 		//darkening
@@ -167,5 +167,15 @@ if (gamepad_is_connected(0)) {
 
 //all buffs
 for (i = 0; i < array_length(all_buff_sprites); i++) {
-	draw_sprite(all_buff_sprites[i],all_buff_sprites_index[i],24+i*24,128);
+	var xx = 24;
+	var yy = 128;
+	draw_sprite(all_buff_sprites[i],all_buff_sprites_index[i],xx+i*24,yy);
+	
+	//numbers of each buff
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_center);
+	draw_set_font(fnt_itemdescription);
+	if all_buff_numbers[i] > 1 {
+		scr_Draw_Text_Outlined(xx+i*24-6,yy+4,all_buff_numbers[i],c_white);
+	}
 }

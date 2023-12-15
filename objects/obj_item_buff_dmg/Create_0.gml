@@ -2,5 +2,10 @@ follow_player = true;
 buff = obj_player.buff_dmg;
 item_name = "Dmg Buff";
 item_description = "Permanently increases the player's damage";
-add_sprite_to_list = false;
+add_sprite_to_list = true;
 item_cost = 10;
+max_uses = 0;
+
+if scr_In_Array(global.all_buffs, object_index) {
+	scr_Buff_Replace();
+}

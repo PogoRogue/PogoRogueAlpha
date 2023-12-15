@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "spr_buffitem_lasersight",
   "bbox_bottom": 15,
-  "bbox_left": 5,
-  "bbox_right": 9,
+  "bbox_left": 3,
+  "bbox_right": 12,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c05b71ff-0941-4490-9cb4-f386bdf6146f",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"565d11ed-37e8-41be-a728-9b404151e633",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 16,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"99425990-0058-4472-b56c-ae0bc44618e6","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"6317d729-76ce-4b37-8da3-0d97d2a56f3f","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c05b71ff-0941-4490-9cb4-f386bdf6146f","path":"sprites/spr_buffitem_lasersight/spr_buffitem_lasersight.yy",},},},"Disabled":false,"id":"8a47cb5b-fc68-42ca-8205-8d4079304f64","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"565d11ed-37e8-41be-a728-9b404151e633","path":"sprites/spr_buffitem_lasersight/spr_buffitem_lasersight.yy",},},},"Disabled":false,"id":"4b35e2d8-3d39-4f8b-be70-ee907d58c328","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

@@ -25,7 +25,7 @@ if key_up and selected = false {
 if key_select {
 	if select = 1 {
 		with obj_pause {
-			paused_outside = true;	
+			paused_outside = true;
 		}
 	}else if select = 2 {
 		//implement later

@@ -25,10 +25,12 @@ platform_on = true;
 //buffs
 damage_buff = 0;
 max_ammo_buff = 0;
+max_max_ammo_buff = 5; //max amount this buff can be received
 laser_sight = false;
 planetary_bullets = 0;
-all_buff_sprites = [];
-all_buff_sprites_index = [];
+all_buff_sprites = []; //buffs equipped in side bar
+all_buff_sprites_index = []; //image index of each buff sprite
+all_buff_numbers = []; //how many of each buff you have
 
 //pickups
 charge = 0;
@@ -67,8 +69,10 @@ charging_sprite = spr_player_zekai_charging;
 
 // Stats
 hp = 40;
-max_hp = 40;
+max_hp = 40; //5 hearts
+max_max_hp = 80; //10 hearts
 armor_buff = 0;
+max_armor_buff = 5;
 stomp_damage = 8;
 num_iframes = 1.5 * room_speed;
 current_iframes = 0;

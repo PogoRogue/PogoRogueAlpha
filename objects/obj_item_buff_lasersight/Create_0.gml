@@ -4,3 +4,9 @@ item_name = "Laser Sight";
 item_description = "A laser is drawn from the bottom of the player to assist with aiming.";
 add_sprite_to_list = true;
 item_cost = 10;
+max_uses = 1;
+scr_Buff_Stats();
+
+if scr_In_Array(global.all_buffs, object_index) {
+	scr_Buff_Replace();
+}

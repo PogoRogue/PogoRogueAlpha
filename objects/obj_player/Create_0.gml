@@ -3,6 +3,7 @@
 grv = 0.21; //gravity
 h_grv = 0.01; //horizontal drag
 rotation_speed = 3; //rotation speed
+original_rotation_speed = rotation_speed;
 current_rotation_speed = 0;
 rotation_delay = rotation_speed / 10; //0.5
 vsp_basicjump = -6.6; //bounce height
@@ -25,10 +26,12 @@ platform_on = true;
 //buffs
 damage_buff = 0;
 max_ammo_buff = 0;
+max_max_ammo_buff = 5; //max amount this buff can be received
 laser_sight = false;
 planetary_bullets = 0;
-all_buff_sprites = [];
-all_buff_sprites_index = [];
+all_buff_sprites = []; //buffs equipped in side bar
+all_buff_sprites_index = []; //image index of each buff sprite
+all_buff_numbers = []; //how many of each buff you have
 
 //pickups
 charge = 0;
@@ -67,8 +70,10 @@ charging_sprite = spr_player_zekai_charging;
 
 // Stats
 hp = 40;
-max_hp = 40;
+max_hp = 40; //5 hearts
+max_max_hp = 80; //10 hearts
 armor_buff = 0;
+max_armor_buff = 5;
 stomp_damage = 8;
 num_iframes = 1.5 * room_speed;
 current_iframes = 0;
@@ -172,16 +177,16 @@ state_free = function() {
 	}
 	
 	//make sure player isn't colliding with anything before checking for collisions again
-	if !(place_meeting(x,y,obj_ground)) and !(place_meeting(x,y,obj_enemy_parent)) and free = false {
+	if !(place_meeting(x,y,obj_ground)) free = false {
 		free = true;	
 	}
 	
 	//falling animation
 	sprite_index = falling_sprite;
 	
-	if (vspeed > 3) {
+	if (vspeed > 5) {
 		image_index = 3;
-	}else if (vspeed > 2) {
+	}else if (vspeed > 3) {
 		image_index = 2;
 	}else if (vspeed > 1) {
 		image_index = 1;
@@ -192,6 +197,7 @@ state_free = function() {
 	//restart room if reached the top unless procgen room
 	if room != room_proc_gen_test {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
+			instance_deactivate_all(false);
 			room_restart();
 		}
 	}
@@ -218,7 +224,7 @@ state_bouncing = function() {
 	if (floor(image_index) = sprite_get_number(sprite_index)-1) {
 		animation_complete = true;
 	}else if (animation_complete = false) {
-		image_index += 0.75;
+		image_index += 1;
 	}
 	
 	// Conveyor belt handling
@@ -266,6 +272,10 @@ state_chargejump = function() {
 				chargejump = true;
 			}
 		}
+		rotation_speed = original_rotation_speed;
+		rotation_delay = rotation_speed / 10;
+		angle = round(angle / original_rotation_speed)*original_rotation_speed;
+		current_rotation_speed = 0;
 	}else {
 		if (charge > charge_max) {
 			charge += charge_max/80; //80 = how many frames until max charge
@@ -401,7 +411,7 @@ bullet_index = 0; //current bullet
 
 //EQUIP WEAPONS
 num_of_weapons = 2; //number of different weapons equipped: only do 1 or 2
-all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun]; //all guns
+all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun,bouncyball_gun,missile_gun]; //all guns
 
 if (random_weapon = true) { //choose random weapons
 	randomize();
@@ -438,7 +448,7 @@ buff_duration = 60 * 5; // buff duration timer
 scr_Pickups();
 
 num_of_pickups = 2; //number of different pickups equipped: only do 1 or 2
-all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash]; //all pickups
+all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack]; //all pickups
 
 if (random_pickup = true) { //choose random pickups
 	randomize();

@@ -4,7 +4,11 @@ function scr_Player_Damaged(damage){
 	
 	with obj_player {
 		if !instance_exists(obj_shieldbubble) and invincible = false {
-			hp -= (damage * (100 / (100 + armor_buff))); // factor in dmg mitigation from armor. If armor is 50, take 2/3 dmg
+			if armor_buff > 0 {
+				armor_buff -= 1;
+			}else {
+				hp -= (damage);
+			}
 			current_iframes = num_iframes;
 			hspeed = -2 * sign(hspeed);
 			vspeed = 0;

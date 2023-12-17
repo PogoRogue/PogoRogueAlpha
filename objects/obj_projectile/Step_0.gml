@@ -8,7 +8,13 @@ if instance_exists(obj_camera) {
 	var padding = 128;
 
 	if !(point_in_rectangle(x,y,obj_camera.x-camera_width-padding,obj_camera.y-camera_height-padding,obj_camera.x+camera_width+padding,obj_camera.y+camera_height+padding)) {
-		damage = 0;
+	}else {
+		damage = init_damage;
+		//damage buff for bouncy ball gun 
+		if (gun_name = "Bouncy Ball Blaster") and num_of_bounces < max_num_of_bounces {
+			damage = init_damage * (2*(max_num_of_bounces-num_of_bounces));
+			image_index = max_num_of_bounces-num_of_bounces;
+		}
 	}
 }
 
@@ -36,7 +42,9 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0) {
 	num_of_bounces -= 1;
 	image_index = 1;
 	alarm[1] = 3;
-	audio_play_sound(snd_grenade_bounce, 0, false);
+	if (gun_name = "Grenade Launcher") {
+		audio_play_sound(snd_grenade_bounce, 0, false);
+	}
 }
 
 //right
@@ -45,7 +53,9 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd < 0 and num_of_bounces > 0) {
 	num_of_bounces -= 1;
 	image_index = 1;
 	alarm[1] = 5;
-	audio_play_sound(snd_grenade_bounce, 0, false);
+	if (gun_name = "Grenade Launcher") {
+		audio_play_sound(snd_grenade_bounce, 0, false);
+	}
 }
 
 //bottom
@@ -54,7 +64,9 @@ if ((place_meeting(x,y+vspd,obj_ground) and vspd < 0) and num_of_bounces > 0) {
 	num_of_bounces -= 1;
 	image_index = 1;
 	alarm[1] = 5;
-	audio_play_sound(snd_grenade_bounce, 0, false);
+	if (gun_name = "Grenade Launcher") {
+		audio_play_sound(snd_grenade_bounce, 0, false);
+	}
 }
 
 //top
@@ -64,9 +76,44 @@ or (place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_groun
 	num_of_bounces -= 1;
 	image_index = 1;
 	alarm[1] = 5;
-	audio_play_sound(snd_grenade_bounce, 0, false);
+	if (gun_name = "Grenade Launcher") {
+		audio_play_sound(snd_grenade_bounce, 0, false);
+	}
 }else if ((place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0) and num_of_bounces <= 0 and max_num_of_bounces > 0) 
 or (place_meeting(x,y,obj_player_mask) and gun_name = "Grenade Launcher" and num_of_bounces <= 0) 
 or (place_meeting(x,y,obj_player) and gun_name = "Grenade Launcher" and num_of_bounces <= 0) {
 	instance_destroy();
+}
+
+//missile
+if (gun_name = "Missile Launcher") {
+	//speed up
+	if speed < 8 {
+		speed += 0.25;	
+	}
+	
+	//lock on to enemy
+	if collision_circle(x,y,196,obj_enemy_parent,false,true) != noone {
+		closest_enemy = instance_nearest(x,y,obj_enemy_parent);
+	}else {
+		closest_enemy = noone;
+	}
+	
+	//rotate
+	if closest_enemy != noone {
+		damage = init_damage;
+		destroy_on_impact = false;
+		scr_Gradually_Turn(self.id,closest_enemy,45,1);
+		direction = image_angle;
+		if place_meeting(x,y,closest_enemy) {
+			instance_destroy();	
+		}
+	}else {
+		destroy_on_impact = true;
+		direction = image_angle;
+		
+		if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 {
+			instance_destroy();	
+		}
+	}
 }

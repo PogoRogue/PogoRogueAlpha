@@ -1,4 +1,6 @@
 /// @description create text in proc gen room
+//temporarily disabled 
+/*
 while(!place_meeting(x,y+32,obj_ground) and !place_meeting(x,y+32,obj_ground_oneway)) {
 	y++;	
 }

@@ -2,6 +2,7 @@
 
 if(is_dead) {
 	image_alpha *= 0.9;
+	mask_index = spr_nothing;
 } else if (hp <= 0) {
 	is_dead = true;
 	alarm_set(0, room_speed);

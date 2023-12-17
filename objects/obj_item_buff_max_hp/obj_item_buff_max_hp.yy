@@ -4,6 +4,7 @@
   "name": "obj_item_buff_max_hp",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [
@@ -33,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_buffitem_heart",
-    "path": "sprites/spr_buffitem_heart/spr_buffitem_heart.yy",
+    "name": "spr_buffitem_heart_max",
+    "path": "sprites/spr_buffitem_heart_max/spr_buffitem_heart_max.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -99,8 +99,8 @@ if created_items = false {
 		with instance_create_depth(xx,yy,depth-1,slot_items_array[i]) {
 			follow_player = false;
 			index = other.index;
+			ii = other.i;
 		}
-		
 		//replace weapon with new weapon if player already has it
 		if i = 4 
 		or i = 5 {
@@ -153,14 +153,23 @@ if select != 0 {
 		item_description = slot_items_array[select-1].item_description;
 		item_cost = slot_items_array[select-1].item_cost;
 		
+		//sold out
 		if global.num_of_coins >= slot_items_array[select-1].item_cost {
 			too_expensive = false;
 		}else {
 			too_expensive = true;
 		}
+		//sold out
+		if slot_items_array[select-1].sold_out = true {
+			sold_out = true;
+		}else {
+			sold_out = false;
+		}
+		
 	}else {
 		item_name = "";
 		item_description = "";
+		sold_out = false;
 	}
 }
 
@@ -171,7 +180,7 @@ if key_select {
 		select = 0;
 	}else if select = 0 and refresh_button = false {
 		select = last_select;
-		if global.num_of_coins >= slot_items_array[last_select-1].item_cost {
+		if global.num_of_coins >= slot_items_array[last_select-1].item_cost and slot_items_array[select-1].sold_out = false {
 			//item follow player
 			last_item_created = slot_items_array[select-1];
 			audio_play_sound(snd_chaching,0,false);
@@ -192,7 +201,7 @@ if key_select {
 				select = other.select;
 				refresh_button = other.refresh_button;
 				create_coins = false;
-				instance_destroy();	
+				instance_destroy();
 			}
 			instance_destroy();
 			instance_create_depth(x,y,depth,obj_shop);

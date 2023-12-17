@@ -21,8 +21,10 @@ if key_select {
 		alarm[0] = 1;
 	}else if select = 2 {
 		if global.last_room != room_shop and global.last_room != room_boss_test {
-			instance_deactivate_all(false);
-			room_restart();
+			//temporarily disabled
+			//instance_deactivate_all(false);
+			//room_restart();
+			game_restart();	
 		}else {
 			game_restart();	
 		}

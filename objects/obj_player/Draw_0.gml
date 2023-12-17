@@ -5,6 +5,17 @@ if(current_iframes >= num_iframes - 10 || dead) {
 
 image_alpha = abs(cos(current_iframes / 5)) + 0.2;
 
+//draw jetpack
+if pickups_array[0] = pickup_jetpack or pickups_array[1] = pickup_jetpack {
+	if sprite_index = player_sprite {
+		draw_sprite_ext(spr_jetpack,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}else if sprite_index = falling_sprite {
+		draw_sprite_ext(spr_jetpack,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}else if sprite_index = charging_sprite {
+		draw_sprite_ext(spr_jetpack_charging,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}
+}
+
 draw_self();
 shader_reset();
 
@@ -26,6 +37,14 @@ if ground_pound_slam = true {
 	for(i = 5; i > 0; i -= 1) {
 		slam_alpha += 0.2;
         draw_sprite_ext(sprite_index,image_index,x,y-(i*slam_trail_distance),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
+		//draw hat during slam
+		if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun {
+			draw_sprite_ext(spr_player_zekai_hat_falling,image_index,x,y-(i*slam_trail_distance),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
+		}
+		//draw jetpack during slam
+		if pickups_array[0] = pickup_jetpack or pickups_array[1] = pickup_jetpack {
+			draw_sprite_ext(spr_jetpack,0,x,y-(i*slam_trail_distance),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
+		}
     }
 	draw_self();
 }

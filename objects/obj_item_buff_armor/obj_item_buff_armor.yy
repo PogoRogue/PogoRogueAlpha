@@ -4,6 +4,7 @@
   "name": "obj_item_buff_armor",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [
@@ -33,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_shieldbubble",
-    "path": "sprites/spr_shieldbubble/spr_shieldbubble.yy",
+    "name": "spr_buffitem_heart_armor",
+    "path": "sprites/spr_buffitem_heart_armor/spr_buffitem_heart_armor.yy",
   },
   "spriteMaskId": null,
   "visible": true,

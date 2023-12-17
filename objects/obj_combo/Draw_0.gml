@@ -18,7 +18,7 @@ if global.combo > 0 {
 		//text
 		var white = make_color_rgb(242,240,229);
 		draw_set_color(white)
-		draw_text_transformed(x + lengthdir_x(distance+8,angle+90),y + lengthdir_y(distance+8,angle+90),"x" + string(global.combo),1,1,angle)
+		draw_text_transformed(x + lengthdir_x(distance+8,angle+90),y + lengthdir_y(distance+8,angle+90),"x" + string(global.combo) + " Combo",1,1,angle)
 	}
 }
 

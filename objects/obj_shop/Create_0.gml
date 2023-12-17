@@ -1,3 +1,4 @@
+randomize();
 shop_index = global.shop_index;
 
 if instance_number(obj_shop) > 1 {
@@ -14,13 +15,13 @@ refresh_button = false;
 refresh_cost = 25;
 
 default_item_1 = obj_item_buff_heart;
-default_item_2 = obj_item_buff_heart;
+default_item_2 = choose(obj_item_buff_max_hp,obj_item_buff_armor);
 buff_1 = obj_item_buff_lasersight;
 buff_2 = obj_item_buff_planetarybullets;
 buff_3 = obj_item_buff_armor;
 buff_4 = obj_item_buff_dmg;
-buff_6 = obj_item_buff_max_ammo;
 buff_5 = obj_item_buff_max_hp;
+buff_6 = obj_item_buff_max_ammo;
 
 weapon_1 = obj_item_weapon_paintball;
 weapon_2 = obj_item_weapon_shotgun;
@@ -38,8 +39,12 @@ created_items = false;
 last_item_created = slot_items_array[0];
 recreated_bought_item = false;
 too_expensive = false;
+sold_out = false;
 cant_move = false;
 
 item_name = "";
 item_description = "";
 item_cost = 0;
+
+
+ii = 0;

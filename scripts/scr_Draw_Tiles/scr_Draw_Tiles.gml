@@ -15,7 +15,6 @@ function scr_Draw_Tiles(xx,yy,tile_size,tileset,object){
 	
 	if (surrounded) {
 		tile_frame = 34;
-		draw_tile(tl_ground,34,0,xx,yy);
 	}
 	
 	//top left

@@ -44,6 +44,9 @@ if keyboard_check_pressed(ord("P")) || keyboard_check_pressed(vk_escape) || game
 		if item_swap = false {
 			pause = false;
 			instance_activate_all();
+			with obj_pausemenu {
+				usable = true;
+			}
 			instance_deactivate_object(obj_pausemenu);
 			instance_deactivate_object(obj_popup_exit);
 			instance_deactivate_object(obj_popup_restart);

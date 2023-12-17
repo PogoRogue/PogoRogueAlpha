@@ -6,7 +6,7 @@ function scr_Buffs(){
 	buff_heart = function() { 
 		with obj_player {
 			if hp < max_hp {
-				obj_player.hp += 8;	
+				hp += 8;	
 			}
 		}
 	}
@@ -25,27 +25,32 @@ function scr_Buffs(){
 	}
 	
 	buff_armor = function(){
-		with obj_player{
-			obj_player.armor_buff += 20;
+		with obj_player {
+			if armor_buff < max_armor_buff {
+				armor_buff += 1;
+			}
 		}
 	}
 	
 	buff_dmg = function(){
-		with obj_player{
-			obj_player.damage_buff += 10;
+		with obj_player {
+			damage_buff += 1;
 		}
 	}
 	
 	buff_max_ammo = function(){
-		with obj_player{
-			obj_player.max_ammo_buff += 1;
+		with obj_player {
+			if max_ammo_buff < max_max_ammo_buff {
+				max_ammo_buff += 1;
+			}
 		}
-		scr_Increment_Max_Ammo();
 	}
 	
 	buff_max_hp = function(){
-		with obj_player{
-			obj_player.max_hp += 5;
+		with obj_player {
+			if max_hp < max_max_hp {
+				max_hp += 8;
+			}
 		}
 	}
 }

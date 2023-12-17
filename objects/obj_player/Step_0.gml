@@ -94,6 +94,15 @@ if state != state_groundpound {
 	slam_trail_distance = 0;
 }
 
+//stop sounds
+if audio_is_playing(snd_jetpack){
+	var not_jetpack_button_1 = !(key_pickup_1 and pickups_array[0] = pickup_jetpack);
+	var not_jetpack_button_2 = !(key_pickup_2 and pickups_array[1] = pickup_jetpack);
+	if not_jetpack_button_1 and not_jetpack_button_2 {
+		audio_stop_sound(snd_jetpack);
+	}
+}	
+
 
 #region //angling
 if (can_rotate) {

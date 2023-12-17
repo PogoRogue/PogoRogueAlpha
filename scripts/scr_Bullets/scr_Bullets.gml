@@ -113,7 +113,7 @@ function scr_Bullets(){
 		grv: obj_player.grv,
 		num_of_bounces: 0,
 		bounce_amount: 1,
-		damage: 5
+		damage: 8
 	};
 	
 	grenade_bullet = {
@@ -151,6 +151,44 @@ function scr_Bullets(){
 		grv: obj_player.grv,
 		num_of_bounces: 0,
 		bounce_amount: 1,
-		damage: 0.12 //per frame
+		damage: 0.18 //per frame
+	};
+	
+	bouncyball_bullet = {
+		sprite: spr_projectile_bouncyball,
+		gui_sprite: spr_projectile_bouncyball_gui,
+		spd: 12,                          
+		firerate_start: 8,               
+		firerate_end: 8,                 
+		firerate_mult: 0,               
+		firerate: 8,                     
+		destroy_on_impact: true,
+		screen_shake: {magnitude: 2, frames: 8},
+		destroy_time: 0,
+		flash_frame: 4,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 3,
+		bounce_amount: 1,
+		damage: 5
+	};
+	
+	missile_bullet = {
+		sprite: spr_projectile_missile,
+		gui_sprite: spr_projectile_missile_gui,
+		spd: 0,                          
+		firerate_start: 0,               
+		firerate_end: 0,                 
+		firerate_mult: 0,               
+		firerate: 0,                     
+		destroy_on_impact: true,
+		screen_shake: {magnitude: 4, frames: 10},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0,
+		bounce_amount: 1,
+		damage: 16
 	};
 }

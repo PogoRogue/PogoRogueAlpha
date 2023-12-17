@@ -12,3 +12,7 @@ if (follow_player = true) {
 		mask_index = sprite_index;
 	}
 }
+
+if show_debug = true {
+	show_debug_message(string(x) + " " +string(y) + " " + string(image_alpha));	
+}

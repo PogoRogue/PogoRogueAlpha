@@ -172,4 +172,23 @@ function scr_Guns(){
 		current_bullets: 5 + obj_player.max_ammo_buff,  
 		max_speed: 7.25
 	};	
+	
+	missile_gun = {
+		_name: "Missile Launcher",  
+		sprite: spr_gun_missile,   
+		ammo: [missile_bullet],
+		inaccuracy: 0,       
+		kick: 2,              
+		sound: snd_grenade,
+		spread_number: 1,    
+		spread_angle: 0,    
+		full_auto: false,     
+		burst_number: 1,     
+		burst_delay: 0,     
+		momentum_added: 1.4, 
+		reset_momentum: true, 
+		bullets_per_bounce: 1 + obj_player.max_ammo_buff,
+		current_bullets: 1 + obj_player.max_ammo_buff,  
+		max_speed: 8
+	};
 }

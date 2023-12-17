@@ -6,6 +6,7 @@ hspd = lengthdir_x(spd,angle);
 vspd = lengthdir_y(spd,angle);
 max_num_of_bounces = num_of_bounces;
 init_damage = damage;
+sound = audio_play_sound(snd_nothing,0,false);
 
 with instance_create_depth(x,y,depth-1,obj_projectile_flash_effect) {
 	image_index = other.flash_frame;
@@ -56,5 +57,16 @@ if (gun_name = "Laser Gun") {
 			mask_index: spr_nothing,
 			rotation_speed: rotation_speed
 		});
+	}
+}
+
+//missile
+if (gun_name = "Missile Launcher") {
+	sound = audio_play_sound(snd_rocketwhoosh,0,false);
+	temp_angle = image_angle;
+	if collision_circle(x,y,256,obj_enemy_parent,false,true) != noone {
+		closest_enemy = instance_nearest(x,y,obj_enemy_parent);
+	}else {
+		closest_enemy = noone;
 	}
 }

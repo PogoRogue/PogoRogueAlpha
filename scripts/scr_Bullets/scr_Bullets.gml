@@ -172,4 +172,23 @@ function scr_Bullets(){
 		bounce_amount: 1,
 		damage: 5
 	};
+	
+	missile_bullet = {
+		sprite: spr_projectile_missile,
+		gui_sprite: spr_projectile_missile_gui,
+		spd: 0,                          
+		firerate_start: 0,               
+		firerate_end: 0,                 
+		firerate_mult: 0,               
+		firerate: 0,                     
+		destroy_on_impact: true,
+		screen_shake: {magnitude: 4, frames: 10},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0,
+		bounce_amount: 1,
+		damage: 16
+	};
 }

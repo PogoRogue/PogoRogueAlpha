@@ -30,6 +30,7 @@ function scr_Pickups(){
 		on_call: function() {
 			if (obj_player.animation_complete) and obj_player.state != obj_player.state_chargejump {
 				obj_player.state = obj_player.state_chargejump;
+				obj_player.rotation_speed = obj_player.rotation_speed * 0.65;
 			}
 		}                  
 	};

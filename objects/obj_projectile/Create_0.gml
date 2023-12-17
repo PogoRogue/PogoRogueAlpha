@@ -5,6 +5,7 @@ angle = image_angle;
 hspd = lengthdir_x(spd,angle);
 vspd = lengthdir_y(spd,angle);
 max_num_of_bounces = num_of_bounces;
+init_damage = damage;
 
 with instance_create_depth(x,y,depth-1,obj_projectile_flash_effect) {
 	image_index = other.flash_frame;

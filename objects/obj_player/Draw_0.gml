@@ -37,6 +37,14 @@ if ground_pound_slam = true {
 	for(i = 5; i > 0; i -= 1) {
 		slam_alpha += 0.2;
         draw_sprite_ext(sprite_index,image_index,x,y-(i*slam_trail_distance),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
+		//draw hat during slam
+		if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun {
+			draw_sprite_ext(spr_player_zekai_hat_falling,image_index,x,y-(i*slam_trail_distance),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
+		}
+		//draw jetpack during slam
+		if pickups_array[0] = pickup_jetpack or pickups_array[1] = pickup_jetpack {
+			draw_sprite_ext(spr_jetpack,0,x,y-(i*slam_trail_distance),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
+		}
     }
 	draw_self();
 }

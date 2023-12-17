@@ -153,4 +153,23 @@ function scr_Bullets(){
 		bounce_amount: 1,
 		damage: 0.18 //per frame
 	};
+	
+	bouncyball_bullet = {
+		sprite: spr_projectile_bouncyball,
+		gui_sprite: spr_projectile_bouncyball_gui,
+		spd: 12,                          
+		firerate_start: 8,               
+		firerate_end: 8,                 
+		firerate_mult: 0,               
+		firerate: 8,                     
+		destroy_on_impact: true,
+		screen_shake: {magnitude: 2, frames: 8},
+		destroy_time: 0,
+		flash_frame: 4,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 3,
+		bounce_amount: 1,
+		damage: 5
+	};
 }

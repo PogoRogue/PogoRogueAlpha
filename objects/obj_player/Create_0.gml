@@ -3,6 +3,7 @@
 grv = 0.21; //gravity
 h_grv = 0.01; //horizontal drag
 rotation_speed = 3; //rotation speed
+original_rotation_speed = rotation_speed;
 current_rotation_speed = 0;
 rotation_delay = rotation_speed / 10; //0.5
 vsp_basicjump = -6.6; //bounce height
@@ -223,7 +224,7 @@ state_bouncing = function() {
 	if (floor(image_index) = sprite_get_number(sprite_index)-1) {
 		animation_complete = true;
 	}else if (animation_complete = false) {
-		image_index += 0.75;
+		image_index += 1;
 	}
 	
 	// Conveyor belt handling
@@ -271,6 +272,10 @@ state_chargejump = function() {
 				chargejump = true;
 			}
 		}
+		rotation_speed = original_rotation_speed;
+		rotation_delay = rotation_speed / 10;
+		angle = round(angle / original_rotation_speed)*original_rotation_speed;
+		current_rotation_speed = 0;
 	}else {
 		if (charge > charge_max) {
 			charge += charge_max/80; //80 = how many frames until max charge
@@ -406,7 +411,7 @@ bullet_index = 0; //current bullet
 
 //EQUIP WEAPONS
 num_of_weapons = 2; //number of different weapons equipped: only do 1 or 2
-all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun]; //all guns
+all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun,bouncyball_gun]; //all guns
 
 if (random_weapon = true) { //choose random weapons
 	randomize();

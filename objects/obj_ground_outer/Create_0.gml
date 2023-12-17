@@ -1,13 +1,6 @@
 /// @description Create tilemap and collision walls
+parent_index = noone;
+created_walls = false;
+tile_frame = 4;
 
-//create 16x16 ground objects to check for collisions and draw tiles 
-for(i = 0; i < image_xscale; i++) {
-	for(j = 0; j < image_yscale; j++) {
-		if(i == 0 || i == (image_xscale - 1.0) || j == 0 || j == (image_yscale - 1.0))
-		instance_create_depth(x+(i*16),y+(j*16),depth-1,obj_ground_tiles_outer);
-	}
-}
-
-
-//create collision walls
-scr_Create_Collision_Walls();
+drawn_tiles = false;

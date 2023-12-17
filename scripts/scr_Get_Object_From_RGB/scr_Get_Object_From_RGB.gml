@@ -24,26 +24,30 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			}
 			else if(Red > 203)
 			{		
-				return obj_enemy_stomp_only;
+				//return obj_enemy_stomp_only;
+				return obj_enemy_stomp_only_moving;
 			}
 			else if(Red > 177)
 			{
-				return obj_enemy_shoot_only;
+				//return obj_enemy_shoot_only;
+				return obj_enemy_shoot_only_jumping;
 			}
 			else if(Red > 150)
 			{
-				return obj_enemy_shooter;
+				//return obj_enemy_shooter;
+				return obj_enemy_shooter_moving;
 			}
 		}
 		else if(Green >= 50)
 		{
 			if(Red > 240)
 			{
-				return obj_enemy_moving
+				return obj_enemy_moving;
 			}
 			else if(Red > 220)
 			{
-				return obj_enemy_explode
+				//return obj_enemy_explode;
+				return obj_enemy_explode_walking;
 			}
 			else if(Red > 200)
 			{
@@ -53,15 +57,31 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			{
 				return obj_enemy_turret;
 			}
+			else if(Red > 160)
+			{
+				return obj_enemy_turret_mobile;
+			}
 			else if(Red > 150)
 			{
-				return obj_enemy_jump;
+				return obj_enemy_moving_jumping;
 			}
 		}
 	}
 	else if(Green > 150) //These are items!
 	{
-
+		if(Green == 255)
+		{
+			return obj_chest;
+		}
+		else if(Green > 228)
+		{
+			return obj_shop_door;
+		}
+		else if(Green > 200)
+		{
+			return obj_boss_door;
+		}
+		
 	}
 	else if(Blue > 150) //These are environmental hazards!
 	{
@@ -73,13 +93,22 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_env_fan;
 		}
+		else if(Blue > 220 && Green == 75)
+		{
+			return obj_temp_platform_off_on;
+		}
+		else if(Blue > 220 && Green == 0)
+		{
+			return obj_temp_platform_on_off;
+		}
 		else if(Blue > 200)
 		{
 			return obj_conveyor_belt;
 		}
 		else if(Blue > 170)
 		{
-			return obj_electric_floor;
+			//return obj_electric_floor;
+			return obj_electric_current;
 		}
 		
 	}
@@ -89,9 +118,17 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_ground_outer;
 		}
-		else if(Red > 10)
+		else if(Red > 140)
 		{
 			return obj_ground_oneway;
+		}
+		else if(Red == Green == Blue == 75)
+		{
+			return obj_angled_platform_left;
+		}
+		else if(Red == Green == Blue == 50)
+		{
+			return obj_angled_platform_right;
 		}
 	}
 	

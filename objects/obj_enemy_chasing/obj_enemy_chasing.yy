@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Enemy",
-    "path": "folders/Objects/Enemy.yy",
+    "name": "Boss Sphere",
+    "path": "folders/Objects/Enemy/Boss Sphere.yy",
   },
   "parentObjectId": {
     "name": "obj_enemy_generic",

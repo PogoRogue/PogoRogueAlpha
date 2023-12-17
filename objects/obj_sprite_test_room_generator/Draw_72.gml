@@ -1,9 +1,7 @@
-
-if(gen_next_block = true)
+if(room_started == false)
 {
 	scr_Convert_Layout_To_Test_Room(layout_grid);
-	gen_next_block = false;
+	room_started = true;
 }
-
 
 

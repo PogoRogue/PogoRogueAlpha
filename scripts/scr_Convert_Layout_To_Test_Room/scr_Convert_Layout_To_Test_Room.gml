@@ -37,6 +37,10 @@ function scr_Convert_Layout_To_Test_Room(layout_grid){
 								var player = instance_nearest(x,y,obj_player);
 								player.x = x_offset + block_room_size/2;
 								player.y = y_offset + block_room_size/2;
+								with obj_camera {
+									x = player.x;
+									y = player.y - 32;
+								}
 							}
 							else
 							{

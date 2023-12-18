@@ -195,7 +195,7 @@ state_free = function() {
 	}
 	
 	//restart room if reached the top unless procgen room
-	if room != room_proc_gen_test {
+	if room != room_proc_gen_test && room != room_sprite_level_test {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
 			instance_deactivate_all(false);
 			room_restart();
@@ -476,6 +476,6 @@ if (num_of_pickups = 1) {
 scr_Buffs();
 
 //create text in proc gen room
-if room = room_proc_gen_test {
+if room = room_proc_gen_test || room = room_sprite_level_test {
 	alarm[2] = 10;
 }

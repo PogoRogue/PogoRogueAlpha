@@ -1,4 +1,4 @@
-if room = room_proc_gen_test {
+if room = room_proc_gen_test || room_sprite_level_test {
 	text = "Procedural Generation Test\n(Still very early stages)";
 }
 if room = room_sam_movement {

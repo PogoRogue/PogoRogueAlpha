@@ -69,7 +69,7 @@ if (instance_exists(follow)) {
 	}
 	
 	//center in room (unless proc gen level)
-	if (room != room_proc_gen_test) {
+	if (room != room_proc_gen_test && room != room_sprite_level_test) {
 		x = clamp(x,view_w_half+buff,room_width - view_w_half-buff);
 		y = clamp(y,view_h_half+buff,room_height - view_h_half-buff);
 	}

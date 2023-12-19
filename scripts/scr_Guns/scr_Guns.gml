@@ -16,7 +16,9 @@ function scr_Guns(){
 		momentum_added: 1,    //0.9, percentage of vsp_basicjump to apply for each bullet, 1 = 100%
 		reset_momentum: true, //reset player speed to 0 for each bullet (false), or just add to current speed (false)
 		bullets_per_bounce: 4 + obj_player.max_ammo_buff,//Number of bullets per clip
+		init_bullets_per_bounce: 4, //Initial number of bullets per clip (no ammo buff)
 		current_bullets: 4 + obj_player.max_ammo_buff,   //current number of bullets left
+		max_added_bullets: 5, //max number of bullets that can be added from the ammo powerup
 		max_speed: -vsp_basicjump //player cant move faster than this if full_auto = true
 	};
 	
@@ -35,7 +37,9 @@ function scr_Guns(){
 		momentum_added: 0,
 		reset_momentum: false,
 		bullets_per_bounce: 1,
+		init_bullets_per_bounce: 1,
 		current_bullets: 1,
+		max_added_bullets: 0,
 		max_speed: -vsp_basicjump
 	};
 
@@ -55,7 +59,9 @@ function scr_Guns(){
 		momentum_added: 0.4,  
 		reset_momentum: false, 
 		bullets_per_bounce: 10 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 10,
 		current_bullets: 10 + obj_player.max_ammo_buff,   
+		max_added_bullets: 5,
 		max_speed: -vsp_basicjump           
 	};
 
@@ -74,7 +80,9 @@ function scr_Guns(){
 		momentum_added: 1.25, 
 		reset_momentum: true, 
 		bullets_per_bounce: 2 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 2,
 		current_bullets: 2 + obj_player.max_ammo_buff,  
+		max_added_bullets: 3,
 		max_speed: -vsp_basicjump          
 	};
 
@@ -93,7 +101,9 @@ function scr_Guns(){
 		momentum_added: 0.2, 
 		reset_momentum: false, 
 		bullets_per_bounce: 25 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 25,
 		current_bullets: 25 + obj_player.max_ammo_buff,  
+		max_added_bullets: 5,
 		max_speed: 8
 	};
 
@@ -112,7 +122,9 @@ function scr_Guns(){
 		momentum_added: 1, 
 		reset_momentum: false, 
 		bullets_per_bounce: 9 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 9,
 		current_bullets: 9 + obj_player.max_ammo_buff,  
+		max_added_bullets: 5,
 		max_speed: -vsp_basicjump
 	};	
 	
@@ -131,7 +143,9 @@ function scr_Guns(){
 		momentum_added: 0.9, 
 		reset_momentum: true, 
 		bullets_per_bounce: 3 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 3,
 		current_bullets: 3 + obj_player.max_ammo_buff,  
+		max_added_bullets: 3,
 		max_speed: -vsp_basicjump*0.9
 	};	
 	
@@ -150,7 +164,9 @@ function scr_Guns(){
 		momentum_added: 0.075, 
 		reset_momentum: false, 
 		bullets_per_bounce: 100 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 100,
 		current_bullets: 100 + obj_player.max_ammo_buff,  
+		max_added_bullets: 5,
 		max_speed: -vsp_basicjump
 	};	
 	
@@ -169,7 +185,9 @@ function scr_Guns(){
 		momentum_added: 1, 
 		reset_momentum: false, 
 		bullets_per_bounce: 5 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 5,
 		current_bullets: 5 + obj_player.max_ammo_buff,  
+		max_added_bullets: 5,
 		max_speed: 7.25
 	};	
 	
@@ -188,7 +206,30 @@ function scr_Guns(){
 		momentum_added: 1.4, 
 		reset_momentum: true, 
 		bullets_per_bounce: 1 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 1,
 		current_bullets: 1 + obj_player.max_ammo_buff,  
+		max_added_bullets: 1,
+		max_speed: 8
+	};
+	
+	boomerang_gun = {
+		_name: "Boomerangs",  
+		sprite: spr_gun_boomerang,   
+		ammo: [boomerang_bullet],
+		inaccuracy: 0,       
+		kick: 2,              
+		sound: snd_grenade,
+		spread_number: 1,    
+		spread_angle: 0,    
+		full_auto: false,     
+		burst_number: 1,     
+		burst_delay: 0,     
+		momentum_added: 1.2, 
+		reset_momentum: true, 
+		bullets_per_bounce: 2 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 2,
+		current_bullets: 2 + obj_player.max_ammo_buff,  
+		max_added_bullets: 1,
 		max_speed: 8
 	};
 }

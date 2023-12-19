@@ -7,6 +7,7 @@ vspd = lengthdir_y(spd,angle);
 max_num_of_bounces = num_of_bounces;
 init_damage = damage;
 sound = audio_play_sound(snd_nothing,0,false);
+colliding_with_enemy = false;
 
 with instance_create_depth(x,y,depth-1,obj_projectile_flash_effect) {
 	image_index = other.flash_frame;

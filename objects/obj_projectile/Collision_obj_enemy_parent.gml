@@ -10,3 +10,5 @@ if(!other.is_dead && other.current_iframes <= 0) {
 if (destroy_on_impact) or (gun_name = "Missile Launcher") {
 	instance_destroy();
 }
+
+colliding_with_enemy = true;

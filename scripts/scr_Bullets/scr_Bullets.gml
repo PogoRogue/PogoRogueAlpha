@@ -170,7 +170,7 @@ function scr_Bullets(){
 		grv: obj_player.grv,
 		num_of_bounces: 3,
 		bounce_amount: 1,
-		damage: 5
+		damage: 7
 	};
 	
 	missile_bullet = {
@@ -190,5 +190,24 @@ function scr_Bullets(){
 		num_of_bounces: 0,
 		bounce_amount: 1,
 		damage: 16
+	};
+	
+	boomerang_bullet = {
+		sprite: spr_projectile_boomerang,
+		gui_sprite: spr_projectile_boomerang_gui,
+		spd: 8,                          
+		firerate_start: 0,               
+		firerate_end: 0,                 
+		firerate_mult: 0,               
+		firerate: 0,                     
+		destroy_on_impact: false,
+		screen_shake: {magnitude: 3, frames: 8},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0,
+		bounce_amount: 1,
+		damage: 8
 	};
 }

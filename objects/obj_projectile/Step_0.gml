@@ -8,6 +8,7 @@ if instance_exists(obj_camera) {
 	var padding = 128;
 
 	if !(point_in_rectangle(x,y,obj_camera.x-camera_width-padding,obj_camera.y-camera_height-padding,obj_camera.x+camera_width+padding,obj_camera.y+camera_height+padding)) {
+		damage = 0;
 	}else {
 		damage = init_damage;
 		//damage buff for bouncy ball gun 
@@ -115,5 +116,42 @@ if (gun_name = "Missile Launcher") {
 		if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 {
 			instance_destroy();	
 		}
+	}
+}
+
+if (gun_name = "Boomerangs") {
+	hspd = 0;
+	vspd = 0;
+	image_angle += 20;
+	if spd > 0 {
+		spd -= 0.25;
+		speed = spd;
+		direction = angle;
+		if spd <= 0 {
+			colliding_with_enemy = false;
+		}
+	}else {
+		speed = 0;
+		spd -= 0.25;
+		move_towards_point(obj_player.x,obj_player.y,abs(spd));
+		//collision with player
+		if place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask) {
+			instance_destroy();
+			audio_play_sound(snd_reload,0,false);
+			with obj_player {
+				if gun.current_bullets < gun.bullets_per_bounce+obj_player.max_ammo_buff {
+					gun.current_bullets += 1;
+				}
+			}
+		}
+	}
+	//damage enemy only once each direction
+	if colliding_with_enemy = true {
+		damage = 0;
+		if !place_meeting(x,y,obj_enemy_parent) {
+			colliding_with_enemy = false;
+		}
+	}else {
+		damage = init_damage;	
 	}
 }

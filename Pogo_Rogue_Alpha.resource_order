@@ -12,6 +12,7 @@
     {"name":"spr_gun_boomerang_bouncy","order":11,"path":"sprites/spr_gun_boomerang_bouncy/spr_gun_boomerang_bouncy.yy",},
     {"name":"spr_projectile_boomerang_gui","order":3,"path":"sprites/spr_projectile_boomerang_gui/spr_projectile_boomerang_gui.yy",},
     {"name":"obj_item_pickup_slowmo","order":1,"path":"objects/obj_item_pickup_slowmo/obj_item_pickup_slowmo.yy",},
+    {"name":"obj_item_pickup_bulletblast","order":2,"path":"objects/obj_item_pickup_bulletblast/obj_item_pickup_bulletblast.yy",},
     {"name":"spr_projectile_boomerang_bouncy_gui","order":4,"path":"sprites/spr_projectile_boomerang_bouncy_gui/spr_projectile_boomerang_bouncy_gui.yy",},
     {"name":"obj_item_weapon_boomerang","order":1,"path":"objects/obj_item_weapon_boomerang/obj_item_weapon_boomerang.yy",},
     {"name":"spr_gun_grenade","order":5,"path":"sprites/spr_gun_grenade/spr_gun_grenade.yy",},
@@ -19,8 +20,10 @@
     {"name":"spr_gun_paintball","order":3,"path":"sprites/spr_gun_paintball/spr_gun_paintball.yy",},
     {"name":"spr_gun_bouncyball","order":2,"path":"sprites/spr_gun_bouncyball/spr_gun_bouncyball.yy",},
     {"name":"obj_slowmo","order":1,"path":"objects/obj_slowmo/obj_slowmo.yy",},
+    {"name":"scr_Player_Collision","order":1,"path":"scripts/scr_Player_Collision/scr_Player_Collision.yy",},
     {"name":"room_sprite_level_test","order":1,"path":"rooms/room_sprite_level_test/room_sprite_level_test.yy",},
     {"name":"spr_projectile_boomerang","order":1,"path":"sprites/spr_projectile_boomerang/spr_projectile_boomerang.yy",},
     {"name":"spr_gun_burstfire","order":1,"path":"sprites/spr_gun_burstfire/spr_gun_burstfire.yy",},
+    {"name":"spr_pickup_bulletblast","order":2,"path":"sprites/spr_pickup_bulletblast/spr_pickup_bulletblast.yy",},
   ],
 }

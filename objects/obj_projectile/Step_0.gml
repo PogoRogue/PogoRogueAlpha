@@ -17,6 +17,11 @@ if instance_exists(obj_camera) {
 			image_index = max_num_of_bounces-num_of_bounces;
 		}
 	}
+	
+	//destroy if far enough away from camera
+	if  !(point_in_rectangle(x,y,obj_camera.x-camera_width-(padding*10),obj_camera.y-camera_height-(padding*10),obj_camera.x+camera_width+(padding*10),obj_camera.y+camera_height+(padding*10))) {
+		instance_destroy();
+	}
 }
 
 //destroy when touching ground

@@ -46,6 +46,8 @@ slam_trail_distance = 0;
 invincible = false;
 max_dash_time = 15;
 dash_time = 15;
+bulletblast_frames = 0;
+bulletblast_frames_max = 60; //how many frames before blasting
 
 //upward flames
 min_flames_speed = 5.6;
@@ -131,50 +133,7 @@ state_free = function() {
 		motion_add(0,h_grv);
 	}
 	
-	//check for collision with one way ground
-	if (place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway)) and vspeed > 0 {
-		while !(place_meeting(x,y+sign(vspeed),obj_ground_oneway)) {
-			y += sign(vspeed);
-		}
-		state = state_bouncing;
-		speed = 0; //stop player movement while bouncing
-	}
-	
-	//check for collision with ground x axis
-	if (place_meeting(x+hspeed,y,obj_ground)) and free = true {
-		while !(place_meeting(x+sign(hspeed),y,obj_ground)) {
-			x += sign(hspeed);
-		}
-		state = state_bouncing;
-		speed = 0; //stop player movement while bouncing
-	}
-	
-	//check for collision with ground y axis
-	if (place_meeting(x,y+vspeed,obj_ground)) and free = true {
-		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
-			y += sign(vspeed);
-		}
-		state = state_bouncing;
-		speed = 0; //stop player movement while bouncing
-	}
-	
-	//check for collision with on off platform	
-	if (place_meeting(x,y+vspeed,obj_temp_platform_on_off) and !place_meeting(x,y-1,obj_temp_platform_on_off)) and vspeed > 0 and platform_on {
-		while !(place_meeting(x,y+sign(vspeed),obj_temp_platform_on_off)) {
-			y += sign(vspeed);
-		}
-		state = state_bouncing;
-		speed = 0; //stop player movement while bouncing
-	}
-	
-	//check for collision with off on platform	
-	if (place_meeting(x,y+vspeed,obj_temp_platform_off_on) and !place_meeting(x,y-1,obj_temp_platform_off_on)) and vspeed > 0 and !platform_on {
-		while !(place_meeting(x,y+sign(vspeed),obj_temp_platform_off_on)) {
-			y += sign(vspeed);
-		}
-		state = state_bouncing;
-		speed = 0; //stop player movement while bouncing
-	}
+	scr_Player_Collision();
 	
 	//make sure player isn't colliding with anything before checking for collisions again
 	if !(place_meeting(x,y,obj_ground)) free = false {
@@ -359,6 +318,44 @@ state_firedash = function() {
 	}
 }
 
+temp_x = 0.5;
+init_x = x;
+state_bulletblast = function() {
+	if bulletblast_frames < bulletblast_frames_max {
+		speed = speed * 0.9;
+		if scr_Animation_Complete() and sprite_index = spr_player_zekai {
+			sprite_index = spr_player_zekai_charging;	
+		}else if sprite_index = spr_player_zekai {
+			image_index += 1;
+			init_x = x;
+		}else {
+			image_index += 0.25;	
+			x += temp_x;
+			if bulletblast_frames % 3 = 0 { //every 3 frames
+				temp_x *= -1.2;
+			}
+		}
+		scr_Player_Collision();
+		if state = state_bouncing { //dont want to cancel powerup after collision
+			state = state_bulletblast;	
+		}
+		bulletblast_frames += 1;
+	}else {
+		old_gun = gun;
+		gun = bulletblast_gun;
+		image_angle += 180;
+		x -= lengthdir_x(21,image_angle+90);
+		y -= lengthdir_y(21,image_angle+90);
+		scr_Shoot();
+		x += lengthdir_x(21,image_angle+90);
+		y += lengthdir_y(21,image_angle+90);
+		image_angle -= 180;
+		gun = old_gun;
+		state = state_free;
+		x = init_x;
+	}
+}
+
 state_shop = function() {
 	angle = 0;	
 	can_rotate = false;
@@ -448,7 +445,7 @@ buff_duration = 60 * 5; // buff duration timer
 scr_Pickups();
 
 num_of_pickups = 2; //number of different pickups equipped: only do 1 or 2
-all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo]; //all pickups
+all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo,pickup_bulletblast]; //all pickups
 
 if (random_pickup = true) { //choose random pickups
 	randomize();

@@ -91,7 +91,7 @@ function scr_Pickups(){
 		max_cooldown_time: 600,
 		cooldown_time: 600,
 		on_cooldown: false,
-		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash],
+		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast],
 		key_held: false,
 		reload_on_bounce: false,
 		max_uses_per_bounce: 0,
@@ -180,7 +180,7 @@ function scr_Pickups(){
 		max_cooldown_time: 1200,
 		cooldown_time: 1200,
 		on_cooldown: false,
-		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash],
+		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast],
 		key_held: false,
 		reload_on_bounce: false,
 		max_uses_per_bounce: 0,
@@ -189,6 +189,30 @@ function scr_Pickups(){
 			if !instance_exists(obj_slowmo) {
 				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth+2,obj_slowmo);
 			}
+		}
+	};
+	
+	pickup_bulletblast = {
+		_name: "Bullet Blast",
+		gui_sprite: spr_pickup_bulletblast,
+		max_cooldown_time: 900,
+		cooldown_time: 900,
+		on_cooldown: false,
+		states_to_call_in: [state_free],
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		on_call: function() {
+			obj_player.can_rotate = false;
+			obj_player.can_shoot = false;
+			obj_player.bulletblast_frames = 0;
+			obj_player.temp_x = 0.5;
+			obj_player.init_x = obj_player.x;
+			obj_player.sprite_index = spr_player_zekai;
+			obj_player.image_index = 0;
+			obj_player.state = obj_player.state_bulletblast;
+			on_cooldown = true;
 		}
 	};
 	

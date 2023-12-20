@@ -91,7 +91,7 @@ function scr_Pickups(){
 		max_cooldown_time: 600,
 		cooldown_time: 600,
 		on_cooldown: false,
-		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_groundpound],
+		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash],
 		key_held: false,
 		reload_on_bounce: false,
 		max_uses_per_bounce: 0,
@@ -172,6 +172,24 @@ function scr_Pickups(){
 			}
 			on_cooldown = true;
 		}                  
+	};
+	
+	pickup_slowmo = {
+		_name: "Slow Mo",
+		gui_sprite: spr_pickup_slowmo,
+		max_cooldown_time: 1200,
+		cooldown_time: 1200,
+		on_cooldown: false,
+		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash],
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		on_call: function() {
+			if !instance_exists(obj_slowmo) {
+				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth+2,obj_slowmo);
+			}
+		}
 	};
 	
 }

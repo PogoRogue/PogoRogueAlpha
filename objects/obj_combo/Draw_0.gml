@@ -4,7 +4,7 @@ draw_set_font(fnt_combo2);
 
 if global.combo > 0 {
 	with obj_player {
-		var distance = 48;
+		var distance = 52;
 		if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun { 
 			distance += 18;
 		}

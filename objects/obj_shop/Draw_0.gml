@@ -5,11 +5,11 @@ var yy = 0;
 
 for(i = 0; i < num_of_slots; i++) {
 	if i % 2 = 0 {
-		xx = 304;
+		xx = 272;
 	}else {
-		xx = 368;
+		xx = 336;
 	}
-	yy = 120 + 64 * floor(i / 2);
+	yy = 104 + 64 * floor(i / 2);
 	
 	if refresh_button = false {
 		draw_sprite(spr_item_slot_shop,i=select-1,xx,yy);
@@ -38,22 +38,29 @@ for(i = 0; i < num_of_slots; i++) {
 	
 	
 }
-draw_sprite(spr_item_slot_refresh,refresh_button + ((global.num_of_coins < refresh_cost)*refresh_button),336,352);
-draw_text(336,352,"Refresh");
-scr_Draw_Text_Outlined(336-5,352+9,refresh_cost,c_white);
-draw_sprite(spr_coin,0,336+6,352+9);
+xx = 304;
+xx2 = 376;
+yy = 104;
+yy2 = 336;
+draw_sprite(spr_item_slot_refresh,refresh_button + (((global.num_of_coins < refresh_cost or refreshes_left <= 0)*refresh_button)),xx,yy2);
+draw_text(xx,yy2,"Refresh");
+if refreshes_left > 0 {
+	scr_Draw_Text_Outlined(xx-5,yy2+9,refresh_cost,c_white);
+	draw_sprite(spr_coin,0,xx+6,yy2+9);
+}
+scr_Draw_Text_Outlined(xx,yy2+20,"Refreshes Left: " + string(refreshes_left),c_white)
 
-draw_sprite(spr_item_slot_name,0,408,120);
-draw_sprite(spr_item_slot_description,0,408,184);
-draw_sprite(spr_item_slot_buy,(select = 0) + (too_expensive and select = 0 or sold_out and select = 0),504,312);
+draw_sprite(spr_item_slot_name,0,xx2,yy);
+draw_sprite(spr_item_slot_description,0,xx2,yy + 64);
+draw_sprite(spr_item_slot_buy,(select = 0) + (too_expensive and select = 0 or sold_out and select = 0),xx2+96,yy + 192);
 
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 draw_set_font(fnt_combo2);
-draw_text(504,120,item_name);
+draw_text(xx2+96,yy,item_name);
 
 draw_set_font(fnt_itemdescription);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top)
-draw_text(424,176,scr_Linebreak(item_description,38,99));
+draw_text(xx2+16,yy + 56,scr_Linebreak(item_description,38,99));
 }

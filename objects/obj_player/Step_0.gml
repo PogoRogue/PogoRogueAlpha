@@ -8,6 +8,9 @@ if (dead = false) {
 
 	key_right_pressed = keyboard_check(vk_right) || keyboard_check(ord("D")) || gamepad_axis_value(0,gp_axislh) > 0.5;
 	key_left_pressed = keyboard_check(vk_left) || keyboard_check(ord("A")) || gamepad_axis_value(0,gp_axislh) < -0.5;
+	
+	key_recenter = keyboard_check(vk_up) || keyboard_check(ord("W")) || gamepad_axis_value(0,gp_axislv) < -0.65;
+	
 	if use_mouse {
 		key_fire_projectile_pressed = mouse_check_button_pressed(mb_left) || gamepad_button_check_pressed(0,gp_shoulderrb);
 		key_fire_projectile_released = mouse_check_button_released(mb_left) || gamepad_button_check_released(0,gp_shoulderrb);
@@ -25,6 +28,7 @@ if (dead = false) {
 	key_fire_projectile = 0;
 	key_right_pressed = 0;
 	key_left_pressed = 0;
+	key_recenter = 0;
 	key_fire_projectile_pressed = 0;
 	key_fire_projectile_released = 0;
 	key_pickup_1 = 0;
@@ -47,28 +51,30 @@ state();
 #region //pickups
 
 //call pickups
-if pickups_array[0].on_cooldown = false and pickups_array[0].reload_on_bounce = false { //cooldown
-	if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
-	or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
-		pickups_array[0].on_call();
+if room != room_shop {
+	if pickups_array[0].on_cooldown = false and pickups_array[0].reload_on_bounce = false { //cooldown
+		if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
+		or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
+			pickups_array[0].on_call();
+		}
+	}else if pickups_array[0].reload_on_bounce = true and pickups_array[0].uses_per_bounce > 0 { //no cooldown
+		if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
+		or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
+			pickups_array[0].on_call();
+		}
 	}
-}else if pickups_array[0].reload_on_bounce = true and pickups_array[0].uses_per_bounce > 0 { //no cooldown
-	if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
-	or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
-		pickups_array[0].on_call();
-	}
-}
 	
-//call pickup 2
-if pickups_array[1].on_cooldown = false and pickups_array[1].reload_on_bounce = false { //cooldown
-	if (key_pickup_2) and scr_In_Array(pickups_array[1].states_to_call_in, state) and pickups_array[1].key_held 
-	or (key_pickup_2_pressed) and scr_In_Array(pickups_array[1].states_to_call_in, state) and !pickups_array[1].key_held {
-		pickups_array[1].on_call();
-	}
-}else if pickups_array[1].reload_on_bounce = true and pickups_array[1].uses_per_bounce > 0 { //no cooldown
-	if (key_pickup_2) and scr_In_Array(pickups_array[1].states_to_call_in, state) and pickups_array[1].key_held 
-	or (key_pickup_2_pressed) and scr_In_Array(pickups_array[1].states_to_call_in, state) and !pickups_array[1].key_held {
-		pickups_array[1].on_call();
+	//call pickup 2
+	if pickups_array[1].on_cooldown = false and pickups_array[1].reload_on_bounce = false { //cooldown
+		if (key_pickup_2) and scr_In_Array(pickups_array[1].states_to_call_in, state) and pickups_array[1].key_held 
+		or (key_pickup_2_pressed) and scr_In_Array(pickups_array[1].states_to_call_in, state) and !pickups_array[1].key_held {
+			pickups_array[1].on_call();
+		}
+	}else if pickups_array[1].reload_on_bounce = true and pickups_array[1].uses_per_bounce > 0 { //no cooldown
+		if (key_pickup_2) and scr_In_Array(pickups_array[1].states_to_call_in, state) and pickups_array[1].key_held 
+		or (key_pickup_2_pressed) and scr_In_Array(pickups_array[1].states_to_call_in, state) and !pickups_array[1].key_held {
+			pickups_array[1].on_call();
+		}
 	}
 }
 
@@ -149,6 +155,28 @@ angle = clamp(angle,-anglemax,anglemax); //cant tilt too far
 
 image_angle = angle;
 #endregion
+
+//recentering
+if key_recenter and centering = false and angle != 0 {
+	centering = true;
+}
+
+if centering = true {
+	can_rotate = false;
+	if angle >= rotation_speed or angle <= -rotation_speed {
+		angle += rotation_speed * -sign(angle);
+	}else {
+		angle = 0;
+		can_rotate = true;
+		centering = false;
+	}
+	
+	//stop if right or left key
+	if key_left or key_right or state = state_bouncing {
+		can_rotate = true;
+		centering = false;
+	}
+}
 
 #region shooting
 

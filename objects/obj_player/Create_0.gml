@@ -22,6 +22,7 @@ conveyor_speed = 0;
 can_rotate = true;
 can_shoot = true;
 platform_on = true;
+centering = false;
 
 //buffs
 damage_buff = 0;
@@ -47,7 +48,7 @@ invincible = false;
 max_dash_time = 15;
 dash_time = 15;
 bulletblast_frames = 0;
-bulletblast_frames_max = 60; //how many frames before blasting
+bulletblast_frames_max = 65; //how many frames before blasting
 
 //upward flames
 min_flames_speed = 5.6;
@@ -279,6 +280,7 @@ state_groundpound = function() {
 		vspeed = slam_speed;
 		can_rotate = true; //allow rotation again
 		vsp_basicjump = -8;
+		stomp_damage = 40;
 		//switch states
 		if place_meeting(x,y+vspeed,obj_ground_parent) or place_meeting(x,y+vspeed,obj_enemy_parent) { 
 			while !(place_meeting(x,y+sign(vspeed),obj_ground_parent)) and !(place_meeting(x,y+sign(vspeed),obj_enemy_parent)) {
@@ -290,6 +292,7 @@ state_groundpound = function() {
 			vspeed = 0;
 			scr_Screen_Shake(6, 15);
 			audio_play_sound(snd_groundpound,0,false);
+			stomp_damage = 8;
 		}
 		
 	}
@@ -340,6 +343,9 @@ state_bulletblast = function() {
 			state = state_bulletblast;	
 		}
 		bulletblast_frames += 1;
+		if bulletblast_frames >= bulletblast_frames_max - 2 {
+			sprite_index = spr_player_zekai_charging_red;	
+		}
 	}else {
 		old_gun = gun;
 		gun = bulletblast_gun;

@@ -91,11 +91,11 @@ if created_items = false {
 	for (i = 0; i < array_length(slot_items_array); i++) {
 		index = i;
 		if i % 2 = 0 {
-			xx = 304;
+			xx = 272;
 		}else {
-			xx = 368;
+			xx = 336;
 		}
-		yy = 120 + 64 * floor(i / 2);
+		yy = 104 + 64 * floor(i / 2);
 		with instance_create_depth(xx,yy,depth-1,slot_items_array[i]) {
 			follow_player = false;
 			index = other.index;
@@ -192,7 +192,7 @@ if key_select {
 				}
 			}
 		}
-	}else if refresh_button = true {
+	}else if refresh_button = true and refreshes_left > 0 {
 		if global.num_of_coins >= refresh_cost {
 			with instance_create_depth(obj_player_mask.x,obj_player_mask.y,obj_player_mask.depth-1,obj_coin_spawner) {
 				num_of_coins = other.refresh_cost;
@@ -204,7 +204,15 @@ if key_select {
 				instance_destroy();
 			}
 			instance_destroy();
-			instance_create_depth(x,y,depth,obj_shop);
+			with instance_create_depth(x,y,depth,obj_shop) {
+				refreshes_left = other.refreshes_left - 1;
+				if other.refresh_cost != 0 {
+					refresh_cost = other.refresh_cost*2;
+				}else {
+					refresh_cost = 25;
+				}
+				first_shop = false;
+			}
 		}
 	}
 }
@@ -212,16 +220,23 @@ if key_select {
 //if item canceled on item swap pop up
 if recreated_bought_item = true {
 	if (select-1) % 2 = 0 {
-		xx = 304;
+		xx = 272;
 	}else {
-		xx = 368;
+		xx = 336;
 	}
-	yy = 120 + 64 * floor((select-1) / 2);
+	yy = 104 + 64 * floor((select-1) / 2);
 	with instance_create_depth(xx,yy,depth-1,last_item_created) {
 		index = other.select-1;
 		follow_player = false;
 	}
 	recreated_bought_item = false;
+}
+
+//picky buyer item
+if global.picky_buyer = true {
+	if refreshes_left = max_refreshes {
+		refresh_cost = 0;
+	}
 }
 
 }

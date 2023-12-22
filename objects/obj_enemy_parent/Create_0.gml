@@ -18,10 +18,10 @@ current_iframes = 0;
 red_frames = 0;
 
 //drop chances
-heart_chance = 10; //percent
-buff_chance = 5; //percent
-pickup_chance = 0; //percent
-weapon_chance = 0; //percent
+heart_chance = 10 + (global.luck/2); //percent
+buff_chance = 5 + (global.luck/2); //percent
+pickup_chance = (global.luck/2); //percent
+weapon_chance = (global.luck/2); //percent
 
 drop_coins = true;
 

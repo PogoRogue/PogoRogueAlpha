@@ -38,4 +38,5 @@ current_iframes = max(current_iframes - 1, 0);
 red_frames = max(red_frames - 1, 0);
 
 // Round HP to nearest integer
-hp = round(hp);
+//Commented this out because it makes the laser act weird
+//hp = round(hp);

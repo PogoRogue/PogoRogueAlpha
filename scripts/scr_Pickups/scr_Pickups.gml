@@ -98,7 +98,7 @@ function scr_Pickups(){
 		uses_per_bounce: 0,
 		on_call: function() {
 			if !instance_exists(obj_shieldbubble) {
-				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth+2,obj_shieldbubble);
+				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-2,obj_shieldbubble);
 			}
 		}
 	};

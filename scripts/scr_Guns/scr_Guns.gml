@@ -187,7 +187,7 @@ function scr_Guns(){
 		init_bullets_per_bounce: 100,
 		current_bullets: 100 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: -vsp_basicjump
+		max_speed: 5.25
 	};	
 	
 	bouncyball_gun = {

@@ -58,4 +58,12 @@ function scr_Buffs(){
 			}
 		}
 	}
+	
+	buff_luck = function(){
+		global.luck += 10;
+	}
+	
+	buff_pickybuyer = function(){
+		global.picky_buyer = true;	
+	}
 }

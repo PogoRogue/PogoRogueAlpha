@@ -13,7 +13,7 @@ with instance_create_depth(x,y,depth-1,obj_projectile_flash_effect) {
 	image_index = other.flash_frame;
 	
 	if (image_index < 4)  {
-		alarm[0] = 4;
+		alarm[0] = 2;
 	}else {
 		alarm[0] = 2;
 	}

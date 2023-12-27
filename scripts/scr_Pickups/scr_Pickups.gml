@@ -2,6 +2,8 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Pickups(){
 	
+	var all_states = [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast];
+	
 	pickup_nothing = {
 		_name: "",                               //item name
 		gui_sprite: spr_pickup_empty,           //pickup gui sprite
@@ -91,7 +93,7 @@ function scr_Pickups(){
 		max_cooldown_time: 600,
 		cooldown_time: 600,
 		on_cooldown: false,
-		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast],
+		states_to_call_in: all_states,
 		key_held: false,
 		reload_on_bounce: false,
 		max_uses_per_bounce: 0,
@@ -180,7 +182,7 @@ function scr_Pickups(){
 		max_cooldown_time: 1200,
 		cooldown_time: 1200,
 		on_cooldown: false,
-		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast],
+		states_to_call_in: all_states,
 		key_held: false,
 		reload_on_bounce: false,
 		max_uses_per_bounce: 0,
@@ -213,6 +215,40 @@ function scr_Pickups(){
 			obj_player.image_index = 0;
 			obj_player.state = obj_player.state_bulletblast;
 			on_cooldown = true;
+		}
+	};
+	
+	pickup_reload = {
+		_name: "Quick Reload",
+		gui_sprite: spr_pickup_reload,
+		max_cooldown_time: 300,
+		cooldown_time: 300,
+		on_cooldown: false,
+		states_to_call_in: all_states,
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		on_call: function() {
+			
+			with obj_player {
+				if gun_1.current_bullets != gun_1.bullets_per_bounce+obj_player.max_ammo_buff and gun_1 != boomerang_gun { //reload bullets
+					//reload sound
+					audio_play_sound(snd_reload,0,false);
+					gun_1.current_bullets = gun_1.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
+					instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
+					other.cooldown_time = other.max_cooldown_time;
+					other.on_cooldown = true;
+				}
+				if gun_2.current_bullets != gun_2.bullets_per_bounce+obj_player.max_ammo_buff and gun_2 != boomerang_gun { //reload bullets
+					//reload sound
+					audio_play_sound(snd_reload,0,false);
+					gun_2.current_bullets = gun_2.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
+					instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
+					other.cooldown_time = other.max_cooldown_time;
+					other.on_cooldown = true;
+				}
+			}
 		}
 	};
 	

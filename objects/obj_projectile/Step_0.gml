@@ -46,10 +46,12 @@ if (gun_name = "Grenade Launcher") {
 if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0) {
 	hspd *= -bounce_amount;
 	num_of_bounces -= 1;
-	image_index = 1;
-	alarm[1] = 3;
 	if (gun_name = "Grenade Launcher") {
 		audio_play_sound(snd_grenade_bounce, 0, false);
+		image_index = 1;
+		alarm[1] = 3;
+	}else {
+		image_angle = point_direction(x,y,x+hspd,y+vspd);
 	}
 }
 
@@ -57,10 +59,12 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0) {
 if ((place_meeting(x+hspd,y,obj_ground)) and hspd < 0 and num_of_bounces > 0) {
 	hspd *= -bounce_amount;
 	num_of_bounces -= 1;
-	image_index = 1;
-	alarm[1] = 5;
 	if (gun_name = "Grenade Launcher") {
 		audio_play_sound(snd_grenade_bounce, 0, false);
+		image_index = 1;
+		alarm[1] = 5;
+	}else {
+		image_angle = point_direction(x,y,x+hspd,y+vspd);	
 	}
 }
 
@@ -68,10 +72,12 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd < 0 and num_of_bounces > 0) {
 if ((place_meeting(x,y+vspd,obj_ground) and vspd < 0) and num_of_bounces > 0) {
 	vspd *= -bounce_amount;
 	num_of_bounces -= 1;
-	image_index = 1;
-	alarm[1] = 5;
 	if (gun_name = "Grenade Launcher") {
 		audio_play_sound(snd_grenade_bounce, 0, false);
+		image_index = 1;
+		alarm[1] = 5;
+	}else {
+		image_angle = point_direction(x,y,x+hspd,y+vspd);
 	}
 }
 
@@ -80,14 +86,16 @@ if (place_meeting(x,y+vspd,obj_ground) and vspd > 0 and num_of_bounces > 0)
 or (place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0 and num_of_bounces > 0) {
 	vspd *= -bounce_amount;
 	num_of_bounces -= 1;
-	image_index = 1;
-	alarm[1] = 5;
 	if (gun_name = "Grenade Launcher") {
 		audio_play_sound(snd_grenade_bounce, 0, false);
+		image_index = 1;
+		alarm[1] = 5;
+	}else {
+		image_angle = point_direction(x,y,x+hspd,y+vspd);
 	}
 }else if ((place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0) and num_of_bounces <= 0 and max_num_of_bounces > 0) 
-or (place_meeting(x,y,obj_player_mask) and gun_name = "Grenade Launcher" and num_of_bounces <= 0) 
-or (place_meeting(x,y,obj_player) and gun_name = "Grenade Launcher" and num_of_bounces <= 0) {
+or (place_meeting(x,y,obj_player_mask) and gun_name = "Grenade Launcher") 
+or (place_meeting(x,y,obj_player) and gun_name = "Grenade Launcher") {
 	instance_destroy();
 }
 
@@ -118,8 +126,22 @@ if (gun_name = "Missile Launcher") {
 		destroy_on_impact = true;
 		direction = image_angle;
 		
-		if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 {
+		if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 and num_of_bounces <= 0 {
 			instance_destroy();	
+		}else if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 {
+			image_angle = point_direction(x,y,x+hspeed,y-vspeed);
+			direction = image_angle;
+			num_of_bounces -= 1;
+		}
+		if place_meeting(x+hspeed,y,obj_ground) and num_of_bounces > 0 {
+			image_angle = point_direction(x,y,x-hspeed,y+vspeed);
+			direction = image_angle;
+			num_of_bounces -= 1;
+		}
+		if place_meeting(x,y+vspeed,obj_ground) and num_of_bounces > 0 {
+			image_angle = point_direction(x,y,x+hspeed,y-vspeed);
+			direction = image_angle;
+			num_of_bounces -= 1;
 		}
 	}
 }

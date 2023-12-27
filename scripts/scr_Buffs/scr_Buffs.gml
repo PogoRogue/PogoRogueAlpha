@@ -66,4 +66,12 @@ function scr_Buffs(){
 	buff_pickybuyer = function(){
 		global.picky_buyer = true;	
 	}
+	
+	buff_bouncybullets = function() {
+		global.bouncy_bullets = 1;	
+	}
+	
+	buff_hotshells = function(){
+		global.hot_shells = true;	
+	}
 }

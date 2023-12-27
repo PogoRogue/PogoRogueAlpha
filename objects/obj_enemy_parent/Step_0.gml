@@ -21,9 +21,9 @@ if(is_dead) {
 	if drop_coins = true {
 		with instance_create_depth(center_x,center_y,depth-1,obj_coin_spawner) {
 			if global.combo < global.combo_max_coins {
-				num_of_coins = global.combo + 4;
+				num_of_coins = global.combo;
 			}else {
-				num_of_coins = global.combo_max_coins + 4;
+				num_of_coins = global.combo_max_coins;
 			}
 		}
 	}

@@ -5,10 +5,12 @@ function scr_Pickups(){
 	var all_states = [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast];
 	
 	pickup_nothing = {
-		_name: "",                               //item name
+		_name: "",                              //item name
+		tagline: "",                            //item tagline (short description)
 		gui_sprite: spr_pickup_empty,           //pickup gui sprite
 		max_cooldown_time: 0,                   //reset cooldown time to this value on every use
 		cooldown_time: 0,                       //actual cooldown value that decreases over time when used
+		cooldown_text: "",                      //text description that shows how cooldowns work for this item
 		on_cooldown: false,                     //is this pickup currently on cooldown
 		states_to_call_in: [state_free],        //when this ability can be activated
 		key_held: false,                        //do you need to hold the key to call this ability (true) or just press it (false)
@@ -20,9 +22,11 @@ function scr_Pickups(){
 	
 	pickup_chargejump = {
 		_name: "Charge Jump",
+		tagline: "Hold while bouncing to launch yourself to great heights.",
 		gui_sprite: spr_pickup_chargejump,
 		max_cooldown_time: 300,
 		cooldown_time: 300,
+		cooldown_text: "Cooldown: " + string(300 / 60) + "s" + " / kill",
 		on_cooldown: false,
 		states_to_call_in: [state_bouncing],
 		key_held: true,
@@ -39,9 +43,11 @@ function scr_Pickups(){
 	
 	pickup_groundpound = {
 		_name: "Ground Pound",
+		tagline: "Slam to the ground with massive power.",
 		gui_sprite: spr_pickup_groundpound,
 		max_cooldown_time: 180,
 		cooldown_time: 180,
+		cooldown_text: "Cooldown: " + string(180 / 60) + "s" + " / kill",
 		on_cooldown: false,
 		states_to_call_in: [state_free],
 		key_held: false,
@@ -58,9 +64,11 @@ function scr_Pickups(){
 	
 	pickup_hatgun = {
 		_name: "Hat Gun",
+		tagline: "Shoot 3 bullets from your head per bounce.",
 		gui_sprite: spr_pickup_hatgun,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
+		cooldown_text: "Cooldown: On bounce" + " / kill",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_bouncing,state_chargejump],
 		key_held: false,
@@ -89,9 +97,11 @@ function scr_Pickups(){
 	
 	pickup_shieldbubble = {
 		_name: "Shield Bubble",
+		tagline: "Creates a shield around the player. Lasts for 5s or until it is destroyed.",
 		gui_sprite: spr_pickup_shieldbubble,
 		max_cooldown_time: 600,
 		cooldown_time: 600,
+		cooldown_text: "Cooldown: " + string(600 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -107,9 +117,11 @@ function scr_Pickups(){
 	
 	pickup_firedash = {
 		_name: "Fire Dash",
+		tagline: "Turn into a fireball and dash upwards. Cooldown resets for every dash kill you get.",
 		gui_sprite: spr_pickup_firedash,
 		max_cooldown_time: 300,
 		cooldown_time: 300,
+		cooldown_text: "Cooldown: " + string(300 / 60) + "s" + " / kill",
 		on_cooldown: false,
 		states_to_call_in: [state_free],
 		key_held: false,
@@ -126,9 +138,11 @@ function scr_Pickups(){
 	
 	pickup_jetpack = {
 		_name: "Jetpack",
+		tagline: "A jetpack that gives you additional momentum when used.",
 		gui_sprite: spr_pickup_jetpack,
 		max_cooldown_time: 60,
 		cooldown_time: 60,
+		cooldown_text: "Cooldown: On bounce",
 		on_cooldown: false,
 		states_to_call_in: [state_free],
 		key_held: true,
@@ -177,10 +191,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_slowmo = {
-		_name: "Slow Mo",
+		_name: "Magic Stopwatch",
+		tagline: "Slows down time temporarily.",
 		gui_sprite: spr_pickup_slowmo,
 		max_cooldown_time: 1200,
 		cooldown_time: 1200,
+		cooldown_text: "Cooldown: " + string(1200 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -196,9 +212,11 @@ function scr_Pickups(){
 	
 	pickup_bulletblast = {
 		_name: "Bullet Blast",
+		tagline: "Creates a massive blast of bullets in all directions.",
 		gui_sprite: spr_pickup_bulletblast,
 		max_cooldown_time: 900,
 		cooldown_time: 900,
+		cooldown_text: "Cooldown: " + string(900 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: [state_free],
 		key_held: false,
@@ -220,9 +238,11 @@ function scr_Pickups(){
 	
 	pickup_reload = {
 		_name: "Quick Reload",
+		tagline: "Automatically reloads both of your weapons.",
 		gui_sprite: spr_pickup_reload,
 		max_cooldown_time: 300,
 		cooldown_time: 300,
+		cooldown_text: "Cooldown: " + string(300 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,

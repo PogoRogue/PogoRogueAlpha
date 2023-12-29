@@ -1,7 +1,7 @@
 follow_player = true;
 weapon = obj_player.laser_gun;
 item_name = "Laser Gun";
-item_tagline = "A massive, powerful laser that can cut through walls."; //add to description
+item_tagline = weapon.tagline; //add to description
 
 scr_Weapon_Stats();
 

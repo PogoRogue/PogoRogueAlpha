@@ -8,3 +8,14 @@ select_y_max = 4; //number of rows
 
 selected_x = false;
 selected_y = false;
+
+instance_activate_object(obj_player);
+with obj_player {
+	//weapons
+	other.gun_1 = gun_1;
+	other.gun_2 = gun_2;
+	//pickups
+	other.pickup_1 = pickup_1;
+	other.pickup_2 = pickup_2;
+}
+instance_deactivate_object(obj_player);

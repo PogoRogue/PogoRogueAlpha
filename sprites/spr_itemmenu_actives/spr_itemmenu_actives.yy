@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_itemmenu_actives",
-  "bbox_bottom": 23,
+  "bbox_bottom": 27,
   "bbox_left": 0,
-  "bbox_right": 86,
+  "bbox_right": 90,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -19,7 +19,7 @@
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 24,
+  "height": 28,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"88ceedc8-3b7c-4f5f-9e2b-a1b8a7a11243","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":true,},
@@ -64,8 +64,8 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 43,
-    "yorigin": 12,
+    "xorigin": 45,
+    "yorigin": 14,
   },
   "swatchColours": [
     4278190335,
@@ -154,5 +154,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 87,
+  "width": 91,
 }

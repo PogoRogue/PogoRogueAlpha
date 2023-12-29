@@ -174,7 +174,7 @@ if (gun_name = "Boomerangs") {
 	}
 	//damage enemy only once each direction
 	if colliding_with_enemy = true {
-		damage = 0 - obj_player.damage_buff;
+		damage = 0 - global.damage_buff;
 		if !place_meeting(x,y,obj_enemy_parent) {
 			colliding_with_enemy = false;
 		}

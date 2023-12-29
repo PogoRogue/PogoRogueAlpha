@@ -32,12 +32,12 @@ if key_select {
 		instance_create_depth(x,y,depth+1,obj_items);
 	}else if select = 3 {
 		usable = false;
-		instance_create_depth(x,y,depth-1,obj_popup_restart);
+		instance_create_depth(x,y,depth+1,obj_popup_restart);
 	}else if select = 4 {
 		//implement later
 	}else if select = 5 {
 		usable = false;
-		instance_create_depth(x,y,depth-1,obj_popup_exit);
+		instance_create_depth(x,y,depth+1,obj_popup_exit);
 	}
 }
 

@@ -33,9 +33,7 @@ function scr_Buffs(){
 	}
 	
 	buff_dmg = function(){
-		with obj_player {
-			damage_buff += 1;
-		}
+		global.damage_buff += 1;
 	}
 	
 	buff_max_ammo = function(){

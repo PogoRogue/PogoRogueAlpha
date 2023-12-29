@@ -31,6 +31,7 @@ global.all_buff_names = []; //names of each buff currently equipped
 global.all_buff_descriptions = []; //descriptions of each buff currently equipped
 global.all_buff_stats = []; //stats (mainly stackability) of each buff currently equipped
 
+global.damage_buff = 0;
 global.luck = 0;
 global.picky_buyer = false;
 global.bouncy_bullets = 0;

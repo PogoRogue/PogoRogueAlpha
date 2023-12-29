@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_itemmenu_passive_slot",
-  "bbox_bottom": 91,
+  "bbox_bottom": 103,
   "bbox_left": 0,
-  "bbox_right": 111,
+  "bbox_right": 127,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -17,7 +17,7 @@
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 92,
+  "height": 104,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"56a20aa5-19db-4ca2-81ea-72e1bab102d8","blendMode":0,"displayName":"Layer 3","isLocked":false,"opacity":100.0,"visible":false,},
@@ -26,7 +26,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"f10b2ead-f3d9-4df9-8715-886ef26974b5","blendMode":0,"displayName":"Layer 2","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 9,
+  "origin": 4,
   "parent": {
     "name": "UI",
     "path": "folders/Sprites/UI.yy",
@@ -62,8 +62,8 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 56,
-    "yorigin": 44,
+    "xorigin": 64,
+    "yorigin": 52,
   },
   "swatchColours": [
     4278190335,
@@ -152,5 +152,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 112,
+  "width": 128,
 }

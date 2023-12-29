@@ -3,6 +3,7 @@
 function scr_Guns(){
 	default_gun = {
 		_name: "Pistol",  //name of gun
+		tagline: "The starting weapon.", //short description of weapon
 		sprite: spr_gun_default,   //gun sprite
 		ammo: [default_bullet],//array of ammo
 		inaccuracy: 0,        //random bullet angle inaccuracy
@@ -66,6 +67,7 @@ function scr_Guns(){
 
 	paintball_gun = {
 		_name: "Paintball Gun",  
+		tagline: "Fires colorful paintballs at a high speed.",
 		sprite: spr_gun_paintball,   
 		ammo: [paintball_bullet],     
 		inaccuracy: 5,     
@@ -87,6 +89,7 @@ function scr_Guns(){
 
 	shotgun_gun = {
 		_name: "Shotgun",  
+		tagline: "Powerful, short-range blast spread.",
 		sprite: spr_gun_shotgun,  
 		ammo: [shotgun_bullet],
 		inaccuracy: 0,       
@@ -108,6 +111,7 @@ function scr_Guns(){
 
 	bubble_gun = {
 		_name: "Bubble Gun",  
+		tagline: "Extremely fast, high-control bubble shooter.",
 		sprite: spr_gun_bubble,   
 		ammo: [bubble_bullet],
 		inaccuracy: 35,       
@@ -129,6 +133,7 @@ function scr_Guns(){
 
 	burstfire_gun = {
 		_name: "Burst Fire Gun",  
+		tagline: "Fire quick bursts of 3 bullets.",
 		sprite: spr_gun_burstfire,   
 		ammo: [burstfire_bullet],
 		inaccuracy: 10,       
@@ -150,6 +155,7 @@ function scr_Guns(){
 	
 	grenade_gun = {
 		_name: "Grenade Launcher",  
+		tagline: "Fire grenades that explode after one bounce.",
 		sprite: spr_gun_grenade,   
 		ammo: [grenade_bullet],
 		inaccuracy: 0,       
@@ -171,6 +177,7 @@ function scr_Guns(){
 	
 	laser_gun = {
 		_name: "Laser Gun",  
+		tagline: "A massive, powerful laser that can cut through walls.",
 		sprite: spr_gun_laser,   
 		ammo: [laser_bullet],
 		inaccuracy: 0,       
@@ -186,12 +193,13 @@ function scr_Guns(){
 		bullets_per_bounce: 100 + obj_player.max_ammo_buff,
 		init_bullets_per_bounce: 100,
 		current_bullets: 100 + obj_player.max_ammo_buff,  
-		max_added_bullets: 5,
+		max_added_bullets: 0,
 		max_speed: 5.25
 	};	
 	
 	bouncyball_gun = {
 		_name: "Bouncy Ball Blaster",  
+		tagline: "Fire bouncy balls that bounce off of walls up to 3 times, doubling in damage after each bounce.",
 		sprite: spr_gun_bouncyball,   
 		ammo: [bouncyball_bullet],
 		inaccuracy: 0,       
@@ -213,6 +221,7 @@ function scr_Guns(){
 	
 	missile_gun = {
 		_name: "Missile Launcher",  
+		tagline: "Fire a heat seeking missile that locks onto nearby enemies.",
 		sprite: spr_gun_missile,   
 		ammo: [missile_bullet],
 		inaccuracy: 0,       
@@ -234,6 +243,7 @@ function scr_Guns(){
 	
 	boomerang_gun = {
 		_name: "Boomerangs",  
+		tagline: "Don't worry, they always come back.",
 		sprite: spr_gun_boomerang,   
 		ammo: [boomerang_bullet],
 		inaccuracy: 0,       

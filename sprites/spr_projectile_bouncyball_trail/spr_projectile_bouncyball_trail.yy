@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_projectile_bouncyball_trail",
-  "bbox_bottom": 19,
+  "bbox_bottom": 20,
   "bbox_left": 0,
-  "bbox_right": 19,
+  "bbox_right": 20,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 4,
@@ -13,7 +13,7 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f6322e28-37e1-4e3d-902a-c76db9b6189a",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d292f4b3-40e5-42c6-96d9-e0448c6ba6ce",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"16a28dcb-a793-4434-a25f-5bbb037dd3dc",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"29fb3d07-9ce6-435d-ad98-99043f2762c9",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a9c50f9e-a39e-4eb6-a53b-da7442d47c3d",},
@@ -26,7 +26,7 @@
   ],
   "gridX": 8,
   "gridY": 8,
-  "height": 20,
+  "height": 22,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e55f6c95-1a84-4ff6-a4f9-a7b4ddbfbf1c","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
@@ -63,7 +63,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f6322e28-37e1-4e3d-902a-c76db9b6189a","path":"sprites/spr_projectile_bouncyball_trail/spr_projectile_bouncyball_trail.yy",},},},"Disabled":false,"id":"ff5679ce-2112-49a9-862c-b03000760e04","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d292f4b3-40e5-42c6-96d9-e0448c6ba6ce","path":"sprites/spr_projectile_bouncyball_trail/spr_projectile_bouncyball_trail.yy",},},},"Disabled":false,"id":"fd5635bd-53e9-4150-9040-4746cbd22eb8","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"16a28dcb-a793-4434-a25f-5bbb037dd3dc","path":"sprites/spr_projectile_bouncyball_trail/spr_projectile_bouncyball_trail.yy",},},},"Disabled":false,"id":"c440992c-0a69-414a-abf7-69789984630b","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"29fb3d07-9ce6-435d-ad98-99043f2762c9","path":"sprites/spr_projectile_bouncyball_trail/spr_projectile_bouncyball_trail.yy",},},},"Disabled":false,"id":"f3020ac2-7de5-4ddb-86ad-a620e064e0ce","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a9c50f9e-a39e-4eb6-a53b-da7442d47c3d","path":"sprites/spr_projectile_bouncyball_trail/spr_projectile_bouncyball_trail.yy",},},},"Disabled":false,"id":"54720771-0824-4fc3-81e7-5120008455cc","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
@@ -77,8 +77,8 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 10,
-    "yorigin": 10,
+    "xorigin": 11,
+    "yorigin": 11,
   },
   "swatchColours": [
     4278190335,
@@ -167,5 +167,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 20,
+  "width": 22,
 }

@@ -28,7 +28,8 @@ if key_select {
 			paused_outside = true;
 		}
 	}else if select = 2 {
-		//implement later
+		usable = false;
+		instance_create_depth(x,y,depth+1,obj_items);
 	}else if select = 3 {
 		usable = false;
 		instance_create_depth(x,y,depth-1,obj_popup_restart);

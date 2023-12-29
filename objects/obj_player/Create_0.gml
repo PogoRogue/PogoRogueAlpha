@@ -14,8 +14,8 @@ bounce_sound = true; //alternating pitch
 shop_bouncing = false; //only use this var in the shop
 animation_complete = false; //bounce animation before jumping
 use_mouse = false; //use mouse to control instead of WASD/Arrow keys?
-mouse_sensitivity = 150; //the lower the value, the more sensitive the player is to mouse movement and vice versa
-mouse_reanglespeed = 4; //the lower the value, the faster the player will reangle itself and vice versa
+mouse_sensitivity = 200; //the lower the value, the more sensitive the player is to mouse movement and vice versa
+mouse_reanglespeed = 6; //the lower the value, the faster the player will reangle itself and vice versa
 invert = false;
 free = true; //pogo not colliding with wall, this variable ensures the player doesn't get stuck in walls
 conveyor_speed = 0;
@@ -30,9 +30,6 @@ max_ammo_buff = 0;
 max_max_ammo_buff = 5; //max amount this buff can be received
 laser_sight = false;
 planetary_bullets = 0;
-all_buff_sprites = []; //buffs equipped in side bar
-all_buff_sprites_index = []; //image index of each buff sprite
-all_buff_numbers = []; //how many of each buff you have
 
 //pickups
 charge = 0;

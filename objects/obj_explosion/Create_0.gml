@@ -7,3 +7,4 @@
 event_inherited();
 damage = 8;
 alarm_set(1, room_speed);
+launched = false;

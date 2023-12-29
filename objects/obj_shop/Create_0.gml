@@ -4,7 +4,7 @@ shop_index = global.shop_index;
 if instance_number(obj_shop) > 1 {
 	instance_destroy();
 }else {
-	global.shop_index += 1;	
+	global.shop_index += 1;
 }
 
 global.player_spawn_x = obj_shop_door.x;

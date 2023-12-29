@@ -34,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_projectile_explosion",
-    "path": "sprites/spr_projectile_explosion/spr_projectile_explosion.yy",
+    "name": "spr_enemy_explosion",
+    "path": "sprites/spr_enemy_explosion/spr_enemy_explosion.yy",
   },
   "spriteMaskId": null,
   "visible": true,

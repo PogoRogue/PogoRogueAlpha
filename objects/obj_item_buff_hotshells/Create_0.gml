@@ -1,7 +1,8 @@
 follow_player = true;
 buff = obj_player.buff_hotshells;
 item_name = "Hot Shells";
-item_description = "Bullet casings hurt enemies on contact.";
+item_tagline = "Bullet casings hurt enemies on contact.";
+item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 10;
 max_uses = 1;

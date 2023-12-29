@@ -24,7 +24,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e55f6c95-1a84-4ff6-a4f9-a7b4ddbfbf1c","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 5,
+  "origin": 2,
   "parent": {
     "name": "Projectiles",
     "path": "folders/Sprites/Projectiles.yy",
@@ -62,7 +62,7 @@
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 7,
-    "yorigin": 3,
+    "yorigin": 0,
   },
   "swatchColours": [
     4278190335,

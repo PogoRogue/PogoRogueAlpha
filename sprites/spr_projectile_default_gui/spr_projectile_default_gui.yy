@@ -18,13 +18,13 @@
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 32,
+  "height": 12,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"a1ab96db-d281-4f54-b84f-4c2d7978f3c9","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 5,
+  "origin": 2,
   "parent": {
     "name": "Projectiles",
     "path": "folders/Sprites/Projectiles.yy",
@@ -61,8 +61,8 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 32,
-    "yorigin": 16,
+    "xorigin": 26,
+    "yorigin": 0,
   },
   "swatchColours": [
     4278190335,
@@ -151,5 +151,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 32,
+  "width": 26,
 }

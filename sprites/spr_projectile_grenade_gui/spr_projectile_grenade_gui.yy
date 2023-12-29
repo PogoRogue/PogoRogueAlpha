@@ -47,7 +47,7 @@
     ],
     "top": 0,
   },
-  "origin": 5,
+  "origin": 2,
   "parent": {
     "name": "Projectiles",
     "path": "folders/Sprites/Projectiles.yy",
@@ -85,7 +85,7 @@
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 13,
-    "yorigin": 7,
+    "yorigin": 0,
   },
   "swatchColours": [
     4278190335,

@@ -74,4 +74,8 @@ function scr_Buffs(){
 	buff_hotshells = function(){
 		global.hot_shells = true;	
 	}
+	
+	buff_combomaster = function(){
+		global.combo_master = true;	
+	}
 }

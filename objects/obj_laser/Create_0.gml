@@ -4,3 +4,4 @@ laser_y = obj_player.y - y;
 init_damage = damage;
 init_sprite = sprite_index;
 gun_name = "Laser Gun";
+destroy_on_impact = false;

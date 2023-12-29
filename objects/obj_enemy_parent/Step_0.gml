@@ -14,6 +14,13 @@ if(is_dead) {
 	//combo
 	global.combo += 1;
 	global.combo_length = global.combo_max;
+	if global.combo = 10 and global.combo_master = true { //combo master powerup
+		with obj_player {
+			if hp < max_hp {
+				hp += 8;
+			}
+		}
+	}
 	
 	//create coins and items
 	var center_x = x - sprite_get_xoffset(sprite_index) + ((sprite_width / 2)*image_xscale);

@@ -21,17 +21,27 @@ global.combo = 0;
 global.combo_length = 0;
 global.combo_max = 32;
 global.combo_max_coins = 15;
-global.hot_shells = false;
+
 
 //buffs
+global.all_buff_sprites = []; //buffs equipped in side bar
+global.all_buff_sprites_index = []; //image index of each buff sprite
+global.all_buff_numbers = []; //how many of each buff you have
+global.all_buff_names = []; //names of each buff currently equipped
+global.all_buff_descriptions = []; //descriptions of each buff currently equipped
+global.all_buff_stats = []; //stats (mainly stackability) of each buff currently equipped
+
 global.luck = 0;
 global.picky_buyer = false;
 global.bouncy_bullets = 0;
+global.hot_shells = false;
+global.combo_master = false;
+
 
 //items unlockable in the shop
 global.all_buffs = [obj_item_buff_lasersight, obj_item_buff_planetarybullets,obj_item_buff_dmg,
 					obj_item_buff_max_ammo, obj_item_buff_luck, obj_item_buff_pickybuyer,
-					obj_item_buff_bouncybullets, obj_item_buff_hotshells];
+					obj_item_buff_bouncybullets, obj_item_buff_hotshells, obj_item_buff_combomaster];
 					
 global.all_weapons = [obj_item_weapon_default, obj_item_weapon_paintball, obj_item_weapon_shotgun, 
 					obj_item_weapon_bubble, obj_item_weapon_burstfire, obj_item_weapon_grenade, 

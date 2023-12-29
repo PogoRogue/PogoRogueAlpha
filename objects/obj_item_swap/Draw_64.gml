@@ -16,18 +16,20 @@ if gamepad_is_connected(0) {
 	select_sprite = select_sprite_keyboard;
 }
 //get current item text
-draw_set_font(fnt_combo);
+draw_set_font(fnt_itemdescription2);
 
 for(i = 0; i < num_of_slots; i++) {
 	draw_sprite(spr_item_slot,i=select-1,center_x-64+(64*i),yy);
 	if i = num_of_slots-1 {
 		draw_sprite(spr_cancel,0,center_x-64+(64*i),yy);
 	}else if i = 0 {
+		draw_set_valign(fa_center);
 		draw_sprite(sprite_1,0,center_x-64+(64*i)-x_adjust,yy-y_adjust);
-		scr_Draw_Text_Outlined(center_x-64+(64*i)-x_adjust,yy-16,item1_name,c_white);
+		scr_Draw_Text_Outlined(center_x-64+(64*i)-x_adjust,yy-21,scr_Linebreak(item1_name,12,99),c_white);
 	}else if i = 1 {
+		draw_set_valign(fa_center);
 		draw_sprite(sprite_2,0,center_x-64+(64*i)-x_adjust,yy-y_adjust);
-		scr_Draw_Text_Outlined(center_x-64+(64*i)-x_adjust,yy-16,item2_name,c_white);
+		scr_Draw_Text_Outlined(center_x-64+(64*i)-x_adjust,yy-21,scr_Linebreak(item2_name,12,99),c_white);
 	}
 	
 	if i = select-1 {
@@ -38,6 +40,6 @@ for(i = 0; i < num_of_slots; i++) {
 //draw new item
 draw_sprite(spr_item_slot,0,center_x,yy+64);
 draw_sprite(sprite_new,0,center_x-x_adjust,yy+64-y_adjust);
-scr_Draw_Text_Outlined(center_x,yy+48,item_name,c_white);
+scr_Draw_Text_Outlined(center_x,yy+43,scr_Linebreak(item_name,12,99),c_white);
 
 draw_set_alpha(1);

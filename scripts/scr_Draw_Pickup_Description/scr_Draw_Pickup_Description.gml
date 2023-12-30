@@ -23,13 +23,13 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num) {
 	draw_set_valign(fa_center);
 	draw_set_font(fnt_combo2);
 	var white = make_color_rgb(242,240,229);
-	draw_text_color(xx+26,yy-105,scr_Linebreak(pickup._name,16,99),white,white,white,white,1);
+	draw_text_color(xx+26,yy-105,scr_Linebreak(pickup._name,16,99),white,white,white,white,draw_get_alpha());
 	
 	//Powerup Description
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 	draw_set_font(fnt_itemdescription2);
-	scr_Draw_Text_Outlined(xx-72,yy-68,scr_Linebreak(pickup.tagline,28,99),c_white);
+	draw_text_color(xx-72,yy-68,scr_Linebreak(pickup.tagline,28,99),white,white,white,white,draw_get_alpha());
 	
 	//Get Powerup Stats
 	var line_1 = pickup.cooldown_text; //cooldown
@@ -37,5 +37,5 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num) {
 	//draw stats
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	draw_text_color(xx,yy+6,line_1,white,white,white,white,1);
+	draw_text_color(xx,yy+6,line_1,white,white,white,white,draw_get_alpha());
 }

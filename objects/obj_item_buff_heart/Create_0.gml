@@ -6,6 +6,7 @@ item_description = item_tagline;
 add_sprite_to_list = false;
 item_cost = 10;
 max_uses = 0;
+item_stats = "";
 
 if scr_In_Array(global.all_buffs, object_index) {
 	scr_Buff_Replace();

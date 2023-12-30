@@ -38,8 +38,14 @@ for(i = 0; i < num_of_slots; i++) {
 }
 
 //draw new item
+if pickups_mode = true {
+	scr_Draw_Pickup_Description(center_x,yy+166,new_item,0);
+}else if weapons_mode = true {
+	scr_Draw_Weapon_Description(center_x,yy+166,new_item,0);
+}
+/*
 draw_sprite(spr_item_slot,0,center_x,yy+64);
 draw_sprite(sprite_new,0,center_x-x_adjust,yy+64-y_adjust);
-scr_Draw_Text_Outlined(center_x,yy+43,scr_Linebreak(item_name,12,99),c_white);
+scr_Draw_Text_Outlined(center_x,yy+43,scr_Linebreak(item_name,12,99),c_white);*/
 
 draw_set_alpha(1);

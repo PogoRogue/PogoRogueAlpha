@@ -33,6 +33,7 @@ pickup_2 = obj_item_pickup_hatgun;
 
 slot_items_array = [default_item_1, default_item_2, buff_1, buff_2, weapon_1, weapon_2, pickup_1, pickup_2];
 select = 1;
+last_selected = 1;
 index = 0;
 last_select = select;
 selected_x = false;
@@ -45,6 +46,7 @@ too_expensive = false;
 sold_out = false;
 cant_move = false;
 
+item_sprite = "";
 item_name = "";
 item_description = "";
 item_cost = 0;

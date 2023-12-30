@@ -166,8 +166,14 @@ if (gun_name = "Boomerangs") {
 			instance_destroy();
 			audio_play_sound(snd_reload,0,false);
 			with obj_player {
-				if gun.current_bullets < gun.bullets_per_bounce+obj_player.max_ammo_buff {
-					gun.current_bullets += 1;
+				if gun_1._name = "Boomerangs" {
+					if gun_1.current_bullets < gun_1.bullets_per_bounce+obj_player.max_ammo_buff {
+						gun_1.current_bullets += 1;
+					}
+				}else if gun_2._name = "Boomerangs" {
+					if gun_2.current_bullets < gun_2.bullets_per_bounce+obj_player.max_ammo_buff {
+						gun_2.current_bullets += 1;
+					}
 				}
 			}
 		}

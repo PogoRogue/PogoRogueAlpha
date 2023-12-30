@@ -11,14 +11,6 @@ fade_away = false;
 item1_name = "";
 item2_name = "";
 
-
 with obj_pause {
 	paused_outside = true;
-}
-
-//shop
-if room = room_shop {
-	if instance_exists(obj_player) {
-		center_x = obj_player.x;
-	}	
 }

@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_itemmenu_weapon_slot",
-  "bbox_bottom": 248,
+  "bbox_bottom": 224,
   "bbox_left": 0,
   "bbox_right": 163,
   "bbox_top": 0,

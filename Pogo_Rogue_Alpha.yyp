@@ -330,6 +330,7 @@
     {"id":{"name":"scr_Create_Collision_Walls","path":"scripts/scr_Create_Collision_Walls/scr_Create_Collision_Walls.yy",},},
     {"id":{"name":"spr_electric_floor_off","path":"sprites/spr_electric_floor_off/spr_electric_floor_off.yy",},},
     {"id":{"name":"spr_shield_break","path":"sprites/spr_shield_break/spr_shield_break.yy",},},
+    {"id":{"name":"obj_player_start","path":"objects/obj_player_start/obj_player_start.yy",},},
     {"id":{"name":"spr_gate_close","path":"sprites/spr_gate_close/spr_gate_close.yy",},},
     {"id":{"name":"spr_shopkeeper","path":"sprites/spr_shopkeeper/spr_shopkeeper.yy",},},
     {"id":{"name":"obj_wallbottom","path":"objects/obj_wallbottom/obj_wallbottom.yy",},},
@@ -577,8 +578,8 @@
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
   ],
   "RoomOrderNodes": [
-    {"roomId":{"name":"room_sprite_level_test","path":"rooms/room_sprite_level_test/room_sprite_level_test.yy",},},
     {"roomId":{"name":"room_proc_gen_test","path":"rooms/room_proc_gen_test/room_proc_gen_test.yy",},},
+    {"roomId":{"name":"room_sprite_level_test","path":"rooms/room_sprite_level_test/room_sprite_level_test.yy",},},
     {"roomId":{"name":"room_gameplay_video","path":"rooms/room_gameplay_video/room_gameplay_video.yy",},},
     {"roomId":{"name":"room_fight_1","path":"rooms/room_fight_1/room_fight_1.yy",},},
     {"roomId":{"name":"room_sam_movement","path":"rooms/room_sam_movement/room_sam_movement.yy",},},

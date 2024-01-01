@@ -3,7 +3,7 @@ function scr_Convert_Layout_To_Test_Room(layout_grid){
 	var block_grid_size  = sprite_get_width(test_room_sprite); //assumes square blocks
 	var block_room_size = block_grid_size * 16;
 	
-	for(var j = 0; j < ds_grid_height(layout_grid); j++)
+	for(var j = ds_grid_height(layout_grid) - 1; j >= 0; j--)
 	{
 		for(var i = 0; i < ds_grid_width(layout_grid); i++)
 		{
@@ -33,14 +33,24 @@ function scr_Convert_Layout_To_Test_Room(layout_grid){
 							//Move the player to this location
 							if(instance_exists(obj_player))
 							{
-								show_debug_message("Moved player!")
 								var player = instance_nearest(x,y,obj_player);
+								if(instance_exists(obj_player_start))
+								{
+									var player_start_location = instance_nearest(x_offset + block_room_size/2,
+																				 y_offset + block_room_size/2,obj_player_start);
+									player.x = player_start_location.x;
+									player.y = player_start_location.y;
+								}
+								else
+								{
 								player.x = x_offset + block_room_size/2;
 								player.y = y_offset + block_room_size/2;
+								}
 								with obj_camera {
 									x = player.x;
 									y = player.y - 32;
-								}
+								}								
+								show_debug_message("Moved player!")
 							}
 							else
 							{

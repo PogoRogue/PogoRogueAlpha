@@ -1,6 +1,7 @@
 {
   "FolderOrderSettings": [],
   "ResourceOrderSettings": [
+    {"name":"obj_player_start","order":1,"path":"objects/obj_player_start/obj_player_start.yy",},
     {"name":"room_sprite_level_test","order":1,"path":"rooms/room_sprite_level_test/room_sprite_level_test.yy",},
   ],
 }

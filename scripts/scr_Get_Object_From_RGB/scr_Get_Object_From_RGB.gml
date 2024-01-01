@@ -10,6 +10,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 	{
 	return -1;
 	}
+	else if(Red == 255 && Green == 255 && Blue == 255) //White = player start location
+	{
+		return obj_player_start;
+	}
 	else if(Red > 150) //This space of colors is designated for enemies
 	{
 		if(Green < 50)

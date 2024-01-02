@@ -9,13 +9,24 @@ select_y_max = 4; //number of rows
 selected_x = false;
 selected_y = false;
 
+with obj_pause {
+	if pause = false {
+		paused_outside = true;	
+	}
+}
+
 instance_activate_object(obj_player);
 with obj_player {
 	//weapons
 	other.gun_1 = gun_1;
 	other.gun_2 = gun_2;
+	other.gun_3 = gun_3;
+	other.num_of_weapons = weapons_equipped;
 	//pickups
 	other.pickup_1 = pickup_1;
 	other.pickup_2 = pickup_2;
+	other.num_of_pickups = num_of_pickups;
 }
-instance_deactivate_object(obj_player);
+if instance_exists(obj_pausemenu) {
+	instance_deactivate_object(obj_player);
+}

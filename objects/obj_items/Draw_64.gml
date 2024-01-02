@@ -56,16 +56,30 @@ if select = 2 {
 	var xx2 = center_x+86;
 	var yy = 234;
 	
-	scr_Draw_Pickup_Description(xx1,yy,pickup_1,1);
-	scr_Draw_Pickup_Description(xx2,yy,pickup_2,2);
+	if num_of_pickups = 1 {
+		scr_Draw_Pickup_Description(center_x,yy,pickup_1,1);
+	}else if num_of_pickups = 2 {
+		scr_Draw_Pickup_Description(xx1,yy,pickup_1,1);
+		scr_Draw_Pickup_Description(xx2,yy,pickup_2,2);
+	}
 }
 
 //WEAPONS
 if select = 3 {
 	var xx1 = center_x-86;
 	var xx2 = center_x+86;
+	var xx3 = center_x+172;
 	var yy = 234;
 	
-	scr_Draw_Weapon_Description(xx1,yy,gun_1,1);
-	scr_Draw_Weapon_Description(xx2,yy,gun_2,2);
+	if num_of_weapons = 1 {
+		scr_Draw_Weapon_Description(center_x,yy,gun_1,1);
+	}else if num_of_weapons = 2 {
+		scr_Draw_Weapon_Description(xx1,yy,gun_1,1);
+		scr_Draw_Weapon_Description(xx2,yy,gun_2,2);
+	}else if num_of_weapons = 3 {
+		xx1 = center_x-172;
+		scr_Draw_Weapon_Description(xx1,yy,gun_1,1);
+		scr_Draw_Weapon_Description(center_x,yy,gun_2,2);
+		scr_Draw_Weapon_Description(xx3,yy,gun_3,3);
+	}
 }

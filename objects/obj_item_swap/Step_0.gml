@@ -1,6 +1,6 @@
 key_left = keyboard_check(ord("A")) || keyboard_check(vk_left) || gamepad_axis_value(0,gp_axislh) < -0.5;
 key_right = keyboard_check(ord("D")) || keyboard_check(vk_right) || gamepad_axis_value(0,gp_axislh) > 0.5;
-key_select = keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_up) || keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0,gp_face1);
+key_select = keyboard_check_pressed(ord("E")) || keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0,gp_face1);
 
 if selected = false and fade_away = false {
 	if key_left {
@@ -38,9 +38,16 @@ if key_select and fade_away = false {
 				pickup_1 = other.new_item;
 				pickups_array = [pickup_1, pickup_2];
 			}else if other.weapons_mode = true  {
-				gun_1 = other.new_item;
-				gun_array = [gun_1, gun_2];
-				gun = gun_array[current_gun];
+				if weapons_equipped = 2 {
+					gun_1 = other.new_item;
+					gun_3 = gun_1;
+					gun_array = [gun_1, gun_2, gun_3];
+					gun = gun_array[current_gun];
+				}else if weapons_equipped = 3 {
+					gun_1 = other.new_item;
+					gun_array = [gun_1, gun_2, gun_3];
+					gun = gun_array[current_gun];
+				}
 			}
 		}
 	}
@@ -61,9 +68,26 @@ if key_select and fade_away = false {
 				pickups_array = [pickup_1, pickup_2];
 			}else if other.weapons_mode = true  {
 				gun_2 = other.new_item;
-				gun_array = [gun_1, gun_2];
+				gun_array = [gun_1, gun_2, gun_3];
 				gun = gun_array[current_gun];
 			}
+		}
+	}
+	//slot 3
+	if select = 3 and num_of_slots > 3 {
+		sprite_3 = sprite_new;
+		sprite_new = spr_nothing;
+		item_name = "";
+		with obj_pause {
+			item_swap = false;
+			paused_outside = true;	
+		}
+		//change gun
+		instance_activate_object(obj_player);
+		with obj_player {
+			gun_3 = other.new_item;
+			gun_array = [gun_1, gun_2, gun_3];
+			gun = gun_array[current_gun];
 		}
 	}
 	//cancel
@@ -94,8 +118,10 @@ with obj_player {
 	}else if other.weapons_mode = true {
 		other.sprite_1 = gun_1.sprite;
 		other.sprite_2 = gun_2.sprite;
+		other.sprite_3 = gun_3.sprite;
 		other.item1_name = gun_1._name;
 		other.item2_name = gun_2._name;
+		other.item3_name = gun_3._name;
 	}
 }
 

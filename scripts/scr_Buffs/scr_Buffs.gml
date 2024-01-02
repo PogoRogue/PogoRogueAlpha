@@ -42,9 +42,13 @@ function scr_Buffs(){
 				gun_1.bullets_per_bounce += 1;
 				gun_1.current_bullets += 1;
 			}
-			if gun_2.bullets_per_bounce < gun_2.init_bullets_per_bounce + gun_2.max_added_bullets {
+			if gun_2.bullets_per_bounce < gun_2.init_bullets_per_bounce + gun_2.max_added_bullets and gun_2 != gun_1 {
 				gun_2.bullets_per_bounce += 1;
 				gun_2.current_bullets += 1;
+			}
+			if gun_3.bullets_per_bounce < gun_3.init_bullets_per_bounce + gun_3.max_added_bullets and gun_3 != gun_1 and gun_3 != gun_2 {
+				gun_3.bullets_per_bounce += 1;
+				gun_3.current_bullets += 1;
 			}
 		}
 	}
@@ -75,5 +79,16 @@ function scr_Buffs(){
 	
 	buff_combomaster = function(){
 		global.combo_master = true;	
+	}
+	
+	buff_blackfriday = function(){
+		global.sale = 0.85;
+	}
+	
+	buff_triplethreat = function(){
+		with obj_player {
+			num_of_weapons = 3;
+			gun_array = [gun_1, gun_2, gun_3];
+		}
 	}
 }

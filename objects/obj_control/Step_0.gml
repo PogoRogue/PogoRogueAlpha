@@ -1,6 +1,7 @@
 restart_button = keyboard_check_pressed(ord("R")) || gamepad_button_check_pressed(0,gp_select); //press R key to restart room
 screenshake_button = keyboard_check_pressed(vk_backspace); //press escape key to restart room
 mute_button = keyboard_check_pressed(ord("M")); 
+itemmenu_button = keyboard_check_pressed(vk_tab); 
 
 if (restart_button) {
 	instance_deactivate_all(false);
@@ -22,6 +23,10 @@ if (mute_button) {
 	}
 }
 
+if (itemmenu_button) and obj_pause.pause = false {
+	instance_create_depth(x,y,depth-1,obj_items);
+}
+
 
 if (screenshake_button) {
 	global.allow_screenshake = not global.allow_screenshake;
@@ -31,3 +36,4 @@ if (screenshake_button) {
 if room != room_shop {
 	global.last_room = room;	
 }
+

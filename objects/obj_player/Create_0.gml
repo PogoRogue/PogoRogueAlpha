@@ -410,29 +410,46 @@ canshoot = 0; //shooting timer
 bullet_index = 0; //current bullet
 
 //EQUIP WEAPONS
-num_of_weapons = 2; //number of different weapons equipped: only do 1 or 2
+num_of_weapons = 1; //number of different weapons equipped: only do 1 or 2 to start, but include functionality of 3 for "triple threat" buff
+weapons_equipped = num_of_weapons;
 all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun,bouncyball_gun,missile_gun,boomerang_gun]; //all guns
 
 if (random_weapon = true) { //choose random weapons
 	randomize();
 	gun_1 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
-	gun_2 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
-
-	while (gun_2 = gun_1) { //dont want 2 of the same weapon
+	if num_of_weapons > 1 {
 		gun_2 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+	}else {
+		gun_2 = gun_1;
+	}
+	if num_of_weapons > 2 {
+		gun_3 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+	}else {
+		gun_3 = gun_1;
+	}
+
+	while (gun_2 = gun_1) and num_of_weapons > 1 { //dont want 2 of the same weapon
+		gun_2 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+	}
+	
+	while (gun_3 = gun_1 and num_of_weapons > 2) or (gun_3 = gun_2 and num_of_weapons > 2) { //dont want 2 of the same weapon
+		gun_3 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
 	}
 }else { //decide which weapons we want manually if not random. 
 	//we do this by changing gun_1_manual and gun_2_manual in the variable definitions tab. Can be changed room by room.
 	//Integers correspond to values in all_guns_array, 0 = default_gun, 1 = paintball_gun, etc.
 	gun_1 = all_guns_array[gun_1_manual_value];
 	gun_2 = all_guns_array[gun_2_manual_value];
+	gun_3 = all_guns_array[gun_3_manual_value];
 }
 
 //set what weapons will actually be equipped at the start
 if (num_of_weapons = 1) {
-	gun_array = [gun_1];
+	gun_array = [gun_1, gun_1, gun_1];
+}else if (num_of_weapons = 2) {
+	gun_array = [gun_1, gun_2, gun_1];
 }else {
-	gun_array = [gun_1, gun_2];
+	gun_array = [gun_1, gun_2, gun_3];
 }
 current_gun = 0;
 gun = gun_array[current_gun];
@@ -463,6 +480,10 @@ if (random_pickup = true) { //choose random pickups
 	//Integers correspond to values in all_pickups_array, 0 = pickup_chargejump, 1 = pickup_groundpound, etc.
 	pickup_1 = all_pickups_array[pickup_1_manual_value];
 	pickup_2 = all_pickups_array[pickup_2_manual_value];
+}
+if num_of_pickups = 0 {
+	pickup_1 = pickup_nothing;
+	pickup_2 = pickup_nothing;
 }
 
 //set what weapons will actually be equipped at the start

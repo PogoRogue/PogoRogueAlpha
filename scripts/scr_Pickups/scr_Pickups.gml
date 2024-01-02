@@ -268,6 +268,14 @@ function scr_Pickups(){
 					other.cooldown_time = other.max_cooldown_time;
 					other.on_cooldown = true;
 				}
+				if gun_3.current_bullets != gun_3.bullets_per_bounce+obj_player.max_ammo_buff and gun_3 != boomerang_gun { //reload bullets
+					//reload sound
+					audio_play_sound(snd_reload,0,false);
+					gun_3.current_bullets = gun_3.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
+					instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
+					other.cooldown_time = other.max_cooldown_time;
+					other.on_cooldown = true;
+				}
 			}
 		}
 	};

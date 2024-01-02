@@ -174,6 +174,10 @@ if (gun_name = "Boomerangs") {
 					if gun_2.current_bullets < gun_2.bullets_per_bounce+obj_player.max_ammo_buff {
 						gun_2.current_bullets += 1;
 					}
+				}else if gun_3._name = "Boomerangs" {
+					if gun_3.current_bullets < gun_3.bullets_per_bounce+obj_player.max_ammo_buff {
+						gun_3.current_bullets += 1;
+					}
 				}
 			}
 		}

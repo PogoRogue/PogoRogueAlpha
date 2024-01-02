@@ -12,7 +12,7 @@ if (pause) { //draw frozen image to screen while paused
 	surface_reset_target();
 }
 
-if keyboard_check_pressed(ord("P")) || keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(0,gp_start) || paused_outside {
+if keyboard_check_pressed(ord("P")) || keyboard_check_pressed(vk_escape) and !instance_exists(obj_items) || gamepad_button_check_pressed(0,gp_start) and !instance_exists(obj_items) || paused_outside {
 	if !pause { //pause now
 		pause = true;
 		
@@ -21,6 +21,7 @@ if keyboard_check_pressed(ord("P")) || keyboard_check_pressed(vk_escape) || game
 		instance_activate_object(obj_control);	
 		if paused_outside = true {
 			instance_activate_object(obj_item_swap);
+			instance_activate_object(obj_items);
 			item_swap = true;
 		}else {
 			instance_activate_object(obj_pausemenu);

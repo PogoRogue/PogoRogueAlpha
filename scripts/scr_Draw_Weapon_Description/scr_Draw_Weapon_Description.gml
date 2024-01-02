@@ -16,6 +16,8 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num) {
 		scr_Draw_Text_Outlined(xx,yy-128,"Weapon 1",c_white);
 	}else if weapon_num = 2 {
 		scr_Draw_Text_Outlined(xx,yy-128,"Weapon 2",c_white);
+	}else if weapon_num = 3 {
+		scr_Draw_Text_Outlined(xx,yy-128,"Weapon 3",c_white);
 	}
 	
 	//Weapon Name

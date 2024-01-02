@@ -7,9 +7,9 @@ draw_set_halign(fa_right);
 draw_set_valign(fa_bottom);
 
 //draw ammo UI
-for (gun_num = 0; gun_num < num_of_weapons; gun_num++) {
+for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 	var ammo = gun_array[gun_num].ammo[bullet_index];
-	var yy = 42 * (gun != gun_array[gun_num]); //add y for other weapons bullets
+	var yy = 42 * gun_num; //add y for other weapons bullets
 	var black_alpha = 0.5 * (gun != gun_array[gun_num]); //darkening for bottom ammo
 	for(i = 0; i < gun_array[gun_num].bullets_per_bounce+max_ammo_buff; i++) {
 		if (gun_array[gun_num] != paintball_gun) and (gun_array[gun_num] != laser_gun) {

@@ -226,8 +226,8 @@ if !(key_fire_projectile) { //lerp back to starting firerate while not shooting
 #endregion
 
 //switch between weapons
-if keyboard_check_pressed(ord("E")) || mouse_wheel_up() || gamepad_button_check_released(0,gp_shoulderr) {
-	if (current_gun) < array_length(gun_array)-1 {
+if mouse_wheel_up() || gamepad_button_check_released(0,gp_shoulderr) {
+	if (current_gun) < weapons_equipped-1 {
 		current_gun += 1;
 	}else {
 		current_gun = 0;
@@ -236,7 +236,7 @@ if keyboard_check_pressed(ord("E")) || mouse_wheel_up() || gamepad_button_check_
 	gun = gun_array[current_gun];
 }
 
-if keyboard_check_pressed(ord("Q")) || mouse_wheel_down() || gamepad_button_check_released(0,gp_shoulderl) {
+if mouse_wheel_down() || gamepad_button_check_released(0,gp_shoulderl) {
 	if (current_gun) > 0 {
 		current_gun -= 1;
 	}else {
@@ -245,6 +245,28 @@ if keyboard_check_pressed(ord("Q")) || mouse_wheel_down() || gamepad_button_chec
 	
 	gun = gun_array[current_gun];
 }
+
+//number keys
+if keyboard_check_pressed(ord("1")) {
+	current_gun = 0;
+	gun = gun_array[current_gun];
+}else if keyboard_check_pressed(ord("2")) and weapons_equipped > 1 {
+	current_gun = 1;
+	gun = gun_array[current_gun];
+}
+else if keyboard_check_pressed(ord("3")) and weapons_equipped > 2 {
+	current_gun = 2;
+	gun = gun_array[current_gun];
+}
+
+if gun_2 = gun_1 {
+	weapons_equipped = 1;	
+}else if gun_2 != gun_1 and gun_3 = gun_1 or gun_2 != gun_1 and gun_3 = gun_2 {
+	weapons_equipped = 2;	
+}else if gun_2 != gun_1 and gun_3 != gun_1 and gun_3 != gun_2 {
+	weapons_equipped = 3;
+}
+
 
 
 // Update iframes

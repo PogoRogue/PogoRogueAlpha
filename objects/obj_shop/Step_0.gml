@@ -104,8 +104,8 @@ if created_items = false {
 		//replace weapon with new weapon if player already has it
 		if i = 4 
 		or i = 5 {
-			while (obj_player.gun_array[0] = slot_items_array[i].weapon or obj_player.gun_array[1] = slot_items_array[i].weapon) {
-				if obj_player.gun_array[0] = slot_items_array[i].weapon or obj_player.gun_array[1] = slot_items_array[i].weapon {
+			while (obj_player.gun_array[0] = slot_items_array[i].weapon or obj_player.gun_array[1] = slot_items_array[i].weapon or obj_player.gun_array[2] = slot_items_array[i].weapon) {
+				if obj_player.gun_array[0] = slot_items_array[i].weapon or obj_player.gun_array[1] = slot_items_array[i].weapon or obj_player.gun_array[2] = slot_items_array[i].weapon {
 					//destroy old item
 					slot_items_array[i].item_cost = 0;
 					instance_destroy(slot_items_array[i]);
@@ -151,10 +151,10 @@ if select != 0 {
 	if instance_exists(slot_items_array[select-1]) {
 		item_name = slot_items_array[select-1].item_name;
 		item_description = slot_items_array[select-1].item_description;
-		item_cost = slot_items_array[select-1].item_cost;
+		item_cost = round(slot_items_array[select-1].item_cost * global.sale);
 		
 		//sold out
-		if global.num_of_coins >= slot_items_array[select-1].item_cost {
+		if global.num_of_coins >= round(slot_items_array[select-1].item_cost * global.sale) {
 			too_expensive = false;
 		}else {
 			too_expensive = true;
@@ -180,7 +180,7 @@ if key_select {
 		select = 0;
 	}else if select = 0 and refresh_button = false {
 		select = last_select;
-		if global.num_of_coins >= slot_items_array[last_select-1].item_cost and slot_items_array[select-1].sold_out = false {
+		if global.num_of_coins >= round(slot_items_array[last_select-1].item_cost * global.sale) and slot_items_array[select-1].sold_out = false {
 			//item follow player
 			last_item_created = slot_items_array[select-1];
 			audio_play_sound(snd_chaching,0,false);

@@ -23,7 +23,7 @@ for(i = 0; i < num_of_slots; i++) {
 	draw_set_font(fnt_uifontsmall);
 	
 	if instance_exists(slot_items_array[i]) {
-		scr_Draw_Text_Outlined(xx-6,yy+21,slot_items_array[i].item_cost,c_white);
+		scr_Draw_Text_Outlined(xx-6,yy+21,round(slot_items_array[i].item_cost * global.sale),c_white);
 		draw_sprite(spr_coin,0,xx+10,yy+21);
 		
 		//sold out

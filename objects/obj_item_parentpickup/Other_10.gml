@@ -3,8 +3,16 @@
 event_inherited();
 
 if pickup != obj_player.pickup_1 and obj_player.num_of_pickups = 1
-or pickup != obj_player.pickup_1 and pickup != obj_player.pickup_2 and obj_player.num_of_pickups = 2 {
-	if obj_player.num_of_pickups = 1 {
+or pickup != obj_player.pickup_1 and pickup != obj_player.pickup_2 and obj_player.num_of_pickups = 2 
+or obj_player.num_of_pickups = 0 {
+	if obj_player.num_of_pickups = 0 {
+		with obj_player {
+			num_of_pickups = 1;
+			pickup_1 = other.pickup;
+			pickup_2 = pickup_nothing;
+			pickups_array = [pickup_1,pickup_2];
+		}
+	}else if obj_player.num_of_pickups = 1 {
 		with obj_player {
 			num_of_pickups = 2;
 			pickup_2 = other.pickup;

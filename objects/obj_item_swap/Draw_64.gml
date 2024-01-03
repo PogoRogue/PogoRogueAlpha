@@ -11,7 +11,7 @@ scr_Draw_Text_Outlined(center_x,yy-44,"Choose an item to replace:", c_white);
 var x_adjust = 0;
 var y_adjust = 0;
 
-if gamepad_is_connected(0) {
+if global.use_controller = true {
 	select_sprite = select_sprite_controller;
 }else {
 	select_sprite = select_sprite_keyboard;
@@ -57,7 +57,7 @@ for(i = 0; i < num_of_slots; i++) {
 		scr_Draw_Text_Outlined(center_x-96+(64*i)-x_adjust,yy-21,scr_Linebreak(item3_name,12,99),c_white);
 	}
 	
-	if gamepad_is_connected(0) {
+	if global.use_controller = true {
 		if i = select-1 {
 			if num_of_slots = 3 {
 				draw_sprite(select_sprite,0,center_x-64+(64*i),yy+24);

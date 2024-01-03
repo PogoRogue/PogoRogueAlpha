@@ -12,13 +12,15 @@ if (pause) { //draw frozen image to screen while paused
 	surface_reset_target();
 }
 
-if keyboard_check_pressed(ord("P")) || keyboard_check_pressed(vk_escape) and !instance_exists(obj_items) || gamepad_button_check_pressed(0,gp_start) and !instance_exists(obj_items) || paused_outside {
+if global.key_pause and !instance_exists(obj_items) || paused_outside {
 	if !pause { //pause now
 		pause = true;
 		
 		//deactivate everything other than this surface
 		instance_deactivate_all(true);
 		instance_activate_object(obj_control);	
+		instance_activate_object(obj_controls_controller);
+		instance_activate_object(obj_controls_keyboard);
 		if paused_outside = true {
 			instance_activate_object(obj_item_swap);
 			instance_activate_object(obj_items);

@@ -16,6 +16,13 @@ global.shop_index = 0;
 global.num_of_ground_objects = 0;
 global.tiles_left_to_draw = 0;
 
+if !instance_exists(obj_controls_controller) {
+	instance_create_depth(x,y,depth,obj_controls_controller);
+}
+if !instance_exists(obj_controls_keyboard) {
+	instance_create_depth(x,y,depth,obj_controls_keyboard);
+}
+
 //combo
 global.combo = 0;
 global.combo_length = 0;

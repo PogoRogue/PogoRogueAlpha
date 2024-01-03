@@ -1,8 +1,8 @@
 /// @description Player collision + button pressed
 if room != room_shop {
-	key_open_door = keyboard_check_pressed(ord("E")) || gamepad_button_check_pressed(0,gp_face4);
+	key_open_door = global.key_interact;
 }else {
-	key_open_door = keyboard_check_pressed(ord("E")) || gamepad_button_check_pressed(0,gp_face4);
+	key_open_door = global.key_interact;
 }
 
 //check for player coliision

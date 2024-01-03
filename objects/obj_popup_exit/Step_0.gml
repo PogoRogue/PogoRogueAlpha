@@ -1,6 +1,7 @@
-key_left = keyboard_check_pressed(ord("A")) || keyboard_check_pressed(vk_left) || gamepad_axis_value(0,gp_axislh) < -0.5;
-key_right = keyboard_check_pressed(ord("D")) || keyboard_check_pressed(vk_right) || gamepad_axis_value(0,gp_axislh) > 0.5;
-key_select = keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0,gp_face1);
+key_left = global.key_left_menu;
+key_right = global.key_right_menu;
+key_select = global.key_select;
+key_back = global.key_back;
 
 if key_left and selected = false {
 	if select > 1 {
@@ -22,6 +23,10 @@ if key_select {
 	}else if select = 2 {
 		game_end();
 	}
+}
+
+if key_back {
+	alarm[0] = 1;	
 }
 
 image_index = select-1;

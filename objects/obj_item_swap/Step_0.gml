@@ -1,6 +1,6 @@
-key_left = keyboard_check(ord("A")) || keyboard_check(vk_left) || gamepad_axis_value(0,gp_axislh) < -0.5;
-key_right = keyboard_check(ord("D")) || keyboard_check(vk_right) || gamepad_axis_value(0,gp_axislh) > 0.5;
-key_select = keyboard_check_pressed(ord("E")) || keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0,gp_face1);
+key_left = global.key_left_menu;
+key_right = global.key_right_menu;
+key_select = global.key_interact and global.use_keyboard or global.key_select;
 
 if selected = false and fade_away = false {
 	if key_left {

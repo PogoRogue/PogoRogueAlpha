@@ -1,11 +1,11 @@
 if room = room_shop {
 
 if cant_move = false {
-	key_left = keyboard_check_pressed(ord("A")) || keyboard_check_pressed(vk_left) || gamepad_axis_value(0,gp_axislh) < -0.5;
-	key_right = keyboard_check_pressed(ord("D")) || keyboard_check_pressed(vk_right) || gamepad_axis_value(0,gp_axislh) > 0.5;
-	key_up = keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_up) || gamepad_axis_value(0,gp_axislv) < -0.5;
-	key_down = keyboard_check_pressed(ord("S")) || keyboard_check_pressed(vk_down) || gamepad_axis_value(0,gp_axislv) > 0.5;
-	key_select = keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0,gp_face1);
+	key_left = global.key_left_menu;
+	key_right = global.key_right_menu;
+	key_up = global.key_up_menu;
+	key_down = global.key_down_menu;
+	key_select = global.key_select;
 }else {
 	key_left = 0;
 	key_right = 0;

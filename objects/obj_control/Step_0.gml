@@ -1,7 +1,7 @@
-restart_button = keyboard_check_pressed(ord("R")) || gamepad_button_check_pressed(0,gp_select); //press R key to restart room
-screenshake_button = keyboard_check_pressed(vk_backspace); //press escape key to restart room
-mute_button = keyboard_check_pressed(ord("M")); 
-itemmenu_button = keyboard_check_pressed(vk_tab); 
+restart_button = keyboard_check_pressed(ord("R")); //press R key to restart room (temporary)
+screenshake_button = keyboard_check_pressed(vk_backspace); //press escape key to restart room (temporary)
+mute_button = keyboard_check_pressed(ord("M")); //press M to mute audio (temporary)
+itemmenu_button = global.key_item_menu; 
 
 if (restart_button) {
 	instance_deactivate_all(false);

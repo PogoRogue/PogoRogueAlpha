@@ -89,7 +89,7 @@ if pickups_array[0].reload_on_bounce = false {
 		//show fuel left
 		draw_sprite_part(pickups_array[0].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*(pickups_array[0].cooldown_time/pickups_array[0].max_cooldown_time),sprite_get_height(spr_pickup_empty),16,72);
 		//draw controls
-		if (gamepad_is_connected(0)) and pickups_array[0].cooldown_time > 0 {
+		if (global.use_controller = true and pickups_array[0].cooldown_time > 0) {
 			draw_sprite(spr_controller_button_bottom,0,32,104);
 		}else if pickups_array[0].cooldown_time > 0 {
 			draw_set_font(fnt_itemdescription2);
@@ -137,7 +137,7 @@ if pickups_array[1].reload_on_bounce = false {
 		//show fuel left
 		draw_sprite_part(pickups_array[1].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*(pickups_array[1].cooldown_time/pickups_array[1].max_cooldown_time),sprite_get_height(spr_pickup_empty),52,72);
 		//draw controls
-		if (gamepad_is_connected(0)) and pickups_array[1].cooldown_time > 0 {
+		if (global.use_controller = true and pickups_array[1].cooldown_time > 0) {
 			draw_sprite(spr_controller_button_right,0,68,104);
 		}else if pickups_array[1].cooldown_time > 0 {
 			draw_set_font(fnt_itemdescription2);
@@ -148,7 +148,7 @@ if pickups_array[1].reload_on_bounce = false {
 }
 
 //show buttons
-if (gamepad_is_connected(0)) {
+if (global.use_controller = true) {
 	//button 1
 	if !(pickups_array[0].on_cooldown) and pickups_array[0] != pickup_nothing and !(pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble) or pickups_array[0] = pickup_slowmo and instance_exists(obj_slowmo)) {
 		draw_sprite(spr_controller_button_bottom,0,32,104);

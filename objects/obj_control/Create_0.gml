@@ -56,7 +56,7 @@ global.all_buffs = [obj_item_buff_lasersight, obj_item_buff_planetarybullets,obj
 global.all_weapons = [obj_item_weapon_default, obj_item_weapon_paintball, obj_item_weapon_shotgun, 
 					obj_item_weapon_bubble, obj_item_weapon_burstfire, obj_item_weapon_grenade, 
 					obj_item_weapon_laser, obj_item_weapon_bouncyball, obj_item_weapon_missile,
-					obj_item_weapon_boomerang];
+					obj_item_weapon_boomerang, obj_item_weapon_starsucker];
 					
 global.all_pickups = [obj_item_pickup_chargejump, obj_item_pickup_groundpound, obj_item_pickup_hatgun, 
 					obj_item_pickup_shieldbubble, obj_item_pickup_firedash, obj_item_pickup_jetpack,

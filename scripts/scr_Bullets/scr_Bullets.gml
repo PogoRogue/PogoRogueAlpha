@@ -229,4 +229,23 @@ function scr_Bullets(){
 		bounce_amount: 1,
 		damage: 8
 	};
+	
+	starsucker_bullet = {
+		sprite: spr_projectile_star,
+		gui_sprite: spr_projectile_star_gui,
+		spd: 14,                        
+		firerate_start: 25,              
+		firerate_end: 25,                
+		firerate_mult: 0,               
+		firerate: 25,                    
+		destroy_on_impact: false,
+		screen_shake: {magnitude: 0, frames: 0},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0,
+		bounce_amount: 1,
+		damage: 6
+	};
 }

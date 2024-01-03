@@ -71,3 +71,12 @@ if (gun_name = "Missile Launcher") {
 		closest_enemy = noone;
 	}
 }
+
+if (gun_name = "Star Sucker") {
+	x = obj_player.x + lengthdir_x(224,image_angle);
+	y = obj_player.y + lengthdir_y(224,image_angle);
+	image_angle = point_direction(x,y,obj_player.x,obj_player.y);
+	init_damage = damage;
+	colliding_with_enemy = false;
+	depth = obj_player.depth + 1;
+}

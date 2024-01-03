@@ -192,3 +192,27 @@ if (gun_name = "Boomerangs") {
 		damage = init_damage;	
 	}
 }
+
+if (gun_name = "Star Sucker") {
+	hspd = 0;
+	vspd = 0;
+	spd += 0.1;
+	move_towards_point(obj_player.x,obj_player.y,spd);
+	
+	if place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask) {
+		instance_destroy();
+	}
+	
+	//damage once per enemy
+	if place_meeting(x,y,obj_enemy_parent) {
+		colliding_with_enemy = true;
+		damage = 0;
+	}else {
+		damage = init_damage;	
+	}
+	
+	//end animation
+	if !scr_Animation_Complete() {
+		image_index += 0.5;	
+	}
+}

@@ -202,7 +202,7 @@ function scr_Guns(){
 		tagline: "Fire bouncy balls that bounce off of walls up to 3 times, doubling in damage after each bounce.",
 		sprite: spr_gun_bouncyball,   
 		ammo: [bouncyball_bullet],
-		inaccuracy: 0,       
+		inaccuracy: 15,       
 		kick: 2,              
 		sound: snd_paintball,
 		spread_number: 1,    
@@ -261,5 +261,27 @@ function scr_Guns(){
 		current_bullets: 2 + obj_player.max_ammo_buff,  
 		max_added_bullets: 1,
 		max_speed: 8
+	};
+	
+	starsucker_gun = {
+		_name: "Star Sucker",  
+		tagline: "Sucks in stars from afar, giving you a bounce when they reach you.",
+		sprite: spr_gun_starsucker,  
+		ammo: [starsucker_bullet],
+		inaccuracy: 5,       
+		kick: 2,             
+		sound: snd_nothing,
+		spread_number: 5,     
+		spread_angle: 25,     
+		full_auto: true,     
+		burst_number: 1,    
+		burst_delay: 0,     
+		momentum_added: 0, 
+		reset_momentum: false, 
+		bullets_per_bounce: 4 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 4,
+		current_bullets: 4 + obj_player.max_ammo_buff,  
+		max_added_bullets: 4,
+		max_speed: -vsp_basicjump          
 	};
 }

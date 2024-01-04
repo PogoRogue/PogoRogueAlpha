@@ -27,7 +27,7 @@ if !instance_exists(obj_controls_keyboard) {
 global.combo = 0;
 global.combo_length = 0;
 global.combo_max = 32;
-global.combo_max_coins = 15;
+global.combo_max_coins = 5;
 
 
 //buffs
@@ -45,13 +45,17 @@ global.bouncy_bullets = 0;
 global.hot_shells = false;
 global.combo_master = false;
 global.sale = 1;
+global.flaming_coins = false;
+global.combo_time_added = 0;
+global.sharpshooter = false;
 
 
 //items unlockable in the shop
 global.all_buffs = [obj_item_buff_lasersight, obj_item_buff_planetarybullets,obj_item_buff_dmg,
 					obj_item_buff_max_ammo, obj_item_buff_luck, obj_item_buff_pickybuyer,
 					obj_item_buff_rubberbullets, obj_item_buff_hotshells, obj_item_buff_combomaster,
-					obj_item_buff_blackfriday, obj_item_buff_triplethreat];
+					obj_item_buff_blackfriday, obj_item_buff_triplethreat, obj_item_buff_flamingcoins,
+					obj_item_buff_combotime, obj_item_buff_sharpshooter];
 					
 global.all_weapons = [obj_item_weapon_default, obj_item_weapon_paintball, obj_item_weapon_shotgun, 
 					obj_item_weapon_bubble, obj_item_weapon_burstfire, obj_item_weapon_grenade, 

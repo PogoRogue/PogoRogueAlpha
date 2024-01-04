@@ -9,3 +9,5 @@ chargejump = false;
 damage = 12;
 
 damaged_list = array_create(100, noone);
+init_angle = obj_player.angle;
+alarm[0] = 60;

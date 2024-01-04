@@ -58,6 +58,9 @@ function scr_Buffs(){
 			if max_hp < max_max_hp {
 				max_hp += 8;
 			}
+			if hp < max_hp {
+				hp += 8;	
+			}
 		}
 	}
 	
@@ -90,5 +93,17 @@ function scr_Buffs(){
 			num_of_weapons = 3;
 			gun_array = [gun_1, gun_2, gun_3];
 		}
+	}
+	
+	buff_flamingcoins = function(){
+		global.flaming_coins = true;	
+	}
+	
+	buff_combotime = function(){
+		global.combo_time_added += 100;
+	}
+	
+	buff_sharpshooter = function(){
+		global.sharpshooter = true;
 	}
 }

@@ -18,3 +18,7 @@ if (instance_exists(follow_object) and instance_exists(follow_object2)) {
 		instance_destroy();
 	}
 }
+
+if !place_meeting(x,y,obj_enemy_parent) {
+	colliding_with_enemies = false;
+}

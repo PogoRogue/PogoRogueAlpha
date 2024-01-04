@@ -23,7 +23,7 @@ function scr_Shoot(){
 				grv: gun.ammo[bullet_index].grv,
 				num_of_bounces: gun.ammo[bullet_index].num_of_bounces + global.bouncy_bullets,
 				bounce_amount: gun.ammo[bullet_index].bounce_amount,
-				damage: gun.ammo[bullet_index].damage,
+				damage: gun.ammo[bullet_index].damage * (1 + ((global.sharpshooter = true and gun.current_bullets = gun.bullets_per_bounce) * 0.5)),
 			});
 			audio_play_sound(gun.sound,0,false);
 			

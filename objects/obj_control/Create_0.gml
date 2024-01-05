@@ -48,6 +48,7 @@ global.sale = 1;
 global.flaming_coins = false;
 global.combo_time_added = 0;
 global.sharpshooter = false;
+global.added_coins = 0;
 
 
 //items unlockable in the shop
@@ -55,7 +56,8 @@ global.all_buffs = [obj_item_buff_lasersight, obj_item_buff_planetarybullets,obj
 					obj_item_buff_max_ammo, obj_item_buff_luck, obj_item_buff_pickybuyer,
 					obj_item_buff_rubberbullets, obj_item_buff_hotshells, obj_item_buff_combomaster,
 					obj_item_buff_blackfriday, obj_item_buff_triplethreat, obj_item_buff_flamingcoins,
-					obj_item_buff_combotime, obj_item_buff_sharpshooter];
+					obj_item_buff_combotime, obj_item_buff_sharpshooter, obj_item_buff_coinsup,
+					obj_item_buff_sharptip];
 					
 global.all_weapons = [obj_item_weapon_default, obj_item_weapon_paintball, obj_item_weapon_shotgun, 
 					obj_item_weapon_bubble, obj_item_weapon_burstfire, obj_item_weapon_grenade, 
@@ -64,7 +66,8 @@ global.all_weapons = [obj_item_weapon_default, obj_item_weapon_paintball, obj_it
 					
 global.all_pickups = [obj_item_pickup_chargejump, obj_item_pickup_groundpound, obj_item_pickup_hatgun, 
 					obj_item_pickup_shieldbubble, obj_item_pickup_firedash, obj_item_pickup_jetpack,
-					obj_item_pickup_slowmo, obj_item_pickup_bulletblast, obj_item_pickup_reload];
+					obj_item_pickup_slowmo, obj_item_pickup_bulletblast, obj_item_pickup_reload,
+					obj_item_pickup_camera];
 
 
 surface_resize(application_surface,view_wport[0]*2,view_hport[0]*2);

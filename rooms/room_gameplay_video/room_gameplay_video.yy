@@ -172,6 +172,7 @@
     {"name":"inst_3388601F","path":"rooms/room_gameplay_video/room_gameplay_video.yy",},
     {"name":"inst_132BEE48","path":"rooms/room_gameplay_video/room_gameplay_video.yy",},
     {"name":"inst_77D15028","path":"rooms/room_gameplay_video/room_gameplay_video.yy",},
+    {"name":"inst_2558D498","path":"rooms/room_gameplay_video/room_gameplay_video.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -350,6 +351,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_40AE8CAB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_explode_walking","path":"objects/obj_enemy_explode_walking/obj_enemy_explode_walking.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":5024.0,"y":1232.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7D15E472","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_moving","path":"objects/obj_enemy_moving/obj_enemy_moving.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":6976.0,"y":2608.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_132BEE48","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_shop_door","path":"objects/obj_shop_door/obj_shop_door.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4592.0,"y":6560.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2558D498","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_pinballbumper","path":"objects/obj_pinballbumper/obj_pinballbumper.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4288.0,"y":6256.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":400,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_55CB02C5_1_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":32.0,},

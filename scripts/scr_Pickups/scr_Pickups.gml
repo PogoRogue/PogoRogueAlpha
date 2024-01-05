@@ -280,4 +280,24 @@ function scr_Pickups(){
 		}
 	};
 	
+	pickup_camera = {
+		_name: "Camera",
+		tagline: "Snap a bright picture of every enemy on screen.",
+		gui_sprite: spr_pickup_camera,
+		max_cooldown_time: 600,
+		cooldown_time: 600,
+		cooldown_text: "Cooldown: " + string(600 / 60) + "s" + " / kill",
+		on_cooldown: false,
+		states_to_call_in: all_states,
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		on_call: function() {
+			audio_play_sound(snd_camera,0,false);
+			instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-1000,obj_camera_pickup);
+			on_cooldown = true;
+		}
+	};
+	
 }

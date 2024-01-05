@@ -48,7 +48,7 @@ function scr_Bullets(){
 		firerate_end: 1,
 		firerate_mult: 0,
 		firerate: 1,
-		destroy_on_impact: false,
+		destroy_on_impact: true,
 		screen_shake: {magnitude: 20, frames: 10},
 		destroy_time: 0,
 		flash_frame: 12,

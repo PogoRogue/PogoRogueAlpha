@@ -106,4 +106,12 @@ function scr_Buffs(){
 	buff_sharpshooter = function(){
 		global.sharpshooter = true;
 	}
+	
+	buff_coinsup = function(){
+		global.added_coins += 1;
+	}
+	
+	buff_sharptip = function(){
+		obj_player.stomp_damage *= 2;
+	}
 }

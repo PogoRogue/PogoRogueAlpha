@@ -79,7 +79,7 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		}
 		else if(Green > 228)
 		{
-			return obj_shop_door;
+			return obj_shop_door_proc_gen_out;
 		}
 		else if(Green > 200)
 		{

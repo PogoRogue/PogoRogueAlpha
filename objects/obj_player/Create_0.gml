@@ -83,6 +83,9 @@ dead = false;
 enemies_killed = 0;
 enemies_required = 0;
 
+// Proc Gen Shop Variable
+in_proc_shop = false;
+
 //starting position
 if global.player_spawn_x = 0 and global.player_spawn_y = 0 {
 	global.player_spawn_x = x;

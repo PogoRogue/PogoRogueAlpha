@@ -22,6 +22,23 @@ if (colliding and key_open_door) {
 			var temp_player = instance_nearest(x,y,obj_player);
 			temp_player.x = inner_door_x;
 			temp_player.y = inner_door_y;
+			
+			temp_player.hspeed = 0;
+			
+			temp_player.in_proc_shop = true;
+			
+			if(instance_exists(obj_camera))
+			{
+				var temp_camera = instance_nearest(x,y,obj_camera);
+				temp_camera.in_shop = true;				
+				view_set_visible(1,true);
+				view_set_visible(0,false);
+				
+				inner_door.camera_x_prev = temp_camera.x;
+				inner_door.camera_y_prev = temp_camera.y;
+				temp_camera.x = 3020;
+				temp_camera.y = 4630;
+			}
 		}
 	}
 }

@@ -5,6 +5,9 @@ event_inherited();
 player_x_prev = x;
 player_y_prev = y;
 
+camera_x_prev = x;
+camera_y_prev = y;
+
 
 //Set this sprite to be the inner shop sprite
 image_index = 1;

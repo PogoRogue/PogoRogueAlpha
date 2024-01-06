@@ -37,7 +37,7 @@ var condition = ground_pound_slam = false;
 scr_Enemy_Collision_Check(condition);
 
 //shop
-if room = room_shop {
+if (room = room_shop || in_proc_shop) {
 	state = state_shop;
 }
 

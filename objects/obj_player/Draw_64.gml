@@ -74,7 +74,7 @@ if pickups_array[0].reload_on_bounce = false {
 }else {
 	if !(pickups_array[0].on_cooldown) and pickups_array[0].max_cooldown_time < 0 {
 		draw_sprite(pickups_array[0].gui_sprite,1,32,88);
-	}else if pickups_array[0].max_cooldown_time < 0 {
+	}else if pickups_array[0].max_cooldown_time < 0 and pickups_array[0].bounce_reset_max <= 1 {
 		draw_sprite(pickups_array[0].gui_sprite,1,32,88);
 		draw_sprite_ext(spr_pickup_empty,0,32,88,1,1,0,c_black,0.5);
 	}
@@ -95,6 +95,18 @@ if pickups_array[0].reload_on_bounce = false {
 			draw_set_font(fnt_itemdescription2);
 			scr_Draw_Text_Outlined(32,104,"LMB",c_white); 
 			draw_set_font(fnt_combo2); 
+		}
+	}
+	if pickups_array[0].bounce_reset_max > 1 { //freeze
+		if pickups_array[0].on_cooldown = true {
+			//darkening
+			draw_sprite_ext(spr_pickup_empty,0,32,88,1,1,0,c_white,0.5);
+			//show fuel left
+			draw_sprite_part(pickups_array[0].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*((pickups_array[0].bounce_reset_max-pickups_array[0].bounce_reset)/pickups_array[0].bounce_reset_max),sprite_get_height(spr_pickup_empty),16,72);
+			draw_sprite_ext(spr_pickup_empty,0,32,88,1,1,0,c_black,0.5);
+			//draw bounces left
+			draw_set_font(fnt_item_popup);
+			scr_Draw_Text_Outlined(32,104,string(pickups_array[0].bounce_reset),c_white);
 		}
 	}
 }
@@ -122,7 +134,7 @@ if pickups_array[1].reload_on_bounce = false {
 }else {
 	if !(pickups_array[1].on_cooldown) and pickups_array[1].max_cooldown_time < 0 {
 		draw_sprite(pickups_array[1].gui_sprite,1,68,88);
-	}else if pickups_array[1].max_cooldown_time < 0 {
+	}else if pickups_array[1].max_cooldown_time < 0 and pickups_array[1].bounce_reset_max <= 1 {
 		draw_sprite(pickups_array[1].gui_sprite,1,68,88);
 		draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_black,0.5);
 	}
@@ -143,6 +155,19 @@ if pickups_array[1].reload_on_bounce = false {
 			draw_set_font(fnt_itemdescription2);
 			scr_Draw_Text_Outlined(68,104,"RMB",c_white); 
 			draw_set_font(fnt_combo2);
+		}
+	}
+	
+	if pickups_array[1].bounce_reset_max > 1 { //freeze
+		if pickups_array[1].on_cooldown = true {
+			//darkening
+			draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_white,0.5);
+			//show fuel left
+			draw_sprite_part(pickups_array[1].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*((pickups_array[1].bounce_reset_max-pickups_array[1].bounce_reset)/pickups_array[1].bounce_reset_max),sprite_get_height(spr_pickup_empty),52,72);
+			draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_black,0.5);
+			//draw bounces left
+			draw_set_font(fnt_item_popup);
+			scr_Draw_Text_Outlined(68,104,string(pickups_array[1].bounce_reset),c_white);
 		}
 	}
 }

@@ -67,7 +67,7 @@ global.all_weapons = [obj_item_weapon_default, obj_item_weapon_paintball, obj_it
 global.all_pickups = [obj_item_pickup_chargejump, obj_item_pickup_groundpound, obj_item_pickup_hatgun, 
 					obj_item_pickup_shieldbubble, obj_item_pickup_firedash, obj_item_pickup_jetpack,
 					obj_item_pickup_slowmo, obj_item_pickup_bulletblast, obj_item_pickup_reload,
-					obj_item_pickup_camera];
+					obj_item_pickup_camera, obj_item_pickup_freeze];
 
 
 surface_resize(application_surface,view_wport[0]*2,view_hport[0]*2);

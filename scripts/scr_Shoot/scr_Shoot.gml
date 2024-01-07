@@ -74,6 +74,13 @@ function scr_Shoot(){
 			bullet_index = 0;
 		}
 		
+		//unfreeze if applicable
+		if state = state_freeze {
+			state = state_free;
+			grv = init_grv;
+			rotation_speed = original_rotation_speed;
+			rotation_delay = rotation_speed / 10;
+		}
 		
 	}
 }

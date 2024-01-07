@@ -27,15 +27,23 @@ function scr_Jump(add_to_jump){
 	charge = 0;
 	bouncing = false;
 	
-	if pickups_array[0].reload_on_bounce = true {
-		pickups_array[0].uses_per_bounce = pickups_array[0].max_uses_per_bounce;
-		pickups_array[0].cooldown_time = pickups_array[0].max_cooldown_time;
-		pickups_array[0].on_cooldown = false;
+	if pickups_array[0].reload_on_bounce = true and pickups_array[0].on_cooldown = true {
+		pickups_array[0].bounce_reset -= 1;
+		if pickups_array[0].bounce_reset <= 0 {
+			pickups_array[0].uses_per_bounce = pickups_array[0].max_uses_per_bounce;
+			pickups_array[0].cooldown_time = pickups_array[0].max_cooldown_time;
+			pickups_array[0].on_cooldown = false;
+			pickups_array[0].bounce_reset = pickups_array[0].bounce_reset_max;
+		}
 	}
-	if pickups_array[1].reload_on_bounce = true {
-		pickups_array[1].uses_per_bounce = pickups_array[1].max_uses_per_bounce;
-		pickups_array[1].cooldown_time = pickups_array[1].max_cooldown_time;
-		pickups_array[1].on_cooldown = false;
+	if pickups_array[1].reload_on_bounce = true and pickups_array[1].on_cooldown = true {
+		pickups_array[1].bounce_reset -= 1;
+		if pickups_array[1].bounce_reset <= 0 {
+			pickups_array[1].uses_per_bounce = pickups_array[1].max_uses_per_bounce;
+			pickups_array[1].cooldown_time = pickups_array[1].max_cooldown_time;
+			pickups_array[1].on_cooldown = false;
+			pickups_array[1].bounce_reset = pickups_array[1].bounce_reset_max;
+		}
 	}
 	
 	//flames

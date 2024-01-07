@@ -45,4 +45,11 @@ function scr_Player_Collision(){
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
 	}
+	
+	//unfreeze
+	if state = state_bouncing {
+		grv = init_grv;
+		rotation_speed = original_rotation_speed;
+		rotation_delay = rotation_speed / 10;
+	}
 }

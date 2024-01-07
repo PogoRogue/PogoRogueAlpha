@@ -1,6 +1,7 @@
 /// @description initialize variables
 //movement stats
 grv = 0.21; //gravity
+init_grv = grv; //initial gravity
 h_grv = 0.01; //horizontal drag
 rotation_speed = 3; //rotation speed
 original_rotation_speed = rotation_speed;
@@ -46,6 +47,7 @@ max_dash_time = 15;
 dash_time = 15;
 bulletblast_frames = 0;
 bulletblast_frames_max = 65; //how many frames before blasting
+freeze_time = 0;
 
 //upward flames
 min_flames_speed = 5.6;
@@ -359,6 +361,27 @@ state_bulletblast = function() {
 	}
 }
 
+state_freeze = function() {
+	if abs(speed) > 0.01 {
+		speed *= 0.8;	
+	}else {
+		speed = 0;	
+	}
+	if freeze_time > 0 {
+		freeze_time -= 1;	
+	}else {
+		state = state_free;
+		grv = init_grv;
+		rotation_speed = original_rotation_speed;
+		rotation_delay = rotation_speed / 10;
+	}
+	can_rotate = true;
+	can_shoot = true;
+	grav = 0;
+	
+	scr_Player_Collision();
+}
+
 state_shop = function() {
 	angle = 0;	
 	can_rotate = false;
@@ -465,7 +488,7 @@ buff_duration = 60 * 5; // buff duration timer
 scr_Pickups();
 
 num_of_pickups = 2; //number of different pickups equipped: only do 1 or 2
-all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo,pickup_bulletblast,pickup_reload,pickup_camera]; //all pickups
+all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo,pickup_bulletblast,pickup_reload,pickup_camera,pickup_freeze]; //all pickups
 
 if (random_pickup = true) { //choose random pickups
 	randomize();
